@@ -2,177 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Italian Republic - Italian Republic Path</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italy - Democratic Path</title>
     <style>
-    
-:root {
-    --bg-color: #0b0e14;
-    --panel-bg: #131822;
-    --card-bg: #1a202c;
-    --border-color: #2d3748;
-    --text-primary: #e2e8f0;
-    --text-secondary: #a0aec0;
-    --accent-neon: #00f3ff;
-    --accent-glow: rgba(0, 243, 255, 0.2);
-}
-
-body {
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background: linear-gradient(180deg, #151d2a 0%, #0b0e14 100%);
-    border-bottom: 2px solid var(--accent-color, var(--accent-neon));
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 0 15px var(--accent-glow);
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.2em;
-    letter-spacing: 2px;
-    color: var(--accent-color, var(--accent-neon));
-    text-shadow: 0 0 10px var(--accent-color, var(--accent-neon));
-}
-
-header p {
-    margin: 5px 0 0 0;
-    color: var(--text-secondary);
-    font-size: 0.9em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-nav {
-    background-color: var(--panel-bg);
-    border-bottom: 1px solid var(--border-color);
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-nav a {
-    color: var(--text-primary);
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 0.9em;
-    transition: all 0.2s ease;
-    border: 1px solid transparent;
-}
-
-nav a:hover {
-    color: var(--accent-color, var(--accent-neon));
-    border-color: var(--accent-color, var(--accent-neon));
-    box-shadow: 0 0 8px var(--accent-glow);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
-
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    padding: 20px;
-    flex: 1 1 calc(33.333% - 20px);
-    box-sizing: border-box;
-    min-width: 280px;
-}
-
-.card h3 {
-    margin-top: 0;
-    color: var(--accent-color, var(--accent-neon));
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 8px;
-}
-
-.card ul {
-    list-style-type: square;
-    padding-left: 20px;
-    color: var(--text-secondary);
-}
-
-.card ul li {
-    margin-bottom: 6px;
-}
-
-.wiki-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: var(--panel-bg);
-}
-
-.wiki-table th, .wiki-table td {
-    border: 1px solid var(--border-color);
-    padding: 12px;
-    text-align: left;
-}
-
-.wiki-table th {
-    background-color: var(--card-bg);
-    color: var(--accent-color, var(--accent-neon));
-}
-
-.ideology-badge {
-    display: inline-block;
-    padding: 3px 8px;
-    border-radius: 3px;
-    font-size: 0.85em;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.badge-com { background-color: #b21010; color: #fff; }
-.badge-van { background-color: #d21e1e; color: #fff; }
-.badge-rev { background-color: #d21e1e; color: #fff; }
-.badge-pro { background-color: #dc3c64; color: #fff; }
-.badge-cen { background-color: #ffdc00; color: #000; }
-.badge-con { background-color: #1e50b4; color: #fff; }
-.badge-rea { background-color: #142878; color: #fff; }
-.badge-aut { background-color: #641e8c; color: #fff; }
-.badge-atc { background-color: #461464; color: #fff; }
-.badge-abs { background-color: #c8aa14; color: #000; }
-.badge-ult { background-color: #282828; color: #fff; border: 1px solid #555; }
-.badge-fun { background-color: #503714; color: #fff; }
-
-footer {
-    text-align: center;
-    padding: 20px;
-    color: var(--text-secondary);
-    font-size: 0.8em;
-    border-top: 1px solid var(--border-color);
-    margin-top: 50px;
-}
-
-    :root {
-        --accent-color: #00c8ff;
-        --accent-glow: rgba(0, 200, 255, 0.4);
-    }
+        :root {
+            --bg-color: #0b0e14;
+            --panel-bg: #131822;
+            --card-bg: #1a202c;
+            --border-color: #2d3748;
+            --text-primary: #e2e8f0;
+            --text-secondary: #a0aec0;
+            --accent-color: #009246;
+            --accent-glow: rgba(0, 146, 70, 0.4);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-color); color: var(--text-primary); font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+        header { background: linear-gradient(180deg, #151d2a 0%, #0b0e14 100%); border-bottom: 2px solid var(--accent-color); padding: 20px; text-align: center; box-shadow: 0 0 15px var(--accent-glow); }
+        header h1 { margin: 0; font-size: 2.2em; letter-spacing: 2px; color: var(--accent-color); text-shadow: 0 0 10px var(--accent-glow); }
+        header p { margin: 5px 0 0; color: var(--text-secondary); font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
+        nav { background-color: var(--panel-bg); border-bottom: 1px solid var(--border-color); padding: 10px 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        nav a { color: var(--text-primary); text-decoration: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9em; transition: all 0.2s ease; border: 1px solid transparent; }
+        nav a:hover { color: var(--accent-color); border-color: var(--accent-color); box-shadow: 0 0 8px var(--accent-glow); }
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+        .grid { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
+        .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 20px; flex: 1 1 280px; box-sizing: border-box; min-width: 280px; margin-bottom: 20px; }
+        .card h3 { margin-top: 0; color: var(--accent-color); border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 12px; }
+        .card p, .card li { color: var(--text-secondary); line-height: 1.6; }
+        .card ul { list-style-type: square; padding-left: 20px; }
+        .card ul li { margin-bottom: 6px; }
+        .wiki-table { width: 100%; border-collapse: collapse; margin-top: 16px; background-color: var(--panel-bg); }
+        .wiki-table th, .wiki-table td { border: 1px solid var(--border-color); padding: 12px; text-align: left; }
+        .wiki-table th { background-color: var(--card-bg); color: var(--accent-color); }
+        .badge { display: inline-block; padding: 3px 8px; border-radius: 3px; font-size: 0.85em; font-weight: bold; text-transform: uppercase; }
+        .badge-prog { background-color: #f59e0b; color: #111; }
+        .badge-cent { background-color: #3b82f6; color: #fff; }
+        .badge-con { background-color: #1e50b4; color: #fff; }
+        .badge-abs { background-color: #8b5cf6; color: #fff; }
+        footer { text-align: center; padding: 20px; color: var(--text-secondary); font-size: 0.8em; border-top: 1px solid var(--border-color); margin-top: 40px; }
+        code { background: rgba(255,255,255,0.08); color: #8bd3ff; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        @media (max-width: 720px) { nav { flex-direction: column; align-items: center; } }
     </style>
 </head>
 <body>
     <header>
         <h1>ITALIAN REPUBLIC</h1>
-        <p>ITALIAN REPUBLIC PATH (DEMOCRATIC BLOC)</p>
+        <p> DEMOCRATIC PATH</p>
     </header>
     <nav>
         <a href="index.html">Home / Countries</a>
@@ -180,38 +54,124 @@ footer {
         <a href="ita_democratic.html">Democratic Path</a>
         <a href="ita_communist.html">Communist Path</a>
         <a href="ita_fascist.html">Fascist Path</a>
-        <a href="ita_nonaligned.html">Non-Aligned Path</a>
+
     </nav>
+
     <div class="container">
-        <div class="card" style="margin-bottom: 20px;">
-            <h3>Focus Tree & Path Overview</h3>
-            <p><strong>Path Title:</strong> Italian Republic</p>
-            <p><strong>Target Ideology:</strong> reactionary / progressive</p>
-            <p><strong>Sub-Ideology:</strong> traditionalismo / social_democracy</p>
-            <p><strong>Overview:</strong> Standard democratic government under center-right or center-left coalitions.</p>
+
+         <div class="card">
+        <h3>1. Header & Flavor Quotes</h3>
+            <p><strong>Starting Name:</strong> Republic of Italy</p>
+            <p><strong>Starting Leader:</strong> Giorgia Meloni.</p>
         </div>
 
-        <div class="grid">
-            <div class="card">
-                <h3>Key Focuses</h3>
-                <ul>
-                    <li>National Emergency Measures</li>
-                    <li>Ideological Consolidation</li>
-                    <li>Diplomatic Alignment & Bloc Joining</li>
-                    <li>Economic Modernization 2025</li>
-                    <li>Military Rearmament Program</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Political Effects</h3>
-                <ul>
-                    <li>Changes national leader and ruling party.</li>
-                    <li>Unlocks unique national spirits and faction options.</li>
-                    <li>Adjusts world tension impact according to ideology parameters.</li>
-                </ul>
-            </div>
+        <div class="card">
+            <h3>Focus Tree & Path Overview</h3>
+            <p><strong>Target Ideology:</strong> progressive / centrist / conservative / reactionary</p>
+            <p><strong>Sub-Ideology:</strong> progressivism / centrist_populism / conservatism / reactionary_populism</p>
+            <p><strong>Overview:</strong> Constitutional renewal, democratic stabilization, and European alignment.</p>
+        </div>
+
+        <div class="card">
+            <h3>2. Technical Infobox & Prerequisites</h3>
+            <table class="wiki-table">
+                <tr><th>Field</th><th>Value</th></tr>
+                <tr><td>Main Ideology (start)</td><td><code>conservative</code> → subtype <code>conservatism</code> (FdI/FI/LN)</td></tr>
+                <tr><td>Capital</td><td>Rome</td></tr>
+                <tr><td>Country Tag</td><td><code>ITA</code></td></tr>
+                <tr><td>Focus Tree ID</td><td><code>italia</code></td></tr>
+            </table>
+            <table class="wiki-table">
+                <thead><tr><th>Path</th><th>Trigger / Requirement</th></tr></thead>
+                <tbody>
+                    <tr><td><span class="badge badge-prog">Progressive</span></td><td><code>ITA_elly_schlein</code> → <code>ITA_socialist_victory</code></td></tr>
+                    <tr><td><span class="badge badge-cent">Centrist</span></td><td><code>ITA_2027_election</code> → <code>ITA_centerleft_victory</code></td></tr>
+                    <tr><td><span class="badge badge-con">Conservative</span></td><td><code>ITA_conservative_victory</code> → <code>ITA_giorgia_meloni</code></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h3>3. Lore & Geopolitical Goals</h3>
+            <p><strong>Background:</strong> Italy in 2025 is a nation hanging in the balance. Giorgia Meloni's center-right government faces a chronic economic crisis, massive immigration, growing internal tensions, and an unstable Europe. Political forces are becoming radicalized: on the right, neo-fascists push for a "Second March on Rome," while on the left, PDRC, CR-OSA, and Potere al Popolo organize in factories and public squares. In the center, social democracy attempts to hold together a crumbling country.</p>
+            <p style="margin-top: 10px;"><strong>Short-term goals:</strong> stabilize the economy, control social tensions, define Italy's position inside or outside NATO and the EU.</p>
+            <p style="margin-top: 10px;"><strong>Long-term goals:</strong> build an advanced social-democratic Italy, expanded welfare, deep European integration.</p>
+            <p style="margin-top: 10px;"><strong>Main rivals:</strong> France, Germany, Austria, Croatia/Slovenia, Russia, USA/NATO, Vatican.</p>
+        </div>
+
+        <div class="card">
+            <h3>4. National Spirits & Modifiers</h3>
+            <table class="wiki-table">
+                <thead><tr><th>Spirit</th><th>Effects</th></tr></thead>
+                <tbody>
+                    <tr><td>Italian Economic Crisis</td><td><code>Consumer Goods Factor +8%</code>, <code>Political Power -0.10/day</code>, <code>Stability -5%</code></td></tr>
+                    <tr><td>Public Debt</td><td><code>Construction Speed -10%</code>, <code>Factory Output -5%</code></td></tr>
+                    <tr><td>Social Tensions</td><td><code>Recruitable Population -5%</code>, <code>Monthly Popularity Change (ruling) -0.01</code></td></tr>
+                    <tr><td>NATO Member</td><td><code>Division Attack +5%</code>, <code>Join Faction Allowed</code></td></tr>
+                    <tr><td>Social Reform</td><td><code>Stability +10%</code>, <code>Consumer Goods +5%</code>, <code>Research Speed +5%</code></td></tr>
+                    <tr><td>Matteï Mediterranean Plan</td><td><code>Infrastructure +1 (Southern Italy)</code>, <code>Trade Efficiency +10%</code></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h3>5. Focus Tree Structure</h3>
+            <p>The Italian tree has 5 main roots at <code>Y=0</code> rows.</p>
+            <ul>
+                <li><code>ITA_democratic_spectrum</code> — center-left / centrist</li>
+                <li><code>ITA_good_old_days</code> — ultranationalism</li>
+                <li><code>ITA_on_the_side_of_the_proletariat</code> — radical left</li>
+                <li><code>ITA_reorganize_the_state</code> — monarchism / autocracy</li>
+                <li><code>(NATO / neutral geopolitical focus)</code></li>
+            </ul>
+            <table class="wiki-table">
+                <thead><tr><th>Focus</th><th>Primary Effect</th></tr></thead>
+                <tbody>
+                    <tr><td><code>ITA_democratic_spectrum</code></td><td>Root of the center-left parliamentarian path</td></tr>
+                    <tr><td><code>ITA_elly_schlein</code></td><td>Progressive PSI leader, <code>+Stability</code></td></tr>
+                    <tr><td><code>ITA_socialist_victory</code></td><td><code>ruling_party = progressive</code></td></tr>
+                    <tr><td><code>ITA_centerleft_victory</code></td><td><code>ruling_party = centrist</code></td></tr>
+                    <tr><td><code>ITA_green_new_deal</code></td><td><code>+200 PP</code>, environmental focus</td></tr>
+                    <tr><td><code>ITA_european_integration</code></td><td><code>+Stability</code>, In-depth look at the EU</td></tr>
+                    <tr><td><code>ITA_2027_election</code></td><td>2027 Elections — choice between progressive and centrist paths</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h3>6. All Parties & Leaders</h3>
+            <table class="wiki-table">
+                <thead><tr><th>Leader</th><th>Party</th><th>Ideology</th></tr></thead>
+                <tbody>
+                    <tr><td>Segreteria Generale</td><td>PdRC-CRosa-PaP — Rifondazione, CR, Potere al Popolo</td><td><code>totalitarian_communism</code> — <code>stalinism</code></td></tr>
+                    <tr><td>Workers' Councils</td><td>Lotta Comunista</td><td><code>vanguard_socialism</code> — <code>leninism</code></td></tr>
+                    <tr><td>Central Council</td><td>PCR — Partito Comunista Rivoluzionario</td><td><code>revolutionary_socialism</code> — <code>Trotskyism</code></td></tr>
+                    <tr><td>Enzo Maraio</td><td>PSI — Partito Socialista Italiano</td><td><code>progressive</code> — <code>social_democracy</code></td></tr>
+                    <tr><td>Elly Schlein </td><td>PD, AVS, M5S — Partito Democratico, Verdi&Sinistra, 5 Stelle</td><td><code>centrist</code> — <code>social_liberalism</code></td></tr>
+                    <tr><td>Giorgia Meloni</td><td>FdI, FI, LN — Frtelli d'Italia, Forza Italia, Lega</td><td><code>conservative</code> — <code>conservatism</code></td></tr>
+                    <tr><td>Roberto Vannacci</td><td>FN — Futuro Nazionale</td><td><code>reactionary</code> — <code>reactionary_populism</code></td></tr>
+                    <tr><td>Grand Governing Leadership</td><td>Cp-FN — CasaPound / Forza Nuova</td><td><code>ultranationalism</code> — <code>neo_fascist</code></td></tr>
+                    <tr><td>Emanuele Filiberto di Savoia</td><td>Casa Savoia — PNM</td><td><code>absolutism</code> — <code>monarchism</code></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h3>7. Unique Events & Mechanics</h3>
+            <p><strong>2027 Elections:</strong> the <code>ITA_2027_election</code> focus generates a branching event that offers the player the choice between the progressive and centrist paths, based on the popularity of the ideologies (<code>has_popularity > 0.40</code>).</p>
+            <p style="margin-top: 10px;"><strong>Revolutionary Coup:</strong> <code>ITA_start_the_coup_de_main</code> requires <code>has_party_popularity vanguard_socialism > 0.50</code> and <code>has_war = no</code>, and unlocks three parallel paths (vanguard, revolutionary, totalitarian) based on the completed focuses.</p>
+            <table class="wiki-table">
+                <thead><tr><th>#</th><th>Event</th><th>Trigger</th><th>Consequence</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td>The Second March on Rome</td><td><code>ITA_second_march_on_rome</code></td><td>Street clashes, <code>Stability -20%</code></td></tr>
+                    <tr><td>2</td><td>The International Rises</td><td><code>ITA_the_international</code></td><td>Declaration of the international</td></tr>
+                    <tr><td>3</td><td>The King Returns to Rome</td><td><code>ITA_the_kingdom_reborn</code></td><td>Proclamation of the Kingdom of Italy</td></tr>
+                    <tr><td>4</td><td>2027 Elections</td><td><code>ITA_2027_election</code></td><td>Branching between center-left and progressive center-right paths</td></tr>
+                </tbody>
+            </table>
         </div>
     </div>
+
     <footer>
         <p>Dragon vs Eagle (DvE) 2025 HOI4 Mod Wiki</p>
     </footer>
