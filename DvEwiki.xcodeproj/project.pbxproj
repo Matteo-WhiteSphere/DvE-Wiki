@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXFileReference section */
+		95C672F93010B474009B1325 /* afg.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = afg.html; sourceTree = "<group>"; };
+		95C672FA3010B474009B1325 /* ago.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ago.html; sourceTree = "<group>"; };
+		95C672FB3010B474009B1325 /* alb.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = alb.html; sourceTree = "<group>"; };
+		95C672FC3010B474009B1325 /* and.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = and.html; sourceTree = "<group>"; };
+		95C672FD3010B474009B1325 /* are.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = are.html; sourceTree = "<group>"; };
+		95C672FE3010B474009B1325 /* arg.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = arg.html; sourceTree = "<group>"; };
+		95C672FF3010B474009B1325 /* arm.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = arm.html; sourceTree = "<group>"; };
+		95C673003010B474009B1325 /* aus.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = aus.html; sourceTree = "<group>"; };
+		95C673013010B474009B1325 /* aut.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = aut.html; sourceTree = "<group>"; };
+		95C673023010B474009B1325 /* aze.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = aze.html; sourceTree = "<group>"; };
+		95C673033010B474009B1325 /* bdi.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = bdi.html; sourceTree = "<group>"; };
+		95C673043010B474009B1325 /* bel.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = bel.html; sourceTree = "<group>"; };
+		95C673053010B474009B1325 /* ben.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ben.html; sourceTree = "<group>"; };
+		95C673063010B474009B1325 /* bfa.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = bfa.html; sourceTree = "<group>"; };
+		95C673073010B474009B1325 /* bgd.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = bgd.html; sourceTree = "<group>"; };
+		95C673083010B474009B1325 /* bgr.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = bgr.html; sourceTree = "<group>"; };
+		95C673093010B474009B1325 /* bhr.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = bhr.html; sourceTree = "<group>"; };
+		95C6730A3010B474009B1325 /* bhs.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = bhs.html; sourceTree = "<group>"; };
+		95C6730B3010B474009B1325 /* bih.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = bih.html; sourceTree = "<group>"; };
+		95C6730C3010B474009B1325 /* blr.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = blr.html; sourceTree = "<group>"; };
+		95C6730D3010B474009B1325 /* blz.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = blz.html; sourceTree = "<group>"; };
+		95C6730E3010B474009B1325 /* bol.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = bol.html; sourceTree = "<group>"; };
+		95C6730F3010B474009B1325 /* bra.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = bra.html; sourceTree = "<group>"; };
+		95C673103010B474009B1325 /* brb.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = brb.html; sourceTree = "<group>"; };
+		95C673113010B474009B1325 /* brn.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = brn.html; sourceTree = "<group>"; };
+		95C673123010B474009B1325 /* btn.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = btn.html; sourceTree = "<group>"; };
+		95C673133010B474009B1325 /* bwa.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = bwa.html; sourceTree = "<group>"; };
+		95C673143010B474009B1325 /* caf.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = caf.html; sourceTree = "<group>"; };
+		95C673153010B474009B1325 /* can.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = can.html; sourceTree = "<group>"; };
+		95C673163010B474009B1325 /* che.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = che.html; sourceTree = "<group>"; };
+		95C673173010B474009B1325 /* chl.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = chl.html; sourceTree = "<group>"; };
+		95C673183010B474009B1325 /* chn_communist.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = chn_communist.html; sourceTree = "<group>"; };
+		95C673193010B474009B1325 /* chn_democratic.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = chn_democratic.html; sourceTree = "<group>"; };
+		95C6731A3010B474009B1325 /* chn_fascist.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = chn_fascist.html; sourceTree = "<group>"; };
+		95C6731B3010B474009B1325 /* chn_nonaligned.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = chn_nonaligned.html; sourceTree = "<group>"; };
+		95C6731C3010B474009B1325 /* cmr.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = cmr.html; sourceTree = "<group>"; };
+		95C6731D3010B474009B1325 /* cod.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = cod.html; sourceTree = "<group>"; };
+		95C6731E3010B474009B1325 /* cog.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = cog.html; sourceTree = "<group>"; };
+		95C6731F3010B474009B1325 /* col.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = col.html; sourceTree = "<group>"; };
+		95C673203010B474009B1325 /* com.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = com.html; sourceTree = "<group>"; };
+		95C673213010B474009B1325 /* cpv.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = cpv.html; sourceTree = "<group>"; };
+		95C673223010B474009B1325 /* cri.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = cri.html; sourceTree = "<group>"; };
+		95C673233010B474009B1325 /* cub.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = cub.html; sourceTree = "<group>"; };
+		95C673243010B474009B1325 /* cyp.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = cyp.html; sourceTree = "<group>"; };
+		95C673253010B474009B1325 /* cze.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = cze.html; sourceTree = "<group>"; };
+		95C673263010B474009B1325 /* dji.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = dji.html; sourceTree = "<group>"; };
+		95C673273010B474009B1325 /* dnk.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = dnk.html; sourceTree = "<group>"; };
+		95C673283010B474009B1325 /* dom.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = dom.html; sourceTree = "<group>"; };
+		95C673293010B474009B1325 /* dza.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = dza.html; sourceTree = "<group>"; };
+		95C6732A3010B474009B1325 /* ecu.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ecu.html; sourceTree = "<group>"; };
+		95C6732B3010B474009B1325 /* egy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = egy.html; sourceTree = "<group>"; };
+		95C6732C3010B474009B1325 /* eri.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = eri.html; sourceTree = "<group>"; };
+		95C6732D3010B474009B1325 /* esp.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = esp.html; sourceTree = "<group>"; };
+		95C6732E3010B474009B1325 /* est.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = est.html; sourceTree = "<group>"; };
+		95C6732F3010B474009B1325 /* eth.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = eth.html; sourceTree = "<group>"; };
+		95C673303010B474009B1325 /* fin.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = fin.html; sourceTree = "<group>"; };
+		95C673313010B474009B1325 /* fji.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = fji.html; sourceTree = "<group>"; };
+		95C673323010B474009B1325 /* fra_communist.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = fra_communist.html; sourceTree = "<group>"; };
+		95C673333010B474009B1325 /* fra_democratic.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = fra_democratic.html; sourceTree = "<group>"; };
+		95C673343010B474009B1325 /* fra_fascist.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = fra_fascist.html; sourceTree = "<group>"; };
+		95C673353010B474009B1325 /* fra_nonaligned.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = fra_nonaligned.html; sourceTree = "<group>"; };
+		95C673363010B474009B1325 /* gab.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = gab.html; sourceTree = "<group>"; };
+		95C673373010B474009B1325 /* gbr_communist.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = gbr_communist.html; sourceTree = "<group>"; };
+		95C673383010B474009B1325 /* gbr_democratic.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = gbr_democratic.html; sourceTree = "<group>"; };
+		95C673393010B474009B1325 /* gbr_fascist.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = gbr_fascist.html; sourceTree = "<group>"; };
+		95C6733A3010B474009B1325 /* gbr_nonaligned.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = gbr_nonaligned.html; sourceTree = "<group>"; };
+		95C6733B3010B474009B1325 /* geo.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = geo.html; sourceTree = "<group>"; };
+		95C6733C3010B474009B1325 /* ger_communist.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ger_communist.html; sourceTree = "<group>"; };
+		95C6733D3010B474009B1325 /* ger_democratic.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ger_democratic.html; sourceTree = "<group>"; };
+		95C6733E3010B474009B1325 /* ger_fascist.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ger_fascist.html; sourceTree = "<group>"; };
+		95C6733F3010B474009B1325 /* ger_nonaligned.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ger_nonaligned.html; sourceTree = "<group>"; };
+		95C673403010B474009B1325 /* gha.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = gha.html; sourceTree = "<group>"; };
+		95C673413010B474009B1325 /* gin.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = gin.html; sourceTree = "<group>"; };
+		95C673423010B474009B1325 /* gmb.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = gmb.html; sourceTree = "<group>"; };
+		95C673433010B474009B1325 /* gnb.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = gnb.html; sourceTree = "<group>"; };
+		95C673443010B474009B1325 /* gnq.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = gnq.html; sourceTree = "<group>"; };
+		95C673453010B474009B1325 /* grc.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = grc.html; sourceTree = "<group>"; };
+		95C673463010B474009B1325 /* gtm.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = gtm.html; sourceTree = "<group>"; };
+		95C673473010B474009B1325 /* guy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = guy.html; sourceTree = "<group>"; };
+		95C673483010B474009B1325 /* hnd.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = hnd.html; sourceTree = "<group>"; };
+		95C673493010B474009B1325 /* hrv.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = hrv.html; sourceTree = "<group>"; };
+		95C6734A3010B474009B1325 /* hti.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = hti.html; sourceTree = "<group>"; };
+		95C6734B3010B474009B1325 /* hun.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = hun.html; sourceTree = "<group>"; };
+		95C6734C3010B474009B1325 /* ideologies.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ideologies.html; sourceTree = "<group>"; };
+		95C6734D3010B474009B1325 /* idn.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = idn.html; sourceTree = "<group>"; };
+		95C6734E3010B474009B1325 /* ind.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ind.html; sourceTree = "<group>"; };
+		95C6734F3010B474009B1325 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		95C673503010B474009B1325 /* irl.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = irl.html; sourceTree = "<group>"; };
+		95C673513010B474009B1325 /* irn.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = irn.html; sourceTree = "<group>"; };
+		95C673523010B474009B1325 /* irq.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = irq.html; sourceTree = "<group>"; };
+		95C673533010B474009B1325 /* isl.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = isl.html; sourceTree = "<group>"; };
+		95C673543010B474009B1325 /* isr.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = isr.html; sourceTree = "<group>"; };
+		95C673553010B474009B1325 /* ita_communist.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ita_communist.html; sourceTree = "<group>"; };
+		95C673563010B474009B1325 /* ita_democratic.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ita_democratic.html; sourceTree = "<group>"; };
+		95C673573010B474009B1325 /* ita_fascist.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ita_fascist.html; sourceTree = "<group>"; };
+		95C673583010B474009B1325 /* ita_nonaligned.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ita_nonaligned.html; sourceTree = "<group>"; };
+		95C673593010B474009B1325 /* jam.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = jam.html; sourceTree = "<group>"; };
+		95C6735A3010B474009B1325 /* jor.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = jor.html; sourceTree = "<group>"; };
+		95C6735B3010B474009B1325 /* jpn.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = jpn.html; sourceTree = "<group>"; };
+		95C6735C3010B474009B1325 /* kaz.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = kaz.html; sourceTree = "<group>"; };
+		95C6735D3010B474009B1325 /* ken.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ken.html; sourceTree = "<group>"; };
+		95C6735E3010B474009B1325 /* kgz.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = kgz.html; sourceTree = "<group>"; };
+		95C6735F3010B474009B1325 /* khm.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = khm.html; sourceTree = "<group>"; };
+		95C673603010B474009B1325 /* kor.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = kor.html; sourceTree = "<group>"; };
+		95C673613010B474009B1325 /* kwt.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = kwt.html; sourceTree = "<group>"; };
+		95C673623010B474009B1325 /* lao.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lao.html; sourceTree = "<group>"; };
+		95C673633010B474009B1325 /* lbn.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lbn.html; sourceTree = "<group>"; };
+		95C673643010B474009B1325 /* lbr.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lbr.html; sourceTree = "<group>"; };
+		95C673653010B474009B1325 /* lby.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lby.html; sourceTree = "<group>"; };
+		95C673663010B474009B1325 /* lka.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lka.html; sourceTree = "<group>"; };
+		95C673673010B474009B1325 /* lso.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lso.html; sourceTree = "<group>"; };
+		95C673683010B474009B1325 /* ltu.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ltu.html; sourceTree = "<group>"; };
+		95C673693010B474009B1325 /* lux.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lux.html; sourceTree = "<group>"; };
+		95C6736A3010B474009B1325 /* lva.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = lva.html; sourceTree = "<group>"; };
+		95C6736B3010B474009B1325 /* mar.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = mar.html; sourceTree = "<group>"; };
+		95C6736C3010B474009B1325 /* mco.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = mco.html; sourceTree = "<group>"; };
+		95C6736D3010B474009B1325 /* mda.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = mda.html; sourceTree = "<group>"; };
+		95C6736E3010B474009B1325 /* mdg.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = mdg.html; sourceTree = "<group>"; };
+		95C6736F3010B474009B1325 /* mdv.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = mdv.html; sourceTree = "<group>"; };
+		95C673703010B474009B1325 /* mex.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = mex.html; sourceTree = "<group>"; };
+		95C673713010B474009B1325 /* mkd.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = mkd.html; sourceTree = "<group>"; };
+		95C673723010B474009B1325 /* mli.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = mli.html; sourceTree = "<group>"; };
+		95C673733010B474009B1325 /* mlt.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = mlt.html; sourceTree = "<group>"; };
+		95C673743010B474009B1325 /* mmr.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = mmr.html; sourceTree = "<group>"; };
+		95C673753010B474009B1325 /* mne.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = mne.html; sourceTree = "<group>"; };
+		95C673763010B474009B1325 /* mng.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = mng.html; sourceTree = "<group>"; };
+		95C673773010B474009B1325 /* moz.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = moz.html; sourceTree = "<group>"; };
+		95C673783010B474009B1325 /* mrt.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = mrt.html; sourceTree = "<group>"; };
+		95C673793010B474009B1325 /* mus.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = mus.html; sourceTree = "<group>"; };
+		95C6737A3010B474009B1325 /* mwi.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = mwi.html; sourceTree = "<group>"; };
+		95C6737B3010B474009B1325 /* mys.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = mys.html; sourceTree = "<group>"; };
+		95C6737C3010B474009B1325 /* nam.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = nam.html; sourceTree = "<group>"; };
+		95C6737D3010B474009B1325 /* ner.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ner.html; sourceTree = "<group>"; };
+		95C6737E3010B474009B1325 /* nga.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = nga.html; sourceTree = "<group>"; };
+		95C6737F3010B474009B1325 /* nic.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = nic.html; sourceTree = "<group>"; };
+		95C673803010B474009B1325 /* nld.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = nld.html; sourceTree = "<group>"; };
+		95C673813010B474009B1325 /* nor.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = nor.html; sourceTree = "<group>"; };
+		95C673823010B474009B1325 /* npl.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = npl.html; sourceTree = "<group>"; };
+		95C673833010B474009B1325 /* nzl.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = nzl.html; sourceTree = "<group>"; };
+		95C673843010B474009B1325 /* omn.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = omn.html; sourceTree = "<group>"; };
+		95C673853010B474009B1325 /* pak.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = pak.html; sourceTree = "<group>"; };
+		95C673863010B474009B1325 /* pan.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = pan.html; sourceTree = "<group>"; };
+		95C673873010B474009B1325 /* per.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = per.html; sourceTree = "<group>"; };
+		95C673883010B474009B1325 /* phl.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = phl.html; sourceTree = "<group>"; };
+		95C673893010B474009B1325 /* png.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = png.html; sourceTree = "<group>"; };
+		95C6738A3010B474009B1325 /* pol.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = pol.html; sourceTree = "<group>"; };
+		95C6738B3010B474009B1325 /* prk.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = prk.html; sourceTree = "<group>"; };
+		95C6738C3010B474009B1325 /* prt.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = prt.html; sourceTree = "<group>"; };
+		95C6738D3010B474009B1325 /* pry.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = pry.html; sourceTree = "<group>"; };
+		95C6738E3010B474009B1325 /* qat.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = qat.html; sourceTree = "<group>"; };
+		95C6738F3010B474009B1325 /* rou.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = rou.html; sourceTree = "<group>"; };
+		95C673903010B474009B1325 /* rus_communist.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = rus_communist.html; sourceTree = "<group>"; };
+		95C673913010B474009B1325 /* rus_democratic.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = rus_democratic.html; sourceTree = "<group>"; };
+		95C673923010B474009B1325 /* rus_fascist.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = rus_fascist.html; sourceTree = "<group>"; };
+		95C673933010B474009B1325 /* rus_nonaligned.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = rus_nonaligned.html; sourceTree = "<group>"; };
+		95C673943010B474009B1325 /* rwa.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = rwa.html; sourceTree = "<group>"; };
+		95C673953010B474009B1325 /* sau.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = sau.html; sourceTree = "<group>"; };
+		95C673963010B474009B1325 /* sdn.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = sdn.html; sourceTree = "<group>"; };
+		95C673973010B474009B1325 /* sen.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = sen.html; sourceTree = "<group>"; };
+		95C673983010B474009B1325 /* sgp.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = sgp.html; sourceTree = "<group>"; };
+		95C673993010B474009B1325 /* slv.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = slv.html; sourceTree = "<group>"; };
+		95C6739A3010B474009B1325 /* som.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = som.html; sourceTree = "<group>"; };
+		95C6739B3010B474009B1325 /* srb.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = srb.html; sourceTree = "<group>"; };
+		95C6739C3010B474009B1325 /* svk.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = svk.html; sourceTree = "<group>"; };
+		95C6739D3010B474009B1325 /* svn.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = svn.html; sourceTree = "<group>"; };
+		95C6739E3010B474009B1325 /* swe.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = swe.html; sourceTree = "<group>"; };
+		95C6739F3010B474009B1325 /* swz.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = swz.html; sourceTree = "<group>"; };
+		95C673A03010B474009B1325 /* syr.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = syr.html; sourceTree = "<group>"; };
+		95C673A13010B474009B1325 /* tcd.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = tcd.html; sourceTree = "<group>"; };
+		95C673A23010B474009B1325 /* tha.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = tha.html; sourceTree = "<group>"; };
+		95C673A33010B474009B1325 /* tjk.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = tjk.html; sourceTree = "<group>"; };
+		95C673A43010B474009B1325 /* tkm.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = tkm.html; sourceTree = "<group>"; };
+		95C673A53010B474009B1325 /* tun.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = tun.html; sourceTree = "<group>"; };
+		95C673A63010B474009B1325 /* tur.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = tur.html; sourceTree = "<group>"; };
+		95C673A73010B474009B1325 /* twn.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = twn.html; sourceTree = "<group>"; };
+		95C673A83010B474009B1325 /* tza.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = tza.html; sourceTree = "<group>"; };
+		95C673A93010B474009B1325 /* uga.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = uga.html; sourceTree = "<group>"; };
+		95C673AA3010B474009B1325 /* ukr.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ukr.html; sourceTree = "<group>"; };
+		95C673AB3010B474009B1325 /* ury.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ury.html; sourceTree = "<group>"; };
+		95C673AC3010B474009B1325 /* usa_communist.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = usa_communist.html; sourceTree = "<group>"; };
+		95C673AD3010B474009B1325 /* usa_democratic.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = usa_democratic.html; sourceTree = "<group>"; };
+		95C673AE3010B474009B1325 /* usa_fascist.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = usa_fascist.html; sourceTree = "<group>"; };
+		95C673AF3010B474009B1325 /* usa_nonaligned.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = usa_nonaligned.html; sourceTree = "<group>"; };
+		95C673B03010B474009B1325 /* uzb.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = uzb.html; sourceTree = "<group>"; };
+		95C673B13010B474009B1325 /* ven.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = ven.html; sourceTree = "<group>"; };
+		95C673B23010B474009B1325 /* vnm.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = vnm.html; sourceTree = "<group>"; };
+		95C673B33010B474009B1325 /* yem.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = yem.html; sourceTree = "<group>"; };
+		95C673B43010B474009B1325 /* zaf.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = zaf.html; sourceTree = "<group>"; };
+		95C673B53010B474009B1325 /* zmb.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = zmb.html; sourceTree = "<group>"; };
+		95C673B63010B474009B1325 /* zwe.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = zwe.html; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		95C672F13010A666009B1325 = {
+			isa = PBXGroup;
+			children = (
+				95C672F93010B474009B1325 /* afg.html */,
+				95C672FA3010B474009B1325 /* ago.html */,
+				95C672FB3010B474009B1325 /* alb.html */,
+				95C672FC3010B474009B1325 /* and.html */,
+				95C672FD3010B474009B1325 /* are.html */,
+				95C672FE3010B474009B1325 /* arg.html */,
+				95C672FF3010B474009B1325 /* arm.html */,
+				95C673003010B474009B1325 /* aus.html */,
+				95C673013010B474009B1325 /* aut.html */,
+				95C673023010B474009B1325 /* aze.html */,
+				95C673033010B474009B1325 /* bdi.html */,
+				95C673043010B474009B1325 /* bel.html */,
+				95C673053010B474009B1325 /* ben.html */,
+				95C673063010B474009B1325 /* bfa.html */,
+				95C673073010B474009B1325 /* bgd.html */,
+				95C673083010B474009B1325 /* bgr.html */,
+				95C673093010B474009B1325 /* bhr.html */,
+				95C6730A3010B474009B1325 /* bhs.html */,
+				95C6730B3010B474009B1325 /* bih.html */,
+				95C6730C3010B474009B1325 /* blr.html */,
+				95C6730D3010B474009B1325 /* blz.html */,
+				95C6730E3010B474009B1325 /* bol.html */,
+				95C6730F3010B474009B1325 /* bra.html */,
+				95C673103010B474009B1325 /* brb.html */,
+				95C673113010B474009B1325 /* brn.html */,
+				95C673123010B474009B1325 /* btn.html */,
+				95C673133010B474009B1325 /* bwa.html */,
+				95C673143010B474009B1325 /* caf.html */,
+				95C673153010B474009B1325 /* can.html */,
+				95C673163010B474009B1325 /* che.html */,
+				95C673173010B474009B1325 /* chl.html */,
+				95C673183010B474009B1325 /* chn_communist.html */,
+				95C673193010B474009B1325 /* chn_democratic.html */,
+				95C6731A3010B474009B1325 /* chn_fascist.html */,
+				95C6731B3010B474009B1325 /* chn_nonaligned.html */,
+				95C6731C3010B474009B1325 /* cmr.html */,
+				95C6731D3010B474009B1325 /* cod.html */,
+				95C6731E3010B474009B1325 /* cog.html */,
+				95C6731F3010B474009B1325 /* col.html */,
+				95C673203010B474009B1325 /* com.html */,
+				95C673213010B474009B1325 /* cpv.html */,
+				95C673223010B474009B1325 /* cri.html */,
+				95C673233010B474009B1325 /* cub.html */,
+				95C673243010B474009B1325 /* cyp.html */,
+				95C673253010B474009B1325 /* cze.html */,
+				95C673263010B474009B1325 /* dji.html */,
+				95C673273010B474009B1325 /* dnk.html */,
+				95C673283010B474009B1325 /* dom.html */,
+				95C673293010B474009B1325 /* dza.html */,
+				95C6732A3010B474009B1325 /* ecu.html */,
+				95C6732B3010B474009B1325 /* egy.html */,
+				95C6732C3010B474009B1325 /* eri.html */,
+				95C6732D3010B474009B1325 /* esp.html */,
+				95C6732E3010B474009B1325 /* est.html */,
+				95C6732F3010B474009B1325 /* eth.html */,
+				95C673303010B474009B1325 /* fin.html */,
+				95C673313010B474009B1325 /* fji.html */,
+				95C673323010B474009B1325 /* fra_communist.html */,
+				95C673333010B474009B1325 /* fra_democratic.html */,
+				95C673343010B474009B1325 /* fra_fascist.html */,
+				95C673353010B474009B1325 /* fra_nonaligned.html */,
+				95C673363010B474009B1325 /* gab.html */,
+				95C673373010B474009B1325 /* gbr_communist.html */,
+				95C673383010B474009B1325 /* gbr_democratic.html */,
+				95C673393010B474009B1325 /* gbr_fascist.html */,
+				95C6733A3010B474009B1325 /* gbr_nonaligned.html */,
+				95C6733B3010B474009B1325 /* geo.html */,
+				95C6733C3010B474009B1325 /* ger_communist.html */,
+				95C6733D3010B474009B1325 /* ger_democratic.html */,
+				95C6733E3010B474009B1325 /* ger_fascist.html */,
+				95C6733F3010B474009B1325 /* ger_nonaligned.html */,
+				95C673403010B474009B1325 /* gha.html */,
+				95C673413010B474009B1325 /* gin.html */,
+				95C673423010B474009B1325 /* gmb.html */,
+				95C673433010B474009B1325 /* gnb.html */,
+				95C673443010B474009B1325 /* gnq.html */,
+				95C673453010B474009B1325 /* grc.html */,
+				95C673463010B474009B1325 /* gtm.html */,
+				95C673473010B474009B1325 /* guy.html */,
+				95C673483010B474009B1325 /* hnd.html */,
+				95C673493010B474009B1325 /* hrv.html */,
+				95C6734A3010B474009B1325 /* hti.html */,
+				95C6734B3010B474009B1325 /* hun.html */,
+				95C6734C3010B474009B1325 /* ideologies.html */,
+				95C6734D3010B474009B1325 /* idn.html */,
+				95C6734E3010B474009B1325 /* ind.html */,
+				95C6734F3010B474009B1325 /* index.html */,
+				95C673503010B474009B1325 /* irl.html */,
+				95C673513010B474009B1325 /* irn.html */,
+				95C673523010B474009B1325 /* irq.html */,
+				95C673533010B474009B1325 /* isl.html */,
+				95C673543010B474009B1325 /* isr.html */,
+				95C673553010B474009B1325 /* ita_communist.html */,
+				95C673563010B474009B1325 /* ita_democratic.html */,
+				95C673573010B474009B1325 /* ita_fascist.html */,
+				95C673583010B474009B1325 /* ita_nonaligned.html */,
+				95C673593010B474009B1325 /* jam.html */,
+				95C6735A3010B474009B1325 /* jor.html */,
+				95C6735B3010B474009B1325 /* jpn.html */,
+				95C6735C3010B474009B1325 /* kaz.html */,
+				95C6735D3010B474009B1325 /* ken.html */,
+				95C6735E3010B474009B1325 /* kgz.html */,
+				95C6735F3010B474009B1325 /* khm.html */,
+				95C673603010B474009B1325 /* kor.html */,
+				95C673613010B474009B1325 /* kwt.html */,
+				95C673623010B474009B1325 /* lao.html */,
+				95C673633010B474009B1325 /* lbn.html */,
+				95C673643010B474009B1325 /* lbr.html */,
+				95C673653010B474009B1325 /* lby.html */,
+				95C673663010B474009B1325 /* lka.html */,
+				95C673673010B474009B1325 /* lso.html */,
+				95C673683010B474009B1325 /* ltu.html */,
+				95C673693010B474009B1325 /* lux.html */,
+				95C6736A3010B474009B1325 /* lva.html */,
+				95C6736B3010B474009B1325 /* mar.html */,
+				95C6736C3010B474009B1325 /* mco.html */,
+				95C6736D3010B474009B1325 /* mda.html */,
+				95C6736E3010B474009B1325 /* mdg.html */,
+				95C6736F3010B474009B1325 /* mdv.html */,
+				95C673703010B474009B1325 /* mex.html */,
+				95C673713010B474009B1325 /* mkd.html */,
+				95C673723010B474009B1325 /* mli.html */,
+				95C673733010B474009B1325 /* mlt.html */,
+				95C673743010B474009B1325 /* mmr.html */,
+				95C673753010B474009B1325 /* mne.html */,
+				95C673763010B474009B1325 /* mng.html */,
+				95C673773010B474009B1325 /* moz.html */,
+				95C673783010B474009B1325 /* mrt.html */,
+				95C673793010B474009B1325 /* mus.html */,
+				95C6737A3010B474009B1325 /* mwi.html */,
+				95C6737B3010B474009B1325 /* mys.html */,
+				95C6737C3010B474009B1325 /* nam.html */,
+				95C6737D3010B474009B1325 /* ner.html */,
+				95C6737E3010B474009B1325 /* nga.html */,
+				95C6737F3010B474009B1325 /* nic.html */,
+				95C673803010B474009B1325 /* nld.html */,
+				95C673813010B474009B1325 /* nor.html */,
+				95C673823010B474009B1325 /* npl.html */,
+				95C673833010B474009B1325 /* nzl.html */,
+				95C673843010B474009B1325 /* omn.html */,
+				95C673853010B474009B1325 /* pak.html */,
+				95C673863010B474009B1325 /* pan.html */,
+				95C673873010B474009B1325 /* per.html */,
+				95C673883010B474009B1325 /* phl.html */,
+				95C673893010B474009B1325 /* png.html */,
+				95C6738A3010B474009B1325 /* pol.html */,
+				95C6738B3010B474009B1325 /* prk.html */,
+				95C6738C3010B474009B1325 /* prt.html */,
+				95C6738D3010B474009B1325 /* pry.html */,
+				95C6738E3010B474009B1325 /* qat.html */,
+				95C6738F3010B474009B1325 /* rou.html */,
+				95C673903010B474009B1325 /* rus_communist.html */,
+				95C673913010B474009B1325 /* rus_democratic.html */,
+				95C673923010B474009B1325 /* rus_fascist.html */,
+				95C673933010B474009B1325 /* rus_nonaligned.html */,
+				95C673943010B474009B1325 /* rwa.html */,
+				95C673953010B474009B1325 /* sau.html */,
+				95C673963010B474009B1325 /* sdn.html */,
+				95C673973010B474009B1325 /* sen.html */,
+				95C673983010B474009B1325 /* sgp.html */,
+				95C673993010B474009B1325 /* slv.html */,
+				95C6739A3010B474009B1325 /* som.html */,
+				95C6739B3010B474009B1325 /* srb.html */,
+				95C6739C3010B474009B1325 /* svk.html */,
+				95C6739D3010B474009B1325 /* svn.html */,
+				95C6739E3010B474009B1325 /* swe.html */,
+				95C6739F3010B474009B1325 /* swz.html */,
+				95C673A03010B474009B1325 /* syr.html */,
+				95C673A13010B474009B1325 /* tcd.html */,
+				95C673A23010B474009B1325 /* tha.html */,
+				95C673A33010B474009B1325 /* tjk.html */,
+				95C673A43010B474009B1325 /* tkm.html */,
+				95C673A53010B474009B1325 /* tun.html */,
+				95C673A63010B474009B1325 /* tur.html */,
+				95C673A73010B474009B1325 /* twn.html */,
+				95C673A83010B474009B1325 /* tza.html */,
+				95C673A93010B474009B1325 /* uga.html */,
+				95C673AA3010B474009B1325 /* ukr.html */,
+				95C673AB3010B474009B1325 /* ury.html */,
+				95C673AC3010B474009B1325 /* usa_communist.html */,
+				95C673AD3010B474009B1325 /* usa_democratic.html */,
+				95C673AE3010B474009B1325 /* usa_fascist.html */,
+				95C673AF3010B474009B1325 /* usa_nonaligned.html */,
+				95C673B03010B474009B1325 /* uzb.html */,
+				95C673B13010B474009B1325 /* ven.html */,
+				95C673B23010B474009B1325 /* vnm.html */,
+				95C673B33010B474009B1325 /* yem.html */,
+				95C673B43010B474009B1325 /* zaf.html */,
+				95C673B53010B474009B1325 /* zmb.html */,
+				95C673B63010B474009B1325 /* zwe.html */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		95C672F23010A666009B1325 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 2640;
+			};
+			buildConfigurationList = 95C672F53010A666009B1325 /* Build configuration list for PBXProject "DvEwiki" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 95C672F13010A666009B1325;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		95C672F63010A666009B1325 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = LVU7RPXD7L;
+			};
+			name = Debug;
+		};
+		95C672F73010A666009B1325 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = LVU7RPXD7L;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		95C672F53010A666009B1325 /* Build configuration list for PBXProject "DvEwiki" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95C672F63010A666009B1325 /* Debug */,
+				95C672F73010A666009B1325 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 95C672F23010A666009B1325 /* Project object */;
+}

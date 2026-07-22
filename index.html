@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dragon vs Eagle (2025) - HOI4 Mod Wiki</title>
+    <style>
+:root {
+    --bg-color: #0b0e14;
+    --panel-bg: #131822;
+    --card-bg: #1a202c;
+    --border-color: #2d3748;
+    --text-primary: #e2e8f0;
+    --text-secondary: #a0aec0;
+    --accent-neon: #00f3ff;
+    --accent-glow: rgba(0, 243, 255, 0.2);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(180deg, #151d2a 0%, #0b0e14 100%);
+    border-bottom: 2px solid var(--accent-color, var(--accent-neon));
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2em;
+    letter-spacing: 2px;
+    color: var(--accent-color, var(--accent-neon));
+    text-shadow: 0 0 10px var(--accent-color, var(--accent-neon));
+}
+
+header p {
+    margin: 5px 0 0 0;
+    color: var(--text-secondary);
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav {
+    background-color: var(--panel-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+nav a:hover {
+    color: var(--accent-color, var(--accent-neon));
+    border-color: var(--accent-color, var(--accent-neon));
+    box-shadow: 0 0 8px var(--accent-glow);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 20px;
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    min-width: 280px;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--accent-color, var(--accent-neon));
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.card ul {
+    list-style-type: square;
+    padding-left: 20px;
+    color: var(--text-secondary);
+}
+
+.card ul li {
+    margin-bottom: 6px;
+}
+
+.wiki-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--panel-bg);
+}
+
+.wiki-table th, .wiki-table td {
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    text-align: left;
+}
+
+.wiki-table th {
+    background-color: var(--card-bg);
+    color: var(--accent-color, var(--accent-neon));
+}
+
+.ideology-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.85em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.badge-com { background-color: #b21010; color: #fff; }
+.badge-van { background-color: #d21e1e; color: #fff; }
+.badge-rev { background-color: #d21e1e; color: #fff; }
+.badge-pro { background-color: #dc3c64; color: #fff; }
+.badge-cen { background-color: #ffdc00; color: #000; }
+.badge-con { background-color: #1e50b4; color: #fff; }
+.badge-rea { background-color: #142878; color: #fff; }
+.badge-aut { background-color: #641e8c; color: #fff; }
+.badge-atc { background-color: #461464; color: #fff; }
+.badge-abs { background-color: #c8aa14; color: #000; }
+.badge-ult { background-color: #282828; color: #fff; border: 1px solid #555; }
+.badge-fun { background-color: #503714; color: #fff; }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-secondary);
+    font-size: 0.8em;
+    border-top: 1px solid var(--border-color);
+    margin-top: 50px;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>DRAGON VS EAGLE (2025)</h1>
+        <p>Official Hearts of Iron IV Mod Wiki Directory</p>
+    </header>
+    <nav>
+        <a href="index.html">Home / Countries</a>
+        <a href="ideologies.html">Ideologies List</a>
+    </nav>
+    <div class="container">
+        <h2>Major Nations (Custom Path Branches)</h2>
+        <div class="grid">
+
+            <div class="card" style="--accent-color: #0066ff; --accent-glow: rgba(0, 102, 255, 0.4)">
+                <h3>United States of America (USA)</h3>
+                <p>Select political path wiki page:</p>
+                <ul>
+                    <li><a href="usa_democratic.html" style="color: #0066ff">Democratic Path</a></li>
+                    <li><a href="usa_communist.html" style="color: #0066ff">Communist Path</a></li>
+                    <li><a href="usa_fascist.html" style="color: #0066ff">Fascist / Reactionary Path</a></li>
+                    <li><a href="usa_nonaligned.html" style="color: #0066ff">Monarchist / Military / Non-Aligned Path</a></li>
+                </ul>
+            </div>
+    
+            <div class="card" style="--accent-color: #ff0000; --accent-glow: rgba(255, 0, 0, 0.4)">
+                <h3>People's Republic of China (CHN)</h3>
+                <p>Select political path wiki page:</p>
+                <ul>
+                    <li><a href="chn_democratic.html" style="color: #ff0000">Democratic Path</a></li>
+                    <li><a href="chn_communist.html" style="color: #ff0000">Communist Path</a></li>
+                    <li><a href="chn_fascist.html" style="color: #ff0000">Fascist / Reactionary Path</a></li>
+                    <li><a href="chn_nonaligned.html" style="color: #ff0000">Monarchist / Military / Non-Aligned Path</a></li>
+                </ul>
+            </div>
+    
+            <div class="card" style="--accent-color: #8b0000; --accent-glow: rgba(139, 0, 0, 0.4)">
+                <h3>Russian Federation (RUS)</h3>
+                <p>Select political path wiki page:</p>
+                <ul>
+                    <li><a href="rus_democratic.html" style="color: #8b0000">Democratic Path</a></li>
+                    <li><a href="rus_communist.html" style="color: #8b0000">Communist Path</a></li>
+                    <li><a href="rus_fascist.html" style="color: #8b0000">Fascist / Reactionary Path</a></li>
+                    <li><a href="rus_nonaligned.html" style="color: #8b0000">Monarchist / Military / Non-Aligned Path</a></li>
+                </ul>
+            </div>
+    
+            <div class="card" style="--accent-color: #2a52be; --accent-glow: rgba(42, 82, 190, 0.4)">
+                <h3>United Kingdom (GBR)</h3>
+                <p>Select political path wiki page:</p>
+                <ul>
+                    <li><a href="gbr_democratic.html" style="color: #2a52be">Democratic Path</a></li>
+                    <li><a href="gbr_communist.html" style="color: #2a52be">Communist Path</a></li>
+                    <li><a href="gbr_fascist.html" style="color: #2a52be">Fascist / Reactionary Path</a></li>
+                    <li><a href="gbr_nonaligned.html" style="color: #2a52be">Monarchist / Military / Non-Aligned Path</a></li>
+                </ul>
+            </div>
+    
+            <div class="card" style="--accent-color: #3399ff; --accent-glow: rgba(51, 153, 255, 0.4)">
+                <h3>French Republic (FRA)</h3>
+                <p>Select political path wiki page:</p>
+                <ul>
+                    <li><a href="fra_democratic.html" style="color: #3399ff">Democratic Path</a></li>
+                    <li><a href="fra_communist.html" style="color: #3399ff">Communist Path</a></li>
+                    <li><a href="fra_fascist.html" style="color: #3399ff">Fascist / Reactionary Path</a></li>
+                    <li><a href="fra_nonaligned.html" style="color: #3399ff">Monarchist / Military / Non-Aligned Path</a></li>
+                </ul>
+            </div>
+    
+            <div class="card" style="--accent-color: #00bfff; --accent-glow: rgba(0, 191, 255, 0.4)">
+                <h3>Federal Republic of Germany (GER)</h3>
+                <p>Select political path wiki page:</p>
+                <ul>
+                    <li><a href="ger_democratic.html" style="color: #00bfff">Democratic Path</a></li>
+                    <li><a href="ger_communist.html" style="color: #00bfff">Communist Path</a></li>
+                    <li><a href="ger_fascist.html" style="color: #00bfff">Fascist / Reactionary Path</a></li>
+                    <li><a href="ger_nonaligned.html" style="color: #00bfff">Monarchist / Military / Non-Aligned Path</a></li>
+                </ul>
+            </div>
+    
+            <div class="card" style="--accent-color: #00c8ff; --accent-glow: rgba(0, 200, 255, 0.4)">
+                <h3>Italian Republic (ITA)</h3>
+                <p>Select political path wiki page:</p>
+                <ul>
+                    <li><a href="ita_democratic.html" style="color: #00c8ff">Democratic Path</a></li>
+                    <li><a href="ita_communist.html" style="color: #00c8ff">Communist Path</a></li>
+                    <li><a href="ita_fascist.html" style="color: #00c8ff">Fascist / Reactionary Path</a></li>
+                    <li><a href="ita_nonaligned.html" style="color: #00c8ff">Monarchist / Military / Non-Aligned Path</a></li>
+                </ul>
+            </div>
+    
+        </div>
+
+        <h2 style="margin-top: 40px;">All Global Nations (2025 World Map)</h2>
+        <table class="wiki-table">
+            <thead>
+                <tr>
+                    <th>TAG</th>
+                    <th>Country Name</th>
+                    <th>Starting Ideology</th>
+                    <th>Sub-Ideology</th>
+                    <th>Wiki Link</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><strong>USA</strong></td>
+                    <td>United States of America</td>
+                    <td><span class="ideology-badge badge-cen">MULTIPLE PATHS</span></td>
+                    <td>Major Power Branch</td>
+                    <td><a href="usa_democratic.html">View Paths</a></td>
+                </tr>
+    
+                <tr>
+                    <td><strong>CHN</strong></td>
+                    <td>People's Republic of China</td>
+                    <td><span class="ideology-badge badge-cen">MULTIPLE PATHS</span></td>
+                    <td>Major Power Branch</td>
+                    <td><a href="chn_democratic.html">View Paths</a></td>
+                </tr>
+    
+                <tr>
+                    <td><strong>RUS</strong></td>
+                    <td>Russian Federation</td>
+                    <td><span class="ideology-badge badge-cen">MULTIPLE PATHS</span></td>
+                    <td>Major Power Branch</td>
+                    <td><a href="rus_democratic.html">View Paths</a></td>
+                </tr>
+    
+                <tr>
+                    <td><strong>GBR</strong></td>
+                    <td>United Kingdom</td>
+                    <td><span class="ideology-badge badge-cen">MULTIPLE PATHS</span></td>
+                    <td>Major Power Branch</td>
+                    <td><a href="gbr_democratic.html">View Paths</a></td>
+                </tr>
+    
+                <tr>
+                    <td><strong>FRA</strong></td>
+                    <td>French Republic</td>
+                    <td><span class="ideology-badge badge-cen">MULTIPLE PATHS</span></td>
+                    <td>Major Power Branch</td>
+                    <td><a href="fra_democratic.html">View Paths</a></td>
+                </tr>
+    
+                <tr>
+                    <td><strong>GER</strong></td>
+                    <td>Federal Republic of Germany</td>
+                    <td><span class="ideology-badge badge-cen">MULTIPLE PATHS</span></td>
+                    <td>Major Power Branch</td>
+                    <td><a href="ger_democratic.html">View Paths</a></td>
+                </tr>
+    
+                <tr>
+                    <td><strong>ITA</strong></td>
+                    <td>Italian Republic</td>
+                    <td><span class="ideology-badge badge-cen">MULTIPLE PATHS</span></td>
+                    <td>Major Power Branch</td>
+                    <td><a href="ita_democratic.html">View Paths</a></td>
+                </tr>
+    
+                <tr>
+                    <td>AFG</td>
+                    <td>Afghanistan</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #503714; color: #fff;">Fundamentalism</span></td>
+                    <td>Islamic Fundamentalism</td>
+                    <td><a href="afg.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>ALB</td>
+                    <td>Albania</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="alb.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>DZA</td>
+                    <td>Algeria</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Patriotic Socialism</td>
+                    <td><a href="dza.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>AND</td>
+                    <td>Andorra</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="and.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>AGO</td>
+                    <td>Angola</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Patriotic Socialism</td>
+                    <td><a href="ago.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>ARG</td>
+                    <td>Argentina</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #3080b4; color: #fff;">Conservative</span></td>
+                    <td>Classical Populism</td>
+                    <td><a href="arg.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>ARM</td>
+                    <td>Armenia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Centrist Populism</td>
+                    <td><a href="arm.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>AUS</td>
+                    <td>Australia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #0066ff; color: #fff;">Conservative</span></td>
+                    <td>Conservatism</td>
+                    <td><a href="aus.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>AUT</td>
+                    <td>Austria</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Conservative</span></td>
+                    <td>Christian Democracy</td>
+                    <td><a href="aut.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>AZE</td>
+                    <td>Azerbaijan</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Dynastic Authoritarianism</td>
+                    <td><a href="aze.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>BHS</td>
+                    <td>Bahamas</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="bhs.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>BHR</td>
+                    <td>Bahrain</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #c8aa14; color: #fff;">Absolutism</span></td>
+                    <td>Absolute Monarchy</td>
+                    <td><a href="bhr.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>BGD</td>
+                    <td>Bangladesh</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Illiberal Democracy</td>
+                    <td><a href="bgd.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>BRB</td>
+                    <td>Barbados</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #dc3c64; color: #fff;">Progressive</span></td>
+                    <td>Social Democracy</td>
+                    <td><a href="brb.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>BLR</td>
+                    <td>Belarus</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Putinism</td>
+                    <td><a href="blr.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>BEL</td>
+                    <td>Belgium</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="bel.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>BLZ</td>
+                    <td>Belize</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="blz.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>BEN</td>
+                    <td>Benin</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="ben.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>BTN</td>
+                    <td>Bhutan</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #c8aa14; color: #fff;">Absolutism</span></td>
+                    <td>Monarchism</td>
+                    <td><a href="btn.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>BOL</td>
+                    <td>Bolivia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #dc3c64; color: #fff;">Progressive</span></td>
+                    <td>Left Populism</td>
+                    <td><a href="bol.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>BIH</td>
+                    <td>Bosnia and Herzegovina</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="bih.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>BWA</td>
+                    <td>Botswana</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #3080b4; color: #fff;">Conservative</span></td>
+                    <td>Conservatism</td>
+                    <td><a href="bwa.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>BRA</td>
+                    <td>Brazil</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #dc3c64; color: #fff;">Progressive</span></td>
+                    <td>Left Populism</td>
+                    <td><a href="bra.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>BRN</td>
+                    <td>Brunei</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #c8aa14; color: #fff;">Absolutism</span></td>
+                    <td>Absolute Monarchy</td>
+                    <td><a href="brn.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>BGR</td>
+                    <td>Bulgaria</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="bgr.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>BFA</td>
+                    <td>Burkina Faso</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #461464; color: #fff;">Autocracy</span></td>
+                    <td>Military Junta</td>
+                    <td><a href="bfa.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>BDI</td>
+                    <td>Burundi</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Paternalism</td>
+                    <td><a href="bdi.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>KHM</td>
+                    <td>Cambodia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Guided Democracy</td>
+                    <td><a href="khm.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>CMR</td>
+                    <td>Cameroon</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Personal Dictatorship</td>
+                    <td><a href="cmr.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>CAN</td>
+                    <td>Canada</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #0066ff; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="can.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>CPV</td>
+                    <td>Cape Verde</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="cpv.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>CAF</td>
+                    <td>Central African Republic</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Paternalism</td>
+                    <td><a href="caf.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>TCD</td>
+                    <td>Chad</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #461464; color: #fff;">Autocracy</span></td>
+                    <td>Military Junta</td>
+                    <td><a href="tcd.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>CHL</td>
+                    <td>Chile</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #dc3c64; color: #fff;">Progressive</span></td>
+                    <td>Social Democracy</td>
+                    <td><a href="chl.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>COL</td>
+                    <td>Colombia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #dc3c64; color: #fff;">Progressive</span></td>
+                    <td>Left Populism</td>
+                    <td><a href="col.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>COM</td>
+                    <td>Comoros</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Paternalism</td>
+                    <td><a href="com.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>COG</td>
+                    <td>Republic of the Congo</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Patriotic Socialism</td>
+                    <td><a href="cog.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>COD</td>
+                    <td>DR Congo</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Illiberal Democracy</td>
+                    <td><a href="cod.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>CRI</td>
+                    <td>Costa Rica</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="cri.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>HRV</td>
+                    <td>Croatia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Conservative</span></td>
+                    <td>Christian Democracy</td>
+                    <td><a href="hrv.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>CUB</td>
+                    <td>Cuba</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #b21010; color: #fff;">Totalitarian Communism</span></td>
+                    <td>Stalinism</td>
+                    <td><a href="cub.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>CYP</td>
+                    <td>Cyprus</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Conservative</span></td>
+                    <td>Christian Democracy</td>
+                    <td><a href="cyp.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>CZE</td>
+                    <td>Czech Republic</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Centrist Populism</td>
+                    <td><a href="cze.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>DNK</td>
+                    <td>Denmark</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Progressive</span></td>
+                    <td>Social Democracy</td>
+                    <td><a href="dnk.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>DJI</td>
+                    <td>Djibouti</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Personal Dictatorship</td>
+                    <td><a href="dji.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>DOM</td>
+                    <td>Dominican Republic</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="dom.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>ECU</td>
+                    <td>Ecuador</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #3080b4; color: #fff;">Conservative</span></td>
+                    <td>Classical Liberalism</td>
+                    <td><a href="ecu.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>EGY</td>
+                    <td>Egypt</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #461464; color: #fff;">Autocracy</span></td>
+                    <td>Military Junta</td>
+                    <td><a href="egy.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>SLV</td>
+                    <td>El Salvador</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Illiberal Democracy</td>
+                    <td><a href="slv.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>GNQ</td>
+                    <td>Equatorial Guinea</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #461464; color: #fff;">Autocracy</span></td>
+                    <td>Personal Dictatorship</td>
+                    <td><a href="gnq.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>ERI</td>
+                    <td>Eritrea</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #461464; color: #fff;">Autocracy</span></td>
+                    <td>Personal Dictatorship</td>
+                    <td><a href="eri.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>EST</td>
+                    <td>Estonia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Ultra Liberalism</td>
+                    <td><a href="est.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>SWZ</td>
+                    <td>Eswatini</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #c8aa14; color: #fff;">Absolutism</span></td>
+                    <td>Absolute Monarchy</td>
+                    <td><a href="swz.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>ETH</td>
+                    <td>Ethiopia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Patriotic Socialism</td>
+                    <td><a href="eth.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>FJI</td>
+                    <td>Fiji</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="fji.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>FIN</td>
+                    <td>Finland</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Conservative</span></td>
+                    <td>Conservatism</td>
+                    <td><a href="fin.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>GAB</td>
+                    <td>Gabon</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #461464; color: #fff;">Autocracy</span></td>
+                    <td>Military Junta</td>
+                    <td><a href="gab.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>GMB</td>
+                    <td>Gambia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="gmb.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>GEO</td>
+                    <td>Georgia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Oligarchy</td>
+                    <td><a href="geo.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>GHA</td>
+                    <td>Ghana</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="gha.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>GRC</td>
+                    <td>Greece</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Conservative</span></td>
+                    <td>Christian Democracy</td>
+                    <td><a href="grc.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>GTM</td>
+                    <td>Guatemala</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #dc3c64; color: #fff;">Progressive</span></td>
+                    <td>Reformist Socialism</td>
+                    <td><a href="gtm.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>GIN</td>
+                    <td>Guinea</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #461464; color: #fff;">Autocracy</span></td>
+                    <td>Military Junta</td>
+                    <td><a href="gin.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>GNB</td>
+                    <td>Guinea-Bissau</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Paternalism</td>
+                    <td><a href="gnb.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>GUY</td>
+                    <td>Guyana</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #dc3c64; color: #fff;">Progressive</span></td>
+                    <td>Reformist Socialism</td>
+                    <td><a href="guy.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>HTI</td>
+                    <td>Haiti</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #461464; color: #fff;">Autocracy</span></td>
+                    <td>Kleptocracy</td>
+                    <td><a href="hti.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>HND</td>
+                    <td>Honduras</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #dc3c64; color: #fff;">Progressive</span></td>
+                    <td>Left Populism</td>
+                    <td><a href="hnd.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>HUN</td>
+                    <td>Hungary</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Authoritarianism</span></td>
+                    <td>Illiberal Democracy</td>
+                    <td><a href="hun.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>ISL</td>
+                    <td>Iceland</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="isl.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>IND</td>
+                    <td>India</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #503714; color: #fff;">Fundamentalism</span></td>
+                    <td>Hindu Nationalism</td>
+                    <td><a href="ind.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>IDN</td>
+                    <td>Indonesia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #3080b4; color: #fff;">Conservative</span></td>
+                    <td>Classical Populism</td>
+                    <td><a href="idn.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>IRN</td>
+                    <td>Iran</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #503714; color: #fff;">Fundamentalism</span></td>
+                    <td>Islamic Fundamentalism</td>
+                    <td><a href="irn.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>IRQ</td>
+                    <td>Iraq</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Illiberal Democracy</td>
+                    <td><a href="irq.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>IRL</td>
+                    <td>Ireland</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="irl.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>ISR</td>
+                    <td>Israel</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #142878; color: #fff;">Reactionary</span></td>
+                    <td>Traditionalismo</td>
+                    <td><a href="isr.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>JAM</td>
+                    <td>Jamaica</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="jam.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>JPN</td>
+                    <td>Japan</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #3080b4; color: #fff;">Conservative</span></td>
+                    <td>Conservatism</td>
+                    <td><a href="jpn.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>JOR</td>
+                    <td>Jordan</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #c8aa14; color: #fff;">Absolutism</span></td>
+                    <td>Monarchism</td>
+                    <td><a href="jor.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>KAZ</td>
+                    <td>Kazakhstan</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Guided Democracy</td>
+                    <td><a href="kaz.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>KEN</td>
+                    <td>Kenya</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #3080b4; color: #fff;">Conservative</span></td>
+                    <td>Classical Populism</td>
+                    <td><a href="ken.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>PRK</td>
+                    <td>North Korea</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #b21010; color: #fff;">Totalitarian Communism</span></td>
+                    <td>Stalinism</td>
+                    <td><a href="prk.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>KOR</td>
+                    <td>South Korea</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #3080b4; color: #fff;">Conservative</span></td>
+                    <td>Conservatism</td>
+                    <td><a href="kor.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>KWT</td>
+                    <td>Kuwait</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #c8aa14; color: #fff;">Absolutism</span></td>
+                    <td>Monarchism</td>
+                    <td><a href="kwt.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>KGZ</td>
+                    <td>Kyrgyzstan</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Illiberal Democracy</td>
+                    <td><a href="kgz.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>LAO</td>
+                    <td>Laos</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #b21010; color: #fff;">Totalitarian Communism</span></td>
+                    <td>Market Socialism</td>
+                    <td><a href="lao.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>LVA</td>
+                    <td>Latvia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Conservative</span></td>
+                    <td>Conservatism</td>
+                    <td><a href="lva.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>LBN</td>
+                    <td>Lebanon</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Sectarian Confessionalism</td>
+                    <td><a href="lbn.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>LSO</td>
+                    <td>Lesotho</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #c8aa14; color: #fff;">Absolutism</span></td>
+                    <td>Monarchism</td>
+                    <td><a href="lso.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>LBR</td>
+                    <td>Liberia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="lbr.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>LBY</td>
+                    <td>Libya</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #461464; color: #fff;">Autocracy</span></td>
+                    <td>Military Junta</td>
+                    <td><a href="lby.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>LTU</td>
+                    <td>Lithuania</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Conservative</span></td>
+                    <td>Christian Democracy</td>
+                    <td><a href="ltu.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>LUX</td>
+                    <td>Luxembourg</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="lux.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>MDG</td>
+                    <td>Madagascar</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="mdg.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>MWI</td>
+                    <td>Malawi</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="mwi.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>MYS</td>
+                    <td>Malaysia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #3080b4; color: #fff;">Conservative</span></td>
+                    <td>Civic Nationalism</td>
+                    <td><a href="mys.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>MDV</td>
+                    <td>Maldives</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #3080b4; color: #fff;">Conservative</span></td>
+                    <td>Conservatism</td>
+                    <td><a href="mdv.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>MLI</td>
+                    <td>Mali</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #461464; color: #fff;">Autocracy</span></td>
+                    <td>Military Junta</td>
+                    <td><a href="mli.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>MLT</td>
+                    <td>Malta</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Progressive</span></td>
+                    <td>Social Democracy</td>
+                    <td><a href="mlt.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>MRT</td>
+                    <td>Mauritania</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Paternalism</td>
+                    <td><a href="mrt.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>MUS</td>
+                    <td>Mauritius</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="mus.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>MEX</td>
+                    <td>Mexico</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #dc3c64; color: #fff;">Progressive</span></td>
+                    <td>Left Populism</td>
+                    <td><a href="mex.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>MDA</td>
+                    <td>Moldova</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="mda.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>MCO</td>
+                    <td>Monaco</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #c8aa14; color: #fff;">Absolutism</span></td>
+                    <td>Monarchism</td>
+                    <td><a href="mco.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>MNG</td>
+                    <td>Mongolia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #dc3c64; color: #fff;">Progressive</span></td>
+                    <td>Social Democracy</td>
+                    <td><a href="mng.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>MNE</td>
+                    <td>Montenegro</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="mne.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>MAR</td>
+                    <td>Morocco</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #c8aa14; color: #fff;">Absolutism</span></td>
+                    <td>Monarchism</td>
+                    <td><a href="mar.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>MOZ</td>
+                    <td>Mozambique</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Patriotic Socialism</td>
+                    <td><a href="moz.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>MMR</td>
+                    <td>Myanmar</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #461464; color: #fff;">Autocracy</span></td>
+                    <td>Military Junta</td>
+                    <td><a href="mmr.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>NAM</td>
+                    <td>Namibia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #dc3c64; color: #fff;">Progressive</span></td>
+                    <td>Social Democracy</td>
+                    <td><a href="nam.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>NPL</td>
+                    <td>Nepal</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #b21010; color: #fff;">Totalitarian Communism</span></td>
+                    <td>Market Socialism</td>
+                    <td><a href="npl.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>NLD</td>
+                    <td>Netherlands</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="nld.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>NZL</td>
+                    <td>New Zealand</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #0066ff; color: #fff;">Conservative</span></td>
+                    <td>Conservatism</td>
+                    <td><a href="nzl.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>NIC</td>
+                    <td>Nicaragua</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Patriotic Socialism</td>
+                    <td><a href="nic.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>NER</td>
+                    <td>Niger</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #461464; color: #fff;">Autocracy</span></td>
+                    <td>Military Junta</td>
+                    <td><a href="ner.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>NGA</td>
+                    <td>Nigeria</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #3080b4; color: #fff;">Conservative</span></td>
+                    <td>Classical Populism</td>
+                    <td><a href="nga.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>MKD</td>
+                    <td>North Macedonia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="mkd.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>NOR</td>
+                    <td>Norway</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Progressive</span></td>
+                    <td>Social Democracy</td>
+                    <td><a href="nor.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>OMN</td>
+                    <td>Oman</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #c8aa14; color: #fff;">Absolutism</span></td>
+                    <td>Absolute Monarchy</td>
+                    <td><a href="omn.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>PAK</td>
+                    <td>Pakistan</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #461464; color: #fff;">Autocracy</span></td>
+                    <td>Military Junta</td>
+                    <td><a href="pak.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>PAN</td>
+                    <td>Panama</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="pan.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>PNG</td>
+                    <td>Papua New Guinea</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="png.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>PRY</td>
+                    <td>Paraguay</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #3080b4; color: #fff;">Conservative</span></td>
+                    <td>Conservatism</td>
+                    <td><a href="pry.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>PER</td>
+                    <td>Peru</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #3080b4; color: #fff;">Conservative</span></td>
+                    <td>Conservatism</td>
+                    <td><a href="per.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>PHL</td>
+                    <td>Philippines</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Illiberal Democracy</td>
+                    <td><a href="phl.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>POL</td>
+                    <td>Poland</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Conservative</span></td>
+                    <td>Christian Democracy</td>
+                    <td><a href="pol.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>PRT</td>
+                    <td>Portugal</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="prt.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>QAT</td>
+                    <td>Qatar</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #c8aa14; color: #fff;">Absolutism</span></td>
+                    <td>Absolute Monarchy</td>
+                    <td><a href="qat.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>ROU</td>
+                    <td>Romania</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="rou.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>RWA</td>
+                    <td>Rwanda</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Personal Dictatorship</td>
+                    <td><a href="rwa.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>SAU</td>
+                    <td>Saudi Arabia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #c8aa14; color: #fff;">Absolutism</span></td>
+                    <td>Absolute Monarchy</td>
+                    <td><a href="sau.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>SEN</td>
+                    <td>Senegal</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #dc3c64; color: #fff;">Progressive</span></td>
+                    <td>Reformist Socialism</td>
+                    <td><a href="sen.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>SRB</td>
+                    <td>Serbia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Illiberal Democracy</td>
+                    <td><a href="srb.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>SGP</td>
+                    <td>Singapore</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Technocracy</td>
+                    <td><a href="sgp.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>SVK</td>
+                    <td>Slovakia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Authoritarianism</span></td>
+                    <td>Illiberal Democracy</td>
+                    <td><a href="svk.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>SVN</td>
+                    <td>Slovenia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="svn.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>SOM</td>
+                    <td>Somalia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #461464; color: #fff;">Autocracy</span></td>
+                    <td>Kleptocracy</td>
+                    <td><a href="som.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>ZAF</td>
+                    <td>South Africa</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #dc3c64; color: #fff;">Progressive</span></td>
+                    <td>Social Democracy</td>
+                    <td><a href="zaf.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>ESP</td>
+                    <td>Spain</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Progressive</span></td>
+                    <td>Social Democracy</td>
+                    <td><a href="esp.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>LKA</td>
+                    <td>Sri Lanka</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #dc3c64; color: #fff;">Progressive</span></td>
+                    <td>Left Populism</td>
+                    <td><a href="lka.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>SDN</td>
+                    <td>Sudan</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #461464; color: #fff;">Autocracy</span></td>
+                    <td>Military Junta</td>
+                    <td><a href="sdn.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>SWE</td>
+                    <td>Sweden</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Conservative</span></td>
+                    <td>Conservatism</td>
+                    <td><a href="swe.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>CHE</td>
+                    <td>Switzerland</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="che.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>SYR</td>
+                    <td>Syria</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Patriotic Socialism</td>
+                    <td><a href="syr.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>TWN</td>
+                    <td>Taiwan</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="twn.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>TJK</td>
+                    <td>Tajikistan</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Personal Dictatorship</td>
+                    <td><a href="tjk.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>TZA</td>
+                    <td>Tanzania</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Patriotic Socialism</td>
+                    <td><a href="tza.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>THA</td>
+                    <td>Thailand</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #3080b4; color: #fff;">Conservative</span></td>
+                    <td>Monarchist Conservatism</td>
+                    <td><a href="tha.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>TUN</td>
+                    <td>Tunisia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Personal Dictatorship</td>
+                    <td><a href="tun.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>TUR</td>
+                    <td>Turkey</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Illiberal Democracy</td>
+                    <td><a href="tur.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>TKM</td>
+                    <td>Turkmenistan</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #461464; color: #fff;">Autocracy</span></td>
+                    <td>Personal Dictatorship</td>
+                    <td><a href="tkm.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>UGA</td>
+                    <td>Uganda</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Personal Dictatorship</td>
+                    <td><a href="uga.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>UKR</td>
+                    <td>Ukraine</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #00c8ff; color: #fff;">Centrist</span></td>
+                    <td>Centrist Populism</td>
+                    <td><a href="ukr.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>ARE</td>
+                    <td>United Arab Emirates</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #c8aa14; color: #fff;">Absolutism</span></td>
+                    <td>Absolute Monarchy</td>
+                    <td><a href="are.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>URY</td>
+                    <td>Uruguay</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="ury.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>UZB</td>
+                    <td>Uzbekistan</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Technocracy</td>
+                    <td><a href="uzb.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>VEN</td>
+                    <td>Venezuela</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Patriotic Socialism</td>
+                    <td><a href="ven.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>VNM</td>
+                    <td>Vietnam</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #b21010; color: #fff;">Totalitarian Communism</span></td>
+                    <td>Market Socialism</td>
+                    <td><a href="vnm.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>YEM</td>
+                    <td>Yemen</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #503714; color: #fff;">Fundamentalism</span></td>
+                    <td>Islamic Fundamentalism</td>
+                    <td><a href="yem.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>ZMB</td>
+                    <td>Zambia</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #ffdc00; color: #fff;">Centrist</span></td>
+                    <td>Liberal Socialdemocrat</td>
+                    <td><a href="zmb.html">View Wiki</a></td>
+                </tr>
+    
+                <tr>
+                    <td>ZWE</td>
+                    <td>Zimbabwe</td>
+                    <td><span class="ideology-badge badge-cen" style="background-color: #641e8c; color: #fff;">Authoritarianism</span></td>
+                    <td>Patriotic Socialism</td>
+                    <td><a href="zwe.html">View Wiki</a></td>
+                </tr>
+    
+            </tbody>
+        </table>
+    </div>
+    <footer>
+        <p>Dragon vs Eagle (DvE) 2025 HOI4 Mod Wiki - Generated Database</p>
+    </footer>
+</body>
+</html>
