@@ -31,8 +31,11 @@
         .card ul { list-style-type: square; padding-left: 20px; }
         .card ul li { margin-bottom: 6px; }
         .wiki-table { width: 100%; border-collapse: collapse; margin-top: 16px; background-color: var(--panel-bg); }
-        .wiki-table th, .wiki-table td { border: 1px solid var(--border-color); padding: 12px; text-align: left; }
+        .wiki-table th, .wiki-table td { border: 1px solid var(--border-color); padding: 12px; text-align: left; vertical-align: middle; }
         .wiki-table th { background-color: var(--card-bg); color: var(--accent-color); }
+        .leader-cell { display: flex; align-items: center; gap: 12px; }
+        .leader-avatar { width: 84px; aspect-ratio: 154 / 210; height: auto; border-radius: 12px; object-fit: cover; background-color: var(--card-bg); box-shadow: none; }
+        .ideology-icon { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background-color: var(--card-bg); box-shadow: none; }
         .badge { display: inline-block; padding: 3px 8px; border-radius: 3px; font-size: 0.85em; font-weight: bold; text-transform: uppercase; }
         .badge-ult { background-color: #8b0000; color: #fff; }
         .badge-con { background-color: #1e50b4; color: #fff; }
@@ -132,17 +135,17 @@
         <div class="card">
             <h3>6. All Parties & Leaders</h3>
             <table class="wiki-table">
-                <thead><tr><th>Leader</th><th>Party</th><th>Ideology</th></tr></thead>
+                <thead><tr><th>Photo</th><th>Leader</th><th>Party</th><th>Ideology</th><th>Icon</th></tr></thead>
                 <tbody>
-                    <tr><td>Segreteria Generale</td><td>PdRC-CRosa-PaP — Rifondazione, CR, Potere al Popolo</td><td><code>totalitarian_communism</code> — <code>stalinism</code></td></tr>
-                    <tr><td>Workers' Councils</td><td>Lotta Comunista</td><td><code>vanguard_socialism</code> — <code>leninism</code></td></tr>
-                    <tr><td>Central Council</td><td>PCR — Partito Comunista Rivoluzionario</td><td><code>revolutionary_socialism</code> — <code>Trotskyism</code></td></tr>
-                    <tr><td>Enzo Maraio</td><td>PSI — Partito Socialista Italiano</td><td><code>progressive</code> — <code>social_democracy</code></td></tr>
-                    <tr><td>Elly Schlein </td><td>PD, AVS, M5S — Partito Democratico, Verdi&Sinistra, 5 Stelle</td><td><code>centrist</code> — <code>social_liberalism</code></td></tr>
-                    <tr><td>Giorgia Meloni</td><td>FdI, FI, LN — Frtelli d'Italia, Forza Italia, Lega</td><td><code>conservative</code> — <code>conservatism</code></td></tr>
-                    <tr><td>Roberto Vannacci</td><td>FN — Futuro Nazionale</td><td><code>reactionary</code> — <code>reactionary_populism</code></td></tr>
-                    <tr><td>Grand Governing Leadership</td><td>Cp-FN — CasaPound / Forza Nuova</td><td><code>ultranationalism</code> — <code>neo_fascist</code></td></tr>
-                    <tr><td>Emanuele Filiberto di Savoia</td><td>Casa Savoia — PNM</td><td><code>absolutism</code> — <code>monarchism</code></td></tr>
+                    <tr><td><img class="leader-avatar" src="images/leaders/Central Committee.png" alt="Segreteria Generale"></td><td>Central Committee</td><td>Rifondazione Comunista, CR, PaP</td><td><code>totalitarian_communism-stalinism</code></td><td><img class="ideology-icon" src="images/ideologies/icon_totalitarian_communism.png" alt="Totalitarian Communism"></td></tr>
+                    <tr><td><img class="leader-avatar" src="images/leaders/workers_council.png" alt="Workers' Councils"></td><td>Workers' Councils</td><td>Lotta Comunista</td><td><code>vanguard_socialism-leninism</code></td><td><img class="ideology-icon" src="images/ideologies/icon_vanguard_socialism.png" alt="Vanguard Socialism"></td></tr>
+                    <tr><td><img class="leader-avatar" src="images/leaders/central_council.png" alt="Central Council"></td><td>Central Council</td><td>Partito Comunista Rivoluzionario</td><td><code>revolutionary_socialism—Trotskyism</code></td><td><img class="ideology-icon" src="images/ideologies/icon_revolutionary_socialism.png" alt="Revolutionary Socialism"></td></tr>
+                    <tr><td><img class="leader-avatar" src="images/leaders/enzo_maraio.png" alt="Enzo Maraio"></td><td>Enzo Maraio</td><td>Partito Socialista Italiano</td><td><code>progressive-social_democracy</code></td><td><img class="ideology-icon" src="images/ideologies/icon_progressive.png" alt="Progressive"></td></tr>
+                    <tr><td><img class="leader-avatar" src="images/leaders/elly_schlein.png" alt="Elly Schlein"></td><td>Elly Schlein</td><td>Partito Democratico, Verdi&Sinistra, 5 Stelle</td><td><code>centrist-social_liberalism</code></td><td><img class="ideology-icon" src="images/ideologies/icon_centrist.png" alt="Centrist"></td></tr>
+                    <tr><td><img class="leader-avatar" src="images/leaders/giorgia_meloni.png" alt="Giorgia Meloni"></td><td>Giorgia Meloni</td><td>Frtelli d'Italia, Forza Italia, Lega nord</td><td><code>conservative</code></td><td><img class="ideology-icon" src="images/ideologies/icon_conservative.png" alt="Conservative"></td></tr>
+                    <tr><td><img class="leader-avatar" src="images/leaders/roberto_vannacci.png" alt="Roberto Vannacci"></td><td>Roberto Vannacci</td><td>Futuro Nazionale</td><td><code>reactionary-reactionary_populism</code></td><td><img class="ideology-icon" src="images/ideologies/icon_reactionary.png" alt="Reactionary"></td></tr>
+                    <tr><td><img class="leader-avatar" src="images/leaders/grand_governing_leadership.png" alt="Grand Governing Leadership"></td><td>Grand Governing Leadership</td><td>CasaPound / Forza Nuova</td><td><code>ultranationalism-neo_fascist</code></td><td><img class="ideology-icon" src="images/ideologies/icon_reactionary.png" alt="Reactionary"></td></tr>
+                    <tr><td><img class="leader-avatar" src="images/leaders/emanuele_filiberto.png" alt="Emanuele Filiberto di Savoia"></td><td>Emanuele Filiberto di Savoia</td><td>Casa Savoia</td><td><code>absolutism-monarchism</code></td><td><img class="ideology-icon" src="images/ideologies/icon_conservative.png" alt="Conservative"></td></tr>
                 </tbody>
             </table>
         </div>
