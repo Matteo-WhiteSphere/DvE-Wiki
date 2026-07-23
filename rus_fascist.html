@@ -215,5 +215,31 @@ footer {
     <footer>
         <p>Dragon vs Eagle (DvE) 2025 HOI4 Mod Wiki</p>
     </footer>
+
+    <script>
+    (function(){
+      function wrapImages(){
+        const images = Array.from(document.querySelectorAll('img'));
+        images.forEach(function(img){
+          if (img.closest('a')) return;
+          const href = img.getAttribute('src');
+          if (!href) return;
+          const link = document.createElement('a');
+          link.href = href;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.className = 'image-open-link';
+          img.parentNode.insertBefore(link, img);
+          link.appendChild(img);
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', wrapImages);
+      } else {
+        wrapImages();
+      }
+    })();
+    </script>
+    
 </body>
 </html>
