@@ -68,6 +68,13 @@ nav a {
     border: 1px solid transparent;
 }
 
+        /* Rende il link della pagina corrente rosso e grassetto */
+        .attivo {
+            color: var(--accent-neon);
+            border-color: var(--accent-neon);
+            box-shadow: 0 0 8px var(--accent-glow);
+        }     
+
 nav a:hover {
     color: var(--accent-color, var(--accent-neon));
     border-color: var(--accent-color, var(--accent-neon));
@@ -169,7 +176,7 @@ footer {
         <p>Official Hearts of Iron IV Mod Wiki Directory</p>
     </header>
     <nav>
-        <a href="index.html">Home / Countries</a>
+        <a href="index.html" class="attivo">Home / Countries</a>
         <a href="ideologies.html">Ideologies List</a>
     </nav>
     <div class="container">

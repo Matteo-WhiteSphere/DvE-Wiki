@@ -2,325 +2,1014 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List of Ideologies - Dragon vs Eagle Wiki</title>
     <style>
-:root {
-    --bg-color: #0b0e14;
-    --panel-bg: #131822;
-    --card-bg: #1a202c;
-    --border-color: #2d3748;
-    --text-primary: #e2e8f0;
-    --text-secondary: #a0aec0;
-    --accent-neon: #00f3ff;
-    --accent-glow: rgba(0, 243, 255, 0.2);
-}
+        :root {
+            --bg-color: #0b0e14;
+            --panel-bg: #131822;
+            --card-bg: #1a202c;
+            --border-color: #2d3748;
+            --text-primary: #e2e8f0;
+            --text-secondary: #a0aec0;
+            --accent-neon: #00f3ff;
+            --accent-glow: rgba(0, 243, 255, 0.2);
+            --table-header-bg: #182030;
+        }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-header {
-    background: linear-gradient(180deg, #151d2a 0%, #0b0e14 100%);
-    border-bottom: 2px solid var(--accent-color, var(--accent-neon));
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 0 15px var(--accent-glow);
-}
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
 
-header h1 {
-    margin: 0;
-    font-size: 2.2em;
-    letter-spacing: 2px;
-    color: var(--accent-color, var(--accent-neon));
-    text-shadow: 0 0 10px var(--accent-color, var(--accent-neon));
-}
+        header {
+            background: linear-gradient(180deg, #151d2a 0%, #0b0e14 100%);
+            border-bottom: 2px solid var(--accent-neon);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
 
-header p {
-    margin: 5px 0 0 0;
-    color: var(--text-secondary);
-    font-size: 0.9em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            letter-spacing: 2px;
+            color: var(--accent-neon);
+            text-shadow: 0 0 10px var(--accent-neon);
+        }
 
-nav {
-    background-color: var(--panel-bg);
-    border-bottom: 1px solid var(--border-color);
-    padding: 10px 20px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
+        header p {
+            margin: 5px 0 0 0;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-nav a {
-    color: var(--text-primary);
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 0.9em;
-    transition: all 0.2s ease;
-    border: 1px solid transparent;
-}
+        nav {
+            background-color: var(--panel-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
 
-nav a:hover {
-    color: var(--accent-color, var(--accent-neon));
-    border-color: var(--accent-color, var(--accent-neon));
-    box-shadow: 0 0 8px var(--accent-glow);
-}
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
 
-.container {
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
 
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
+        /* Rende il link della pagina corrente rosso e grassetto */
+        .attivo {
+            color: var(--accent-neon);
+            border-color: var(--accent-neon);
+            box-shadow: 0 0 8px var(--accent-glow);
+        }     
 
-.card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    padding: 20px;
-    flex: 1 1 calc(33.333% - 20px);
-    box-sizing: border-box;
-    min-width: 280px;
-}
+        nav a:hover {
+            color: var(--accent-neon);
+            border-color: var(--accent-neon);
+            box-shadow: 0 0 8px var(--accent-glow);
+        }
 
-.card h3 {
-    margin-top: 0;
-    color: var(--accent-color, var(--accent-neon));
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 8px;
-}
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
 
-.card ul {
-    list-style-type: square;
-    padding-left: 20px;
-    color: var(--text-secondary);
-}
+        .page-intro {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
 
-.card ul li {
-    margin-bottom: 6px;
-}
+        .page-intro h2 {
+            color: var(--accent-neon);
+            margin-top: 0;
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 6px;
+        }
 
-.wiki-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: var(--panel-bg);
-}
+        /* Wiki Tables (The Fire Rises Style) */
+        .wiki-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
 
-.wiki-table th, .wiki-table td {
-    border: 1px solid var(--border-color);
-    padding: 12px;
-    text-align: left;
-}
+        .wiki-table caption {
+            background-color: var(--table-header-bg);
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 10px 15px;
+            text-align: left;
+            border: 1px solid var(--border-color);
+            border-bottom: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.wiki-table th {
-    background-color: var(--card-bg);
-    color: var(--accent-color, var(--accent-neon));
-}
+        .wiki-table caption .collapse-btn {
+            font-size: 0.85em;
+            color: var(--accent-neon);
+            cursor: pointer;
+            text-transform: uppercase;
+        }
 
-.ideology-badge {
-    display: inline-block;
-    padding: 3px 8px;
-    border-radius: 3px;
-    font-size: 0.85em;
-    font-weight: bold;
-    text-transform: uppercase;
-}
+        .wiki-table th {
+            background-color: #131822;
+            color: var(--text-secondary);
+            padding: 10px 14px;
+            text-align: left;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--border-color);
+        }
+
+        .wiki-table td {
+            border: 1px solid var(--border-color);
+            padding: 10px 14px;
+            vertical-align: middle;
+            font-size: 0.95em;
+        }
+
+
+
+        .wiki-table tr:nth-child(even) td {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Column Sizing */
+        .col-name { width: 25%; font-weight: bold; color: #ffffff; }
+        .col-icon { width: 10%; text-align: center; }
+        .col-banner { width: 25%; text-align: center; }
+        .col-details { width: 40%; color: var(--text-secondary); font-size: 0.9em; }
+
+        /* Media Elements */
 
         .ideology-icon {
-             width: 56px; 
-             height: 56px; 
-             border-radius: 12px; 
-             object-fit: cover; 
-             background-color: var(--card-bg); 
-             box-shadow: none; 
-}
 
-.badge-com { background-color: #b21010; color: #fff; }
-.badge-van { background-color: #d21e1e; color: #fff; }
-.badge-rev { background-color: #d21e1e; color: #fff; }
-.badge-pro { background-color: #dc3c64; color: #fff; }
-.badge-cen { background-color: #ffdc00; color: #000; }
-.badge-con { background-color: #1e50b4; color: #fff; }
-.badge-rea { background-color: #142878; color: #fff; }
-.badge-aut { background-color: #641e8c; color: #fff; }
-.badge-atc { background-color: #461464; color: #fff; }
-.badge-abs { background-color: #c8aa14; color: #000; }
-.badge-ult { background-color: #282828; color: #fff; border: 1px solid #555; }
-.badge-fun { background-color: #503714; color: #fff; }
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            object-fit: cover;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            display: flex;
+            margin: 0 auto;
+        }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    color: var(--text-secondary);
-    font-size: 0.8em;
-    border-top: 1px solid var(--border-color);
-    margin-top: 50px;
-}
+        .subideology-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            object-fit: cover;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .banner-img {
+            max-width: 100%;
+            height: 38px;
+            object-fit: contain;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            background-color: #000;
+        }
+
+        .group-header-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            font-family: monospace;
+            margin-left: 8px;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid var(--border-color);
+        }
+
+        .name {
+            display: flex;
+            align-items: center;
+            font-size: 1.5em;
+            font-family: monospace;
+            background: rgba(0,0,0,0.4);
+        }
+
+        code {
+            background: rgba(0, 0, 0, 0.4);
+            color: #38bdf8;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.85em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 0.8em;
+            border-top: 1px solid var(--border-color);
+            margin-top: 50px;
+        }
+    
+        .caption-meta { display: flex; gap: 10px; align-items: center; }
+        .caption-meta .caption-icon img { max-height: 34px; display:block; }
+        .caption-meta .caption-details { color: var(--text-secondary); font-family: monospace; font-size:0.9em; }
 </style>
 </head>
 <body>
+
     <header>
         <h1>LIST OF IDEOLOGIES</h1>
         <p>Dragon vs Eagle (2025) Political System & Sub-Ideologies</p>
     </header>
+
     <nav>
         <a href="index.html">Home / Countries</a>
-        <a href="ideologies.html">Ideologies List</a>
+        <a href="ideologies.html" class="attivo">Ideologies List</a>
     </nav>
+
     <div class="container">
+
+        <div class="page-intro">
+            <h2>System Overview</h2>
+            <p>Political ideologies in <code>Dragon vs Eagle</code> dictate faction alignment, world tension generation, and diplomatic options. Each main ideology group contains multiple <strong>sub-ideologies</strong> which define specific political affiliations, leaders, and regime types.</p>
+        </div>
+
+        <!-- TOTALITARIAN COMMUNISM -->
         <table class="wiki-table">
             <thead>
                 <tr>
-                    <th>Ideology Group</th>
-                    <th>Base Color</th>
-                    <th>Description & Faction Alignments</th>
-                    <th>Sub-Ideologies (Types)</th>
-                    <th>Icon</th></tr></thead>
+                    <th style="color:#7b1921;" class="name">TOTALITARIAN COMMUNISM<img class="subideology-icon" src="images/ideologies/totalitarian_communism.png" alt="TOTALITARIAN COMMUNISM"></th>
+                    <th class="col-icon">Icon</th>
+                    <th class="col-banner">Banner</th>
+                    <th class="col-details">GFX Identifier / Details</th>
                 </tr>
             </thead>
             <tbody>
 
                 <tr>
-                    <td><strong>TOTALITARIAN COMMUNISM</strong><br><code>totalitarian_communism</code></td>
-                    <td><div style="width:20px; height:20px; background-color:#b21010; border:1px solid #fff; border-radius:3px;"></div></td>
-                    <td>Stalinist, Maoist, Dengist... In general Pro-Soviet and Pro-Chinese totalitarians.</td>
-                    <td>Maoism, Stalinism, Chekist Communism, Socialist Military Junta, Jacobinism, Transhumanist, Transhumanistanarchoprimitivism, Market Socialism, Xi Jinping Thought, Left Nationalism</td>
-                    <td><img class="ideology-icon" src="images/ideologies/icon_totalitarian_communism.png" alt="Totalitarian Communism"></td></tr>
+                    <td class="col-name">Maoism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/maoism.png" alt="Maoism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/maoism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_maoism_icon</code></td>
                 </tr>
-    
                 <tr>
-                    <td><strong>VANGUARD SOCIALISM</strong><br><code>vanguard_socialism</code></td>
-                    <td><div style="width:20px; height:20px; background-color:#d21e1e; border:1px solid #fff; border-radius:3px;"></div></td>
-                    <td>Leninist, internationalist, anti-Stalinist socialist vanguards.</td>
-                    <td>Leninist Internationalism, Neo Sovietism, Neo Communism</td>
-                <td><img class="ideology-icon" src="images/ideologies/icon_vanguard_socialism.png" alt="Vanguard Socialism"></td></tr>
+                    <td class="col-name">Stalinism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/stalinism.png" alt="Stalinism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/stalinism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_stalinism_icon</code></td>
                 </tr>
-    
                 <tr>
-                    <td><strong>REVOLUTIONARY SOCIALISM</strong><br><code>revolutionary_socialism</code></td>
-                    <td><div style="width:20px; height:20px; background-color:#d21e1e; border:1px solid #fff; border-radius:3px;"></div></td>
-                    <td>Trotskyist, left anarchist, syndicalist, and other radical left groups.</td>
-                    <td>Trotskyism,Left Anarchist, Syndicalism, Neo Socialism, Neo Communism, Left Baathism, </td>
-                    <td><img class="ideology-icon" src="images/ideologies/icon_revolutionary_socialism.png" alt="Revolutionary Socialism"></td>
+                    <td class="col-name">Chekist Communism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/chekist_communism.png" alt="Chekist Communism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_chekist_communism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_chekist_communism_icon</code></td>
                 </tr>
-    
                 <tr>
-                    <td><strong>PROGRESSIVE</strong><br><code>progressive</code></td>
-                    <td><div style="width:20px; height:20px; background-color:#dc3c64; border:1px solid #fff; border-radius:3px;"></div></td>
-                    <td>Social-Democrats, Democratic Socialists, Reformists, Green Leftists.</td>
-                    <td>Progressivism, Reformist Socialism, Social Democracy, Neo Socialism, Left Centrist, Left Populism, Green Leftist</td>
-                    <td><img class="ideology-icon" src="images/ideologies/icon_progressive.png" alt="Progressive"></td>
+                    <td class="col-name">Socialist Military Junta</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/socialist_military_junta.png" alt="Socialist Military Junta"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_socialist_military_junta.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_socialist_military_junta_icon</code></td>
                 </tr>
-    
                 <tr>
-                    <td><strong>CENTRIST</strong><br><code>centrist</code></td>
-                    <td><div style="width:20px; height:20px; background-color:#ffdc00; border:1px solid #fff; border-radius:3px;"></div></td>
-                    <td>Liberal, centrist, modern social-democratic parties (e.g., SPD, Labour Party).</td>
-                    <td>Liberal Socialdemocrat, Green Liberalism, Ultra Liberalism, Centrist Populism</td>
-                    <td><img class="ideology-icon" src="images/ideologies/icon_centrist.png" alt="Centrist"></td>
+                    <td class="col-name">Jacobinism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/jacobinism.png" alt="Jacobinism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_jacobinism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_jacobinism_icon</code></td>
                 </tr>
-    
                 <tr>
-                    <td><strong>CONSERVATIVE</strong><br><code>conservative</code></td>
-                    <td><div style="width:20px; height:20px; background-color:#1e50b4; border:1px solid #fff; border-radius:3px;"></div></td>
-                    <td>Center-right conservative parties (CDU/CSU, Forza Italia, Tories).</td>
-                    <td>Conservatism, Classical Liberalism, Civic Nationalism, Trumpism, Constitutionalist, Christian Democracy, Classical Populism</td>
-                    <td><img class="ideology-icon" src="images/ideologies/icon_conservative.png" alt="Conservative"></td>
+                    <td class="col-name">Transhumanist</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/transhumanist.png" alt="Transhumanist"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_transhumanist.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_transhumanist_icon</code></td>
                 </tr>
-    
                 <tr>
-                    <td><strong>REACTIONARY</strong><br><code>reactionary</code></td>
-                    <td><div style="width:20px; height:20px; background-color:#142878; border:1px solid #fff; border-radius:3px;"></div></td>
-                    <td>Right-wing populists and reactionaries (Fratelli d'Italia, US Republicans, Rassemblement National).</td>
-                    <td>Military Democracy, Paleoconservatism, Traditionalismo, Clericalism, Corporatism, Hardline Conservatism, Paternalism</td>
-                    <td><img class="ideology-icon" src="images/ideologies/icon_reactionary.png" alt="Reactionary"></td>
+                    <td class="col-name">Transhumanist Anarcho-Primitivism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/transhumanistanarchoprimitivism.png" alt="Transhumanist Anarcho-Primitivism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_transhumanistanarchoprimitivism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_transhumanistanarchoprimitivism_icon</code></td>
                 </tr>
-    
                 <tr>
-                    <td><strong>AUTHORITARIANISM</strong><br><code>authoritarianism</code></td>
-                    <td><div style="width:20px; height:20px; background-color:#641e8c; border:1px solid #fff; border-radius:3px;"></div></td>
-                    <td>Authoritarian regimes, illiberal democracies (United Russia, AfD, Right faction GOP).</td>
-                    <td>Putinism, Patriotic Socialism, Illiberal Democracy, Oligarchy, Technocracy, Guided Democracy, Autocratic Liberalism</td>
-                    <td><img class="ideology-icon" src="images/ideologies/icon_authoritarianism.png" alt="Authoritarianism"></td>
+                    <td class="col-name">Market Socialism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/market_socialism.png" alt="Market Socialism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_market_socialism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_market_socialism_icon</code></td>
                 </tr>
-    
                 <tr>
-                    <td><strong>AUTOCRACY</strong><br><code>autocracy</code></td>
-                    <td><div style="width:20px; height:20px; background-color:#461464; border:1px solid #fff; border-radius:3px;"></div></td>
-                    <td>Military juntas, personal dictatorships, mafia states, or army-led administrations.</td>
-                    <td>Populist Putinism, Mafia State, Military Junta, Red Army, Peoples Liberation Army, Us Army, Personal Dictatorship, Theocratic Autocracy, Kleptocracy</td>
-                    <td><img class="ideology-icon" src="images/ideologies/icon_autocracy.png" alt="Autocracy"></td>
+                    <td class="col-name">Xi Jinping Thought</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/xi_jinping_thought.png" alt="Xi Jinping Thought"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_xi_jinping_thought.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_xi_jinping_thought_icon</code></td>
                 </tr>
-    
                 <tr>
-                    <td><strong>ABSOLUTISM</strong><br><code>absolutism</code></td>
-                    <td><div style="width:20px; height:20px; background-color:#c8aa14; border:1px solid #fff; border-radius:3px;"></div></td>
-                    <td>Monarchies and royal houses.</td>
-                    <td>Monarchism, Casa Savoia, Absolute Monarchy, Divine Monarchy, Imperial Autocracy, Oligarchic Monarchy, Theocratic Monarchy</td>
-                    <td><img class="ideology-icon" src="images/ideologies/icon_absolutism.png" alt="Absolutism"></td>
+                    <td class="col-name">Left Nationalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/left_nationalism.png" alt="Left Nationalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_left_nationalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_left_nationalism_icon</code></td>
                 </tr>
-    
                 <tr>
-                    <td><strong>ULTRANATIONALISM</strong><br><code>ultranationalism</code></td>
-                    <td><div style="width:20px; height:20px; background-color:#282828; border:1px solid #fff; border-radius:3px;"></div></td>
-                    <td>Fascist, Nazi, NazBol, Neo-Fascist, and extreme nationalist factions.</td>
-                    <td>Neo Fascist, Neo Nazist, Fascist, Nationalsocialist, Nazi Maoism, Strassarite, National Bolshevism, National Syndicalism, Ultranationalism Party</td>
-                    <td><img class="ideology-icon" src="images/ideologies/icon_ultranationalism.png" alt="Ultranationalism"></td>
+                    <td class="col-name">Juche</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/juche.png" alt="Juche"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_juche.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_juche_icon</code></td>
                 </tr>
-    
                 <tr>
-                    <td><strong>FUNDAMENTALISM</strong><br><code>fundamentalism</code></td>
-                    <td><div style="width:20px; height:20px; background-color:#503714; border:1px solid #fff; border-radius:3px;"></div></td>
-                    <td>Religious states, Islamic Republics, Evangelical, or Hindu Nationalist regimes.</td>
-                    <td>Islamic Fundamentalism, Christian Fundamentalism, Religious Nationalism, Ultratraditionalism, Theocratic State, Jihadism, Evangelical Nationalism, Hindu Nationalism</td>
-                    <td><img class="ideology-icon" src="images/ideologies/icon_fundamentalism.png" alt="Fundamentalism"></td>
+                    <td class="col-name">Pol Pot Thought</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/Pol_Pot_Thought.png" alt="Pol Pot Thought"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_Pol_Pot_Thought.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_Pol_Pot_Thought_icon</code></td>
                 </tr>
-    
+                <tr>
+                    <td class="col-name">Deutsche Communism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/DDR.png" alt="Deutsche Communism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_DDR.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_DDR_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Maximalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/maximalism.png" alt="Maximalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_maximalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_maximalism_icon</code></td>
+                </tr>
             </tbody>
         </table>
+
+        <!-- VANGUARD SOCIALISM -->
+        <table class="wiki-table">
+            <thead>
+                <tr>
+                    <th style="color:#d22c3a;" class="name">VANGUARD SOCIALISM<img class="subideology-icon" src="images/ideologies/vanguard_socialism.png" alt="VANGUARD SOCIALISM"></th>
+                    <th class="col-icon">Icon</th>
+                    <th class="col-banner">Banner</th>
+                    <th class="col-details">GFX Identifier / Details</th>
+                </tr>
+            </thead>
+            <tbody>
+
+
+                <tr>
+                    <td class="col-name">Leninist Internationalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/leninist_internationalism.png" alt="Leninist Internationalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_leninist_internationalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_leninist_internationalism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Neo Communism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/neo_communism.png" alt="Neo Communism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_neo_communism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_neo_communism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Neo Sovietism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/neo_sovietism.png" alt="Neo Sovietism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_neo_sovietism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_neo_sovietism_icon</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- REVOLUTIONARY SOCIALISM -->
+        <table class="wiki-table">
+            <thead>
+                <tr>
+                    <th style="color:#e64539;" class="name">REVOLUTIONARY SOCIALISM<img class="subideology-icon" src="images/ideologies/revolutionary_socialism.png" alt="REVOLUTIONARY SOCIALISM"></th>
+                    <th class="col-icon">Icon</th>
+                    <th class="col-banner">Banner</th>
+                    <th class="col-details">GFX Identifier / Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-name">Trotskyism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/trotskyism.png" alt="Trotskyism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_trotskyism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_trotskyism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Left Ba'athism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/left_baathism.png" alt="Left Ba'athism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_left_baathism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_left_baathism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Left Anarchism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/left_anarchist.png" alt="Left Anarchism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_left_anarchist.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_left_anarchist_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Syndicalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/syndicalism.png" alt="Syndicalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_syndicalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_syndicalism_icon</code> — PCR (Italy)[cite: 198, 200]</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- PROGRESSIVE -->
+        <table class="wiki-table">
+            <thead>
+                <tr>
+                    <th style="color:#2de42d;" class="name">PROGRESSIVE<img class="subideology-icon" src="images/ideologies/progressive.png" alt="PROGRESSIVE"></th>
+                    <th class="col-icon">Icon</th>
+                    <th class="col-banner">Banner</th>
+                    <th class="col-details">GFX Identifier / Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-name">Progressivism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/progressivism.png" alt="Progressivism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_progressivism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_progressivism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Reformist Socialism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/reformist_socialism.png" alt="Reformist Socialism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_reformist_socialism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_reformist_socialism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Social Democracy</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/social_democracy.png" alt="Social Democracy"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_social_democracy.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_social_democracy_icon</code> — Italian PSI (Elly Schlein)[cite: 198, 200]</td>
+                </tr>
+                <tr>
+                    <td class="col-name">Neo Socialism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/neo_socialism.png" alt="Neo Socialism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_neo_socialism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_neo_socialism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Left Populism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/left_populism.png" alt="Left Populism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_left_populism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_left_populism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Green Leftism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/green_leftist.png" alt="Green Leftism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_green_leftist.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_green_leftist_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Left Centrism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/left_centrist.png" alt="Left Centrism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_left_centrist.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_left_centrist_icon</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- CENTRIST -->
+        <table class="wiki-table">
+            <thead>
+                <tr>
+                    <th style="color:#e4de2d;" class="name">CENTRIST<img class="subideology-icon" src="images/ideologies/centrist.png" alt="CENTRIST"></th>
+                    <th class="col-icon">Icon</th>
+                    <th class="col-banner">Banner</th>
+                    <th class="col-details">GFX Identifier / Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-name">Liberal Social Democrat</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/liberal_socialdemocrat.png" alt="Liberal Social Democrat"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_liberal_socialdemocrat.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_liberal_socialdemocrat_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Green Liberalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/green_liberalism.png" alt="Green Liberalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_green_liberalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_green_liberalism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Ultra Liberalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/ultra_liberalism.png" alt="Ultra Liberalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_ultra_liberalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_ultra_liberalism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Centrist Populism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/centrist_populism.png" alt="Centrist Populism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_centrist_populism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_centrist_populism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Social Liberals</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/social_liberal.png" alt="Social Liberals"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_social_liberal.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_social_liberal_icon</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- CONSERVATIVE -->
+        <table class="wiki-table">
+            <thead>
+                <tr>
+                    <th style="color:#1b0fb6;" class="name">CONSERVATIVE<img class="subideology-icon" src="images/ideologies/conservative.png" alt="CONSERVATIVE"></th>
+                    <th class="col-icon">Icon</th>
+                    <th class="col-banner">Banner</th>
+                    <th class="col-details">GFX Identifier / Details</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="col-name">Conservatism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/conservatism.png" alt="Conservatism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_conservatism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_conservatism_icon</code> — FdI / FI / LN (Giorgia Meloni)[cite: 198, 200]</td>
+                </tr>
+                <tr>
+                    <td class="col-name">Classical Liberalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/classical_liberalism.png" alt="Classical Liberalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_classical_liberalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_classical_liberalism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Civic Nationalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/civic_nationalism.png" alt="Civic Nationalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_civic_nationalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_civic_nationalism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Trumpism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/trumpism.png" alt="Trumpism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_trumpism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_trumpism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Constitutionalist</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/constitutionalist.png" alt="Constitutionalist"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_constitutionalist.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_constitutionalist_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Christian Democracy</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/christian_democracy.png" alt="Christian Democracy"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_christian_democracy.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_christian_democracy_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Classical Populism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/classical_populism.png" alt="Classical Populism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_classical_populism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_classical_populism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">National Liberalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/national_liberalism.png" alt="National Liberalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_national_liberalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_national_liberalism_icon</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- REACTIONARY -->
+        <table class="wiki-table">
+            <thead>
+                <tr>
+                    <th style="color:#868686;" class="name">REACTIONARY<img class="subideology-icon" src="images/ideologies/reactionary.png" alt="REACTIONARY"></th>
+                    <th class="col-icon">Icon</th>
+                    <th class="col-banner">Banner</th>
+                    <th class="col-details">GFX Identifier / Details</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="col-name">Military Democracy</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/military_democracy.png" alt="Military Democracy"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_military_democracy.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_military_democracy_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Paleoconservatism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/paleoconservatism.png" alt="Paleoconservatism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_paleoconservatism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_paleoconservatism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Traditionalismo</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/traditionalismo.png" alt="Traditionalismo"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_traditionalismo.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_traditionalismo_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Clericalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/clericalism.png" alt="Clericalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_clericalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_clericalism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Corporatism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/corporatism.png" alt="Corporatism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_corporatism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_corporatism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Hardline Conservatism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/hardline_conservatism.png" alt="Hardline Conservatism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_hardline_conservatism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_hardline_conservatism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Paternalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/paternalism.png" alt="Paternalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_paternalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_paternalism_icon</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- AUTHORITARIANISM -->
+        <table class="wiki-table">
+            <thead>
+                <tr>
+                    <th style="color:#686868;" class="name">AUTHORITARIANISM<img class="subideology-icon" src="images/ideologies/authoritarianism.png" alt="AUTHORITARIANISM"></th>
+                    <th class="col-icon">Icon</th>
+                    <th class="col-banner">Banner</th>
+                    <th class="col-details">GFX Identifier / Details</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="col-name">Patriotic Socialism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/patriotic_socialism.png" alt="Patriotic Socialism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_patriotic_socialism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_patriotic_socialism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Illiberal Democracy</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/illiberal_democracy.png" alt="Illiberal Democracy"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_illiberal_democracy.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_illiberal_democracy_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Oligarchy</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/oligarchy.png" alt="Oligarchy"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_oligarchy.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_oligarchy_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Technocracy</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/technocracy.png" alt="Technocracy"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_technocracy.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_technocracy_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Guided Democracy</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/guided_democracy.png" alt="Guided Democracy"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_guided_democracy.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_guided_democracy_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Autocratic Liberalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/autocratic_liberalism.png" alt="Autocratic Liberalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_autocratic_liberalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_autocratic_liberalism_icon</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- AUTOCRACY -->
+        <table class="wiki-table">
+            <thead>
+                <tr>
+                    <th style="color:#404040;" class="name">AUTOCRACY<img class="subideology-icon" src="images/ideologies/autocracy.png" alt="AUTOCRACY"></th>
+                    <th class="col-icon">Icon</th>
+                    <th class="col-banner">Banner</th>
+                    <th class="col-details">GFX Identifier / Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-name">Putinism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/putinism.png" alt="Putinism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_putinism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_putinism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Securocracy</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/securocracy.png" alt="Securocracy"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_securocracy.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_securocracy_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Military Dictatorship</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/military_dictatorship.png" alt="Military Dictatorship"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_military_dictatorship.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_military_dictatorship_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Personalist Dictatorship</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/personalist_dictatorship.png" alt="Personalist Dictatorship"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_personalist_dictatorship.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_personalist_dictatorship_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Theocratic Dictatorship</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/theocratic_dictatorship.png" alt="Theocratic Dictatorship"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_theocratic_dictatorship.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_theocratic_dictatorship_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Technocratic Dictatorship</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/technocratic_dictatorship.png" alt="Technocratic Dictatorship"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_technocratic_dictatorship.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_technocratic_dictatorship_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Corporatocracy</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/corporatocracy.png" alt="Corporatocracy"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_corporatocracy.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_corporatocracy_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Mafia State</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/mafia_state.png" alt="Mafia State"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_mafia_state.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_mafia_state_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Military Junta</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/military_junta.png" alt="Military Junta"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_military_junta.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_military_junta_icon</code> — Italian Armed Forces (FF.AA.)[cite: 198, 200]</td>
+                </tr>
+                <tr>
+                    <td class="col-name">Red Army</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/red_army.png" alt="Red Army"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_red_army.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_red_army_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">People's Liberation Army</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/peoples_liberation_army.png" alt="People's Liberation Army"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_peoples_liberation_army.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_peoples_liberation_army_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">US Army</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/us_army.png" alt="US Army"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_us_army.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_us_army_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Personal Dictatorship</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/personal_dictatorship.png" alt="Personal Dictatorship"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_personal_dictatorship.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_personal_dictatorship_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Theocratic Autocracy</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/theocratic_autocracy.png" alt="Theocratic Autocracy"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_theocratic_autocracy.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_theocratic_autocracy_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Kleptocracy</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/kleptocracy.png" alt="Kleptocracy"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_kleptocracy.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_kleptocracy_icon</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- ABSOLUTISM -->
+        <table class="wiki-table">
+            <thead>
+                <tr>
+                    <th style="color:#9632c8;" class="name">ABSOLUTISM<img class="subideology-icon" src="images/ideologies/absolutism.png" alt="ABSOLUTISM"></th>
+                    <th class="col-icon">Icon</th>
+                    <th class="col-banner">Banner</th>
+                    <th class="col-details">GFX Identifier / Details</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="col-name">Monarchism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/monarchism.png" alt="Monarchism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_monarchism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_monarchism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Casa Savoia</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/casa_savoia.png" alt="Casa Savoia"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_casa_savoia.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_casa_savoia_icon</code> — House of Savoy Restoration[cite: 198, 200]</td>
+                </tr>
+                <tr>
+                    <td class="col-name">Absolute Monarchy</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/absolute_monarchy.png" alt="Absolute Monarchy"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_absolute_monarchy.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_absolute_monarchy_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Divine Monarchy</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/divine_monarchy.png" alt="Divine Monarchy"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_divine_monarchy.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_divine_monarchy_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Imperial Autocracy</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/imperial_autocracy.png" alt="Imperial Autocracy"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_imperial_autocracy.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_imperial_autocracy_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Oligarchic Monarchy</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/oligarchic_monarchy.png" alt="Oligarchic Monarchy"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_oligarchic_monarchy.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_oligarchic_monarchy_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Theocratic Monarchy</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/theocratic_monarchy.png" alt="Theocratic Monarchy"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_theocratic_monarchy.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_theocratic_monarchy_icon</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- ULTRANATIONALISM -->
+        <table class="wiki-table">
+            <thead>
+                <tr>
+                    <th style="color:#472900;" class="name">ULTRANATIONALISM<img class="subideology-icon" src="images/ideologies/ultranationalism.png" alt="ULTRANATIONALISM"></th>
+                    <th class="col-icon">Icon</th>
+                    <th class="col-banner">Banner</th>
+                    <th class="col-details">GFX Identifier / Details</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="col-name">Neo Fascist</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/neo_fascist.png" alt="Neo Fascist"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_neo_fascist.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_neo_fascist_icon</code> — CasaPound / Forza Nuova[cite: 198, 200]</td>
+                </tr>
+                <tr>
+                    <td class="col-name">Neo Nazist</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/neo_nazist.png" alt="Neo Nazist"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_neo_nazist.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_neo_nazist_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Fascist</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/fascist.png" alt="Fascist"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_fascist.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_fascist_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">National Socialist</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/nationalsocialist.png" alt="National Socialist"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_nationalsocialist.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_nationalsocialist_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Nazi Maoism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/nazi_maoism.png" alt="Nazi Maoism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_nazi_maoism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_nazi_maoism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Strasserite</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/strassarite.png" alt="Strasserite"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_strassarite.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_strassarite_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">National Bolshevism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/national_bolshevism.png" alt="National Bolshevism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_national_bolshevism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_national_bolshevism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">National Syndicalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/national_syndicalism.png" alt="National Syndicalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_national_syndicalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_national_syndicalism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Ultranationalist SubParty</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/ultranationalism.png" alt="Ultranationalism Party"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_ultranationalism_party.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_ultranationalism_icon</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- FUNDAMENTALISM -->
+        <table class="wiki-table">
+            <thead>
+                <tr>
+                    <th style="color:#504b45;" class="name">FUNDAMENTALISM<img class="subideology-icon" src="images/ideologies/fundamentalism.png" alt="FUNDAMENTALISM"></th>
+                    <th class="col-icon">Icon</th>
+                    <th class="col-banner">Banner</th>
+                    <th class="col-details">GFX Identifier / Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-name">Christian Fundamentalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/christian_fundamentalism.png" alt="Christian Fundamentalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_christian_fundamentalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_christian_fundamentalism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Clerical Fascism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/clerical_fascism.png" alt="Clerical Fascism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_clerical_fascism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_clerical_fascism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Islamic Fundamentalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/islamic_fundamentalism.png" alt="Islamic Fundamentalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_islamic_fundamentalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_islamic_fundamentalism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Religious Nationalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/religious_nationalism.png" alt="Religious Nationalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_religious_nationalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_religious_nationalism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Ultratraditionalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/ultratraditionalism.png" alt="Ultratraditionalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_ultratraditionalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_ultratraditionalism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Theocratic State</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/theocratic_state.png" alt="Theocratic State"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_theocratic_state.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_theocratic_state_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Jihadism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/jihadism.png" alt="Jihadism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_jihadism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_jihadism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Evangelical Nationalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/evangelical_nationalism.png" alt="Evangelical Nationalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_evangelical_nationalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_evangelical_nationalism_icon</code></td>
+                </tr>
+                <tr>
+                    <td class="col-name">Hindu Nationalism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/hindu_nationalism.png" alt="Hindu Nationalism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_hindu_nationalism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_hindu_nationalism_icon</code></td>
+                </tr>
+            </tbody>
+        </table>
+
     </div>
+
     <footer>
         <p>Dragon vs Eagle (DvE) 2025 HOI4 Mod Wiki</p>
     </footer>
 
-    <script>
-    (function(){
-      function wrapImages(){
-        const images = Array.from(document.querySelectorAll('img'));
-        images.forEach(function(img){
-          if (img.closest('a')) return;
-          const href = img.getAttribute('src');
-          if (!href) return;
-          const link = document.createElement('a');
-          link.href = href;
-          link.target = '_blank';
-          link.rel = 'noopener noreferrer';
-          link.className = 'image-open-link';
-          img.parentNode.insertBefore(link, img);
-          link.appendChild(img);
-        });
-      }
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', wrapImages);
-      } else {
-        wrapImages();
-      }
-    })();
-    </script>
-    
 </body>
 </html>
