@@ -173,14 +173,11 @@
         /* Media Elements */
 
         .ideology-icon {
+            width: 44px;
+            height: 44px;
 
-            width: 30px;
-            height: 30px;
-            border-radius: 8px;
             object-fit: cover;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            display: flex;
+
             margin: 0 auto;
         }
 
@@ -244,6 +241,7 @@
         .caption-meta { display: flex; gap: 10px; align-items: center; }
         .caption-meta .caption-icon img { max-height: 34px; display:block; }
         .caption-meta .caption-details { color: var(--text-secondary); font-family: monospace; font-size:0.9em; }
+                @media (max-width: 720px) { nav { flex-direction: column; align-items: center; } }
 </style>
 </head>
 <body>
@@ -269,7 +267,7 @@
         <table class="wiki-table">
             <thead>
                 <tr>
-                    <th style="color:#7b1921;" class="name">TOTALITARIAN COMMUNISM<img class="subideology-icon" src="images/ideologies/totalitarian_communism.png" alt="TOTALITARIAN COMMUNISM"></th>
+                    <th style="color:#7b1921;" class="name">TOTALITARIAN COMMUNISM<img class="ideology-icon" src="images/ideologies/totalitarian_communism.png" alt="TOTALITARIAN COMMUNISM"></th>
                     <th class="col-icon">Icon</th>
                     <th class="col-banner">Banner</th>
                     <th class="col-details">GFX Identifier / Details</th>
@@ -308,6 +306,12 @@
                     <td class="col-details"><code>GFX_ideology_jacobinism_icon</code></td>
                 </tr>
                 <tr>
+                    <td class="col-name">Market Socialism</td>
+                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/market_socialism.png" alt="Market Socialism"></td>
+                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_market_socialism.png" alt="Banner" onerror="this.style.display='none'"></td>
+                    <td class="col-details"><code>GFX_ideology_market_socialism_icon</code></td>
+                </tr>
+                <tr>
                     <td class="col-name">Transhumanist</td>
                     <td class="col-icon"><img class="subideology-icon" src="images/ideologies/transhumanist.png" alt="Transhumanist"></td>
                     <td class="col-banner"><img class="banner-img" src="images/banners/banner_transhumanist.png" alt="Banner" onerror="this.style.display='none'"></td>
@@ -318,12 +322,6 @@
                     <td class="col-icon"><img class="subideology-icon" src="images/ideologies/transhumanistanarchoprimitivism.png" alt="Transhumanist Anarcho-Primitivism"></td>
                     <td class="col-banner"><img class="banner-img" src="images/banners/banner_transhumanistanarchoprimitivism.png" alt="Banner" onerror="this.style.display='none'"></td>
                     <td class="col-details"><code>GFX_ideology_transhumanistanarchoprimitivism_icon</code></td>
-                </tr>
-                <tr>
-                    <td class="col-name">Market Socialism</td>
-                    <td class="col-icon"><img class="subideology-icon" src="images/ideologies/market_socialism.png" alt="Market Socialism"></td>
-                    <td class="col-banner"><img class="banner-img" src="images/banners/banner_market_socialism.png" alt="Banner" onerror="this.style.display='none'"></td>
-                    <td class="col-details"><code>GFX_ideology_market_socialism_icon</code></td>
                 </tr>
                 <tr>
                     <td class="col-name">Xi Jinping Thought</td>
@@ -368,7 +366,7 @@
         <table class="wiki-table">
             <thead>
                 <tr>
-                    <th style="color:#d22c3a;" class="name">VANGUARD SOCIALISM<img class="subideology-icon" src="images/ideologies/vanguard_socialism.png" alt="VANGUARD SOCIALISM"></th>
+                    <th style="color:#d22c3a;" class="name">VANGUARD SOCIALISM<img class="ideology-icon" src="images/ideologies/vanguard_socialism.png" alt="VANGUARD SOCIALISM"></th>
                     <th class="col-icon">Icon</th>
                     <th class="col-banner">Banner</th>
                     <th class="col-details">GFX Identifier / Details</th>
@@ -402,7 +400,7 @@
         <table class="wiki-table">
             <thead>
                 <tr>
-                    <th style="color:#e64539;" class="name">REVOLUTIONARY SOCIALISM<img class="subideology-icon" src="images/ideologies/revolutionary_socialism.png" alt="REVOLUTIONARY SOCIALISM"></th>
+                    <th style="color:#e64539;" class="name">REVOLUTIONARY SOCIALISM<img class="ideology-icon" src="images/ideologies/revolutionary_socialism.png" alt="REVOLUTIONARY SOCIALISM"></th>
                     <th class="col-icon">Icon</th>
                     <th class="col-banner">Banner</th>
                     <th class="col-details">GFX Identifier / Details</th>
@@ -440,7 +438,7 @@
         <table class="wiki-table">
             <thead>
                 <tr>
-                    <th style="color:#2de42d;" class="name">PROGRESSIVE<img class="subideology-icon" src="images/ideologies/progressive.png" alt="PROGRESSIVE"></th>
+                    <th style="color:#2de42d;" class="name">PROGRESSIVE<img class="ideology-icon" src="images/ideologies/progressive.png" alt="PROGRESSIVE"></th>
                     <th class="col-icon">Icon</th>
                     <th class="col-banner">Banner</th>
                     <th class="col-details">GFX Identifier / Details</th>
@@ -496,7 +494,7 @@
         <table class="wiki-table">
             <thead>
                 <tr>
-                    <th style="color:#e4de2d;" class="name">CENTRIST<img class="subideology-icon" src="images/ideologies/centrist.png" alt="CENTRIST"></th>
+                    <th style="color:#e4de2d;" class="name">CENTRIST<img class="ideology-icon" src="images/ideologies/centrist.png" alt="CENTRIST"></th>
                     <th class="col-icon">Icon</th>
                     <th class="col-banner">Banner</th>
                     <th class="col-details">GFX Identifier / Details</th>
@@ -540,7 +538,7 @@
         <table class="wiki-table">
             <thead>
                 <tr>
-                    <th style="color:#1b0fb6;" class="name">CONSERVATIVE<img class="subideology-icon" src="images/ideologies/conservative.png" alt="CONSERVATIVE"></th>
+                    <th style="color:#1b0fb6;" class="name">CONSERVATIVE<img class="ideology-icon" src="images/ideologies/conservative.png" alt="CONSERVATIVE"></th>
                     <th class="col-icon">Icon</th>
                     <th class="col-banner">Banner</th>
                     <th class="col-details">GFX Identifier / Details</th>
@@ -603,7 +601,7 @@
         <table class="wiki-table">
             <thead>
                 <tr>
-                    <th style="color:#868686;" class="name">REACTIONARY<img class="subideology-icon" src="images/ideologies/reactionary.png" alt="REACTIONARY"></th>
+                    <th style="color:#868686;" class="name">REACTIONARY<img class="ideology-icon" src="images/ideologies/reactionary.png" alt="REACTIONARY"></th>
                     <th class="col-icon">Icon</th>
                     <th class="col-banner">Banner</th>
                     <th class="col-details">GFX Identifier / Details</th>
@@ -660,7 +658,7 @@
         <table class="wiki-table">
             <thead>
                 <tr>
-                    <th style="color:#686868;" class="name">AUTHORITARIANISM<img class="subideology-icon" src="images/ideologies/authoritarianism.png" alt="AUTHORITARIANISM"></th>
+                    <th style="color:#686868;" class="name">AUTHORITARIANISM<img class="ideology-icon" src="images/ideologies/authoritarianism.png" alt="AUTHORITARIANISM"></th>
                     <th class="col-icon">Icon</th>
                     <th class="col-banner">Banner</th>
                     <th class="col-details">GFX Identifier / Details</th>
@@ -711,7 +709,7 @@
         <table class="wiki-table">
             <thead>
                 <tr>
-                    <th style="color:#404040;" class="name">AUTOCRACY<img class="subideology-icon" src="images/ideologies/autocracy.png" alt="AUTOCRACY"></th>
+                    <th style="color:#404040;" class="name">AUTOCRACY<img class="ideology-icon" src="images/ideologies/autocracy.png" alt="AUTOCRACY"></th>
                     <th class="col-icon">Icon</th>
                     <th class="col-banner">Banner</th>
                     <th class="col-details">GFX Identifier / Details</th>
@@ -815,7 +813,7 @@
         <table class="wiki-table">
             <thead>
                 <tr>
-                    <th style="color:#9632c8;" class="name">ABSOLUTISM<img class="subideology-icon" src="images/ideologies/absolutism.png" alt="ABSOLUTISM"></th>
+                    <th style="color:#9632c8;" class="name">ABSOLUTISM<img class="ideology-icon" src="images/ideologies/absolutism.png" alt="ABSOLUTISM"></th>
                     <th class="col-icon">Icon</th>
                     <th class="col-banner">Banner</th>
                     <th class="col-details">GFX Identifier / Details</th>
@@ -872,7 +870,7 @@
         <table class="wiki-table">
             <thead>
                 <tr>
-                    <th style="color:#472900;" class="name">ULTRANATIONALISM<img class="subideology-icon" src="images/ideologies/ultranationalism.png" alt="ULTRANATIONALISM"></th>
+                    <th style="color:#472900;" class="name">ULTRANATIONALISM<img class="ideology-icon" src="images/ideologies/ultranationalism.png" alt="ULTRANATIONALISM"></th>
                     <th class="col-icon">Icon</th>
                     <th class="col-banner">Banner</th>
                     <th class="col-details">GFX Identifier / Details</th>
@@ -941,7 +939,7 @@
         <table class="wiki-table">
             <thead>
                 <tr>
-                    <th style="color:#504b45;" class="name">FUNDAMENTALISM<img class="subideology-icon" src="images/ideologies/fundamentalism.png" alt="FUNDAMENTALISM"></th>
+                    <th style="color:#504b45;" class="name">FUNDAMENTALISM<img class="ideology-icon" src="images/ideologies/fundamentalism.png" alt="FUNDAMENTALISM"></th>
                     <th class="col-icon">Icon</th>
                     <th class="col-banner">Banner</th>
                     <th class="col-details">GFX Identifier / Details</th>
@@ -1010,6 +1008,32 @@
     <footer>
         <p>Dragon vs Eagle (DvE) 2025 HOI4 Mod Wiki</p>
     </footer>
+
+    <script>
+    (function(){
+      function wrapImages(){
+        const images = Array.from(document.querySelectorAll('img'));
+        images.forEach(function(img){
+          if (img.closest('a')) return;
+          const href = img.getAttribute('src');
+          if (!href) return;
+          const link = document.createElement('a');
+          link.href = href;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.className = 'image-open-link';
+          link.title = 'Open image in a new tab';
+          img.parentNode.insertBefore(link, img);
+          link.appendChild(img);
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', wrapImages);
+      } else {
+        wrapImages();
+      }
+    })();
+    </script>
 
 </body>
 </html>

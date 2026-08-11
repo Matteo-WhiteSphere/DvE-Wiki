@@ -36,6 +36,8 @@
         .leader-cell { display: flex; align-items: center; gap: 12px; }
         .leader-avatar { width: 84px; aspect-ratio: 154 / 210; height: auto; border-radius: 12px; object-fit: cover; background-color: var(--card-bg); box-shadow: none; }
         .ideology-icon { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background-color: var(--card-bg); box-shadow: none; }
+        .image-open-link { display: inline-block; line-height: 0; }
+        .image-open-link img { cursor: zoom-in; }
         .badge { display: inline-block; padding: 3px 8px; border-radius: 3px; font-size: 0.85em; font-weight: bold; text-transform: uppercase; }
         .badge-van { background-color: #d21e1e; color: #fff; }
         .badge-rev { background-color: #dc3c64; color: #fff; }
@@ -186,6 +188,7 @@
           link.target = '_blank';
           link.rel = 'noopener noreferrer';
           link.className = 'image-open-link';
+          link.title = 'Open image in a new tab';
           img.parentNode.insertBefore(link, img);
           link.appendChild(img);
         });
