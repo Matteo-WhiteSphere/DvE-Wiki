@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Creation Guide - Dragon vs Eagle Wiki</title>
+    <style>
+        :root {
+            --bg-color: #0b0e14;
+            --panel-bg: #131822;
+            --card-bg: #1a202c;
+            --border-color: #2d3748;
+            --text-primary: #e2e8f0;
+            --text-secondary: #a0aec0;
+            --accent-neon: #00f3ff;
+            --accent-glow: rgba(0, 243, 255, 0.2);
+            --table-header-bg: #182030;
+            --code-color: #38bdf8;
+            --warn-color: #ffb454;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(180deg, #151d2a 0%, #0b0e14 100%);
+            border-bottom: 2px solid var(--accent-neon);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            letter-spacing: 2px;
+            color: var(--accent-neon);
+            text-shadow: 0 0 10px var(--accent-neon);
+        }
+
+        header p {
+            margin: 5px 0 0 0;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            background-color: var(--panel-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .attivo {
+            color: var(--accent-neon);
+            border-color: var(--accent-neon);
+            box-shadow: 0 0 8px var(--accent-glow);
+        }
+
+        nav a:hover {
+            color: var(--accent-neon);
+            border-color: var(--accent-neon);
+            box-shadow: 0 0 8px var(--accent-glow);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Section cards (same look as .page-intro on the ideologies page) */
+        .page-intro, .section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px 24px;
+            margin-bottom: 30px;
+        }
+
+        .page-intro h2, .section h2 {
+            color: var(--accent-neon);
+            margin: 0 0 14px 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 6px;
+            font-size: 1.35em;
+            letter-spacing: 0.5px;
+        }
+
+        .section h3 {
+            color: #ffffff;
+            margin: 26px 0 8px 0;
+            font-size: 1.08em;
+        }
+
+        .section h3 .step-tag, .section h2 .step-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            font-family: monospace;
+            margin-right: 8px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+            color: var(--accent-neon);
+            vertical-align: middle;
+        }
+
+        p { margin: 0 0 12px 0; }
+        .section p:last-child, .page-intro p:last-child { margin-bottom: 0; }
+
+        ul, ol {
+            margin: 0 0 12px 0;
+            padding-left: 22px;
+            color: var(--text-secondary);
+        }
+
+        ul { list-style-type: square; }
+        li { margin-bottom: 6px; }
+        li strong, p strong { color: var(--text-primary); }
+
+        a.inline { color: var(--accent-neon); text-decoration: none; }
+        a.inline:hover { text-decoration: underline; }
+
+        /* Table of contents */
+        .toc {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 8px 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc li { margin: 0; }
+
+        .toc a {
+            display: block;
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 6px 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--panel-bg);
+            font-size: 0.92em;
+            transition: all 0.2s ease;
+        }
+
+        .toc a:hover {
+            color: var(--accent-neon);
+            border-color: var(--accent-neon);
+            box-shadow: 0 0 8px var(--accent-glow);
+        }
+
+        .toc a span { color: var(--accent-neon); font-family: monospace; margin-right: 6px; }
+
+        /* Wiki tables */
+        .table-wrap { overflow-x: auto; margin-bottom: 16px; }
+
+        .wiki-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .wiki-table th {
+            background-color: #131822;
+            color: var(--text-secondary);
+            padding: 10px 14px;
+            text-align: left;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--border-color);
+        }
+
+        .wiki-table td {
+            border: 1px solid var(--border-color);
+            padding: 10px 14px;
+            vertical-align: top;
+            font-size: 0.95em;
+            color: var(--text-secondary);
+        }
+
+        .wiki-table td:first-child { color: #ffffff; font-weight: bold; }
+        .wiki-table tr:nth-child(even) td { background-color: rgba(255, 255, 255, 0.02); }
+        .wiki-table td.num { text-align: right; font-family: 'Consolas', monospace; white-space: nowrap; }
+
+        /* Code */
+        code {
+            background: rgba(0, 0, 0, 0.4);
+            color: var(--code-color);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Menlo', monospace;
+            font-size: 0.85em;
+        }
+
+        .code-block {
+            position: relative;
+            margin: 0 0 16px 0;
+        }
+
+        pre {
+            margin: 0;
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid var(--border-color);
+            border-left: 3px solid var(--accent-neon);
+            border-radius: 4px;
+            padding: 14px 16px;
+            overflow-x: auto;
+            tab-size: 4;
+            -moz-tab-size: 4;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            font-size: 0.86em;
+            line-height: 1.5;
+            color: var(--code-color);
+            white-space: pre;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: var(--panel-bg);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 0.72em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover, .copy-btn:focus-visible {
+            color: var(--accent-neon);
+            border-color: var(--accent-neon);
+            box-shadow: 0 0 8px var(--accent-glow);
+            outline: none;
+        }
+
+        /* Callouts */
+        .note {
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-left: 3px solid var(--accent-neon);
+            border-radius: 4px;
+            padding: 12px 16px;
+            margin: 0 0 16px 0;
+            color: var(--text-secondary);
+        }
+
+        .note.warn { border-left-color: var(--warn-color); }
+        .note strong { color: var(--text-primary); }
+        .note > :last-child { margin-bottom: 0; }
+
+        /* The two rules / the three cases */
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 16px;
+        }
+
+        .card {
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 16px 18px;
+            flex: 1 1 calc(50% - 20px);
+            min-width: 260px;
+        }
+
+        .card h3 {
+            margin: 0 0 8px 0;
+            color: var(--accent-neon);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .card p { color: var(--text-secondary); }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.78em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .badge-one { background-color: #1e50b4; color: #fff; }
+        .badge-all { background-color: #b21010; color: #fff; }
+        .badge-mix { background-color: #641e8c; color: #fff; }
+
+        /* Checklist */
+        .checklist { list-style: none; padding-left: 0; }
+
+        .checklist li {
+            position: relative;
+            padding-left: 28px;
+        }
+
+        .checklist li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            border: 1px solid var(--accent-neon);
+            border-radius: 3px;
+            box-shadow: 0 0 6px var(--accent-glow);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 0.8em;
+            border-top: 1px solid var(--border-color);
+            margin-top: 50px;
+        }
+
+        @media (max-width: 720px) {
+            nav { flex-direction: column; align-items: center; }
+            header h1 { font-size: 1.6em; }
+            .page-intro, .section { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>EVENT CREATION GUIDE</h1>
+        <p>How to make events for one nation only, or for every nation</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home / Countries</a>
+        <a href="ideologies.html">Ideologies List</a>
+        <a href="events_guide.html" class="attivo">Events Guide</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- 0. THE IDEA -->
+        <div class="page-intro" id="idea">
+            <h2>The Idea in One Minute</h2>
+            <p>An event is never "shown on screen" by itself. It is <strong>delivered to a country</strong>. A player sees an event only if it was delivered to the country they are playing.</p>
+            <ul>
+                <li>Deliver it to <strong>one country</strong>: only the player of that country sees it.</li>
+                <li>Deliver it to <strong>every country</strong>: everyone sees it.</li>
+            </ul>
+            <p>So the event itself is written the same way in both cases. What changes is <strong>who you send it to</strong>.</p>
+        </div>
+
+        <div class="section">
+            <h2>Two Rules of This Mod</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>1. A picture needs a <code>news_event</code></h3>
+                    <p>The game can only put a picture at the top of the window in the news window. A <code>country_event</code> is text only: if you write <code>country_event</code>, the picture will never appear.</p>
+                </div>
+                <div class="card">
+                    <h3>2. The picture is a "panel"</h3>
+                    <p>A 581x436 image that contains the header bar (with its label, for example <code>COUNTRY EVENT</code>) and the 557x372 photo. A plain photo would land in the top-left corner of the window.</p>
+                </div>
+            </div>
+            <p>A <code>news_event</code> is a normal event in every other way: it can go to one country only, have several options, and have effects.</p>
+        </div>
+
+        <!-- CONTENTS -->
+        <div class="section">
+            <h2>Contents</h2>
+            <ul class="toc">
+                <li><a href="#files"><span>1</span>The files you touch</a></li>
+                <li><a href="#write"><span>2</span>Write the event</a></li>
+                <li><a href="#texts"><span>3</span>Write the texts</a></li>
+                <li><a href="#picture"><span>4</span>Make and register the picture</a></li>
+                <li><a href="#who"><span>5</span>Decide who sees it</a></li>
+                <li><a href="#when"><span>6</span>Decide when it fires</a></li>
+                <li><a href="#test"><span>7</span>Test it</a></li>
+                <li><a href="#checklist"><span>8</span>Checklist</a></li>
+                <li><a href="#mistakes"><span>9</span>Common mistakes</a></li>
+            </ul>
+        </div>
+
+        <!-- 1. FILES -->
+        <div class="section" id="files">
+            <h2><span class="step-tag">1</span>The Files You Touch</h2>
+            <div class="table-wrap">
+                <table class="wiki-table">
+                    <thead>
+                        <tr><th>What</th><th>Where</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>The event</td><td><code>events/&lt;your_file&gt;.txt</code></td></tr>
+                        <tr><td>Title, text, button text</td><td><code>localisation/english/&lt;your_file&gt;_l_english.yml</code></td></tr>
+                        <tr><td>The picture</td><td><code>gfx/event_pictures/DVE_news/&lt;name&gt;.png</code> (or <code>.dds</code>)</td></tr>
+                        <tr><td>Registering the picture</td><td><code>interface/DVE_event_panels.gfx</code></td></tr>
+                        <tr><td>When it fires and for whom</td><td><code>common/on_actions/&lt;your_file&gt;.txt</code>, or the effect of a focus, decision or other event</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 2. WRITE THE EVENT -->
+        <div class="section" id="write">
+            <h2><span class="step-tag">2</span>Write the Event</h2>
+            <p>Create a file in <code>events/</code>, for example <code>events/DVE_ROM_2025.txt</code>.</p>
+            <div class="code-block"><pre><code>add_namespace = dve_rom
+
+news_event = {
+	id = dve_rom.2
+	title = dve_rom.2.t
+	desc = dve_rom.2.d
+	picture = GFX_news_event_DVE_rom_january_strikes
+
+	is_triggered_only = yes
+
+	option = {
+		name = dve_rom.2.a
+	}
+}</code></pre></div>
+
+            <h3>Line by line</h3>
+            <ul>
+                <li><strong><code>add_namespace = dve_rom</code></strong>: must be at the top of the file, once. Every id in the file starts with this name. Pick a name nobody else uses. Already taken: <code>dve_news</code>, <code>dve_rom</code>, <code>dve_lba</code>, <code>dve_frapro</code>, <code>dve_itapro</code>, <code>dve_mayday</code>, and the same names ending in <code>_send</code>.</li>
+                <li><strong><code>id = dve_rom.2</code></strong>: namespace, a dot, a number. An id must be unique in the whole mod. If two events share an id, only one of them works. Search the mod for the id before using it.</li>
+                <li><strong><code>title</code> / <code>desc</code></strong>: localisation keys, not the text itself (see <a class="inline" href="#texts">step 3</a>).</li>
+                <li><strong><code>picture</code></strong>: the sprite name of your panel (see <a class="inline" href="#picture">step 4</a>). Leave the line out for an event with no picture: the window then shows the <code>WORLD NEWS</code> header with an empty screen.</li>
+                <li><strong><code>is_triggered_only = yes</code></strong>: the event fires only when something sends it. Always include it, otherwise the game fires it randomly for every country.</li>
+                <li><strong><code>option</code></strong>: one button. <code>name</code> is the localisation key of the button text. Effects go inside the option.</li>
+            </ul>
+
+            <h3>An option with effects</h3>
+            <div class="code-block"><pre><code>	option = {
+		name = dve_rom.2.a
+		add_stability = -0.05
+		add_popularity = { ideology = progressive popularity = 0.02 }
+	}</code></pre></div>
+            <p><code>popularity = 0.02</code> means +2%. The <code>ideology</code> must be one of the 14 groups of the mod: <code>progressive</code>, <code>revolutionary_socialism</code>, <code>vanguard_socialism</code>, <code>authoritarian_socialism</code>, <code>totalitarian_socialism</code>, <code>liberal</code>, <code>centrist</code>, <code>conservative</code>, <code>reactionary</code>, <code>authoritarianism</code>, <code>autocracy</code>, <code>absolutism</code>, <code>ultranationalism</code>, <code>fundamentalism</code>.</p>
+            <p>For several buttons, write several <code>option</code> blocks. AI countries pick an option by themselves.</p>
+        </div>
+
+        <!-- 3. TEXTS -->
+        <div class="section" id="texts">
+            <h2><span class="step-tag">3</span>Write the Texts</h2>
+            <p>Create <code>localisation/english/DVE_ROM_2025_l_english.yml</code>. The name must end in <code>_l_english.yml</code>.</p>
+            <div class="code-block"><pre><code>l_english:
+ dve_rom.2.t:0 "The January Strikes"
+ dve_rom.2.d:0 "First paragraph of the text.\n\nSecond paragraph."
+ dve_rom.2.a:0 "Hope the people get what they want."</code></pre></div>
+
+            <div class="note warn">
+                <p><strong>Rules that break the game if ignored</strong></p>
+                <ul>
+                    <li>The file must be saved as <strong>UTF-8 with BOM</strong>.</li>
+                    <li>The first line is exactly <code>l_english:</code>.</li>
+                    <li>Every other line starts with <strong>one space</strong>, then <code>key:0 "text"</code>.</li>
+                    <li><strong>Never put a double quote inside the text.</strong> Use single quotes: <code>'austerity ordinance'</code>. An unclosed double quote in a localisation file can crash the game.</li>
+                    <li><code>\n</code> is a line break; <code>\n\n</code> leaves an empty line between paragraphs.</li>
+                    <li>Avoid long dashes and unusual accented letters; plain <code>-</code> and <code>é</code>-style accents are fine.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 4. PICTURE -->
+        <div class="section" id="picture">
+            <h2><span class="step-tag">4</span>Make and Register the Picture</h2>
+
+            <h3>By hand</h3>
+            <ol>
+                <li>Open a template from <code>tools/panel_templates/</code>: <code>panel_COUNTRY_EVENT.png</code>, <code>panel_WORLD_NEWS.png</code>, or <code>panel_no_label.png</code> if you want to write your own header text.</li>
+                <li>Resize or crop your photo to <strong>557x372</strong>.</li>
+                <li>Paste it with its top-left corner at <strong>x = 12, y = 60</strong>.</li>
+                <li>Save as PNG in <code>gfx/event_pictures/DVE_news/</code>, for example <code>news_event_DVE_rom_january_strikes.png</code>.</li>
+            </ol>
+
+            <h3>With Python and Pillow</h3>
+            <div class="code-block"><pre><code>python3 tools/dve_event_panel.py photo.png "COUNTRY EVENT" gfx/event_pictures/DVE_news/news_event_DVE_rom_january_strikes.dds</code></pre></div>
+
+            <h3>Register it</h3>
+            <p>Add a block inside <code>spriteTypes = { ... }</code> in <code>interface/DVE_event_panels.gfx</code>:</p>
+            <div class="code-block"><pre><code>	spriteType = {
+		name = "GFX_news_event_DVE_rom_january_strikes"
+		texturefile = "gfx/event_pictures/DVE_news/news_event_DVE_rom_january_strikes.png"
+	}</code></pre></div>
+            <p>The <code>name</code> here is what you write after <code>picture =</code> in the event. The <code>texturefile</code> must match the real file name exactly, including capital letters and the extension.</p>
+        </div>
+
+        <!-- 5. WHO -->
+        <div class="section" id="who">
+            <h2><span class="step-tag">5</span>Decide Who Sees It</h2>
+
+            <h3><span class="badge badge-one">A</span>Only one nation sees it</h3>
+            <p>Send the event to that country's tag:</p>
+            <div class="code-block"><pre><code>ROM = { news_event = { id = dve_rom.2 } }</code></pre></div>
+            <p>Only the player of Romania sees it. Its options and effects apply to Romania only.</p>
+            <p>If the effect already runs "as" Romania (for example inside a Romanian focus, a Romanian decision, or the option of another Romanian event), you do not need the tag:</p>
+            <div class="code-block"><pre><code>news_event = { id = dve_rom.2 }</code></pre></div>
+
+            <h3><span class="badge badge-all">B</span>Every nation sees it</h3>
+            <p>Send it to all existing countries:</p>
+            <div class="code-block"><pre><code>every_country = { news_event = { id = dve_rom.1 } }</code></pre></div>
+            <div class="note warn">
+                <p><strong>Be careful:</strong> the options and their effects now run <strong>in every country</strong>. If the option gives +2% popularity, every country gets +2%.</p>
+            </div>
+
+            <h3><span class="badge badge-mix">C</span>Every nation sees it, but only one gets the effects</h3>
+            <p>Send it to everyone as in B, and wrap the effects in a check on the tag:</p>
+            <div class="code-block"><pre><code>	option = {
+		name = dve_frapro.1.a
+		if = {
+			limit = { tag = FRA }
+			add_popularity = { ideology = progressive popularity = 0.02 }
+			add_popularity = { ideology = vanguard_socialism popularity = 0.05 }
+		}
+	}</code></pre></div>
+            <p>Everyone reads the event; only France gets the popularity change. Other countries see the button with no effect listed.</p>
+        </div>
+
+        <!-- 6. WHEN -->
+        <div class="section" id="when">
+            <h2><span class="step-tag">6</span>Decide When It Fires</h2>
+            <p>All scheduling goes in a file in <code>common/on_actions/</code>, for example <code>common/on_actions/DVE_ROM_2025_on_actions.txt</code>.</p>
+
+            <h3><span class="step-tag">6.1</span>From a focus, a decision or another event</h3>
+            <p>Put the line from step 5 directly in the effect:</p>
+            <div class="code-block"><pre><code>completion_reward = {
+	ROM = { news_event = { id = dve_rom.2 } }
+}</code></pre></div>
+            <p>Add a delay with <code>days</code> or <code>hours</code>:</p>
+            <div class="code-block"><pre><code>ROM = { news_event = { id = dve_rom.2 days = 3 } }</code></pre></div>
+
+            <h3><span class="step-tag">6.2</span>On a fixed date in the first months (hours from game start)</h3>
+            <p>The game starts on <strong>2025.01.01 at 12:00</strong>. Count the hours from that moment to your date.</p>
+            <div class="code-block"><pre><code>hours = (days between 1 January and your date) x 24 + (your hour - 12)</code></pre></div>
+            <p>Days already passed at the start of each month: Jan 0, Feb 31, Mar 59, Apr 90, May 120, Jun 151, Jul 181, Aug 212, Sep 243, Oct 273, Nov 304, Dec 334. The game has <strong>no leap years</strong>: every year is 365 days.</p>
+            <div class="table-wrap">
+                <table class="wiki-table">
+                    <thead>
+                        <tr><th>Date</th><th>Calculation</th><th>Hours</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>2025.01.03 06:00</td><td>2 x 24 - 6</td><td class="num">42</td></tr>
+                        <tr><td>2025.02.10 10:00</td><td>40 x 24 - 2</td><td class="num">958</td></tr>
+                        <tr><td>2025.05.18 12:00</td><td>137 x 24 + 0</td><td class="num">3288</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><span class="badge badge-one">One nation</span></p>
+            <div class="code-block"><pre><code>on_actions = {
+	on_startup = {
+		effect = {
+			if = {
+				limit = { NOT = { has_global_flag = DVE_ROM_2025_scheduled } }
+				set_global_flag = DVE_ROM_2025_scheduled
+				ROM = {
+					news_event = { id = dve_rom.2 hours = 42 }
+				}
+			}
+		}
+	}
+}</code></pre></div>
+            <div class="note">
+                <p><strong>Two things matter here</strong></p>
+                <ul>
+                    <li><code>on_startup</code> has no country behind it, so you <strong>must</strong> wrap the event in a tag (<code>ROM = { ... }</code>) or in <code>every_country</code>.</li>
+                    <li>The global flag makes the block run once. Use your own flag name.</li>
+                </ul>
+            </div>
+
+            <p><span class="badge badge-all">Every nation</span></p>
+            <p>Do not schedule the news directly. Countries that are born later (civil war factions) and players who change tag would miss it. Schedule a hidden "sender" event instead, and let it deliver the news on the day.</p>
+            <p>In the events file:</p>
+            <div class="code-block"><pre><code>add_namespace = dve_rom
+add_namespace = dve_rom_send
+
+country_event = {
+	id = dve_rom_send.1
+	hidden = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { NOT = { has_global_flag = dve_rom_1_sent } }
+			set_global_flag = dve_rom_1_sent
+			every_country = { news_event = { id = dve_rom.1 } }
+		}
+	}
+}</code></pre></div>
+            <p>In the on_actions file, inside the same <code>on_startup</code> block:</p>
+            <div class="code-block"><pre><code>				every_country = {
+					country_event = { id = dve_rom_send.1 hours = 1 }
+				}</code></pre></div>
+            <p>Every country receives the hidden sender at the same hour. The first one sends the news to all countries that exist at that moment; the flag stops the others from sending it again.</p>
+
+            <h3><span class="step-tag">6.3</span>On a date far in the future (checked every day)</h3>
+            <p>For dates a year or more away, check the date daily instead of counting hours. <code>on_daily_TAG</code> runs every day for that country, as long as it exists.</p>
+
+            <p><span class="badge badge-one">One nation</span></p>
+            <div class="code-block"><pre><code>on_actions = {
+	on_daily_LBA = {
+		effect = {
+			if = {
+				limit = {
+					date &gt; 2026.2.16
+					NOT = { has_global_flag = dve_lba_1_fired }
+				}
+				set_global_flag = dve_lba_1_fired
+				news_event = { id = dve_lba.1 hours = 6 }
+			}
+		}
+	}
+}</code></pre></div>
+            <ul>
+                <li><code>date &gt; 2026.2.16</code> becomes true on 17 February: always write <strong>the day before</strong> the one you want.</li>
+                <li><code>hours = 6</code> makes it appear at 06:00 of that day.</li>
+                <li>The flag makes it fire once.</li>
+                <li>Inside <code>on_daily_LBA</code> you are already Libya, so no tag is needed.</li>
+            </ul>
+
+            <p><span class="badge badge-all">Every nation</span></p>
+            <p>Use the same block but send to everyone. Use the tag of the country the event is about, so it only fires while that country exists:</p>
+            <div class="code-block"><pre><code>	on_daily_FRA = {
+		effect = {
+			if = {
+				limit = {
+					date &gt; 2026.9.16
+					date &lt; 2026.10.1
+					NOT = { has_global_flag = dve_frapro_1_fired }
+				}
+				set_global_flag = dve_frapro_1_fired
+				every_country = { news_event = { id = dve_frapro.1 hours = 8 } }
+			}
+		}
+	}</code></pre></div>
+            <p>The second <code>date &lt;</code> line is a window: it stops an old save from receiving a pile of outdated events on the same day.</p>
+            <p>You can add any other condition to the <code>limit</code>, for example "only while France is not in its civil war":</p>
+            <div class="code-block"><pre><code>				limit = { NOT = { has_country_flag = FRA_civil_war } }</code></pre></div>
+
+            <h3><span class="step-tag">6.4</span>Every year on the same day</h3>
+            <p>Schedule the first one from game start with a sender (6.2), and let the sender book itself again 365 days later for every country:</p>
+            <div class="code-block"><pre><code>			every_country = {
+				news_event = { id = dve_mayday.1 }
+				country_event = { id = dve_mayday_send.1 days = 365 }
+			}</code></pre></div>
+            <p>Use a flag that expires so it can fire again next year:</p>
+            <div class="code-block"><pre><code>			set_global_flag = { flag = dve_mayday_sent days = 30 value = 1 }</code></pre></div>
+        </div>
+
+        <!-- 7. TEST -->
+        <div class="section" id="test">
+            <h2><span class="step-tag">7</span>Test It</h2>
+            <ol>
+                <li>Restart the game after changing files, and start a <strong>new game</strong> if you changed anything in <code>on_startup</code> (it only runs when a game begins).</li>
+                <li>Open the console and type the id to see the event at once, for the country you are playing:
+                    <div class="code-block" style="margin-top: 8px;"><pre><code>event dve_rom.2</code></pre></div>
+                </li>
+                <li>To check effects that apply to one country only, switch to it first:
+                    <div class="code-block" style="margin-top: 8px;"><pre><code>tag FRA
+event dve_frapro.1</code></pre></div>
+                </li>
+                <li>If something is wrong, open <code>logs/error.log</code> in the game's documents folder and search for your namespace or file name.</li>
+            </ol>
+            <div class="note">
+                <p>The console does not work in Ironman.</p>
+            </div>
+        </div>
+
+        <!-- 8. CHECKLIST -->
+        <div class="section" id="checklist">
+            <h2><span class="step-tag">8</span>Checklist</h2>
+            <ul class="checklist">
+                <li><code>add_namespace</code> at the top of the events file, and the namespace is not used elsewhere.</li>
+                <li>The id is unique in the whole mod.</li>
+                <li>It is a <code>news_event</code> if it has a picture.</li>
+                <li><code>is_triggered_only = yes</code> is there.</li>
+                <li><code>.t</code>, <code>.d</code> and every option key exist in the <code>_l_english.yml</code> file.</li>
+                <li>The localisation file is UTF-8 with BOM, starts with <code>l_english:</code>, and has no double quotes inside the texts.</li>
+                <li>The picture is a 581x436 panel, and its sprite is in <code>interface/DVE_event_panels.gfx</code> with the exact file name.</li>
+                <li>One nation: sent with <code>TAG = { news_event = { ... } }</code>. All nations: sent with <code>every_country = { news_event = { ... } }</code>.</li>
+                <li>Effects meant for one country in an all-nations event are inside <code>if = { limit = { tag = XXX } ... }</code>.</li>
+                <li>A flag makes it fire only once.</li>
+                <li>Every <code>{</code> has its <code>}</code>.</li>
+            </ul>
+        </div>
+
+        <!-- 9. MISTAKES -->
+        <div class="section" id="mistakes">
+            <h2><span class="step-tag">9</span>Common Mistakes</h2>
+            <div class="table-wrap">
+                <table class="wiki-table">
+                    <thead>
+                        <tr><th>Symptom</th><th>Cause</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>No picture</td><td>The event is a <code>country_event</code>, or the sprite name / file name does not match.</td></tr>
+                        <tr><td>Photo in the top-left corner, covering the header</td><td>The picture is a plain photo, not a 581x436 panel.</td></tr>
+                        <tr><td>Title or text shows the key (<code>dve_rom.2.t</code>)</td><td>Missing localisation key, wrong file name, or file not saved with BOM.</td></tr>
+                        <tr><td>The event never fires</td><td><code>on_startup</code> without a tag or <code>every_country</code>; flag already set in an old save; wrong date (remember: the day before).</td></tr>
+                        <tr><td>Only some players see an "all nations" event</td><td>It was scheduled directly at game start instead of through a sender, so later-born countries missed it.</td></tr>
+                        <tr><td>Every country got the effects</td><td>Effects in the option without the <code>tag</code> check.</td></tr>
+                        <tr><td>Another event appears instead of yours</td><td>Two events share the same id.</td></tr>
+                        <tr><td>The event fires again and again</td><td>No flag, or <code>is_triggered_only</code> is missing.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Dragon vs Eagle (DvE) 2025 HOI4 Mod Wiki</p>
+    </footer>
+
+    <script>
+    (function(){
+      function addCopyButtons(){
+        document.querySelectorAll('.code-block').forEach(function(block){
+          var code = block.querySelector('code');
+          if (!code) return;
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'copy-btn';
+          btn.textContent = 'Copy';
+          btn.setAttribute('aria-label', 'Copy code');
+          btn.addEventListener('click', function(){
+            var text = code.textContent;
+            function done(ok){
+              btn.textContent = ok ? 'Copied' : 'Select and copy';
+              setTimeout(function(){ btn.textContent = 'Copy'; }, 1600);
+            }
+            function fallback(){
+              try {
+                var area = document.createElement('textarea');
+                area.value = text;
+                area.style.position = 'fixed';
+                area.style.opacity = '0';
+                document.body.appendChild(area);
+                area.select();
+                var ok = document.execCommand('copy');
+                document.body.removeChild(area);
+                done(ok);
+              } catch (e) { done(false); }
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(text).then(function(){ done(true); }, fallback);
+            } else {
+              fallback();
+            }
+          });
+          block.appendChild(btn);
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', addCopyButtons);
+      } else {
+        addCopyButtons();
+      }
+    })();
+    </script>
+
+</body>
+</html>
