@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.gstatic.com https://apis.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://*.firebaseapp.com http://127.0.0.1:9099 http://127.0.0.1:8080; frame-src https://*.firebaseapp.com https://accounts.google.com http://127.0.0.1:9099; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="robots" content="noindex, nofollow">
     <title>Admin Panel - Dragon vs Eagle Wiki</title>
@@ -27,40 +27,28 @@
         <div id="admin-root" class="hidden">
             <div class="card">
                 <h3>Add a staff account</h3>
-                <p class="muted">
-                    <strong>Staff username:</strong> creates the login <code>Role.Name</code> (e.g. <code>Editor.Rapha</code>) with a temporary password that you pass on; it must be changed at the first login.<br>
-                    <strong>Google:</strong> the person signs in with that Google account and gets the role automatically.<br>
-                    <strong>E-mail + password:</strong> an account is created and the person receives an e-mail to choose their own password.
-                </p>
-                <form id="invite-form" class="row">
+                <p class="muted">Creates the login <code>Role.Name</code> (e.g. <code>Editor.Rapha</code>) with a temporary password that you send privately; it must be changed at the first login.</p>
+                <form id="create-form" class="row">
                     <div>
-                        <label for="inv-method">Login method</label>
-                        <select id="inv-method">
-                            <option value="staff">Staff username (Role.Name)</option>
-                            <option value="google">Google</option>
-                            <option value="password">E-mail + password</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="inv-role">Role</label>
-                        <select id="inv-role"></select>
+                        <label for="new-role">Role</label>
+                        <select id="new-role"></select>
                     </div>
                     <div style="flex:2 1 260px">
-                        <label for="inv-email" id="inv-email-label">Name</label>
-                        <input type="text" id="inv-email" required maxlength="200" autocomplete="off" spellcheck="false">
+                        <label for="new-name">Name</label>
+                        <input type="text" id="new-name" required maxlength="32" autocomplete="off" spellcheck="false" placeholder="Rapha">
                     </div>
                     <div class="shrink">
-                        <button class="btn primary" type="submit" id="inv-btn">Add account</button>
+                        <button class="btn primary" type="submit" id="create-btn">Add account</button>
                     </div>
                 </form>
-                <p class="muted" id="inv-preview"></p>
+                <p class="muted" id="new-preview"></p>
                 <div id="new-account" class="notice ok hidden"></div>
             </div>
 
             <div class="card">
                 <h3>Create several staff accounts</h3>
                 <p class="muted">One username per line, written as <code>Role.Name</code> (Owner / Admin / Editor). Accounts that already exist are skipped. Each account gets a temporary password, shown only once below, that must be changed at the first login.</p>
-                <textarea id="bulk-list" spellcheck="false" style="min-height:180px"></textarea>
+                <textarea id="bulk-list" spellcheck="false" style="min-height:140px"></textarea>
                 <div class="toolbar" style="margin-top:10px">
                     <button class="btn primary" type="button" id="bulk-btn">Create accounts</button>
                     <span class="muted" id="bulk-status"></span>
@@ -69,27 +57,21 @@
             </div>
 
             <div class="card">
-                <h3>Pending invitations</h3>
-                <div class="table-wrap"><table class="wiki-table" id="invites-table"></table></div>
-            </div>
-
-            <div class="card">
                 <h3>Users</h3>
                 <p class="muted">
-                    <span class="role-tag role-owner">owner</span> manages admins (set only from the Firebase console or tools/accounts.mjs) ·
+                    <span class="role-tag role-owner">owner</span> creates owners and admins ·
                     <span class="role-tag role-admin">admin</span> manages editors, deletes pages ·
                     <span class="role-tag role-editor">editor</span> creates and edits pages ·
-                    <span class="role-tag role-user">user</span> can only read ·
-                    <span class="role-tag role-disabled">disabled</span> blocked
+                    <span class="role-tag role-disabled">disabled</span> cannot sign in
                 </p>
-                <p class="muted">Forgotten password of a staff username: an owner runs <code>node tools/accounts.mjs reset Editor.Name</code> (see STAFF_SETUP.md). Changing the role here does not rename the login.</p>
-                <div class="toolbar"><input type="text" id="user-search" placeholder="Search e-mail…" style="max-width:300px"></div>
+                <p class="muted">Changing the role also renames the login (e.g. Editor.Pyro → Admin.Pyro). <strong>Reset password</strong> gives a new temporary password and signs the person out everywhere. Owners cannot be changed from here.</p>
+                <div class="toolbar"><input type="text" id="user-search" placeholder="Search…" style="max-width:300px"></div>
                 <div class="table-wrap"><table class="wiki-table" id="users-table"></table></div>
             </div>
 
             <div class="card">
                 <h3>Activity log</h3>
-                <p class="muted">Every page change and account change is recorded here. Entries cannot be edited or deleted from the website.</p>
+                <p class="muted">Every page change and account change is recorded here. Entries cannot be edited or deleted.</p>
                 <div class="toolbar"><button class="btn small" type="button" id="audit-more">Load more</button></div>
                 <div class="table-wrap"><table class="wiki-table" id="audit-table"></table></div>
             </div>

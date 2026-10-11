@@ -1,164 +1,140 @@
 # Area Staff — pagine dinamiche, account e sicurezza
 
-Il wiki ha un'**area staff** dove i DEV della mod creano e modificano pagine direttamente dal browser, senza toccare i file HTML. In ogni pagina c'è il pulsante **👤 Login** nella barra di navigazione: quando sei collegato mostra il tuo account (es. `Editor.Rapha`) e porta all'editor.
+Il wiki ha un'**area staff** dove i DEV della mod creano e modificano pagine direttamente dal browser, senza toccare i file HTML. In ogni pagina c'è il pulsante **👤 Login** nella barra in alto: quando sei collegato mostra il tuo account (es. `Editor.Rapha`) e porta all'editor.
+
+Tutto gira **dentro Netlify**, senza servizi esterni:
+
+- il sito resta statico (HTML/CSS/JS);
+- un piccolo server (**Netlify Function**, `netlify/functions/api.mjs`) gestisce login, permessi e salvataggi;
+- i dati (pagine, account, cronologia, registro) stanno in **Netlify Blobs**, l'archivio dati integrato di Netlify, visibile solo al server.
 
 | Pagina | A cosa serve |
 |---|---|
-| `login.html` | Accesso con **username staff** (`Ruolo.Nome`), **Google** o **e-mail + password** |
+| `login.html` | Accesso con username `Ruolo.Nome` e password |
 | `editor.html` | Editor delle pagine (editor, admin, owner) |
-| `admin.html` | Account, ruoli, inviti e registro attività (admin, owner) |
-| `page.html?p=<indirizzo>` | Pagina pubblica generata dal database (es. `page.html?p=afg`) |
+| `admin.html` | Account, ruoli, reset password, registro attività (admin, owner) |
+| `page.html?p=<indirizzo>` | Pagina pubblica (es. `page.html?p=afg`) |
 
-Le vecchie ~180 pagine placeholder (`afg.html`, `usa_fascist.html`, …) sono state rimosse: il loro contenuto è in `data/placeholders.json` e viene mostrato come **bozza** finché un editor non scrive la pagina vera. I link della home puntano già a `page.html?p=…`.
-
-Il sito resta statico ed è pubblicato su **Netlify** (configurazione in `netlify.toml` e `_redirects`). Login e database sono forniti da **Firebase** (piano gratuito *Spark*).
+Le vecchie ~180 pagine placeholder sono in `data/placeholders.json` e vengono mostrate come **bozza** finché un editor non scrive la pagina vera. I vecchi indirizzi (`afg.html`, …) reindirizzano a `page.html?p=…` (`_redirects`).
 
 ---
 
-## 1. Configurazione di Firebase (una volta sola, ~10 minuti)
+## 1. Primo avvio (nessuna configurazione richiesta)
 
-1. Vai su <https://console.firebase.google.com> → **Aggiungi progetto** (Google Analytics non serve).
-2. **Impostazioni progetto → Generali → Le tue app → Web (`</>`)**: registra un'app web e copia i valori di `firebaseConfig` dentro `js/firebase-config.js` (al posto dei valori `YOUR_…`). Questi valori **non sono segreti**: la protezione è data dalle regole del database.
-3. **Authentication → Inizia → Sign-in method**: abilita **Email/Password** e **Google**.
-4. **Authentication → Impostazioni → Domini autorizzati**: aggiungi i domini Netlify del wiki: `dve-wiki.netlify.app` e, per provare le anteprime, `deploy-preview-1--dve-wiki.netlify.app` (Firebase non accetta asterischi: ogni anteprima va aggiunta a mano; se colleghi un dominio personalizzato aggiungi anche quello).
-5. **Authentication → Impostazioni → Criteri password**: attivalo (minimo 10 caratteri, maiuscole, minuscole, numeri). Lascia attiva la **protezione dall'enumerazione delle e-mail**.
-6. **Firestore Database → Crea database** in *modalità produzione* (regione consigliata: `europe-west`).
-7. **Firestore → Regole**: incolla il contenuto di `firestore.rules` e premi **Pubblica**.
-   In alternativa con la CLI: `npx firebase-tools login` e poi `npx firebase-tools deploy --only firestore:rules --project <id-progetto>`.
-8. Fai commit + push di `js/firebase-config.js`.
+1. Fai il merge della PR (o apri la deploy preview): Netlify pubblica sito e funzione da solo.
+2. Apri una pagina qualsiasi del sito. Alla **prima richiesta** il server crea gli account elencati in `data/staff-accounts.json`:
 
-## 2. Creare gli account dello staff (dal sito, senza terminale)
+   | Username | Ruolo |
+   |---|---|
+   | `Owner.RedMatteo` | owner |
+   | `Owner.EC` | owner |
+   | `Admin.Kylo` | admin |
+   | `Editor.Rapha` | editor |
+   | `Editor.Pyro` | editor |
+   | `Editor.Tazi` | editor |
+   | `Editor.Defort` | editor |
+   | `Editor.iowaderussr` | editor |
 
-Gli account sono già elencati in `data/staff-accounts.json`:
+3. Le **password temporanee** vengono scritte **una sola volta** nel log del server: Netlify → il sito *dve-wiki* → **Logs → Functions → api**. Solo chi ha accesso al pannello Netlify del sito può leggerle.
+4. Mandale in privato a ognuno (es. Discord). Al primo accesso ognuno **deve scegliere la propria password**; prima di farlo l'account non può fare niente.
 
-| Username | Ruolo |
-|---|---|
-| `Owner.RedMatteo` | owner |
-| `Owner.EC` | owner |
-| `Admin.Kylo` | admin |
-| `Editor.Rapha` | editor |
-| `Editor.Pyro` | editor |
-| `Editor.Tazi` | editor |
-| `Editor.Defort` | editor |
-| `Editor.iowaderussr` | editor |
+> I dati sono condivisi tra sito principale e deploy preview: gli account creati una volta valgono ovunque.
 
-1. Apri il sito → **👤 Login** → **Sign in with Google** con il tuo account Google. Diventi `user`.
-2. Firebase console → **Firestore Database → users** → apri il documento con la tua e-mail → cambia il campo `role` da `user` a `owner` → salva. (È l'unico passaggio da console: il primo owner non si può creare dal sito, per sicurezza.)
-3. Ricarica la pagina di login → **Admin panel**. Il riquadro **Create several staff accounts** è già compilato con gli 8 account: premi **Create accounts**.
-4. Il sito mostra **una sola volta** la tabella con username e **password temporanea** di ciascuno (pulsante *Copy*). Mandala in privato a ogni persona, compreso il tuo `Owner.RedMatteo`. Al primo accesso il sito obbliga a scegliere una password personale: finché non lo fanno, l'account non può modificare niente.
-
-Gli account già esistenti vengono saltati, quindi puoi rilanciare senza problemi. In futuro puoi aggiungere persone dallo stesso riquadro (una per riga, `Ruolo.Nome`) o dal modulo **Add a staff account**. Gli owner possono creare owner, admin ed editor; gli admin solo editor. Un owner già esistente si modifica solo dalla console Firebase.
-
-### In alternativa: script da terminale
-
-Serve [Node.js](https://nodejs.org) 18+ e la chiave del progetto (Firebase console → **Impostazioni progetto → Account di servizio → Genera nuova chiave privata**, da salvare **fuori dal repository** e da non condividere mai):
-
-```bash
-cd tools
-npm install
-node accounts.mjs create --key ~/Desktop/<nome-file-chiave>.json
-```
-
-Altri comandi utili:
-
-```bash
-node accounts.mjs list  --key <chiave>                    # elenco account e ruoli
-node accounts.mjs reset Editor.Rapha --key <chiave>       # password dimenticata → nuova password temporanea
-node accounts.mjs role Editor.Pyro admin --key <chiave>   # cambia ruolo; il login diventa Admin.Pyro
-node accounts.mjs role Editor.Tazi disabled --key <chiave> # blocca l'account (anche il login)
-```
-
----
+**Se ti perdi il log** (o un owner dimentica la password): vedi *Recupero d'emergenza* più sotto.
 
 ### Le password: come funzionano
 
-- **Nessuna password è scritta nel repository o nel sito.** Il repository è pubblico: qualsiasi password messa lì sarebbe visibile a tutti.
-- Le password **temporanee** vengono generate a caso dallo script nel momento in cui crei gli account, e stampate **solo nel tuo terminale**, una volta.
-- Tu le mandi in privato (es. messaggio su Discord) a ciascuno.
-- Al primo accesso ognuno **sceglie la propria password** (minimo 10 caratteri, maiuscole, minuscole e numeri). Da quel momento nemmeno tu la conosci: Firebase salva solo una versione cifrata.
-- Password dimenticata: un owner esegue `node accounts.mjs reset Editor.Nome` e manda la nuova password temporanea.
-- Ognuno può cambiare la propria password quando vuole da **👤 Login → Change password**.
+- **Nessuna password è scritta nel repository o nel sito.**
+- Il server salva solo un'**impronta cifrata** (scrypt) della password: nemmeno chi gestisce il sito può leggerla.
+- Password dimenticata: un admin/owner preme **Reset password** nel pannello admin e manda la nuova password temporanea.
+- Ognuno può cambiare la propria password da **👤 Login → Change password**.
 
-## 3. Ruoli e account
+---
+
+## 2. Ruoli e account
 
 | Ruolo | Può fare |
 |---|---|
-| **owner** | Tutto, compreso creare/rimuovere **amministratori** |
-| **admin** | Creare e gestire **editor**, eliminare pagine, leggere il registro attività |
-| **editor** | Creare e modificare pagine (non può eliminarle, solo toglierle dalla pubblicazione) |
-| **user** | Account normale: può accedere ma non modificare |
-| **disabled** | Account bloccato |
+| **owner** | Tutto: crea owner, admin ed editor; gestisce admin ed editor |
+| **admin** | Crea e gestisce **editor**, resetta le loro password, elimina pagine, legge il registro attività |
+| **editor** | Crea e modifica pagine (non può eliminarle, solo toglierle dalla pubblicazione) |
+| **disabled** | Account bloccato: non può accedere |
 
-Un nuovo `owner` può essere creato solo da un altro owner (pannello admin), dalla console Firebase o con `tools/accounts.mjs`. Un owner esistente non può essere modificato o bloccato dal sito.
+- Gli username hanno sempre la forma `Ruolo.Nome`. Cambiando ruolo dal pannello, il login viene **rinominato** (es. `Editor.Pyro` → `Admin.Pyro`).
+- Un **owner esistente non può essere modificato dal sito** (nemmeno da un altro owner).
+- Nel pannello admin: **Add a staff account** per una persona, **Create several staff accounts** per più persone (una per riga). La password temporanea viene mostrata **una sola volta**.
 
-### Tipi di account
+### Recupero d'emergenza
 
-- **Username staff `Ruolo.Nome`** (es. `Editor.Rapha`): si accede scrivendo l'username e la password. Non hanno un'e-mail; se si dimentica la password, un owner esegue `node accounts.mjs reset Ruolo.Nome`. Nel login l'username non distingue maiuscole/minuscole.
-- **Google**: chiunque può accedere con Google e diventa **user** (solo lettura). Un admin può poi dargli il ruolo editor dalla tabella *Users*, oppure invitarne l'indirizzo in anticipo.
-- **E-mail + password**: creato da un admin; la persona riceve un'e-mail per scegliere la password.
+Se un owner perde la password (o non hai copiato il log del primo avvio):
 
-Dal pannello `admin.html` → **Add a staff account** un admin crea nuovi username staff (la password temporanea viene mostrata una sola volta) o invita indirizzi Google / e-mail. Gli admin possono creare solo **editor**; gli owner anche **admin**. Cambiare ruolo dal pannello non rinomina il login: per avere anche l'username giusto usa `node accounts.mjs role …`.
+1. Netlify → *Site configuration → Environment variables* → aggiungi `DVE_RECOVERY_CODE` con un codice lungo e casuale (almeno 16 caratteri) e rifai il deploy.
+2. Da terminale:
 
----
+   ```bash
+   curl -X POST https://dve-wiki.netlify.app/api/recover \
+     -H "X-DvE-Request: 1" -H "Content-Type: application/json" \
+     -d '{"code":"IL-TUO-CODICE","username":"Owner.RedMatteo"}'
+   ```
 
-## 4. Sistema di sicurezza
-
-- **Regole Firestore lato server** (`firestore.rules`): ogni scrittura è verificata da Google, non dal browser. Anche manomettendo il JavaScript non si superano i permessi.
-- **Gerarchia dei ruoli**: nessuno può cambiare il proprio ruolo; gli admin non possono toccare altri admin né gli owner; solo un owner può creare altri owner, e nessuno può modificare un owner esistente dal sito.
-- **Password temporanee obbligatoriamente da cambiare** al primo accesso; prima di allora l'account non ha permessi.
-- **Username staff su un dominio riservato** (`.invalid`, che non può ricevere e-mail): nessuno può farsi mandare il reset della password di un account staff, e gli username staff non possono essere "rubati" tramite inviti.
-- **E-mail verificata obbligatoria** per gli account Google / e-mail.
-- **Protezione XSS**: il testo delle pagine (Markdown) è ripulito con DOMPurify: script, iframe, form, `javascript:` e CSS pericolosi vengono rimossi.
-- **Content Security Policy** sulle pagine dinamiche e dell'area staff.
-- **Cronologia completa** di ogni pagina (pulsante *History*), che resta anche dopo l'eliminazione.
-- **Registro attività** non modificabile: ogni modifica di pagine, account, ruoli e inviti è registrata con autore e ora.
-- **Rilevamento conflitti** se due persone salvano la stessa pagina insieme.
-- **Logout automatico** dopo 60 minuti di inattività (modificabile in `js/firebase-config.js`).
-- **Protezione brute-force** sul login (gestita da Firebase).
-
-Consigli extra (facoltativi): in Google Cloud Console limita la *API key* ai referrer HTTP del tuo dominio; attiva **Firebase App Check** con reCAPTCHA.
+   La risposta contiene una nuova password temporanea.
+3. **Togli** la variabile `DVE_RECOVERY_CODE` subito dopo.
 
 ---
 
-## 5. Guida rapida per i DEV (editor)
+## 3. Sistema di sicurezza
 
-1. Premi **👤 Login** in alto in qualsiasi pagina, accedi con il tuo `Editor.Nome` e la password → **Open page editor**.
-2. A sinistra c'è l'elenco: *published* (pubblica), *draft* (bozza, visibile solo allo staff), *placeholder* (vecchia pagina non ancora creata — aprila e premi **Save** per crearla).
-3. **+ New page** per una pagina nuova: nazione, percorso politico, guida o altro. L'indirizzo (`slug`) viene generato dal titolo e non si può cambiare dopo il primo salvataggio.
+- **Controlli lato server**: ogni permesso è verificato dal server; manomettere il JavaScript nel browser non serve a niente.
+- **Password** cifrate con scrypt (salt casuale), confronti a tempo costante.
+- **Password temporanee obbligatoriamente da cambiare** al primo accesso e dopo ogni reset.
+- **Sessione** in un cookie firmato (HMAC), `HttpOnly` (il JavaScript non può leggerlo), `Secure`, `SameSite=Strict`; scade dopo **60 minuti di inattività** e comunque dopo 12 ore. Cambio password, reset, cambio ruolo o blocco **chiudono tutte le sessioni** di quell'account.
+- **Blocco brute-force**: dopo 5 password sbagliate l'account è bloccato per 15 minuti; massimo 30 tentativi ogni 15 minuti per indirizzo IP.
+- **Protezione CSRF**: le modifiche richiedono un'intestazione speciale e la stessa origine.
+- **Gerarchia dei ruoli**: nessuno può modificare sé stesso; gli admin non toccano admin né owner; nessuno modifica un owner dal sito.
+- **Validazione dei dati** lato server (indirizzi, lunghezze, colori, numero di sezioni).
+- **Protezione XSS**: il testo delle pagine (Markdown) è ripulito con DOMPurify; Content Security Policy sulle pagine dinamiche.
+- **Header di sicurezza** Netlify (`netlify.toml`): anti-clickjacking, HSTS, nosniff; le pagine staff non vengono mai salvate in cache né indicizzate.
+- **Cronologia completa** di ogni pagina (pulsante *History*) e **rilevamento conflitti** se due persone salvano insieme.
+- **Registro attività** di ogni modifica di pagine e account, non modificabile dal sito.
+
+---
+
+## 4. Guida rapida per i DEV (editor)
+
+1. Premi **👤 Login** in alto, accedi con il tuo `Editor.Nome` → **Open page editor**.
+2. A sinistra: *published* (pubblica), *draft* (bozza, solo staff), *placeholder* (vecchia pagina non ancora creata — aprila e premi **Save**).
+3. **+ New page** per una pagina nuova: nazione, percorso politico, guida o altro. L'indirizzo (`slug`) non si può cambiare dopo il primo salvataggio.
 4. Pagine con lo stesso **Group** (es. `ita`) sono collegate nella barra di navigazione, in ordine di **Nav order**.
-5. Ogni **sezione** è una card (larghezza intera, metà o un terzo). Il testo si scrive in **Markdown** (aiuto in fondo all'editor) e ci sono modelli pronti per spiriti nazionali, focus, partiti e leader.
+5. Ogni **sezione** è una card (intera, metà o un terzo). Testo in **Markdown** (aiuto in fondo all'editor), con modelli pronti per spiriti nazionali, focus, partiti e leader.
 6. Le immagini vanno caricate nel repository (`images/leaders/…`, `images/ideologies/…`) e richiamate con `![nome](images/leaders/file.png)`.
-7. Spunta **Published** per renderla visibile a tutti. **Ctrl+S** salva. Da **Account** puoi cambiare la tua password.
+7. Spunta **Published** per renderla visibile a tutti. **Ctrl+S** salva.
 
 ---
 
-## 6. Sviluppo locale e test
+## 5. Sviluppo in locale
 
-Serve Node.js e Java (per gli emulatori Firebase).
+Serve [Node.js](https://nodejs.org) 20 o più recente. Nessun account Netlify necessario:
 
 ```bash
-# Test automatici delle regole di sicurezza
-cd tests && npm install && npm test
-
-# Sito + emulatori in locale (nessun progetto reale necessario)
-npx firebase-tools emulators:start --project demo-dve   # Auth :9099, Firestore :8080, UI :4000
-python3 -m http.server 8000                             # in un altro terminale, dalla root del repo
-cd tools && npm install && node accounts.mjs create --emulator   # crea gli account di prova
-# apri http://localhost:8000/login.html?emulator=1
+npm install
+npm run dev      # sito + server su http://localhost:8888, dati in .dev-data/
+npm test         # test automatici del server e della sicurezza
 ```
 
-## 7. File principali
+Al primo avvio locale le password temporanee compaiono nel terminale. Per ricominciare da zero cancella la cartella `.dev-data/`.
+
+## 6. File principali
 
 | File | Contenuto |
 |---|---|
-| `firestore.rules` | Regole di sicurezza del database |
-| `js/firebase-config.js` | Configurazione Firebase, dominio degli username staff, timeout di inattività |
-| `js/wiki.js` | Modulo comune: login, ruoli, rendering Markdown sicuro |
-| `js/page.js`, `js/editor.js`, `js/admin.js`, `js/login.js` | Logica delle pagine dinamiche e dell'area staff |
+| `netlify/functions/api.mjs` | Server: login, pagine, account, registro |
+| `netlify/lib/core.mjs` | Archivio dati, password, sessioni, ruoli, validazione |
+| `data/staff-accounts.json` | Account creati al primo avvio |
+| `js/wiki.js` | Modulo comune del browser: chiamate al server, rendering Markdown sicuro |
+| `js/page.js`, `js/editor.js`, `js/admin.js`, `js/login.js` | Pagine dinamiche e area staff |
 | `js/nav-account.js`, `js/index-extra.js` | Pulsante Login nelle pagine statiche, pagine nuove nella home |
-| `tools/accounts.mjs`, `data/staff-accounts.json` | Creazione e gestione degli account staff |
-| `netlify.toml`, `_redirects`, `404.html` | Header di sicurezza, redirect dai vecchi indirizzi (`afg.html` → `page.html?p=afg`), pagina 404 |
-| `css/wiki.css` | Stile condiviso (stesso tema del wiki) |
+| `netlify.toml`, `_redirects`, `404.html` | Configurazione Netlify, header di sicurezza, redirect, pagina 404 |
+| `tools/dev-server.mjs` | Server di sviluppo locale |
+| `tests/api.test.mjs` | Test automatici |
 | `data/placeholders.json` | Contenuto delle vecchie pagine placeholder |
-| `js/vendor/` | `marked` (Markdown) e `DOMPurify` (sanificazione), inclusi nel repo |
-| `tests/` | Test automatici delle regole di sicurezza |
+| `js/vendor/` | `marked` (Markdown) e `DOMPurify` (sanificazione) |

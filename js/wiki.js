@@ -1,263 +1,90 @@
 // Core module shared by the dynamic wiki pages and the staff area:
-// Firebase initialisation, session/role handling, safe Markdown rendering.
-import { initializeApp, deleteApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
-import {
-    getAuth, connectAuthEmulator, onAuthStateChanged, signOut, inMemoryPersistence,
-    setPersistence, createUserWithEmailAndPassword, sendPasswordResetEmail
-} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
-import {
-    getFirestore, connectFirestoreEmulator, doc, getDoc, setDoc, updateDoc, deleteDoc,
-    collection, serverTimestamp
-} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+// talks to the wiki API (/api, a Netlify Function), session/role helpers,
+// safe Markdown rendering.
 import { marked } from './vendor/marked.esm.js';
 import DOMPurify from './vendor/purify.es.js';
-import { firebaseConfig, IDLE_LOGOUT_MINUTES, EMULATOR_HOST, USERNAME_DOMAIN } from './firebase-config.js';
 
-// ------------------------------------------------------------------ setup
+// -------------------------------------------------------------------- API
 
-const isLocalhost = ['localhost', '127.0.0.1'].includes(location.hostname);
-if (isLocalhost && new URLSearchParams(location.search).get('emulator') === '1') {
-    sessionStorage.setItem('dve_emulator', '1');
-}
-export const usingEmulator = isLocalhost && sessionStorage.getItem('dve_emulator') === '1';
-
-const activeConfig = usingEmulator
-    ? { apiKey: 'demo-key', authDomain: 'localhost', projectId: 'demo-dve', appId: 'demo-app' }
-    : firebaseConfig;
-
-export const isConfigured = usingEmulator ||
-    (!!firebaseConfig.apiKey && !firebaseConfig.apiKey.startsWith('YOUR_') &&
-     !firebaseConfig.projectId.startsWith('YOUR_'));
-
-export let app = null, auth = null, db = null;
-if (isConfigured) {
-    app = initializeApp(activeConfig);
-    auth = getAuth(app);
-    db = getFirestore(app);
-    if (usingEmulator) {
-        connectAuthEmulator(auth, `http://${EMULATOR_HOST}:9099`, { disableWarnings: true });
-        connectFirestoreEmulator(db, EMULATOR_HOST, 8080);
+export class ApiError extends Error {
+    constructor(status, data) {
+        super((data && data.error) || `Request failed (${status}).`);
+        this.status = status;
+        this.code = data && data.code;
+        this.data = data || {};
     }
+}
+
+/** Calls the wiki API. Throws ApiError on HTTP errors. */
+export async function api(path, { method = 'GET', body } = {}) {
+    let res;
+    try {
+        res = await fetch('/api/' + path, {
+            method,
+            credentials: 'same-origin',
+            headers: {
+                'X-DvE-Request': '1',
+                ...(body !== undefined ? { 'Content-Type': 'application/json' } : {})
+            },
+            body: body !== undefined ? JSON.stringify(body) : undefined
+        });
+    } catch (e) {
+        throw new ApiError(0, { error: 'Network error: the server cannot be reached.', code: 'network' });
+    }
+    let data = null;
+    try { data = await res.json(); } catch { /* not JSON (e.g. API not deployed) */ }
+    if (!res.ok || !data) throw new ApiError(res.status, data || { error: 'The wiki server is not available.', code: 'unavailable' });
+    return data;
 }
 
 // ------------------------------------------------------------------ roles
 
-export const ROLES = ['owner', 'admin', 'editor', 'user', 'disabled'];
+export const ROLES = ['owner', 'admin', 'editor', 'disabled'];
 export const isEditorRole = (r) => r === 'editor' || r === 'admin' || r === 'owner';
 export const isAdminRole = (r) => r === 'admin' || r === 'owner';
 
-/** Roles that a user with role `actor` may grant (mirrors canAssign() in firestore.rules). */
-export function assignableRoles(actor) {
-    if (actor === 'owner') return ['user', 'editor', 'admin', 'disabled'];
-    if (actor === 'admin') return ['user', 'editor', 'disabled'];
-    return [];
-}
-
-// ------------------------------------------------------ staff usernames
-// Staff accounts log in with "Role.Name" (e.g. Editor.Rapha). Internally they are
-// e-mail/password accounts on a reserved domain that can never receive mail.
+// Mirrors CAN_CREATE / CAN_MANAGE in netlify/lib/core.mjs (the server decides).
+export const creatableRoles = (actor) => ({ owner: ['owner', 'admin', 'editor'], admin: ['editor'] }[actor] || []);
+export const assignableRoles = (actor) => ({ owner: ['admin', 'editor', 'disabled'], admin: ['editor', 'disabled'] }[actor] || []);
 
 export const ROLE_PREFIX = { owner: 'Owner', admin: 'Admin', editor: 'Editor' };
 export const STAFF_NAME_RE = /^[A-Za-z0-9_-]{2,32}$/;
-const STAFF_USERNAME_RE = /^(owner|admin|editor)\.[a-z0-9_-]{2,32}$/i;
+export const USERNAME_RE = /^(owner|admin|editor)\.([A-Za-z0-9_-]{2,32})$/i;
 
 export function staffUsername(role, name) {
     return `${ROLE_PREFIX[role]}.${name}`;
 }
 
-/** "Editor.Rapha" → "editor.rapha@<domain>"; a real e-mail address is returned lower-cased. */
-export function loginToEmail(login) {
-    const value = String(login || '').trim();
-    if (value.includes('@')) return value.toLowerCase();
-    if (!STAFF_USERNAME_RE.test(value)) return null;
-    return `${value.toLowerCase()}@${USERNAME_DOMAIN}`;
-}
-
-export function isStaffEmail(email) {
-    return String(email || '').toLowerCase().endsWith('@' + USERNAME_DOMAIN);
-}
-
-/** What to show for an account: its "Role.Name" or its e-mail address. */
-export function accountLabel(profile, user) {
-    const email = (profile && profile.email) || (user && user.email) || '';
-    if (isStaffEmail(email)) return (profile && profile.displayName) || email.split('@')[0];
-    return email;
-}
-
-/** Random temporary password that satisfies the Firebase password policy. */
-export function tempPassword() {
-    const upper = 'ABCDEFGHJKLMNPQRSTUVWXYZ', lower = 'abcdefghijkmnopqrstuvwxyz', digits = '23456789';
-    const all = upper + lower + digits;
-    const bytes = crypto.getRandomValues(new Uint32Array(16));
-    const chars = [...bytes].map((b, i) => {
-        const set = i === 0 ? upper : i === 1 ? lower : i === 2 ? digits : all;
-        return set[b % set.length];
-    });
-    return chars.join('').match(/.{4}/g).join('-');
-}
-
 // ---------------------------------------------------------------- session
 
-/**
- * Makes sure the signed-in user has a profile document. New users are created
- * with role "user" unless an admin invited their (verified) e-mail address.
- */
-async function ensureProfile(user) {
-    const ref = doc(db, 'users', user.uid);
-    let snap = await getDoc(ref);
-    const email = (user.email || '').toLowerCase();
-    const profile = snap.exists() ? snap.data() : null;
+let sessionPromise = null;
 
-    let invite = null;
-    if (email && user.emailVerified && (!profile || profile.role === 'user')) {
-        await user.getIdToken(true); // make sure the token carries email_verified
-        try {
-            const inv = await getDoc(doc(db, 'invites', email));
-            if (inv.exists()) invite = inv.data();
-        } catch (e) { /* no invite readable */ }
+/** The signed-in user ({ username, role, mustChangePassword }) or null. Cached per page load. */
+export function currentUser({ refresh = false } = {}) {
+    if (!sessionPromise || refresh) {
+        sessionPromise = api('me').then((d) => d.user).catch(() => null);
     }
-
-    if (!profile) {
-        await setDoc(ref, {
-            email,
-            displayName: (user.displayName || email.split('@')[0] || 'user').slice(0, 80),
-            role: invite ? invite.role : 'user',
-            createdAt: serverTimestamp(),
-            lastLogin: serverTimestamp()
-        });
-        if (invite) await deleteDoc(doc(db, 'invites', email)).catch(() => {});
-    } else if (profile.role === 'user' && invite) {
-        await updateDoc(ref, { role: invite.role, lastLogin: serverTimestamp() });
-        await deleteDoc(doc(db, 'invites', email)).catch(() => {});
-    } else {
-        const last = profile.lastLogin && profile.lastLogin.toMillis ? profile.lastLogin.toMillis() : 0;
-        if (Date.now() - last > 30 * 60 * 1000) {
-            await updateDoc(ref, { lastLogin: serverTimestamp() }).catch(() => {});
-        }
-    }
-    snap = await getDoc(ref);
-    return snap.data();
+    return sessionPromise;
 }
 
-/**
- * Calls cb({ user, profile, role }) whenever the session changes.
- * user is null when signed out. role is 'none' when signed out.
- */
-export function watchSession(cb) {
-    if (!isConfigured) { cb({ user: null, profile: null, role: 'none' }); return () => {}; }
-    return onAuthStateChanged(auth, async (user) => {
-        if (!user) { cb({ user: null, profile: null, role: 'none' }); return; }
-        try {
-            const profile = await ensureProfile(user);
-            cb({ user, profile, role: profile ? profile.role : 'user' });
-        } catch (e) {
-            console.error('Profile error', e);
-            cb({ user, profile: null, role: 'user', error: e });
-        }
-    });
+/** Calls cb({ user, role }) once the session is known. role is 'none' when signed out. */
+export async function watchSession(cb) {
+    const user = await currentUser();
+    cb({ user, role: user ? user.role : 'none' });
 }
 
-/** Verified address (or staff login) and no pending temporary password: mirrors active() in the rules. */
-export function accountActive(user, profile) {
-    if (!user || !profile || profile.mustChangePassword) return false;
-    return user.emailVerified || isStaffEmail(user.email);
+/** Signed in, editing allowed and no temporary password left to change. */
+export const accountActive = (user) => !!user && !user.mustChangePassword && user.role !== 'disabled';
+
+export async function login(username, password) {
+    const { user } = await api('login', { method: 'POST', body: { username, password } });
+    sessionPromise = Promise.resolve(user);
+    return user;
 }
 
 export async function logout() {
-    localStorage.removeItem('dve_last_activity');
-    if (auth) await signOut(auth);
-}
-
-/** Signs staff out after IDLE_LOGOUT_MINUTES without activity (shared across tabs). */
-export function enforceIdleTimeout() {
-    const KEY = 'dve_last_activity';
-    const limit = IDLE_LOGOUT_MINUTES * 60 * 1000;
-    const read = () => { try { return Number(localStorage.getItem(KEY)) || 0; } catch { return 0; } };
-    const touch = () => { try { localStorage.setItem(KEY, String(Date.now())); } catch { /* ignore */ } };
-
-    const check = async () => {
-        const last = read();
-        if (auth && auth.currentUser && last && Date.now() - last > limit) {
-            await logout();
-            location.href = 'login.html?expired=1&next=' + encodeURIComponent(location.pathname.split('/').pop() + location.search);
-        }
-    };
-    check().then(touch);
-    let lastTouch = Date.now();
-    ['mousemove', 'keydown', 'click', 'scroll', 'touchstart'].forEach((ev) =>
-        addEventListener(ev, () => {
-            if (Date.now() - lastTouch > 15000) { lastTouch = Date.now(); touch(); }
-        }, { passive: true }));
-    setInterval(check, 60 * 1000);
-}
-
-/**
- * Creates an e-mail/password account for someone else without signing the
- * current admin out (uses a throw-away secondary Firebase app), then sends
- * a password-reset e-mail so the new user chooses their own password.
- */
-async function withSecondaryAuth(fn) {
-    const secondary = initializeApp(activeConfig, 'secondary-' + Date.now());
-    try {
-        const secAuth = getAuth(secondary);
-        if (usingEmulator) connectAuthEmulator(secAuth, `http://${EMULATOR_HOST}:9099`, { disableWarnings: true });
-        await setPersistence(secAuth, inMemoryPersistence);
-        const result = await fn(secAuth);
-        await signOut(secAuth).catch(() => {});
-        return result;
-    } finally {
-        await deleteApp(secondary).catch(() => {});
-    }
-}
-
-export async function createPasswordAccount(email) {
-    const created = await withSecondaryAuth(async (secAuth) => {
-        try {
-            const bytes = crypto.getRandomValues(new Uint8Array(24));
-            await createUserWithEmailAndPassword(secAuth, email, btoa(String.fromCharCode(...bytes)) + 'aA1!');
-            return true;
-        } catch (e) {
-            if (e.code !== 'auth/email-already-in-use') throw e;
-            return false;
-        }
-    });
-    await sendPasswordResetEmail(auth, email);
-    return { created };
-}
-
-/**
- * Creates a "Role.Name" staff login with a temporary password (shown once to the
- * admin, who passes it on). Returns { uid, email, password }.
- */
-export async function createStaffLogin(username) {
-    const email = loginToEmail(username);
-    if (!email) throw new Error('Invalid username.');
-    const password = tempPassword();
-    const uid = await withSecondaryAuth(async (secAuth) => {
-        const cred = await createUserWithEmailAndPassword(secAuth, email, password);
-        return cred.user.uid;
-    });
-    return { uid, email, password };
-}
-
-/** Builds an audit-log document (to be written in a batch/transaction or alone). */
-export function auditEntry(user, action, target, details = '') {
-    return {
-        ref: doc(collection(db, 'audit')),
-        data: {
-            action: String(action).slice(0, 40),
-            target: String(target).slice(0, 200),
-            details: String(details).slice(0, 500),
-            actor: user.uid,
-            actorEmail: (user.email || '').toLowerCase(),
-            at: serverTimestamp()
-        }
-    };
-}
-
-export async function logAudit(user, action, target, details = '') {
-    const e = auditEntry(user, action, target, details);
-    await setDoc(e.ref, e.data);
+    try { await api('logout', { method: 'POST' }); } catch { /* ignore */ }
+    sessionPromise = Promise.resolve(null);
 }
 
 // ---------------------------------------------------------- placeholders
@@ -314,31 +141,11 @@ export function applyAccent(target, hex) {
 
 export function formatDate(ts) {
     if (!ts) return '—';
-    const d = ts.toDate ? ts.toDate() : new Date(ts);
-    return d.toLocaleString();
+    return new Date(ts).toLocaleString();
 }
 
 export function friendlyError(e) {
-    const code = (e && e.code) || '';
-    const map = {
-        'auth/invalid-credential': 'Wrong username / e-mail or password.',
-        'auth/wrong-password': 'Wrong username / e-mail or password.',
-        'auth/user-not-found': 'Wrong username / e-mail or password.',
-        'auth/invalid-email': 'Invalid username or e-mail address.',
-        'auth/email-already-in-use': 'This username or e-mail address is already taken.',
-        'auth/weak-password': 'The password is too weak (at least 10 characters, with upper-case, lower-case letters and a number).',
-        'auth/password-does-not-meet-requirements': 'The password does not meet the requirements (at least 10 characters, with upper-case, lower-case letters and a number).',
-        'auth/requires-recent-login': 'For security, sign out and sign in again, then retry.',
-        'auth/too-many-requests': 'Too many attempts. The account is temporarily locked, try again later or reset the password.',
-        'auth/user-disabled': 'This account has been disabled.',
-        'auth/popup-closed-by-user': 'Login window closed.',
-        'auth/popup-blocked': 'The browser blocked the login popup. Allow popups for this site.',
-        'auth/network-request-failed': 'Network error. Check your connection.',
-        'auth/unauthorized-domain': 'This domain is not authorized in Firebase (Authentication → Settings → Authorized domains).',
-        'permission-denied': 'Permission denied: your account does not have the required role.',
-        'unavailable': 'Database unreachable. Check your connection.'
-    };
-    return map[code] || (e && e.message) || String(e);
+    return (e && e.message) || String(e);
 }
 
 // ------------------------------------------------------------- markdown

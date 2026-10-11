@@ -1,5 +1,5 @@
 {
-  "_comment": "Staff accounts proposed in admin.html (Create staff accounts) and used by: node tools/accounts.mjs create. Format: Role.Name (Owner / Admin / Editor). Passwords are never stored here.",
+  "_comment": "Staff accounts created automatically on the first start of the site (passwords in the Netlify function log) and proposed in admin.html (Create several staff accounts). Format: Role.Name (Owner / Admin / Editor). Passwords are never stored here.",
   "accounts": [
     "Owner.RedMatteo",
     "Owner.EC",

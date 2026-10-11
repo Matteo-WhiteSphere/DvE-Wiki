@@ -1,0 +1,16 @@
+{
+  "name": "dve-wiki",
+  "private": true,
+  "type": "module",
+  "description": "Dragon vs Eagle HOI4 mod wiki: static site + Netlify Functions API (Netlify Blobs storage).",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node tools/dev-server.mjs",
+    "test": "node --test tests/api.test.mjs"
+  },
+  "dependencies": {
+    "@netlify/blobs": "10.7.13"
+  }
+}

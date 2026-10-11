@@ -1,13 +1,7 @@
-// Staff login: Google, "Role.Name" staff accounts or e-mail/password.
+// Staff login with "Role.Name" usernames.
 import {
-    auth, db, isConfigured, watchSession, logout, friendlyError, el, isEditorRole, isAdminRole,
-    loginToEmail, isStaffEmail, accountLabel
+    api, login, logout, currentUser, friendlyError, el, isEditorRole, isAdminRole, USERNAME_RE
 } from './wiki.js';
-import {
-    GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword, sendPasswordResetEmail,
-    sendEmailVerification, updatePassword
-} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
-import { doc, updateDoc } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
 const $ = (id) => document.getElementById(id);
 const params = new URLSearchParams(location.search);
@@ -18,71 +12,53 @@ function notice(text, kind = '') {
     $('login-notice').replaceChildren(text ? el('div', { class: 'notice ' + kind, text }) : '');
 }
 
-function busy(on) {
-    for (const id of ['google-btn', 'email-btn', 'reset-btn']) $(id).disabled = on;
-}
+if (params.get('expired')) notice('Your session expired. Please sign in again.');
 
-if (!isConfigured) {
-    notice('The staff area is not configured yet: fill in js/firebase-config.js (see STAFF_SETUP.md).', 'error');
-} else if (params.get('expired')) {
-    notice('Your session expired after a period of inactivity. Please sign in again.');
-}
-
-$('google-btn').addEventListener('click', async () => {
-    busy(true);
-    try {
-        const provider = new GoogleAuthProvider();
-        provider.setCustomParameters({ prompt: 'select_account' });
-        await signInWithPopup(auth, provider);
-    } catch (e) {
-        notice(friendlyError(e), 'error');
-    } finally { busy(false); }
-});
-
-$('email-form').addEventListener('submit', async (ev) => {
+$('login-form').addEventListener('submit', async (ev) => {
     ev.preventDefault();
-    const email = loginToEmail($('email').value);
-    if (!email) { notice('Write your username as Role.Name (e.g. Editor.Rapha) or your e-mail address.', 'error'); return; }
-    busy(true);
-    try {
-        await signInWithEmailAndPassword(auth, email, $('password').value);
-        $('password').value = '';
-        notice(null);
-    } catch (e) {
-        notice(friendlyError(e), 'error');
-    } finally { busy(false); }
-});
-
-$('reset-btn').addEventListener('click', async () => {
-    const email = loginToEmail($('email').value);
-    if (!email) { notice('Type your username or e-mail first, then press "Forgot password?".'); return; }
-    if (isStaffEmail(email)) {
-        notice('Staff usernames have no e-mail: ask an owner to reset your password.');
+    const username = $('username').value.trim();
+    if (!USERNAME_RE.test(username)) {
+        notice('Write your username as Role.Name, e.g. Editor.Rapha.', 'error');
         return;
     }
-    busy(true);
+    $('login-btn').disabled = true;
     try {
-        await sendPasswordResetEmail(auth, email);
-    } catch (e) { /* same answer either way: do not reveal which addresses exist */ }
-    notice('If an account exists for that address, a password-reset e-mail has been sent.', 'ok');
-    busy(false);
+        const user = await login(username, $('password').value);
+        $('password').value = '';
+        notice(null);
+        show(user);
+    } catch (e) {
+        notice(friendlyError(e), 'error');
+    } finally { $('login-btn').disabled = false; }
+});
+
+$('forgot-btn').addEventListener('click', () => {
+    notice('Ask an owner or an administrator: they can give you a new temporary password from the Admin panel.');
 });
 
 // ------------------------------------------------------- password change
 
-let session = null;
-let forced = false;
+let current = null;
 
-function showPasswordForm(isForced) {
-    forced = isForced;
+function showPasswordForm(forced) {
     $('change-password').classList.remove('hidden');
-    $('signed-in').classList.toggle('hidden', isForced);
-    $('pw-logout').classList.toggle('hidden', !isForced);
-    $('pw-username').value = session && session.user ? accountLabel(session.profile, session.user) : '';
-    $('new-password').focus();
+    $('signed-in').classList.toggle('hidden', forced);
+    $('pw-logout').classList.toggle('hidden', !forced);
+    $('pw-cancel').classList.toggle('hidden', forced);
+    $('current-password-box').classList.toggle('hidden', forced);
+    $('pw-intro').textContent = forced
+        ? 'You signed in with a temporary password. Choose your own password to activate the account.'
+        : 'Type your current password, then the new one.';
+    $('pw-username').value = current ? current.username : '';
+    (forced ? $('new-password') : $('current-password')).focus();
 }
 
-$('pw-logout').addEventListener('click', () => logout());
+$('pw-logout').addEventListener('click', async () => { await logout(); show(null); });
+$('pw-cancel').addEventListener('click', () => {
+    $('password-form').reset();
+    $('change-password').classList.add('hidden');
+    $('signed-in').classList.remove('hidden');
+});
 
 $('password-form').addEventListener('submit', async (ev) => {
     ev.preventDefault();
@@ -94,15 +70,14 @@ $('password-form').addEventListener('submit', async (ev) => {
     }
     $('pw-btn').disabled = true;
     try {
-        await updatePassword(session.user, pw);
-        if (session.profile && session.profile.mustChangePassword) {
-            await updateDoc(doc(db, 'users', session.user.uid), { mustChangePassword: false });
-        }
+        const { user } = await api('password', {
+            method: 'POST', body: { currentPassword: $('current-password').value, newPassword: pw }
+        });
         $('password-form').reset();
         $('change-password').classList.add('hidden');
         notice('Password saved.', 'ok');
-        if (forced) { location.reload(); return; }
-        $('signed-in').classList.remove('hidden');
+        await currentUser({ refresh: true });
+        show(user);
     } catch (e) {
         notice(friendlyError(e), 'error');
     } finally { $('pw-btn').disabled = false; }
@@ -110,60 +85,31 @@ $('password-form').addEventListener('submit', async (ev) => {
 
 // ---------------------------------------------------------------- state
 
-function roleTag(role) {
-    return el('span', { class: 'role-tag role-' + role, text: role });
-}
-
-watchSession((s) => {
-    session = s;
-    const { user, profile, role, error } = s;
-    if (!isConfigured) { $('signed-out').classList.remove('hidden'); busy(true); return; }
+function show(user) {
+    current = user;
     $('signed-out').classList.toggle('hidden', !!user);
     $('signed-in').classList.toggle('hidden', !user);
     $('change-password').classList.add('hidden');
-    if (!user) return;
+    if (!user) { $('username').focus(); return; }
 
-    $('me-email').textContent = accountLabel(profile, user) || '—';
-    $('me-role').replaceChildren(roleTag(role));
+    $('me-email').textContent = user.username;
+    $('me-role').replaceChildren(el('span', { class: 'role-tag role-' + user.role, text: user.role }));
     const status = $('me-status');
     const actions = $('me-actions');
     status.replaceChildren();
     actions.replaceChildren();
 
-    const isPasswordUser = user.providerData.some((p) => p.providerId === 'password');
-    const staff = isStaffEmail(user.email);
+    if (user.mustChangePassword) { showPasswordForm(true); return; }
 
-    if (profile && profile.mustChangePassword) {
-        showPasswordForm(true);
-        return;
-    }
-
-    if (error) {
-        status.append(el('div', { class: 'notice error', text: 'Could not load your profile: ' + friendlyError(error) }));
-    } else if (!user.emailVerified && isPasswordUser && !staff) {
-        status.append(el('div', { class: 'notice' },
-            el('strong', { text: 'E-mail not verified. ' }),
-            'You must verify your address before you can edit the wiki.'));
-        actions.append(
-            el('button', { class: 'btn', text: 'Send verification e-mail', onclick: async (ev) => {
-                ev.target.disabled = true;
-                try { await sendEmailVerification(user); notice('Verification e-mail sent. Open the link, then press "I verified it".', 'ok'); }
-                catch (e) { notice(friendlyError(e), 'error'); ev.target.disabled = false; }
-            } }),
-            el('button', { class: 'btn', text: 'I verified it', onclick: async () => { await user.reload(); await user.getIdToken(true); location.reload(); } })
-        );
-    } else if (role === 'user') {
-        status.append(el('div', { class: 'notice' },
-            el('strong', { text: 'User account. ' }),
-            'You can read the wiki. To edit pages, ask an administrator for the editor role (send them the account shown above).'));
-    } else if (role === 'disabled') {
-        status.append(el('div', { class: 'notice error', text: 'This account has been disabled by an administrator.' }));
-    } else if (isEditorRole(role)) {
+    if (isEditorRole(user.role)) {
         if (next) { location.replace(next); return; }
         status.append(el('div', { class: 'notice ok', text: 'You are signed in.' }));
         actions.append(el('a', { class: 'btn primary', href: 'editor.html', text: 'Open page editor' }));
-        if (isAdminRole(role)) actions.append(el('a', { class: 'btn', href: 'admin.html', text: 'Admin panel' }));
+        if (isAdminRole(user.role)) actions.append(el('a', { class: 'btn', href: 'admin.html', text: 'Admin panel' }));
     }
-    if (isPasswordUser) actions.append(el('button', { class: 'btn', text: 'Change password', onclick: () => showPasswordForm(false) }));
-    actions.append(el('button', { class: 'btn danger', text: 'Sign out', onclick: () => logout() }));
-});
+    actions.append(
+        el('button', { class: 'btn', text: 'Change password', onclick: () => showPasswordForm(false) }),
+        el('button', { class: 'btn danger', text: 'Sign out', onclick: async () => { await logout(); notice('Signed out.', 'ok'); show(null); } }));
+}
+
+currentUser().then(show);

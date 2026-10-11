@@ -1,13 +1,8 @@
 // Page editor for editors / admins / owners.
 import {
-    db, isConfigured, watchSession, enforceIdleTimeout, loadSeeds, renderSections, el,
-    applyAccent, isEditorRole, isAdminRole, accountActive, accountLabel, auditEntry, SLUG_RE, COLOR_RE, slugify,
-    formatDate, friendlyError
+    api, watchSession, loadSeeds, renderSections, el, applyAccent, isEditorRole, isAdminRole,
+    accountActive, SLUG_RE, COLOR_RE, slugify, formatDate, friendlyError
 } from './wiki.js';
-import {
-    doc, collection, getDocs, getDoc, runTransaction, deleteDoc, writeBatch, query, orderBy,
-    limit, serverTimestamp
-} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
 const $ = (id) => document.getElementById(id);
 
@@ -27,13 +22,23 @@ const state = {
     role: 'none',
     slug: null,          // slug of the loaded page
     isNew: true,         // not yet in the database
-    loadedUpdatedAt: null,
+    rev: null,           // revision number of the loaded page (conflict detection)
     dirty: false,
-    pages: new Map(),    // slug -> db data
+    pages: new Map(),    // slug -> page summary
     seeds: {}
 };
 
 // ------------------------------------------------------------- notices
+
+/** The session ended (inactivity) or the account changed: back to the login page. */
+function handleAuthError(e) {
+    if (e && (e.status === 401 || e.code === 'password-change')) {
+        state.dirty = false;
+        location.replace('login.html?expired=1&next=' + encodeURIComponent('editor.html' + location.search));
+        return true;
+    }
+    return false;
+}
 
 function notice(text, kind = '') {
     $('editor-notice').replaceChildren(text ? el('div', { class: 'notice ' + kind, text }) : '');
@@ -52,9 +57,9 @@ addEventListener('beforeunload', (ev) => {
 // ----------------------------------------------------------- page list
 
 async function refreshList() {
-    const snap = await getDocs(collection(db, 'pages'));
+    const { pages } = await api('pages');
     state.pages.clear();
-    snap.forEach((d) => state.pages.set(d.id, d.data()));
+    for (const p of pages) state.pages.set(p.slug, p);
     drawList();
 }
 
@@ -174,7 +179,7 @@ function readForm() {
     };
 }
 
-/** Client-side copy of the checks in firestore.rules, with readable messages. */
+/** Client-side copy of the checks in netlify/lib/core.mjs (cleanPage), with readable messages. */
 function validate(slug, p) {
     if (!SLUG_RE.test(slug)) return 'Page address: lower-case letters, numbers, "_" or "-" only (max 64).';
     if (!p.title || p.title.length > 120) return 'Title is required (max 120 characters).';
@@ -230,17 +235,19 @@ async function openPage(slug, { force = false } = {}) {
     notice(null);
     let data = null;
     try {
-        const snap = await getDoc(doc(db, 'pages', slug));
-        if (snap.exists()) data = snap.data();
-    } catch (e) { notice(friendlyError(e), 'error'); return; }
+        data = (await api('pages/' + encodeURIComponent(slug))).page;
+    } catch (e) {
+        if (handleAuthError(e)) return;
+        if (e.status !== 404) { notice(friendlyError(e), 'error'); return; }
+    }
 
     if (data) {
         state.isNew = false;
-        state.loadedUpdatedAt = data.updatedAt ? data.updatedAt.toMillis() : null;
+        state.rev = data.rev;
         fillForm(data);
     } else {
         state.isNew = true;
-        state.loadedUpdatedAt = null;
+        state.rev = null;
         const seed = state.seeds[slug];
         fillForm(seed ? { ...seed, published: false } : { title: '', category: 'other', accent: '#00f3ff' });
         if (seed) notice('This page is still a placeholder. Its old content has been loaded: edit it and press Save to create the page.');
@@ -258,7 +265,7 @@ function newPage() {
     notice(null);
     state.slug = null;
     state.isNew = true;
-    state.loadedUpdatedAt = null;
+    state.rev = null;
     fillForm({ title: '', subtitle: '', category: 'other', accent: '#00f3ff', published: false });
     $('f-slug').value = '';
     delete $('f-slug').dataset.touched;
@@ -270,7 +277,7 @@ function newPage() {
 
 // --------------------------------------------------------------- save
 
-async function save() {
+async function save({ force = false } = {}) {
     const slug = (state.isNew ? $('f-slug').value.trim().toLowerCase() : state.slug) || '';
     const p = readForm();
     const err = validate(slug, p);
@@ -278,74 +285,30 @@ async function save() {
 
     $('save-btn').disabled = true;
     try {
-        const pageRef = doc(db, 'pages', slug);
-        const action = await runTransaction(db, async (tx) => {
-            const snap = await tx.get(pageRef);
-            if (state.isNew && snap.exists()) {
-                const e = new Error(`A page with the address "${slug}" already exists. Open it from the list or choose another address.`);
-                e.code = 'exists';
-                throw e;
-            }
-            if (!state.isNew) {
-                if (!snap.exists()) {
-                    const e = new Error('This page has been deleted by someone else.');
-                    e.code = 'gone';
-                    throw e;
-                }
-                const current = snap.data().updatedAt ? snap.data().updatedAt.toMillis() : null;
-                if (current !== state.loadedUpdatedAt) {
-                    const e = new Error('conflict');
-                    e.code = 'conflict';
-                    e.by = snap.data().updatedByEmail || 'another user';
-                    throw e;
-                }
-            }
-            const data = {
-                ...p,
-                updatedBy: state.user.uid,
-                updatedByEmail: (state.user.email || '').toLowerCase(),
-                updatedAt: serverTimestamp()
-            };
-            if (snap.exists()) {
-                data.createdBy = snap.data().createdBy;
-                data.createdAt = snap.data().createdAt;
-            } else {
-                data.createdBy = state.user.uid;
-                data.createdAt = serverTimestamp();
-            }
-            tx.set(pageRef, data);
-            tx.set(doc(collection(pageRef, 'revisions')), {
-                ...p,
-                savedBy: state.user.uid,
-                savedByEmail: (state.user.email || '').toLowerCase(),
-                savedAt: serverTimestamp()
-            });
-            const act = snap.exists() ? 'page.update' : 'page.create';
-            const a = auditEntry(state.user, act, slug, `${p.published ? 'published' : 'draft'} · ${p.sections.length} sections`);
-            tx.set(a.ref, a.data);
-            return act;
+        const { page } = await api('pages/' + encodeURIComponent(slug), {
+            method: 'PUT', body: { page: p, baseRev: state.isNew ? null : state.rev, force }
         });
-
-        const fresh = await getDoc(pageRef);
-        state.pages.set(slug, fresh.data());
+        const created = state.isNew;
+        state.pages.set(slug, page);
         state.slug = slug;
         state.isNew = false;
-        state.loadedUpdatedAt = fresh.data().updatedAt.toMillis();
+        state.rev = page.rev;
         history.replaceState(null, '', 'editor.html?p=' + encodeURIComponent(slug));
         setDirty(false);
         setMode();
-        notice(action === 'page.create' ? `Page "${slug}" created.` : 'Saved.', 'ok');
+        notice(created ? `Page "${slug}" created.` : 'Saved.', 'ok');
     } catch (e) {
+        if (handleAuthError(e)) return;
         if (e.code === 'conflict') {
-            if (confirm(`${e.by} saved this page after you opened it.\n\nOK = overwrite their changes with yours\nCancel = keep their version (you can reload the page to see it)`)) {
-                const snap = await getDoc(doc(db, 'pages', slug));
-                state.loadedUpdatedAt = snap.data().updatedAt ? snap.data().updatedAt.toMillis() : null;
+            if (confirm(`${e.data.updatedBy || 'Someone else'} saved this page after you opened it.\n\nOK = overwrite their changes with yours\nCancel = keep their version (you can reload the page to see it)`)) {
                 $('save-btn').disabled = false;
-                return save();
+                return save({ force: true });
             }
             notice('Not saved: the page was changed by someone else. Copy your text somewhere, then reload the page.', 'error');
+        } else if (e.code === 'exists') {
+            notice(`A page with the address "${slug}" already exists. Open it from the list or choose another address.`, 'error');
         } else {
-            notice(e.code === 'exists' || e.code === 'gone' ? e.message : 'Save failed: ' + friendlyError(e), 'error');
+            notice('Save failed: ' + friendlyError(e), 'error');
         }
     } finally {
         $('save-btn').disabled = false;
@@ -357,17 +320,15 @@ async function removePage() {
     const typed = prompt(`Delete the page "${state.slug}"?\nIts history is kept, so it can be restored by re-creating the same address.\n\nType the address to confirm:`);
     if (typed !== state.slug) return;
     try {
-        const batch = writeBatch(db);
-        batch.delete(doc(db, 'pages', state.slug));
-        const a = auditEntry(state.user, 'page.delete', state.slug, $('f-title').value.slice(0, 100));
-        batch.set(a.ref, a.data);
-        await batch.commit();
+        await api('pages/' + encodeURIComponent(state.slug), { method: 'DELETE' });
         state.pages.delete(state.slug);
         const slug = state.slug;
         setDirty(false);
         await openPage(slug, { force: true });
         notice(`Page "${slug}" deleted.`, 'ok');
-    } catch (e) { notice('Delete failed: ' + friendlyError(e), 'error'); }
+    } catch (e) {
+        if (!handleAuthError(e)) notice('Delete failed: ' + friendlyError(e), 'error');
+    }
 }
 
 async function showHistory() {
@@ -376,27 +337,29 @@ async function showHistory() {
     panel.classList.remove('hidden');
     const list = $('history-list');
     list.replaceChildren(el('p', { class: 'muted', text: 'Loading…' }));
+    const base = 'pages/' + encodeURIComponent(state.slug) + '/revisions';
     try {
-        const snap = await getDocs(query(collection(db, 'pages', state.slug, 'revisions'), orderBy('savedAt', 'desc'), limit(50)));
+        const { revisions } = await api(base);
         const table = el('table', { class: 'wiki-table' },
             el('tr', {}, el('th', { text: 'Saved' }), el('th', { text: 'By' }), el('th', { text: 'State' }), el('th', { text: '' })));
-        snap.forEach((d) => {
-            const r = d.data();
+        for (const r of revisions) {
             table.append(el('tr', {},
                 el('td', { text: formatDate(r.savedAt) }),
-                el('td', { text: r.savedByEmail || r.savedBy }),
+                el('td', { text: r.savedBy }),
                 el('td', { text: r.published ? 'published' : 'draft' }),
-                el('td', {}, el('button', { class: 'btn small', type: 'button', text: 'Load', onclick: () => {
+                el('td', {}, el('button', { class: 'btn small', type: 'button', text: 'Load', onclick: async () => {
                     if (state.dirty && !confirm('Replace the current text with this version?')) return;
-                    const { savedBy, savedByEmail, savedAt, ...page } = r;
-                    fillForm(page);
-                    setDirty(true);
-                    notice(`Version from ${formatDate(r.savedAt)} loaded. Press Save to restore it.`);
+                    try {
+                        const { revision } = await api(base + '/' + encodeURIComponent(r.id));
+                        fillForm(revision);
+                        setDirty(true);
+                        notice(`Version from ${formatDate(r.savedAt)} loaded. Press Save to restore it.`);
+                    } catch (e) { if (!handleAuthError(e)) notice(friendlyError(e), 'error'); }
                 } }))));
-        });
-        list.replaceChildren(snap.empty ? el('p', { class: 'muted', text: 'No saved versions.' }) : table);
+        }
+        list.replaceChildren(revisions.length ? table : el('p', { class: 'muted', text: 'No saved versions.' }));
     } catch (e) {
-        list.replaceChildren(el('p', { class: 'muted', text: friendlyError(e) }));
+        if (!handleAuthError(e)) list.replaceChildren(el('p', { class: 'muted', text: friendlyError(e) }));
     }
 }
 
@@ -404,7 +367,7 @@ async function showHistory() {
 
 function wire() {
     $('new-page-btn').addEventListener('click', newPage);
-    $('save-btn').addEventListener('click', save);
+    $('save-btn').addEventListener('click', () => save());
     $('delete-btn').addEventListener('click', removePage);
     $('history-btn').addEventListener('click', showHistory);
     $('preview-btn').addEventListener('click', () => {
@@ -445,30 +408,24 @@ function wire() {
 
 // --------------------------------------------------------------- start
 
-let started = false;
-watchSession(async ({ user, profile, role }) => {
-    if (!isConfigured) { notice('The staff area is not configured yet (see STAFF_SETUP.md).', 'error'); return; }
+watchSession(async ({ user, role }) => {
     if (!user) {
         location.replace('login.html?next=' + encodeURIComponent('editor.html' + location.search));
         return;
     }
+    if (user.mustChangePassword) { location.replace('login.html'); return; }
     state.user = user;
     state.role = role;
-    $('whoami').textContent = `Signed in as ${accountLabel(profile, user)} (${role})`;
+    $('whoami').textContent = `Signed in as ${user.username} (${role})`;
     $('nav-admin').classList.toggle('hidden', !isAdminRole(role));
-    if (profile && profile.mustChangePassword) { location.replace('login.html'); return; }
-    if (!isEditorRole(role) || !accountActive(user, profile)) {
-        $('editor-root').classList.add('hidden');
-        notice('Your account cannot edit pages (role: ' + role + '). Open "Account" for details.', 'error');
+    if (!isEditorRole(role) || !accountActive(user)) {
+        notice('Your account cannot edit pages (role: ' + role + ').', 'error');
         return;
     }
-    if (started) return;
-    started = true;
-    enforceIdleTimeout();
     wire();
     $('editor-root').classList.remove('hidden');
     state.seeds = await loadSeeds();
-    try { await refreshList(); } catch (e) { notice(friendlyError(e), 'error'); }
+    try { await refreshList(); } catch (e) { if (!handleAuthError(e)) notice(friendlyError(e), 'error'); }
     const wanted = (new URLSearchParams(location.search).get('p') || '').toLowerCase();
     if (SLUG_RE.test(wanted)) await openPage(wanted, { force: true });
     else newPage();

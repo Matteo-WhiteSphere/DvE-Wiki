@@ -1,6 +1,16 @@
-# Netlify settings for the DvE wiki (static site, no build step).
+# Netlify settings for the DvE wiki: static site + the /api function
+# (netlify/functions/api.mjs), whose data lives in Netlify Blobs.
 [build]
   publish = "."
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  # data/staff-accounts.json is bundled into the function (first-start accounts).
+  included_files = ["data/staff-accounts.json"]
 
 # Security headers for every page.
 [[headers]]
@@ -12,8 +22,7 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
     Strict-Transport-Security = "max-age=31536000"
-    # Firebase's Google sign-in popup needs to talk back to the page.
-    Cross-Origin-Opener-Policy = "same-origin-allow-popups"
+    Cross-Origin-Opener-Policy = "same-origin"
 
 # Staff area: never cached, never indexed.
 [[headers]]

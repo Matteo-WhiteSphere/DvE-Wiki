@@ -190,7 +190,11 @@
 # Repository files that are not part of the website.
 /tools/*          /404.html  404!
 /tests/*          /404.html  404!
-/firebase.json    /404.html  404!
+/netlify/*        /404.html  404!
+/node_modules/*   /404.html  404!
+/package.json     /404.html  404!
+/package-lock.json /404.html  404!
+/netlify.toml     /404.html  404!
 /STAFF_SETUP.md   /404.html  404!
 /DvEwiki.xcodeproj/*  /404.html  404!
 /.DS_Store        /404.html  404!

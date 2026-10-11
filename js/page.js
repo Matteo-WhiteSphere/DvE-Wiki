@@ -1,11 +1,8 @@
-// Public renderer for wiki pages stored in Firestore: page.html?p=<slug>
+// Public renderer for wiki pages stored by the API: page.html?p=<slug>
 import {
-    db, isConfigured, watchSession, loadSeeds, renderHeader, renderSections, el,
-    isEditorRole, SLUG_RE, formatDate, accountLabel
+    api, watchSession, loadSeeds, renderHeader, renderSections, el,
+    isEditorRole, SLUG_RE, formatDate
 } from './wiki.js';
-import {
-    doc, getDoc, collection, query, where, getDocs
-} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
 const slug = (new URLSearchParams(location.search).get('p') || '').toLowerCase();
 const headerEl = document.getElementById('page-header');
@@ -23,46 +20,36 @@ function notice(html, kind = '') {
     noticeEl.append(box);
 }
 
-async function fetchPage(role) {
-    if (!isConfigured) return { page: null, hidden: false };
+async function fetchPage() {
     try {
-        const snap = await getDoc(doc(db, 'pages', slug));
-        return { page: snap.exists() ? snap.data() : null, hidden: false };
+        return { page: (await api('pages/' + encodeURIComponent(slug))).page };
     } catch (e) {
-        // permission-denied = the page exists but is not published.
-        if (e.code === 'permission-denied') return { page: null, hidden: true };
-        console.error(e);
-        return { page: null, hidden: false, error: e };
+        if (e.status === 404 && e.code !== 'unavailable') return { page: null };
+        console.warn('Wiki server unavailable', e);
+        return { page: null, error: e };
     }
 }
 
-async function fetchSiblings(group, role) {
+async function fetchSiblings(group) {
     const seeds = await loadSeeds();
     const items = new Map();
     for (const [s, p] of Object.entries(seeds)) {
         if (p.group === group) items.set(s, { slug: s, label: p.navLabel || p.title, order: p.navOrder || 0 });
     }
-    if (isConfigured) {
-        try {
-            const filters = [where('group', '==', group)];
-            if (!isEditorRole(role)) filters.push(where('published', '==', true));
-            const snap = await getDocs(query(collection(db, 'pages'), ...filters));
-            snap.forEach((d) => {
-                const p = d.data();
-                items.set(d.id, { slug: d.id, label: p.navLabel || p.title, order: p.navOrder || 0 });
-            });
-        } catch (e) { console.warn('Sibling pages unavailable', e); }
-    }
+    try {
+        const { pages } = await api('pages?group=' + encodeURIComponent(group));
+        for (const p of pages) items.set(p.slug, { slug: p.slug, label: p.navLabel || p.title, order: p.navOrder || 0 });
+    } catch (e) { console.warn('Sibling pages unavailable', e); }
     return [...items.values()].sort((a, b) => a.order - b.order || a.label.localeCompare(b.label));
 }
 
 function loginLink(session) {
     const signedIn = session && session.user;
-    const label = signedIn ? accountLabel(session.profile, session.user) || 'Account' : 'Login';
+    const label = signedIn ? session.user.username : 'Login';
     return el('a', {
         href: signedIn && isEditorRole(session.role) ? 'editor.html' : 'login.html',
         class: 'nav-login',
-        title: signedIn ? `Signed in as ${label} (${session.role})` : 'Sign in (staff and user accounts)',
+        title: signedIn ? `Signed in as ${label} (${session.role})` : 'Staff sign in',
         text: '\u{1F464} ' + label
     });
 }
@@ -73,7 +60,7 @@ async function renderNav(page, role, session) {
         el('a', { href: 'ideologies.html', text: 'Ideologies List' })
     ];
     if (page && page.group) {
-        const siblings = await fetchSiblings(page.group, role);
+        const siblings = await fetchSiblings(page.group);
         if (siblings.length > 1) {
             for (const s of siblings) {
                 links.push(el('a', {
@@ -109,7 +96,7 @@ async function render(session) {
         return;
     }
 
-    const [{ page, hidden, error }, seeds] = await Promise.all([fetchPage(role), loadSeeds()]);
+    const [{ page, error }, seeds] = await Promise.all([fetchPage(), loadSeeds()]);
     if (token !== renderToken) return;
     const seed = seeds[slug];
     const shown = page || seed;
@@ -119,8 +106,8 @@ async function render(session) {
         renderHeader(headerEl, { title: 'Page not found', subtitle: slug });
         document.title = 'Page not found - Dragon vs Eagle Wiki';
         contentEl.replaceChildren(el('div', { class: 'card' },
-            el('p', { text: hidden ? 'This page has not been published yet.' : 'This page does not exist (yet).' }),
-            error ? el('p', { class: 'muted', text: 'Could not reach the database.' }) : ''));
+            el('p', { text: 'This page does not exist (yet), or it has not been published.' }),
+            error ? el('p', { class: 'muted', text: 'Could not reach the wiki server.' }) : ''));
         await renderNav(null, role, session);
         renderStaffBar(role, false);
         return;
