@@ -71,7 +71,7 @@ async function renderNav(page, role, session) {
             }
         }
     }
-    links.push(loginLink(session));
+    links.push(el('a', { href: 'search.html', text: '\u{1F50D} Search' }), loginLink(session));
     navEl.replaceChildren(...links);
 }
 

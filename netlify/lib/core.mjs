@@ -313,6 +313,10 @@ export function cleanPage(p) {
         accent: COLOR_RE.test(p.accent || '') ? p.accent.toLowerCase() : bad('Invalid accent colour.'),
         navLabel: str(p.navLabel, 60, 'Navigation label'),
         navOrder: Number.isInteger(p.navOrder) && p.navOrder >= 0 && p.navOrder <= 999 ? p.navOrder : bad('Nav order must be 0-999.'),
+        // Country info shown in the home page table (optional).
+        ideology: str(p.ideology, 60, 'Starting ideology'),
+        subIdeology: str(p.subIdeology, 60, 'Sub-ideology'),
+        ideologyColor: !p.ideologyColor ? '' : COLOR_RE.test(p.ideologyColor) ? p.ideologyColor.toLowerCase() : bad('Invalid ideology colour.'),
         published: p.published === true,
         sections: []
     };
@@ -334,6 +338,29 @@ export function cleanPage(p) {
 export function pageSummary(slug, p) {
     return {
         slug, title: p.title, category: p.category, group: p.group, tag: p.tag, accent: p.accent,
-        navLabel: p.navLabel, navOrder: p.navOrder, published: p.published, updatedAt: p.updatedAt
+        navLabel: p.navLabel, navOrder: p.navOrder, published: p.published, updatedAt: p.updatedAt,
+        ideology: p.ideology || '', subIdeology: p.subIdeology || '', ideologyColor: p.ideologyColor || ''
+    };
+}
+
+/** Markdown/HTML → plain text for the search index. */
+export function plainText(md) {
+    return String(md || '')
+        .replace(/<[^>]*>/g, ' ')                 // HTML tags
+        .replace(/!\[([^\]]*)\]\([^)]*\)/g, '$1')   // images → alt text
+        .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')    // links → text
+        .replace(/&[a-z]+;|&#\d+;/gi, ' ')
+        .replace(/[`*#>|~]|:?-{3,}:?/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+/** Search entry for a published page. */
+export function searchEntry(slug, p) {
+    const text = (p.sections || []).map((s) => `${s.title || ''} ${plainText(s.body)}`).join(' \n ');
+    return {
+        slug, title: p.title, subtitle: p.subtitle, category: p.category, tag: p.tag, group: p.group,
+        navLabel: p.navLabel, ideology: p.ideology || '', subIdeology: p.subIdeology || '',
+        text: text.slice(0, 20000)
     };
 }

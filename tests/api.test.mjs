@@ -71,11 +71,13 @@ const page = (extra = {}) => ({
 
 // ------------------------------------------------------------------ tests
 
-test('the staff file creates the 8 accounts, all with a temporary password', async () => {
+test('the staff file creates its accounts, all with a temporary password', async () => {
+    const { readFile } = await import('node:fs/promises');
+    const file = JSON.parse(await readFile(new URL('../data/staff-accounts.json', import.meta.url), 'utf8'));
     const owner = await session('Owner.RedMatteo');
     const { users } = (await call('GET', 'users', { cookie: owner })).data;
-    assert.deepEqual(users.map((u) => u.username).sort(), ['Admin.Kylo', 'Editor.Defort', 'Editor.Pyro', 'Editor.Rapha',
-        'Editor.Tazi', 'Editor.iowaderussr', 'Owner.EC', 'Owner.RedMatteo'].sort());
+    assert.deepEqual(users.map((u) => u.username).sort(), file.accounts.map((a) => a.username).sort());
+    assert.ok(users.some((u) => u.username === 'Editor.eppuandromeda'));
     assert.ok(users.filter((u) => u.username !== 'Owner.RedMatteo').every((u) => u.mustChangePassword));
 });
 
@@ -272,4 +274,21 @@ test('audit log records actions and is admin-only', async () => {
         assert.ok(actions.includes(a), `missing ${a}`);
     }
     assert.equal((await call('GET', 'audit')).status, 401);
+});
+
+test('search index: published pages only, plain text, country fields', async () => {
+    const ed = await session('Editor.Rapha');
+    await call('PUT', 'pages/s1', { cookie: ed, body: { page: page({ published: true, ideology: 'Maoism', subIdeology: 'Red Path', ideologyColor: '#B21010',
+        sections: [{ title: 'Leaders', layout: 'full', body: '**Mao** <span class="badge">X</span> `ITA_focus_id` [link](x.html)' }] }), baseRev: null } });
+    await call('PUT', 'pages/s2', { cookie: ed, body: { page: page({ published: false, title: 'Secret draft' }), baseRev: null } });
+    const { pages } = (await call('GET', 'search')).data;
+    const s1 = pages.find((p) => p.slug === 's1');
+    assert.ok(s1);
+    assert.equal(pages.some((p) => p.slug === 's2'), false);
+    assert.match(s1.text, /Leaders Mao X ITA_focus_id link/);
+    assert.equal(s1.ideology, 'Maoism');
+    const summary = (await call('GET', 'pages')).data.pages.find((p) => p.slug === 's1');
+    assert.equal(summary.ideologyColor, '#b21010');
+    const bad = await call('PUT', 'pages/s3', { cookie: ed, body: { page: page({ ideologyColor: 'red' }), baseRev: null } });
+    assert.equal(bad.status, 400);
 });
