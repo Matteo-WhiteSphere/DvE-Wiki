@@ -101,6 +101,31 @@ export async function loadSeeds() {
     return seedCache;
 }
 
+let countriesCache = null;
+/** Base data of the home page (data/countries.json): major nations and country table. */
+export async function loadCountries() {
+    if (!countriesCache) {
+        try {
+            const res = await fetch('data/countries.json', { cache: 'no-cache' });
+            countriesCache = res.ok ? await res.json() : { majors: [], countries: [] };
+        } catch { countriesCache = { majors: [], countries: [] }; }
+    }
+    return countriesCache;
+}
+
+/** Normalizes text for searching: lower case, no accents. */
+export function fold(s) {
+    return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+/** Readable text colour (black or white) on a given background. */
+export function textColorOn(hex) {
+    if (!COLOR_RE.test(hex || '')) return '#ffffff';
+    const n = parseInt(hex.slice(1), 16);
+    const lum = (0.299 * ((n >> 16) & 255) + 0.587 * ((n >> 8) & 255) + 0.114 * (n & 255)) / 255;
+    return lum > 0.62 ? '#000000' : '#ffffff';
+}
+
 // --------------------------------------------------------------- helpers
 
 export const SLUG_RE = /^[a-z0-9][a-z0-9_-]{0,63}$/;

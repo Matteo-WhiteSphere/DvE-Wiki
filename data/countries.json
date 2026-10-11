@@ -1,0 +1,1681 @@
+{
+ "_comment": "Base data of the home page. Pages created in the editor are added on top: a country page (category \"country\") with a TAG updates or adds its row; path pages (category \"path\") are added to the card of their group.",
+ "majors": [
+  {
+   "tag": "USA",
+   "group": "usa",
+   "name": "United States of America",
+   "color": "#0066ff",
+   "paths": [
+    {
+     "label": "Democratic Path",
+     "href": "page.html?p=usa_democratic"
+    },
+    {
+     "label": "Communist Path",
+     "href": "page.html?p=usa_communist"
+    },
+    {
+     "label": "Fascist / Reactionary Path",
+     "href": "page.html?p=usa_fascist"
+    },
+    {
+     "label": "Monarchist / Military / Non-Aligned Path",
+     "href": "page.html?p=usa_nonaligned"
+    }
+   ]
+  },
+  {
+   "tag": "CHN",
+   "group": "chn",
+   "name": "People's Republic of China",
+   "color": "#ff0000",
+   "paths": [
+    {
+     "label": "New Left Path",
+     "href": "page.html?p=chn_democratic"
+    },
+    {
+     "label": "Centralist Path",
+     "href": "page.html?p=chn_communist"
+    },
+    {
+     "label": "Reformist Path",
+     "href": "page.html?p=chn_fascist"
+    },
+    {
+     "label": "Military Path",
+     "href": "page.html?p=chn_nonaligned"
+    }
+   ]
+  },
+  {
+   "tag": "RUS",
+   "group": "rus",
+   "name": "Russian Federation",
+   "color": "#103f00",
+   "paths": [
+    {
+     "label": "Democratic Path",
+     "href": "page.html?p=rus_democratic"
+    },
+    {
+     "label": "Communist Path",
+     "href": "page.html?p=rus_communist"
+    },
+    {
+     "label": "Fascist / Reactionary Path",
+     "href": "page.html?p=rus_fascist"
+    },
+    {
+     "label": "Monarchist / Military / Non-Aligned Path",
+     "href": "page.html?p=rus_nonaligned"
+    }
+   ]
+  },
+  {
+   "tag": "GBR",
+   "group": "gbr",
+   "name": "United Kingdom",
+   "color": "#2a52be",
+   "paths": [
+    {
+     "label": "Democratic Path",
+     "href": "page.html?p=gbr_democratic"
+    },
+    {
+     "label": "Communist Path",
+     "href": "page.html?p=gbr_communist"
+    },
+    {
+     "label": "Fascist / Reactionary Path",
+     "href": "page.html?p=gbr_fascist"
+    },
+    {
+     "label": "Monarchist / Military / Non-Aligned Path",
+     "href": "page.html?p=gbr_nonaligned"
+    }
+   ]
+  },
+  {
+   "tag": "FRA",
+   "group": "fra",
+   "name": "French Republic",
+   "color": "#3399ff",
+   "paths": [
+    {
+     "label": "Democratic Path",
+     "href": "page.html?p=fra_democratic"
+    },
+    {
+     "label": "Communist Path",
+     "href": "page.html?p=fra_communist"
+    },
+    {
+     "label": "Fascist / Reactionary Path",
+     "href": "page.html?p=fra_fascist"
+    },
+    {
+     "label": "Monarchist / Military / Non-Aligned Path",
+     "href": "page.html?p=fra_nonaligned"
+    }
+   ]
+  },
+  {
+   "tag": "GER",
+   "group": "ger",
+   "name": "Federal Republic of Germany",
+   "color": "#00bfff",
+   "paths": [
+    {
+     "label": "Democratic Path",
+     "href": "page.html?p=ger_democratic"
+    },
+    {
+     "label": "Communist Path",
+     "href": "page.html?p=ger_communist"
+    },
+    {
+     "label": "Fascist / Reactionary Path",
+     "href": "page.html?p=ger_fascist"
+    },
+    {
+     "label": "Monarchist / Military / Non-Aligned Path",
+     "href": "page.html?p=ger_nonaligned"
+    }
+   ]
+  },
+  {
+   "tag": "ITA",
+   "group": "ita",
+   "name": "Italian Republic",
+   "color": "#3cdf5f",
+   "paths": [
+    {
+     "label": "Democratic Path",
+     "href": "ita_democratic.html"
+    },
+    {
+     "label": "Communist Path",
+     "href": "ita_communist.html"
+    },
+    {
+     "label": "Fascist / Reactionary Path",
+     "href": "ita_fascist.html"
+    }
+   ]
+  }
+ ],
+ "countries": [
+  {
+   "tag": "USA",
+   "name": "United States of America",
+   "ideology": "Conservative",
+   "ideologyColor": "#742d2d",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Trumpism",
+   "href": "page.html?p=usa_democratic",
+   "major": true
+  },
+  {
+   "tag": "CHN",
+   "name": "People's Republic of China",
+   "ideology": "Totalitarian Communism",
+   "ideologyColor": "#b21010",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Xi Jinping Thought",
+   "href": "page.html?p=chn_democratic",
+   "major": true
+  },
+  {
+   "tag": "RUS",
+   "name": "Russian Federation",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Oligarchy",
+   "href": "page.html?p=rus_democratic",
+   "major": true
+  },
+  {
+   "tag": "ENG",
+   "name": "United Kingdom",
+   "ideology": "Progressive",
+   "ideologyColor": "#dc3c64",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Left Centrist",
+   "href": "page.html?p=gbr_democratic",
+   "major": true
+  },
+  {
+   "tag": "FRA",
+   "name": "French Republic",
+   "ideology": "Centrist",
+   "ideologyColor": "#a0971b",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Centrist",
+   "href": "page.html?p=fra_democratic",
+   "major": true
+  },
+  {
+   "tag": "GER",
+   "name": "Federal Republic of Germany",
+   "ideology": "Progressive",
+   "ideologyColor": "#dc3c64",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Left Centrist",
+   "href": "page.html?p=ger_democratic",
+   "major": true
+  },
+  {
+   "tag": "ITA",
+   "name": "Italian Republic",
+   "ideology": "Conservative",
+   "ideologyColor": "#0066ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Populism",
+   "href": "ita_democratic.html",
+   "major": true
+  },
+  {
+   "tag": "AFG",
+   "name": "Afghanistan",
+   "ideology": "Fundamentalism",
+   "ideologyColor": "#503714",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Islamic Fundamentalism",
+   "href": "page.html?p=afg"
+  },
+  {
+   "tag": "ALB",
+   "name": "Albania",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=alb"
+  },
+  {
+   "tag": "DZA",
+   "name": "Algeria",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Oligarchy",
+   "href": "page.html?p=dza"
+  },
+  {
+   "tag": "AND",
+   "name": "Andorra",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=and"
+  },
+  {
+   "tag": "AGO",
+   "name": "Angola",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Left Nationalism",
+   "href": "page.html?p=ago"
+  },
+  {
+   "tag": "ARG",
+   "name": "Argentina",
+   "ideology": "Conservative",
+   "ideologyColor": "#3080b4",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Classical Populism",
+   "href": "page.html?p=arg"
+  },
+  {
+   "tag": "ARM",
+   "name": "Armenia",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Centrist Populism",
+   "href": "page.html?p=arm"
+  },
+  {
+   "tag": "AUS",
+   "name": "Australia",
+   "ideology": "Conservative",
+   "ideologyColor": "#0066ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Conservatism",
+   "href": "page.html?p=aus"
+  },
+  {
+   "tag": "AUT",
+   "name": "Austria",
+   "ideology": "Conservative",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Christian Democracy",
+   "href": "page.html?p=aut"
+  },
+  {
+   "tag": "AZE",
+   "name": "Azerbaijan",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Dynastic Authoritarianism",
+   "href": "page.html?p=aze"
+  },
+  {
+   "tag": "BHS",
+   "name": "Bahamas",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=bhs"
+  },
+  {
+   "tag": "BHR",
+   "name": "Bahrain",
+   "ideology": "Absolutism",
+   "ideologyColor": "#c8aa14",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Absolute Monarchy",
+   "href": "page.html?p=bhr"
+  },
+  {
+   "tag": "BGD",
+   "name": "Bangladesh",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Illiberal Democracy",
+   "href": "page.html?p=bgd"
+  },
+  {
+   "tag": "BRB",
+   "name": "Barbados",
+   "ideology": "Progressive",
+   "ideologyColor": "#dc3c64",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Social Democracy",
+   "href": "page.html?p=brb"
+  },
+  {
+   "tag": "BLR",
+   "name": "Belarus",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Putinism",
+   "href": "page.html?p=blr"
+  },
+  {
+   "tag": "BEL",
+   "name": "Belgium",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=bel"
+  },
+  {
+   "tag": "BLZ",
+   "name": "Belize",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=blz"
+  },
+  {
+   "tag": "BEN",
+   "name": "Benin",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=ben"
+  },
+  {
+   "tag": "BTN",
+   "name": "Bhutan",
+   "ideology": "Absolutism",
+   "ideologyColor": "#c8aa14",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Monarchism",
+   "href": "page.html?p=btn"
+  },
+  {
+   "tag": "BOL",
+   "name": "Bolivia",
+   "ideology": "Progressive",
+   "ideologyColor": "#dc3c64",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Left Populism",
+   "href": "page.html?p=bol"
+  },
+  {
+   "tag": "BIH",
+   "name": "Bosnia and Herzegovina",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=bih"
+  },
+  {
+   "tag": "BWA",
+   "name": "Botswana",
+   "ideology": "Conservative",
+   "ideologyColor": "#3080b4",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Conservatism",
+   "href": "page.html?p=bwa"
+  },
+  {
+   "tag": "BRA",
+   "name": "Brazil",
+   "ideology": "Progressive",
+   "ideologyColor": "#dc3c64",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Left Populism",
+   "href": "page.html?p=bra"
+  },
+  {
+   "tag": "BRN",
+   "name": "Brunei",
+   "ideology": "Absolutism",
+   "ideologyColor": "#c8aa14",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Absolute Monarchy",
+   "href": "page.html?p=brn"
+  },
+  {
+   "tag": "BGR",
+   "name": "Bulgaria",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=bgr"
+  },
+  {
+   "tag": "BFA",
+   "name": "Burkina Faso",
+   "ideology": "Autocracy",
+   "ideologyColor": "#461464",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Military Junta",
+   "href": "page.html?p=bfa"
+  },
+  {
+   "tag": "BDI",
+   "name": "Burundi",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Paternalism",
+   "href": "page.html?p=bdi"
+  },
+  {
+   "tag": "KHM",
+   "name": "Cambodia",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Guided Democracy",
+   "href": "page.html?p=khm"
+  },
+  {
+   "tag": "CMR",
+   "name": "Cameroon",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Personal Dictatorship",
+   "href": "page.html?p=cmr"
+  },
+  {
+   "tag": "CAN",
+   "name": "Canada",
+   "ideology": "Centrist",
+   "ideologyColor": "#0066ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=can"
+  },
+  {
+   "tag": "CPV",
+   "name": "Cape Verde",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=cpv"
+  },
+  {
+   "tag": "CAF",
+   "name": "Central African Republic",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Paternalism",
+   "href": "page.html?p=caf"
+  },
+  {
+   "tag": "TCD",
+   "name": "Chad",
+   "ideology": "Autocracy",
+   "ideologyColor": "#461464",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Military Junta",
+   "href": "page.html?p=tcd"
+  },
+  {
+   "tag": "CHL",
+   "name": "Chile",
+   "ideology": "Progressive",
+   "ideologyColor": "#dc3c64",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Social Democracy",
+   "href": "page.html?p=chl"
+  },
+  {
+   "tag": "COL",
+   "name": "Colombia",
+   "ideology": "Progressive",
+   "ideologyColor": "#dc3c64",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Left Populism",
+   "href": "page.html?p=col"
+  },
+  {
+   "tag": "COM",
+   "name": "Comoros",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Paternalism",
+   "href": "page.html?p=com"
+  },
+  {
+   "tag": "COG",
+   "name": "Republic of the Congo",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Patriotic Socialism",
+   "href": "page.html?p=cog"
+  },
+  {
+   "tag": "COD",
+   "name": "DR Congo",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Illiberal Democracy",
+   "href": "page.html?p=cod"
+  },
+  {
+   "tag": "CRI",
+   "name": "Costa Rica",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=cri"
+  },
+  {
+   "tag": "HRV",
+   "name": "Croatia",
+   "ideology": "Conservative",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Christian Democracy",
+   "href": "page.html?p=hrv"
+  },
+  {
+   "tag": "CUB",
+   "name": "Cuba",
+   "ideology": "Totalitarian Communism",
+   "ideologyColor": "#b21010",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Stalinism",
+   "href": "page.html?p=cub"
+  },
+  {
+   "tag": "CYP",
+   "name": "Cyprus",
+   "ideology": "Conservative",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Christian Democracy",
+   "href": "page.html?p=cyp"
+  },
+  {
+   "tag": "CZE",
+   "name": "Czech Republic",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Centrist Populism",
+   "href": "page.html?p=cze"
+  },
+  {
+   "tag": "DNK",
+   "name": "Denmark",
+   "ideology": "Progressive",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Social Democracy",
+   "href": "page.html?p=dnk"
+  },
+  {
+   "tag": "DJI",
+   "name": "Djibouti",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Personal Dictatorship",
+   "href": "page.html?p=dji"
+  },
+  {
+   "tag": "DOM",
+   "name": "Dominican Republic",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=dom"
+  },
+  {
+   "tag": "ECU",
+   "name": "Ecuador",
+   "ideology": "Conservative",
+   "ideologyColor": "#3080b4",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Classical Liberalism",
+   "href": "page.html?p=ecu"
+  },
+  {
+   "tag": "EGY",
+   "name": "Egypt",
+   "ideology": "Autocracy",
+   "ideologyColor": "#461464",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Military Junta",
+   "href": "page.html?p=egy"
+  },
+  {
+   "tag": "SLV",
+   "name": "El Salvador",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Illiberal Democracy",
+   "href": "page.html?p=slv"
+  },
+  {
+   "tag": "GNQ",
+   "name": "Equatorial Guinea",
+   "ideology": "Autocracy",
+   "ideologyColor": "#461464",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Personal Dictatorship",
+   "href": "page.html?p=gnq"
+  },
+  {
+   "tag": "ERI",
+   "name": "Eritrea",
+   "ideology": "Autocracy",
+   "ideologyColor": "#461464",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Personal Dictatorship",
+   "href": "page.html?p=eri"
+  },
+  {
+   "tag": "EST",
+   "name": "Estonia",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Ultra Liberalism",
+   "href": "page.html?p=est"
+  },
+  {
+   "tag": "SWZ",
+   "name": "Eswatini",
+   "ideology": "Absolutism",
+   "ideologyColor": "#c8aa14",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Absolute Monarchy",
+   "href": "page.html?p=swz"
+  },
+  {
+   "tag": "ETH",
+   "name": "Ethiopia",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Patriotic Socialism",
+   "href": "page.html?p=eth"
+  },
+  {
+   "tag": "FJI",
+   "name": "Fiji",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=fji"
+  },
+  {
+   "tag": "FIN",
+   "name": "Finland",
+   "ideology": "Conservative",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Conservatism",
+   "href": "fin.html"
+  },
+  {
+   "tag": "GAB",
+   "name": "Gabon",
+   "ideology": "Autocracy",
+   "ideologyColor": "#461464",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Military Junta",
+   "href": "page.html?p=gab"
+  },
+  {
+   "tag": "GMB",
+   "name": "Gambia",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=gmb"
+  },
+  {
+   "tag": "GEO",
+   "name": "Georgia",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Oligarchy",
+   "href": "page.html?p=geo"
+  },
+  {
+   "tag": "GHA",
+   "name": "Ghana",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=gha"
+  },
+  {
+   "tag": "GRC",
+   "name": "Greece",
+   "ideology": "Conservative",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Christian Democracy",
+   "href": "page.html?p=grc"
+  },
+  {
+   "tag": "GTM",
+   "name": "Guatemala",
+   "ideology": "Progressive",
+   "ideologyColor": "#dc3c64",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Reformist Socialism",
+   "href": "page.html?p=gtm"
+  },
+  {
+   "tag": "GIN",
+   "name": "Guinea",
+   "ideology": "Autocracy",
+   "ideologyColor": "#461464",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Military Junta",
+   "href": "page.html?p=gin"
+  },
+  {
+   "tag": "GNB",
+   "name": "Guinea-Bissau",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Paternalism",
+   "href": "page.html?p=gnb"
+  },
+  {
+   "tag": "GUY",
+   "name": "Guyana",
+   "ideology": "Progressive",
+   "ideologyColor": "#dc3c64",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Reformist Socialism",
+   "href": "page.html?p=guy"
+  },
+  {
+   "tag": "HTI",
+   "name": "Haiti",
+   "ideology": "Autocracy",
+   "ideologyColor": "#461464",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Kleptocracy",
+   "href": "page.html?p=hti"
+  },
+  {
+   "tag": "HND",
+   "name": "Honduras",
+   "ideology": "Progressive",
+   "ideologyColor": "#dc3c64",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Left Populism",
+   "href": "page.html?p=hnd"
+  },
+  {
+   "tag": "HUN",
+   "name": "Hungary",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Illiberal Democracy",
+   "href": "page.html?p=hun"
+  },
+  {
+   "tag": "ISL",
+   "name": "Iceland",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=isl"
+  },
+  {
+   "tag": "IND",
+   "name": "India",
+   "ideology": "Fundamentalism",
+   "ideologyColor": "#503714",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Hindu Nationalism",
+   "href": "page.html?p=ind"
+  },
+  {
+   "tag": "IDN",
+   "name": "Indonesia",
+   "ideology": "Conservative",
+   "ideologyColor": "#3080b4",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Classical Populism",
+   "href": "page.html?p=idn"
+  },
+  {
+   "tag": "IRN",
+   "name": "Iran",
+   "ideology": "Fundamentalism",
+   "ideologyColor": "#503714",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Islamic Fundamentalism",
+   "href": "page.html?p=irn"
+  },
+  {
+   "tag": "IRQ",
+   "name": "Iraq",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Illiberal Democracy",
+   "href": "page.html?p=irq"
+  },
+  {
+   "tag": "IRL",
+   "name": "Ireland",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=irl"
+  },
+  {
+   "tag": "ISR",
+   "name": "Israel",
+   "ideology": "Reactionary",
+   "ideologyColor": "#142878",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Traditionalismo",
+   "href": "page.html?p=isr"
+  },
+  {
+   "tag": "JAM",
+   "name": "Jamaica",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=jam"
+  },
+  {
+   "tag": "JPN",
+   "name": "Japan",
+   "ideology": "Conservative",
+   "ideologyColor": "#3080b4",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Conservatism",
+   "href": "page.html?p=jpn"
+  },
+  {
+   "tag": "JOR",
+   "name": "Jordan",
+   "ideology": "Absolutism",
+   "ideologyColor": "#c8aa14",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Monarchism",
+   "href": "page.html?p=jor"
+  },
+  {
+   "tag": "KAZ",
+   "name": "Kazakhstan",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Guided Democracy",
+   "href": "page.html?p=kaz"
+  },
+  {
+   "tag": "KEN",
+   "name": "Kenya",
+   "ideology": "Conservative",
+   "ideologyColor": "#3080b4",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Classical Populism",
+   "href": "page.html?p=ken"
+  },
+  {
+   "tag": "PRK",
+   "name": "North Korea",
+   "ideology": "Totalitarian Communism",
+   "ideologyColor": "#b21010",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Stalinism",
+   "href": "page.html?p=prk"
+  },
+  {
+   "tag": "KOR",
+   "name": "South Korea",
+   "ideology": "Conservative",
+   "ideologyColor": "#3080b4",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Conservatism",
+   "href": "page.html?p=kor"
+  },
+  {
+   "tag": "KWT",
+   "name": "Kuwait",
+   "ideology": "Absolutism",
+   "ideologyColor": "#c8aa14",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Monarchism",
+   "href": "page.html?p=kwt"
+  },
+  {
+   "tag": "KGZ",
+   "name": "Kyrgyzstan",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Illiberal Democracy",
+   "href": "page.html?p=kgz"
+  },
+  {
+   "tag": "LAO",
+   "name": "Laos",
+   "ideology": "Totalitarian Communism",
+   "ideologyColor": "#b21010",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Market Socialism",
+   "href": "page.html?p=lao"
+  },
+  {
+   "tag": "LVA",
+   "name": "Latvia",
+   "ideology": "Conservative",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Conservatism",
+   "href": "page.html?p=lva"
+  },
+  {
+   "tag": "LBN",
+   "name": "Lebanon",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Sectarian Confessionalism",
+   "href": "page.html?p=lbn"
+  },
+  {
+   "tag": "LSO",
+   "name": "Lesotho",
+   "ideology": "Absolutism",
+   "ideologyColor": "#c8aa14",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Monarchism",
+   "href": "page.html?p=lso"
+  },
+  {
+   "tag": "LBR",
+   "name": "Liberia",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=lbr"
+  },
+  {
+   "tag": "LBY",
+   "name": "Libya",
+   "ideology": "Autocracy",
+   "ideologyColor": "#461464",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Military Junta",
+   "href": "page.html?p=lby"
+  },
+  {
+   "tag": "LTU",
+   "name": "Lithuania",
+   "ideology": "Conservative",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Christian Democracy",
+   "href": "page.html?p=ltu"
+  },
+  {
+   "tag": "LUX",
+   "name": "Luxembourg",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=lux"
+  },
+  {
+   "tag": "MDG",
+   "name": "Madagascar",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=mdg"
+  },
+  {
+   "tag": "MWI",
+   "name": "Malawi",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=mwi"
+  },
+  {
+   "tag": "MYS",
+   "name": "Malaysia",
+   "ideology": "Conservative",
+   "ideologyColor": "#3080b4",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Civic Nationalism",
+   "href": "page.html?p=mys"
+  },
+  {
+   "tag": "MDV",
+   "name": "Maldives",
+   "ideology": "Conservative",
+   "ideologyColor": "#3080b4",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Conservatism",
+   "href": "page.html?p=mdv"
+  },
+  {
+   "tag": "MLI",
+   "name": "Mali",
+   "ideology": "Autocracy",
+   "ideologyColor": "#461464",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Military Junta",
+   "href": "page.html?p=mli"
+  },
+  {
+   "tag": "MLT",
+   "name": "Malta",
+   "ideology": "Progressive",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Social Democracy",
+   "href": "page.html?p=mlt"
+  },
+  {
+   "tag": "MRT",
+   "name": "Mauritania",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Paternalism",
+   "href": "page.html?p=mrt"
+  },
+  {
+   "tag": "MUS",
+   "name": "Mauritius",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=mus"
+  },
+  {
+   "tag": "MEX",
+   "name": "Mexico",
+   "ideology": "Progressive",
+   "ideologyColor": "#dc3c64",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Left Populism",
+   "href": "page.html?p=mex"
+  },
+  {
+   "tag": "MDA",
+   "name": "Moldova",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=mda"
+  },
+  {
+   "tag": "MCO",
+   "name": "Monaco",
+   "ideology": "Absolutism",
+   "ideologyColor": "#c8aa14",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Monarchism",
+   "href": "page.html?p=mco"
+  },
+  {
+   "tag": "MNG",
+   "name": "Mongolia",
+   "ideology": "Progressive",
+   "ideologyColor": "#dc3c64",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Social Democracy",
+   "href": "page.html?p=mng"
+  },
+  {
+   "tag": "MNE",
+   "name": "Montenegro",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=mne"
+  },
+  {
+   "tag": "MAR",
+   "name": "Morocco",
+   "ideology": "Absolutism",
+   "ideologyColor": "#c8aa14",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Monarchism",
+   "href": "page.html?p=mar"
+  },
+  {
+   "tag": "MOZ",
+   "name": "Mozambique",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Patriotic Socialism",
+   "href": "page.html?p=moz"
+  },
+  {
+   "tag": "MMR",
+   "name": "Myanmar",
+   "ideology": "Autocracy",
+   "ideologyColor": "#461464",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Military Junta",
+   "href": "page.html?p=mmr"
+  },
+  {
+   "tag": "NAM",
+   "name": "Namibia",
+   "ideology": "Progressive",
+   "ideologyColor": "#dc3c64",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Social Democracy",
+   "href": "page.html?p=nam"
+  },
+  {
+   "tag": "NPL",
+   "name": "Nepal",
+   "ideology": "Totalitarian Communism",
+   "ideologyColor": "#b21010",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Market Socialism",
+   "href": "page.html?p=npl"
+  },
+  {
+   "tag": "NLD",
+   "name": "Netherlands",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=nld"
+  },
+  {
+   "tag": "NZL",
+   "name": "New Zealand",
+   "ideology": "Conservative",
+   "ideologyColor": "#0066ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Conservatism",
+   "href": "page.html?p=nzl"
+  },
+  {
+   "tag": "NIC",
+   "name": "Nicaragua",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Patriotic Socialism",
+   "href": "page.html?p=nic"
+  },
+  {
+   "tag": "NER",
+   "name": "Niger",
+   "ideology": "Autocracy",
+   "ideologyColor": "#461464",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Military Junta",
+   "href": "page.html?p=ner"
+  },
+  {
+   "tag": "NGA",
+   "name": "Nigeria",
+   "ideology": "Conservative",
+   "ideologyColor": "#3080b4",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Classical Populism",
+   "href": "page.html?p=nga"
+  },
+  {
+   "tag": "MKD",
+   "name": "North Macedonia",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=mkd"
+  },
+  {
+   "tag": "NOR",
+   "name": "Norway",
+   "ideology": "Progressive",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Social Democracy",
+   "href": "page.html?p=nor"
+  },
+  {
+   "tag": "OMN",
+   "name": "Oman",
+   "ideology": "Absolutism",
+   "ideologyColor": "#c8aa14",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Absolute Monarchy",
+   "href": "page.html?p=omn"
+  },
+  {
+   "tag": "PAK",
+   "name": "Pakistan",
+   "ideology": "Autocracy",
+   "ideologyColor": "#461464",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Military Junta",
+   "href": "page.html?p=pak"
+  },
+  {
+   "tag": "PAN",
+   "name": "Panama",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=pan"
+  },
+  {
+   "tag": "PNG",
+   "name": "Papua New Guinea",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=png"
+  },
+  {
+   "tag": "PRY",
+   "name": "Paraguay",
+   "ideology": "Conservative",
+   "ideologyColor": "#3080b4",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Conservatism",
+   "href": "page.html?p=pry"
+  },
+  {
+   "tag": "PER",
+   "name": "Peru",
+   "ideology": "Conservative",
+   "ideologyColor": "#3080b4",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Conservatism",
+   "href": "page.html?p=per"
+  },
+  {
+   "tag": "PHL",
+   "name": "Philippines",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Illiberal Democracy",
+   "href": "page.html?p=phl"
+  },
+  {
+   "tag": "POL",
+   "name": "Poland",
+   "ideology": "Conservative",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Christian Democracy",
+   "href": "page.html?p=pol"
+  },
+  {
+   "tag": "PRT",
+   "name": "Portugal",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=prt"
+  },
+  {
+   "tag": "QAT",
+   "name": "Qatar",
+   "ideology": "Absolutism",
+   "ideologyColor": "#c8aa14",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Absolute Monarchy",
+   "href": "page.html?p=qat"
+  },
+  {
+   "tag": "ROU",
+   "name": "Romania",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=rou"
+  },
+  {
+   "tag": "RWA",
+   "name": "Rwanda",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Personal Dictatorship",
+   "href": "page.html?p=rwa"
+  },
+  {
+   "tag": "SAU",
+   "name": "Saudi Arabia",
+   "ideology": "Absolutism",
+   "ideologyColor": "#c8aa14",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Absolute Monarchy",
+   "href": "page.html?p=sau"
+  },
+  {
+   "tag": "SEN",
+   "name": "Senegal",
+   "ideology": "Progressive",
+   "ideologyColor": "#dc3c64",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Reformist Socialism",
+   "href": "page.html?p=sen"
+  },
+  {
+   "tag": "SRB",
+   "name": "Serbia",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Illiberal Democracy",
+   "href": "page.html?p=srb"
+  },
+  {
+   "tag": "SGP",
+   "name": "Singapore",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Technocracy",
+   "href": "page.html?p=sgp"
+  },
+  {
+   "tag": "SVK",
+   "name": "Slovakia",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Illiberal Democracy",
+   "href": "page.html?p=svk"
+  },
+  {
+   "tag": "SVN",
+   "name": "Slovenia",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=svn"
+  },
+  {
+   "tag": "SOM",
+   "name": "Somalia",
+   "ideology": "Autocracy",
+   "ideologyColor": "#461464",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Kleptocracy",
+   "href": "page.html?p=som"
+  },
+  {
+   "tag": "ZAF",
+   "name": "South Africa",
+   "ideology": "Progressive",
+   "ideologyColor": "#dc3c64",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Social Democracy",
+   "href": "page.html?p=zaf"
+  },
+  {
+   "tag": "ESP",
+   "name": "Spain",
+   "ideology": "Progressive",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Social Democracy",
+   "href": "page.html?p=esp"
+  },
+  {
+   "tag": "LKA",
+   "name": "Sri Lanka",
+   "ideology": "Progressive",
+   "ideologyColor": "#dc3c64",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Left Populism",
+   "href": "page.html?p=lka"
+  },
+  {
+   "tag": "SDN",
+   "name": "Sudan",
+   "ideology": "Autocracy",
+   "ideologyColor": "#461464",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Military Junta",
+   "href": "page.html?p=sdn"
+  },
+  {
+   "tag": "SWE",
+   "name": "Sweden",
+   "ideology": "Conservative",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Conservatism",
+   "href": "page.html?p=swe"
+  },
+  {
+   "tag": "CHE",
+   "name": "Switzerland",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=che"
+  },
+  {
+   "tag": "SYR",
+   "name": "Syria",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Patriotic Socialism",
+   "href": "page.html?p=syr"
+  },
+  {
+   "tag": "TWN",
+   "name": "Taiwan",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=twn"
+  },
+  {
+   "tag": "TJK",
+   "name": "Tajikistan",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Personal Dictatorship",
+   "href": "page.html?p=tjk"
+  },
+  {
+   "tag": "TZA",
+   "name": "Tanzania",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Patriotic Socialism",
+   "href": "page.html?p=tza"
+  },
+  {
+   "tag": "THA",
+   "name": "Thailand",
+   "ideology": "Conservative",
+   "ideologyColor": "#3080b4",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Monarchist Conservatism",
+   "href": "page.html?p=tha"
+  },
+  {
+   "tag": "TUN",
+   "name": "Tunisia",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Personal Dictatorship",
+   "href": "page.html?p=tun"
+  },
+  {
+   "tag": "TUR",
+   "name": "Turkey",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Illiberal Democracy",
+   "href": "page.html?p=tur"
+  },
+  {
+   "tag": "TKM",
+   "name": "Turkmenistan",
+   "ideology": "Autocracy",
+   "ideologyColor": "#461464",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Personal Dictatorship",
+   "href": "page.html?p=tkm"
+  },
+  {
+   "tag": "UGA",
+   "name": "Uganda",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Personal Dictatorship",
+   "href": "page.html?p=uga"
+  },
+  {
+   "tag": "UKR",
+   "name": "Ukraine",
+   "ideology": "Centrist",
+   "ideologyColor": "#00c8ff",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Centrist Populism",
+   "href": "page.html?p=ukr"
+  },
+  {
+   "tag": "ARE",
+   "name": "United Arab Emirates",
+   "ideology": "Absolutism",
+   "ideologyColor": "#c8aa14",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Absolute Monarchy",
+   "href": "page.html?p=are"
+  },
+  {
+   "tag": "URY",
+   "name": "Uruguay",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=ury"
+  },
+  {
+   "tag": "UZB",
+   "name": "Uzbekistan",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Technocracy",
+   "href": "page.html?p=uzb"
+  },
+  {
+   "tag": "VEN",
+   "name": "Venezuela",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Patriotic Socialism",
+   "href": "page.html?p=ven"
+  },
+  {
+   "tag": "VNM",
+   "name": "Vietnam",
+   "ideology": "Totalitarian Communism",
+   "ideologyColor": "#b21010",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Market Socialism",
+   "href": "page.html?p=vnm"
+  },
+  {
+   "tag": "YEM",
+   "name": "Yemen",
+   "ideology": "Fundamentalism",
+   "ideologyColor": "#503714",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Islamic Fundamentalism",
+   "href": "page.html?p=yem"
+  },
+  {
+   "tag": "ZMB",
+   "name": "Zambia",
+   "ideology": "Centrist",
+   "ideologyColor": "#ffdc00",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Liberal Socialdemocrat",
+   "href": "page.html?p=zmb"
+  },
+  {
+   "tag": "ZWE",
+   "name": "Zimbabwe",
+   "ideology": "Authoritarianism",
+   "ideologyColor": "#641e8c",
+   "ideologyText": "#ffffff",
+   "subIdeology": "Patriotic Socialism",
+   "href": "page.html?p=zwe"
+  }
+ ]
+}

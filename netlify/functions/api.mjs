@@ -4,7 +4,7 @@ import {
     store, HttpError, ensureBootstrap, parseUsername, renameForRole, verifyPassword, hashPassword,
     passwordProblem, tempPassword, signSession, readSession, sessionCookie, SESSION_COOKIE,
     getUser, listUsers, saveUser, createUser, publicUser, checkLock, recordFailure, clearFailures,
-    audit, cleanPage, pageSummary, SLUG_RE, isEditorRole, isAdminRole, canCreate, canManage,
+    audit, cleanPage, pageSummary, searchEntry, SLUG_RE, isEditorRole, isAdminRole, canCreate, canManage,
     canAssign, MAX_FAILED_LOGINS, MAX_IP_ATTEMPTS
 } from '../lib/core.mjs';
 
@@ -115,6 +115,17 @@ async function listPages(url, session) {
     }));
     const result = all.filter((p) => p && (editor || p.published) && (!group || p.group === group));
     return json({ pages: result });
+}
+
+/** Text of every published page, for the wiki search (search.html). */
+async function searchIndex() {
+    const pages = store('pages');
+    const { blobs } = await pages.list();
+    const all = await Promise.all(blobs.map(async (b) => {
+        const p = await pages.get(b.key, { type: 'json' });
+        return p && p.published ? searchEntry(b.key, p) : null;
+    }));
+    return json({ pages: all.filter(Boolean) });
 }
 
 async function getPage(slug, session) {
@@ -303,6 +314,7 @@ export default async function handler(req, context) {
                 return json({ ok: true }, 200, { 'Set-Cookie': sessionCookie('', 0) });
             case 'POST /password': return await changePassword(req, session);
             case 'GET /pages': res = await listPages(url, session); break;
+            case 'GET /search': res = await searchIndex(); break;
             case 'GET /pages/:': res = await getPage(parts[1], session); break;
             case 'PUT /pages/:': res = await savePage(req, parts[1], session); break;
             case 'DELETE /pages/:': res = await deletePage(parts[1], session); break;

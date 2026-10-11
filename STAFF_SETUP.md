@@ -115,6 +115,8 @@ Dopo 5 codici sbagliati la pagina si blocca per 15 minuti per quell'indirizzo IP
 5. Ogni **sezione** è una card (intera, metà o un terzo). Testo in **Markdown** (aiuto in fondo all'editor), con modelli pronti per spiriti nazionali, focus, partiti e leader.
 6. Le immagini vanno caricate nel repository (`images/leaders/…`, `images/ideologies/…`) e richiamate con `![nome](images/leaders/file.png)`.
 7. Spunta **Published** per renderla visibile a tutti. **Ctrl+S** salva.
+8. **Home page automatica**: una pagina *Country* pubblicata compare nella tabella delle nazioni della home (nome = *Label in navigation*, poi TAG, *Starting ideology*, *Sub-ideology* e il colore dell'ideologia, campi che compaiono quando la categoria è *Country*). Se la nazione esiste già nella tabella, la sua riga viene aggiornata. Le pagine *Country path* compaiono nel riquadro della loro nazione (stesso *Group*, es. `ita`), oppure in un riquadro nuovo. Guide e altre pagine finiscono in *More Wiki Pages*.
+9. **Ricerca**: `search.html` (🔍 in ogni pagina) cerca tra nazioni, TAG, ideologie, pagine scritte nell'editor, bozze e pagine statiche (ideologie, guida eventi, Italia, Finlandia). Le bozze non pubblicate non compaiono.
 
 ---
 
@@ -140,7 +142,9 @@ In locale valgono le stesse password temporanee del file. Per ricominciare da ze
 | `tools/temp-passwords.mjs` | Genera nuove password temporanee per il file |
 | `js/wiki.js` | Modulo comune del browser: chiamate al server, rendering Markdown sicuro |
 | `js/page.js`, `js/editor.js`, `js/admin.js`, `js/login.js`, `js/recover.js` | Pagine dinamiche, area staff e recupero |
-| `js/nav-account.js`, `js/index-extra.js` | Pulsante Login nelle pagine statiche, pagine nuove nella home |
+| `js/home.js`, `data/countries.json` | Home dinamica: nazioni principali e tabella dei paesi (dati di base + pagine dell'editor) |
+| `search.html`, `js/search.js` | Ricerca nel wiki |
+| `js/nav-account.js` | Pulsante Login nelle pagine statiche |
 | `netlify.toml`, `_redirects`, `404.html` | Configurazione Netlify, header di sicurezza, redirect, pagina 404 |
 | `tools/dev-server.mjs` | Server di sviluppo locale |
 | `tests/api.test.mjs` | Test automatici |
