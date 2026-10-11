@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Staff account management for the DvE wiki (Firebase Admin SDK).
 //
-//   node accounts.mjs create                  create every account in staff-accounts.json
+//   node accounts.mjs create                  create every account in data/staff-accounts.json
 //   node accounts.mjs list                    list staff accounts and roles
 //   node accounts.mjs reset Editor.Rapha      give a new temporary password
 //   node accounts.mjs role Editor.Rapha admin change role (the login becomes Admin.Rapha)
@@ -11,7 +11,7 @@
 //                     Service accounts → Generate new private key). Never commit it!
 //                     Alternatively set GOOGLE_APPLICATION_CREDENTIALS.
 //   --project <id>    Firebase project id (default: from the key file)
-//   --file <file>     account list (default: staff-accounts.json)
+//   --file <file>     account list (default: ../data/staff-accounts.json)
 //   --emulator        use the local Firebase emulators (project demo-dve)
 //
 // Temporary passwords are printed once and must be changed at the first login.
@@ -123,7 +123,7 @@ function printCredentials(rows) {
 
 // -------------------------------------------------------------- commands
 async function create() {
-    const file = resolve(here, opts.file || 'staff-accounts.json');
+    const file = opts.file ? resolve(opts.file) : resolve(here, '../data/staff-accounts.json');
     const list = JSON.parse(readFileSync(file, 'utf8')).accounts;
     const accounts = list.map(parseUsername); // validate everything first
     const created = [];

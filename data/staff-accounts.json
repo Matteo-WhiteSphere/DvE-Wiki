@@ -1,0 +1,13 @@
+{
+  "_comment": "Staff accounts proposed in admin.html (Create staff accounts) and used by: node tools/accounts.mjs create. Format: Role.Name (Owner / Admin / Editor). Passwords are never stored here.",
+  "accounts": [
+    "Owner.RedMatteo",
+    "Owner.EC",
+    "Admin.Kylo",
+    "Editor.Rapha",
+    "Editor.Pyro",
+    "Editor.Tazi",
+    "Editor.Defort",
+    "Editor.iowaderussr"
+  ]
+}

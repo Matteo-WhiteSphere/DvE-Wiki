@@ -229,7 +229,10 @@ test('admins create staff profiles following the hierarchy', async () => {
     await assertSucceeds(setDoc(doc(as('admin'), 'users', 'new1'), prof('editor.tazi', 'editor', 'admin1')));
     await assertFails(setDoc(doc(as('admin'), 'users', 'new2'), prof('admin.kylo', 'admin', 'admin1')));
     await assertSucceeds(setDoc(doc(as('owner'), 'users', 'new2'), prof('admin.kylo', 'admin', 'owner1')));
-    await assertFails(setDoc(doc(as('owner'), 'users', 'new3'), prof('owner.ec', 'owner', 'owner1')));
+    await assertSucceeds(setDoc(doc(as('owner'), 'users', 'new3'), prof('owner.ec', 'owner', 'owner1')));
+    await assertFails(setDoc(doc(as('admin'), 'users', 'new7'), prof('owner.zz', 'owner', 'admin1')));
+    // an existing owner still cannot be changed from the website
+    await assertFails(updateDoc(doc(as('owner'), 'users', 'new3'), { role: 'disabled', roleUpdatedBy: 'owner1', roleUpdatedAt: serverTimestamp() }));
     await assertFails(setDoc(doc(as('owner'), 'users', 'new4'), prof('editor.x', 'editor', 'owner1', { mustChangePassword: false })));
     await assertFails(setDoc(doc(as('owner'), 'users', 'new5'), { ...prof('x', 'editor', 'owner1'), email: 'someone@gmail.com' }));
     await assertFails(setDoc(doc(as('mod'), 'users', 'new6'), prof('editor.y', 'editor', 'mod1')));

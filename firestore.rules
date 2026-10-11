@@ -3,7 +3,7 @@ rules_version = '2';
 // Dragon vs Eagle Wiki — Firestore security rules.
 //
 // Roles (stored in users/{uid}.role):
-//   owner    – set ONLY from the Firebase console or tools/accounts.mjs. Can manage admins.
+//   owner    – created by another owner, the Firebase console or tools/accounts.mjs. Manages admins.
 //   admin    – manages editors, creates staff accounts, deletes pages, reads the audit log.
 //   editor   – creates and edits wiki pages.
 //   user     – signed in, no write access (default for new sign-ins).
@@ -51,6 +51,13 @@ service cloud.firestore {
           || (isAdmin() && role in ['user', 'editor', 'disabled']);
     }
 
+    // Roles a new "Role.Name" staff account can be created with. Owners can create
+    // other owners, but an existing owner can only be changed from the console.
+    function canCreateStaff(role) {
+      return (isOwner() && role in ['editor', 'admin', 'owner'])
+          || (isAdmin() && role == 'editor');
+    }
+
     // Invitations are only for real, verified e-mail addresses (Google or e-mail accounts).
     function hasInviteFor(role) {
       return realEmailVerified()
@@ -83,8 +90,7 @@ service cloud.firestore {
           && request.resource.data.email.matches(staffLoginRe())
           && request.resource.data.displayName is string
           && request.resource.data.displayName.size() <= 80
-          && request.resource.data.role in ['editor', 'admin']
-          && canAssign(request.resource.data.role)
+          && canCreateStaff(request.resource.data.role)
           && request.resource.data.createdBy == request.auth.uid
           && request.resource.data.createdAt == request.time
           && request.resource.data.mustChangePassword == true);

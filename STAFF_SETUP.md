@@ -27,9 +27,9 @@ Il sito resta statico ed è pubblicato su **Netlify** (configurazione in `netlif
    In alternativa con la CLI: `npx firebase-tools login` e poi `npx firebase-tools deploy --only firestore:rules --project <id-progetto>`.
 8. Fai commit + push di `js/firebase-config.js`.
 
-## 2. Creare gli account dello staff (un comando)
+## 2. Creare gli account dello staff (dal sito, senza terminale)
 
-Gli account sono già elencati in `tools/staff-accounts.json`:
+Gli account sono già elencati in `data/staff-accounts.json`:
 
 | Username | Ruolo |
 |---|---|
@@ -42,20 +42,22 @@ Gli account sono già elencati in `tools/staff-accounts.json`:
 | `Editor.Defort` | editor |
 | `Editor.iowaderussr` | editor |
 
-Per crearli serve [Node.js](https://nodejs.org) (versione 18 o più recente):
+1. Apri il sito → **👤 Login** → **Sign in with Google** con il tuo account Google. Diventi `user`.
+2. Firebase console → **Firestore Database → users** → apri il documento con la tua e-mail → cambia il campo `role` da `user` a `owner` → salva. (È l'unico passaggio da console: il primo owner non si può creare dal sito, per sicurezza.)
+3. Ricarica la pagina di login → **Admin panel**. Il riquadro **Create several staff accounts** è già compilato con gli 8 account: premi **Create accounts**.
+4. Il sito mostra **una sola volta** la tabella con username e **password temporanea** di ciascuno (pulsante *Copy*). Mandala in privato a ogni persona, compreso il tuo `Owner.RedMatteo`. Al primo accesso il sito obbliga a scegliere una password personale: finché non lo fanno, l'account non può modificare niente.
 
-1. Firebase console → **Impostazioni progetto → Account di servizio → Genera nuova chiave privata**. Salva il file JSON **fuori dal repository** (es. sul Desktop). È una chiave segreta: non condividerla e non fare mai commit (il `.gitignore` la blocca comunque).
-2. Dal terminale, nella cartella del repo:
+Gli account già esistenti vengono saltati, quindi puoi rilanciare senza problemi. In futuro puoi aggiungere persone dallo stesso riquadro (una per riga, `Ruolo.Nome`) o dal modulo **Add a staff account**. Gli owner possono creare owner, admin ed editor; gli admin solo editor. Un owner già esistente si modifica solo dalla console Firebase.
 
-   ```bash
-   cd tools
-   npm install
-   node accounts.mjs create --key ~/Desktop/<nome-file-chiave>.json
-   ```
+### In alternativa: script da terminale
 
-3. Lo script stampa **una sola volta** la tabella con username e **password temporanea** di ciascuno. Mandala in privato a ogni persona. Al primo accesso il sito obbliga a scegliere una password personale: finché non lo fanno, l'account non può modificare niente.
+Serve [Node.js](https://nodejs.org) 18+ e la chiave del progetto (Firebase console → **Impostazioni progetto → Account di servizio → Genera nuova chiave privata**, da salvare **fuori dal repository** e da non condividere mai):
 
-Rilanciare `create` è sicuro: gli account già esistenti vengono saltati. Per aggiungere qualcuno in futuro basta aggiungerlo al file e rilanciare, oppure crearlo dal pannello admin.
+```bash
+cd tools
+npm install
+node accounts.mjs create --key ~/Desktop/<nome-file-chiave>.json
+```
 
 Altri comandi utili:
 
@@ -87,7 +89,7 @@ node accounts.mjs role Editor.Tazi disabled --key <chiave> # blocca l'account (a
 | **user** | Account normale: può accedere ma non modificare |
 | **disabled** | Account bloccato |
 
-Il ruolo `owner` si assegna **solo** dalla console Firebase o con `tools/accounts.mjs`, mai dal sito.
+Un nuovo `owner` può essere creato solo da un altro owner (pannello admin), dalla console Firebase o con `tools/accounts.mjs`. Un owner esistente non può essere modificato o bloccato dal sito.
 
 ### Tipi di account
 
@@ -102,7 +104,7 @@ Dal pannello `admin.html` → **Add a staff account** un admin crea nuovi userna
 ## 4. Sistema di sicurezza
 
 - **Regole Firestore lato server** (`firestore.rules`): ogni scrittura è verificata da Google, non dal browser. Anche manomettendo il JavaScript non si superano i permessi.
-- **Gerarchia dei ruoli**: nessuno può cambiare il proprio ruolo; gli admin non possono toccare altri admin né gli owner; gli owner non si creano dal sito.
+- **Gerarchia dei ruoli**: nessuno può cambiare il proprio ruolo; gli admin non possono toccare altri admin né gli owner; solo un owner può creare altri owner, e nessuno può modificare un owner esistente dal sito.
 - **Password temporanee obbligatoriamente da cambiare** al primo accesso; prima di allora l'account non ha permessi.
 - **Username staff su un dominio riservato** (`.invalid`, che non può ricevere e-mail): nessuno può farsi mandare il reset della password di un account staff, e gli username staff non possono essere "rubati" tramite inviti.
 - **E-mail verificata obbligatoria** per gli account Google / e-mail.
@@ -154,7 +156,7 @@ cd tools && npm install && node accounts.mjs create --emulator   # crea gli acco
 | `js/wiki.js` | Modulo comune: login, ruoli, rendering Markdown sicuro |
 | `js/page.js`, `js/editor.js`, `js/admin.js`, `js/login.js` | Logica delle pagine dinamiche e dell'area staff |
 | `js/nav-account.js`, `js/index-extra.js` | Pulsante Login nelle pagine statiche, pagine nuove nella home |
-| `tools/accounts.mjs`, `tools/staff-accounts.json` | Creazione e gestione degli account staff |
+| `tools/accounts.mjs`, `data/staff-accounts.json` | Creazione e gestione degli account staff |
 | `netlify.toml`, `_redirects`, `404.html` | Header di sicurezza, redirect dai vecchi indirizzi (`afg.html` → `page.html?p=afg`), pagina 404 |
 | `css/wiki.css` | Stile condiviso (stesso tema del wiki) |
 | `data/placeholders.json` | Contenuto delle vecchie pagine placeholder |
