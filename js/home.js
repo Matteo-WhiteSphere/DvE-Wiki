@@ -1,6 +1,6 @@
 // Dynamic home page: major nations and the country table are built from
 // data/countries.json plus the pages published from the web editor.
-import { api, loadCountries, el, COLOR_RE, fold, textColorOn } from './wiki.js';
+import { api, loadCountries, el, COLOR_RE, fold, textColorOn, readableOnDark } from './wiki.js';
 
 const $ = (id) => document.getElementById(id);
 const pageHref = (slug) => 'page.html?p=' + encodeURIComponent(slug);
@@ -26,11 +26,12 @@ function merge(base, pages) {
         const href = pageHref(p.slug);
         let row = countries.find((c) => c.href === href) || (p.tag && countries.find((c) => c.tag === p.tag && !c.major));
         if (!row) {
-            row = { tag: p.tag || '', name: '', ideology: '', ideologyColor: '', subIdeology: '', href };
+            row = { tag: p.tag || '', name: '', short: '', ideology: '', ideologyColor: '', subIdeology: '', leader: '', href };
             countries.push(row);
         }
         row.href = row.major ? row.href : href;
-        row.name = p.navLabel || row.name || p.title;
+        row.short = p.navLabel || row.short || p.title;
+        row.name = row.name || p.navLabel || p.title;
         if (p.tag) row.tag = p.tag;
         if (p.ideology) row.ideology = p.ideology;
         if (p.subIdeology) row.subIdeology = p.subIdeology;
@@ -59,7 +60,7 @@ function merge(base, pages) {
     // Majors first (in their order), then every other country by name.
     const ordered = [
         ...countries.filter((c) => c.major),
-        ...countries.filter((c) => !c.major).sort((a, b) => a.name.localeCompare(b.name))
+        ...countries.filter((c) => !c.major).sort((a, b) => (a.short || a.name).localeCompare(b.short || b.name))
     ];
     const extras = pages.filter((x) => EXTRA_TITLES[x.category]);
     return { majors, countries: ordered, extras };
@@ -69,7 +70,7 @@ function merge(base, pages) {
 
 function renderMajors(majors) {
     $('home-majors').replaceChildren(...majors.map((m) => {
-        const c = color(m.color, '#00f3ff');
+        const c = readableOnDark(color(m.color, '#00f3ff'));
         return el('div', { class: 'card', style: `--accent-color: ${c}` },
             el('h3', { text: `${m.name} (${m.tag})` }),
             el('p', { text: 'Select political path wiki page:' }),
@@ -79,13 +80,16 @@ function renderMajors(majors) {
 
 function countryRow(c) {
     const bg = color(c.ideologyColor, '#2d3748');
-    return el('tr', { 'data-search': fold([c.tag, c.name, c.ideology, c.subIdeology].join(' ')), 'data-ideology': c.ideology || '' },
+    const short = c.short || c.name;
+    return el('tr', { 'data-search': fold([c.tag, c.name, c.short, c.alias, c.ideology, c.subIdeology, c.leader].join(' ')), 'data-ideology': c.ideology || '' },
         el('td', {}, c.major ? el('strong', { text: c.tag }) : c.tag),
-        el('td', { text: c.name }),
+        el('td', {}, el('div', { class: 'country-name', text: short }),
+            c.name && c.name !== short ? el('div', { class: 'country-official', text: c.name }) : ''),
         el('td', {}, c.ideology
             ? el('span', { class: 'ideology-badge', style: `background-color: ${bg}; color: ${color(c.ideologyText, textColorOn(bg))};`, text: c.ideology })
             : '—'),
         el('td', { text: c.subIdeology || '—' }),
+        el('td', { text: c.leader || '—' }),
         el('td', {}, el('a', { href: c.href, text: c.major ? 'View Paths' : 'View Wiki' })));
 }
 
@@ -131,6 +135,10 @@ $('country-filter').addEventListener('input', applyFilter);
 $('ideology-filter').addEventListener('change', applyFilter);
 
 const base = await loadCountries();
+if (base.source) {
+    $('mod-source').textContent = `Countries, tags, ideologies and leaders at the 2025 start, taken from the mod files` +
+        (base.source.generated ? ` (updated ${new Date(base.source.generated).toLocaleDateString()})` : '') + '.';
+}
 let data = merge(base, []);
 renderMajors(data.majors);
 renderCountries(data.countries);

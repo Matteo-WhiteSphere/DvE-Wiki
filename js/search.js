@@ -5,7 +5,7 @@ import { api, loadSeeds, loadCountries, el, fold } from './wiki.js';
 const $ = (id) => document.getElementById(id);
 
 // Static pages of the site that are not managed by the editor.
-const STATIC_PAGES = ['ideologies.html', 'events_guide.html', 'fin.html', 'ita_democratic.html', 'ita_communist.html', 'ita_fascist.html'];
+const STATIC_PAGES = ['events_guide.html', 'fin.html', 'ita_democratic.html', 'ita_communist.html', 'ita_fascist.html'];
 
 const KIND_LABEL = {
     country: 'Country', path: 'Country path', guide: 'Guide', other: 'Page',
@@ -15,6 +15,27 @@ const KIND_LABEL = {
 const clean = (s) => String(s || '').replace(/\s+/g, ' ').trim();
 
 // --------------------------------------------------------------- sources
+
+async function ideologyDocs() {
+    try {
+        const { ideologies } = await (await fetch('data/ideologies.json', { cache: 'no-cache' })).json();
+        const docs = [];
+        for (const i of ideologies) {
+            docs.push({
+                title: i.name, url: `ideologies.html#${i.key}`, kind: 'ideology', context: `Main ideology · ${i.types.length} sub-ideologies`,
+                text: clean([i.name, i.noun, i.key, i.description, ...i.types.map((t) => t.name)].join(' '))
+            });
+            for (const t of i.types) {
+                docs.push({
+                    title: t.name, url: `ideologies.html#${t.key}`, kind: 'ideology',
+                    context: `${i.name}${t.countries.length ? ' · ' + t.countries.map((c) => c.name).join(', ') : ''}`,
+                    text: clean([t.name, t.key, i.name, t.description, ...t.countries.map((c) => `${c.name} ${c.tag}`)].join(' '))
+                });
+            }
+        }
+        return docs;
+    } catch { return []; }
+}
 
 async function databasePages() {
     try { return (await api('search')).pages; } catch { return []; }
@@ -66,8 +87,8 @@ let indexPromise = null;
 function buildIndex() {
     if (indexPromise) return indexPromise;
     indexPromise = (async () => {
-        const [pages, seeds, base, ...statics] = await Promise.all([
-            databasePages(), loadSeeds(), loadCountries(), ...STATIC_PAGES.map(staticDocs)
+        const [pages, seeds, base, ideologies, ...statics] = await Promise.all([
+            databasePages(), loadSeeds(), loadCountries(), ideologyDocs(), ...STATIC_PAGES.map(staticDocs)
         ]);
         const docs = [];
         const written = new Set(pages.map((p) => p.slug));
@@ -75,11 +96,12 @@ function buildIndex() {
         // Country table rows (so a TAG or an ideology finds the country).
         for (const c of base.countries) {
             docs.push({
-                title: c.name, url: c.href, kind: 'country', tag: c.tag,
-                context: [c.tag, c.ideology, c.subIdeology].filter(Boolean).join(' · '),
-                text: clean([c.tag, c.name, c.ideology, c.subIdeology].join(' '))
+                title: c.short || c.name, url: c.href, kind: 'country', tag: c.tag,
+                context: [c.tag, c.short && c.short !== c.name ? c.name : '', c.ideology, c.subIdeology, c.leader].filter(Boolean).join(' · '),
+                text: clean([c.tag, c.name, c.short, c.alias, c.ideology, c.subIdeology, c.leader].join(' '))
             });
         }
+        docs.push(...ideologies);
         // Pages written in the editor.
         for (const p of pages) {
             docs.push({

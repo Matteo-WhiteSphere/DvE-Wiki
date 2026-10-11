@@ -126,6 +126,17 @@ export function textColorOn(hex) {
     return lum > 0.62 ? '#000000' : '#ffffff';
 }
 
+/** Same hue, lightened until it is readable as text on the dark theme. */
+export function readableOnDark(hex) {
+    if (!COLOR_RE.test(hex || '')) return '#00f3ff';
+    let [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
+    const lum = () => (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+    for (let i = 0; i < 12 && lum() < 0.45; i++) {
+        r += (255 - r) * 0.15; g += (255 - g) * 0.15; b += (255 - b) * 0.15;
+    }
+    return '#' + [r, g, b].map((v) => Math.round(v).toString(16).padStart(2, '0')).join('');
+}
+
 // --------------------------------------------------------------- helpers
 
 export const SLUG_RE = /^[a-z0-9][a-z0-9_-]{0,63}$/;
@@ -159,7 +170,8 @@ export function hexToRgba(hex, alpha) {
 }
 
 export function applyAccent(target, hex) {
-    const color = COLOR_RE.test(hex || '') ? hex : '#00f3ff';
+    // Very dark accents (e.g. ideology colours of the mod) are lightened to stay readable.
+    const color = readableOnDark(COLOR_RE.test(hex || '') ? hex : '#00f3ff');
     target.style.setProperty('--accent-color', color);
     target.style.setProperty('--accent-glow', hexToRgba(color, 0.35));
 }

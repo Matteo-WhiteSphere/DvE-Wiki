@@ -268,7 +268,7 @@ async function openPage(slug, { force = false } = {}) {
         if (seed && seed.category === 'country') {
             // Prefill the home-table fields from data/countries.json.
             const row = (await loadCountries()).countries.find((c) => c.href === 'page.html?p=' + slug);
-            if (row) base = { ideology: row.ideology, subIdeology: row.subIdeology, ideologyColor: row.ideologyColor, navLabel: row.name };
+            if (row) base = { ideology: row.ideology, subIdeology: row.subIdeology, ideologyColor: row.ideologyColor, navLabel: row.short || row.name };
         }
         fillForm(seed ? { ...seed, ...base, published: false } : { title: '', category: 'other', accent: '#00f3ff' });
         if (seed) notice('This page is still a placeholder. Its old content has been loaded: edit it and press Save to create the page.');

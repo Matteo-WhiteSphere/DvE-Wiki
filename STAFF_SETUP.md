@@ -120,7 +120,32 @@ Dopo 5 codici sbagliati la pagina si blocca per 15 minuti per quell'indirizzo IP
 
 ---
 
-## 5. Sviluppo in locale
+## 5. Allineamento con la mod
+
+Nazioni, TAG, ideologie, sotto-ideologie, leader, nomi in gioco, icone e illustrazioni del wiki vengono **dalla mod stessa** (repository [ECModder/2025-Dragon-Vs.-Eagle](https://github.com/ECModder/2025-Dragon-Vs.-Eagle)). Quando la mod cambia, si riallinea il wiki così (serve Node.js 20+ e Python 3 con Pillow):
+
+```bash
+git clone --depth 1 https://github.com/ECModder/2025-Dragon-Vs.-Eagle ../2025-Dragon-Vs.-Eagle   # la prima volta
+git -C ../2025-Dragon-Vs.-Eagle pull                                                              # le volte successive
+python3 tools/convert-mod-icons.py ../2025-Dragon-Vs.-Eagle   # icone e illustrazioni nuove
+npm run sync-mod -- ../2025-Dragon-Vs.-Eagle                  # dati
+```
+
+Poi commit + push. Cosa viene aggiornato:
+
+| File | Contenuto |
+|---|---|
+| `data/countries.json` | Le nazioni presenti sulla mappa del 2025 (chi possiede almeno uno stato), con TAG HOI4, nome in gioco, ideologia e sotto-ideologia di partenza, leader |
+| `data/ideologies.json` | Le 14 ideologie e le sotto-ideologie con colori, descrizioni, icone e illustrazioni → pagina `ideologies.html` |
+| `data/placeholders.json` | Le bozze delle nazioni (informazioni, partiti e popolarità del 2025, leader disponibili). Le pagine già scritte nell'editor **non vengono toccate** |
+| `data/mod-report.json` | Problemi trovati nei dati della mod (vedi sotto) |
+| `images/ideologies/` | Icone mancanti e illustrazioni (`art/`) convertite dai file `.dds` / `.jpg` della mod |
+
+Come vengono letti i dati: per ogni nazione si applica il file `history/countries` come fa il gioco (prima la parte senza data, poi i blocchi datati fino alla data del bookmark 2025); il leader è l'**ultimo** definito per il partito al governo; i nomi vengono dalla localisation inglese della mod.
+
+`data/mod-report.json` elenca le incoerenze della mod utili ai DEV: nazioni senza un leader per il partito al governo (in gioco ne viene generato uno a caso), partito al governo con popolarità 0%, nazioni senza `set_politics`.
+
+## 6. Sviluppo in locale
 
 Serve [Node.js](https://nodejs.org) 20 o più recente. Nessun account Netlify necessario:
 
@@ -132,7 +157,7 @@ npm test         # test automatici del server e della sicurezza
 
 In locale valgono le stesse password temporanee del file. Per ricominciare da zero cancella la cartella `.dev-data/`.
 
-## 6. File principali
+## 7. File principali
 
 | File | Contenuto |
 |---|---|
@@ -142,7 +167,9 @@ In locale valgono le stesse password temporanee del file. Per ricominciare da ze
 | `tools/temp-passwords.mjs` | Genera nuove password temporanee per il file |
 | `js/wiki.js` | Modulo comune del browser: chiamate al server, rendering Markdown sicuro |
 | `js/page.js`, `js/editor.js`, `js/admin.js`, `js/login.js`, `js/recover.js` | Pagine dinamiche, area staff e recupero |
-| `js/home.js`, `data/countries.json` | Home dinamica: nazioni principali e tabella dei paesi (dati di base + pagine dell'editor) |
+| `js/home.js`, `data/countries.json` | Home dinamica: nazioni principali e tabella dei paesi (dati della mod + pagine dell'editor) |
+| `ideologies.html`, `js/ideologies.js`, `data/ideologies.json` | Pagina delle ideologie (dati della mod) |
+| `tools/sync-from-mod.mjs`, `tools/hoi4-parser.mjs`, `tools/convert-mod-icons.py` | Allineamento con la mod |
 | `search.html`, `js/search.js` | Ricerca nel wiki |
 | `js/nav-account.js` | Pulsante Login nelle pagine statiche |
 | `netlify.toml`, `_redirects`, `404.html` | Configurazione Netlify, header di sicurezza, redirect, pagina 404 |

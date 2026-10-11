@@ -187,6 +187,9 @@ footer {
 #country-count { color: var(--text-secondary); font-size: 0.9em; }
 .card a { color: var(--accent-color, var(--accent-neon)); }
 .wiki-table a { color: var(--accent-neon); }
+.country-name { font-weight: bold; }
+.country-official { color: var(--text-secondary); font-size: 0.85em; margin-top: 2px; }
+.mod-source { color: var(--text-secondary); font-size: 0.85em; margin: 6px 0 0; }
 </style>
     <script type="module" src="js/home.js"></script>
     <script type="module" src="js/nav-account.js"></script>
@@ -212,6 +215,7 @@ footer {
         <div class="grid" id="home-majors"></div>
 
         <h2 style="margin-top: 40px;">All Global Nations (2025 World Map)</h2>
+        <p class="mod-source" id="mod-source"></p>
         <div class="home-filters">
             <input type="search" id="country-filter" placeholder="Filter countries (name, TAG, ideology…)" aria-label="Filter countries" maxlength="60">
             <select id="ideology-filter" aria-label="Filter by ideology"><option value="">All ideologies</option></select>
@@ -224,6 +228,7 @@ footer {
                     <th>Country Name</th>
                     <th>Starting Ideology</th>
                     <th>Sub-Ideology</th>
+                    <th>Leader</th>
                     <th>Wiki Link</th>
                 </tr>
             </thead>
