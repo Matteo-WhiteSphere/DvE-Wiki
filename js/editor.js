@@ -1,7 +1,7 @@
-// Page editor for moderators / admins.
+// Page editor for editors / admins / owners.
 import {
     db, isConfigured, watchSession, enforceIdleTimeout, loadSeeds, renderSections, el,
-    applyAccent, isEditorRole, isAdminRole, auditEntry, SLUG_RE, COLOR_RE, slugify,
+    applyAccent, isEditorRole, isAdminRole, accountActive, accountLabel, auditEntry, SLUG_RE, COLOR_RE, slugify,
     formatDate, friendlyError
 } from './wiki.js';
 import {
@@ -446,7 +446,7 @@ function wire() {
 // --------------------------------------------------------------- start
 
 let started = false;
-watchSession(async ({ user, role }) => {
+watchSession(async ({ user, profile, role }) => {
     if (!isConfigured) { notice('The staff area is not configured yet (see STAFF_SETUP.md).', 'error'); return; }
     if (!user) {
         location.replace('login.html?next=' + encodeURIComponent('editor.html' + location.search));
@@ -454,11 +454,12 @@ watchSession(async ({ user, role }) => {
     }
     state.user = user;
     state.role = role;
-    $('whoami').textContent = `Signed in as ${user.email} (${role})`;
+    $('whoami').textContent = `Signed in as ${accountLabel(profile, user)} (${role})`;
     $('nav-admin').classList.toggle('hidden', !isAdminRole(role));
-    if (!isEditorRole(role) || !user.emailVerified) {
+    if (profile && profile.mustChangePassword) { location.replace('login.html'); return; }
+    if (!isEditorRole(role) || !accountActive(user, profile)) {
         $('editor-root').classList.add('hidden');
-        notice('Your account cannot edit pages (role: ' + role + (user.emailVerified ? '' : ', e-mail not verified') + '). Open "Account" for details.', 'error');
+        notice('Your account cannot edit pages (role: ' + role + '). Open "Account" for details.', 'error');
         return;
     }
     if (started) return;

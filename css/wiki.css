@@ -216,8 +216,8 @@ input[type=color] { width: 48px; height: 36px; border: 1px solid var(--border-co
 .role-tag { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.75em; font-weight: bold; text-transform: uppercase; border: 1px solid currentColor; }
 .role-owner { color: #ffd700; }
 .role-admin { color: #ff6868; }
-.role-moderator { color: var(--accent-neon); }
-.role-pending { color: var(--warn); }
+.role-editor { color: var(--accent-neon); }
+.role-user { color: var(--warn); }
 .role-disabled { color: #777; }
 
 /* ---------- editor ---------- */
@@ -246,3 +246,5 @@ input[type=color] { width: 48px; height: 36px; border: 1px solid var(--border-co
     nav { flex-direction: column; align-items: center; }
     header h1 { font-size: 1.6em; }
 }
+
+nav a.nav-login { border-color: var(--accent-color); }

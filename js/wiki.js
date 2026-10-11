@@ -11,7 +11,7 @@ import {
 } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 import { marked } from './vendor/marked.esm.js';
 import DOMPurify from './vendor/purify.es.js';
-import { firebaseConfig, IDLE_LOGOUT_MINUTES, EMULATOR_HOST } from './firebase-config.js';
+import { firebaseConfig, IDLE_LOGOUT_MINUTES, EMULATOR_HOST, USERNAME_DOMAIN } from './firebase-config.js';
 
 // ------------------------------------------------------------------ setup
 
@@ -42,22 +42,65 @@ if (isConfigured) {
 
 // ------------------------------------------------------------------ roles
 
-export const ROLES = ['owner', 'admin', 'moderator', 'pending', 'disabled'];
-export const isEditorRole = (r) => r === 'moderator' || r === 'admin' || r === 'owner';
+export const ROLES = ['owner', 'admin', 'editor', 'user', 'disabled'];
+export const isEditorRole = (r) => r === 'editor' || r === 'admin' || r === 'owner';
 export const isAdminRole = (r) => r === 'admin' || r === 'owner';
 
 /** Roles that a user with role `actor` may grant (mirrors canAssign() in firestore.rules). */
 export function assignableRoles(actor) {
-    if (actor === 'owner') return ['pending', 'moderator', 'admin', 'disabled'];
-    if (actor === 'admin') return ['pending', 'moderator', 'disabled'];
+    if (actor === 'owner') return ['user', 'editor', 'admin', 'disabled'];
+    if (actor === 'admin') return ['user', 'editor', 'disabled'];
     return [];
+}
+
+// ------------------------------------------------------ staff usernames
+// Staff accounts log in with "Role.Name" (e.g. Editor.Rapha). Internally they are
+// e-mail/password accounts on a reserved domain that can never receive mail.
+
+export const ROLE_PREFIX = { owner: 'Owner', admin: 'Admin', editor: 'Editor' };
+export const STAFF_NAME_RE = /^[A-Za-z0-9_-]{2,32}$/;
+const STAFF_USERNAME_RE = /^(owner|admin|editor)\.[a-z0-9_-]{2,32}$/i;
+
+export function staffUsername(role, name) {
+    return `${ROLE_PREFIX[role]}.${name}`;
+}
+
+/** "Editor.Rapha" → "editor.rapha@<domain>"; a real e-mail address is returned lower-cased. */
+export function loginToEmail(login) {
+    const value = String(login || '').trim();
+    if (value.includes('@')) return value.toLowerCase();
+    if (!STAFF_USERNAME_RE.test(value)) return null;
+    return `${value.toLowerCase()}@${USERNAME_DOMAIN}`;
+}
+
+export function isStaffEmail(email) {
+    return String(email || '').toLowerCase().endsWith('@' + USERNAME_DOMAIN);
+}
+
+/** What to show for an account: its "Role.Name" or its e-mail address. */
+export function accountLabel(profile, user) {
+    const email = (profile && profile.email) || (user && user.email) || '';
+    if (isStaffEmail(email)) return (profile && profile.displayName) || email.split('@')[0];
+    return email;
+}
+
+/** Random temporary password that satisfies the Firebase password policy. */
+export function tempPassword() {
+    const upper = 'ABCDEFGHJKLMNPQRSTUVWXYZ', lower = 'abcdefghijkmnopqrstuvwxyz', digits = '23456789';
+    const all = upper + lower + digits;
+    const bytes = crypto.getRandomValues(new Uint32Array(16));
+    const chars = [...bytes].map((b, i) => {
+        const set = i === 0 ? upper : i === 1 ? lower : i === 2 ? digits : all;
+        return set[b % set.length];
+    });
+    return chars.join('').match(/.{4}/g).join('-');
 }
 
 // ---------------------------------------------------------------- session
 
 /**
  * Makes sure the signed-in user has a profile document. New users are created
- * as "pending" unless an admin invited their (verified) e-mail address.
+ * with role "user" unless an admin invited their (verified) e-mail address.
  */
 async function ensureProfile(user) {
     const ref = doc(db, 'users', user.uid);
@@ -66,7 +109,7 @@ async function ensureProfile(user) {
     const profile = snap.exists() ? snap.data() : null;
 
     let invite = null;
-    if (email && user.emailVerified && (!profile || profile.role === 'pending')) {
+    if (email && user.emailVerified && (!profile || profile.role === 'user')) {
         await user.getIdToken(true); // make sure the token carries email_verified
         try {
             const inv = await getDoc(doc(db, 'invites', email));
@@ -78,12 +121,12 @@ async function ensureProfile(user) {
         await setDoc(ref, {
             email,
             displayName: (user.displayName || email.split('@')[0] || 'user').slice(0, 80),
-            role: invite ? invite.role : 'pending',
+            role: invite ? invite.role : 'user',
             createdAt: serverTimestamp(),
             lastLogin: serverTimestamp()
         });
         if (invite) await deleteDoc(doc(db, 'invites', email)).catch(() => {});
-    } else if (profile.role === 'pending' && invite) {
+    } else if (profile.role === 'user' && invite) {
         await updateDoc(ref, { role: invite.role, lastLogin: serverTimestamp() });
         await deleteDoc(doc(db, 'invites', email)).catch(() => {});
     } else {
@@ -106,12 +149,18 @@ export function watchSession(cb) {
         if (!user) { cb({ user: null, profile: null, role: 'none' }); return; }
         try {
             const profile = await ensureProfile(user);
-            cb({ user, profile, role: profile ? profile.role : 'pending' });
+            cb({ user, profile, role: profile ? profile.role : 'user' });
         } catch (e) {
             console.error('Profile error', e);
-            cb({ user, profile: null, role: 'pending', error: e });
+            cb({ user, profile: null, role: 'user', error: e });
         }
     });
+}
+
+/** Verified address (or staff login) and no pending temporary password: mirrors active() in the rules. */
+export function accountActive(user, profile) {
+    if (!user || !profile || profile.mustChangePassword) return false;
+    return user.emailVerified || isStaffEmail(user.email);
 }
 
 export async function logout() {
@@ -147,27 +196,48 @@ export function enforceIdleTimeout() {
  * current admin out (uses a throw-away secondary Firebase app), then sends
  * a password-reset e-mail so the new user chooses their own password.
  */
-export async function createPasswordAccount(email) {
+async function withSecondaryAuth(fn) {
     const secondary = initializeApp(activeConfig, 'secondary-' + Date.now());
     try {
         const secAuth = getAuth(secondary);
         if (usingEmulator) connectAuthEmulator(secAuth, `http://${EMULATOR_HOST}:9099`, { disableWarnings: true });
         await setPersistence(secAuth, inMemoryPersistence);
-        const bytes = crypto.getRandomValues(new Uint8Array(24));
-        const tempPassword = btoa(String.fromCharCode(...bytes)) + 'aA1!';
-        let created = true;
-        try {
-            await createUserWithEmailAndPassword(secAuth, email, tempPassword);
-        } catch (e) {
-            if (e.code !== 'auth/email-already-in-use') throw e;
-            created = false;
-        }
+        const result = await fn(secAuth);
         await signOut(secAuth).catch(() => {});
-        await sendPasswordResetEmail(auth, email);
-        return { created };
+        return result;
     } finally {
         await deleteApp(secondary).catch(() => {});
     }
+}
+
+export async function createPasswordAccount(email) {
+    const created = await withSecondaryAuth(async (secAuth) => {
+        try {
+            const bytes = crypto.getRandomValues(new Uint8Array(24));
+            await createUserWithEmailAndPassword(secAuth, email, btoa(String.fromCharCode(...bytes)) + 'aA1!');
+            return true;
+        } catch (e) {
+            if (e.code !== 'auth/email-already-in-use') throw e;
+            return false;
+        }
+    });
+    await sendPasswordResetEmail(auth, email);
+    return { created };
+}
+
+/**
+ * Creates a "Role.Name" staff login with a temporary password (shown once to the
+ * admin, who passes it on). Returns { uid, email, password }.
+ */
+export async function createStaffLogin(username) {
+    const email = loginToEmail(username);
+    if (!email) throw new Error('Invalid username.');
+    const password = tempPassword();
+    const uid = await withSecondaryAuth(async (secAuth) => {
+        const cred = await createUserWithEmailAndPassword(secAuth, email, password);
+        return cred.user.uid;
+    });
+    return { uid, email, password };
 }
 
 /** Builds an audit-log document (to be written in a batch/transaction or alone). */
@@ -251,10 +321,14 @@ export function formatDate(ts) {
 export function friendlyError(e) {
     const code = (e && e.code) || '';
     const map = {
-        'auth/invalid-credential': 'Wrong e-mail or password.',
-        'auth/wrong-password': 'Wrong e-mail or password.',
-        'auth/user-not-found': 'Wrong e-mail or password.',
-        'auth/invalid-email': 'Invalid e-mail address.',
+        'auth/invalid-credential': 'Wrong username / e-mail or password.',
+        'auth/wrong-password': 'Wrong username / e-mail or password.',
+        'auth/user-not-found': 'Wrong username / e-mail or password.',
+        'auth/invalid-email': 'Invalid username or e-mail address.',
+        'auth/email-already-in-use': 'This username or e-mail address is already taken.',
+        'auth/weak-password': 'The password is too weak (at least 10 characters, with upper-case, lower-case letters and a number).',
+        'auth/password-does-not-meet-requirements': 'The password does not meet the requirements (at least 10 characters, with upper-case, lower-case letters and a number).',
+        'auth/requires-recent-login': 'For security, sign out and sign in again, then retry.',
         'auth/too-many-requests': 'Too many attempts. The account is temporarily locked, try again later or reset the password.',
         'auth/user-disabled': 'This account has been disabled.',
         'auth/popup-closed-by-user': 'Login window closed.',

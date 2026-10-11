@@ -13,12 +13,12 @@
 <body>
     <header>
         <h1>STAFF AREA</h1>
-        <p>Dragon vs Eagle Wiki — Developers &amp; Moderators</p>
+        <p>Dragon vs Eagle Wiki — Login</p>
     </header>
     <nav>
         <a href="index.html">Home / Countries</a>
         <a href="ideologies.html">Ideologies List</a>
-        <a href="login.html" class="attivo">Staff Login</a>
+        <a href="login.html" class="attivo">&#128100; Login</a>
     </nav>
     <div class="container">
         <div class="auth-box">
@@ -30,10 +30,10 @@
                     <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.6 5.4 2.6 13.3l7.9 6.1C12.4 13.7 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.6c0-1.6-.1-3.1-.4-4.6H24v9h12.4c-.5 2.9-2.2 5.3-4.6 6.9l7.4 5.7c4.3-4 6.9-9.9 6.9-17z"/><path fill="#FBBC05" d="M10.5 28.6c-.5-1.4-.8-3-.8-4.6s.3-3.2.8-4.6l-7.9-6.1C.9 16.6 0 20.2 0 24s.9 7.4 2.6 10.7l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.4-5.7c-2.1 1.4-4.8 2.3-8.5 2.3-6.3 0-11.6-4.2-13.5-10l-7.9 6.1C6.6 42.6 14.6 48 24 48z"/></svg>
                     Sign in with Google
                 </button>
-                <div class="divider">— or with e-mail —</div>
+                <div class="divider">— or with your staff account —</div>
                 <form id="email-form" autocomplete="on">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" autocomplete="username" required maxlength="200">
+                    <label for="email">Username or e-mail</label>
+                    <input type="text" id="email" autocomplete="username" autocapitalize="off" spellcheck="false" required maxlength="200" placeholder="Editor.Name">
                     <label for="password">Password</label>
                     <input type="password" id="password" autocomplete="current-password" required maxlength="200">
                     <div class="row" style="margin-top:14px">
@@ -41,12 +41,29 @@
                         <button class="btn shrink" type="button" id="reset-btn">Forgot password?</button>
                     </div>
                 </form>
-                <p class="muted" style="margin-top:16px">Accounts are created by the wiki administrators. If you sign in with Google for the first time your account will wait for approval.</p>
+                <p class="muted" style="margin-top:16px">Staff usernames look like <code>Role.Name</code> (e.g. <code>Editor.Rapha</code>) and are created by the administrators. Signing in with Google creates a normal user account: an administrator can then give it editing rights.</p>
+            </div>
+
+            <div class="card hidden" id="change-password">
+                <h3>Choose your password</h3>
+                <p class="muted">You signed in with a temporary password. Choose your own password to activate the account.</p>
+                <form id="password-form">
+                    <input type="text" autocomplete="username" id="pw-username" class="hidden" readonly>
+                    <label for="new-password">New password</label>
+                    <input type="password" id="new-password" autocomplete="new-password" required minlength="10" maxlength="200">
+                    <label for="new-password2">Repeat new password</label>
+                    <input type="password" id="new-password2" autocomplete="new-password" required minlength="10" maxlength="200">
+                    <p class="muted">At least 10 characters, with upper-case and lower-case letters and a number.</p>
+                    <div class="row" style="margin-top:14px">
+                        <button class="btn primary" type="submit" id="pw-btn">Save password</button>
+                        <button class="btn shrink danger" type="button" id="pw-logout">Sign out</button>
+                    </div>
+                </form>
             </div>
 
             <div class="card hidden" id="signed-in">
                 <h3>Your account</h3>
-                <p><strong>E-mail:</strong> <span id="me-email"></span></p>
+                <p><strong>Account:</strong> <span id="me-email"></span></p>
                 <p><strong>Role:</strong> <span id="me-role"></span></p>
                 <div id="me-status"></div>
                 <div class="toolbar" style="margin-top:14px" id="me-actions"></div>

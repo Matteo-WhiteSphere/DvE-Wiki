@@ -19,3 +19,8 @@ export const IDLE_LOGOUT_MINUTES = 60;
 // Local development only: when the site is opened from localhost with
 // ?emulator=1 it talks to the Firebase emulators (firebase emulators:start).
 export const EMULATOR_HOST = "127.0.0.1";
+
+// Staff accounts sign in with "Role.Name" (e.g. Editor.Rapha), stored as
+// "editor.rapha@<USERNAME_DOMAIN>". ".invalid" is a reserved domain that can
+// never receive e-mail. Must match staffLoginRe() in firestore.rules.
+export const USERNAME_DOMAIN = "dve-wiki.invalid";

@@ -28,29 +28,33 @@
             <div class="card">
                 <h3>Add a staff account</h3>
                 <p class="muted">
+                    <strong>Staff username:</strong> creates the login <code>Role.Name</code> (e.g. <code>Editor.Rapha</code>) with a temporary password that you pass on; it must be changed at the first login.<br>
                     <strong>Google:</strong> the person signs in with that Google account and gets the role automatically.<br>
                     <strong>E-mail + password:</strong> an account is created and the person receives an e-mail to choose their own password.
                 </p>
                 <form id="invite-form" class="row">
-                    <div style="flex:2 1 260px">
-                        <label for="inv-email">E-mail</label>
-                        <input type="email" id="inv-email" required maxlength="200" placeholder="dev@example.com">
+                    <div>
+                        <label for="inv-method">Login method</label>
+                        <select id="inv-method">
+                            <option value="staff">Staff username (Role.Name)</option>
+                            <option value="google">Google</option>
+                            <option value="password">E-mail + password</option>
+                        </select>
                     </div>
                     <div>
                         <label for="inv-role">Role</label>
                         <select id="inv-role"></select>
                     </div>
-                    <div>
-                        <label for="inv-method">Login method</label>
-                        <select id="inv-method">
-                            <option value="google">Google</option>
-                            <option value="password">E-mail + password</option>
-                        </select>
+                    <div style="flex:2 1 260px">
+                        <label for="inv-email" id="inv-email-label">Name</label>
+                        <input type="text" id="inv-email" required maxlength="200" autocomplete="off" spellcheck="false">
                     </div>
                     <div class="shrink">
                         <button class="btn primary" type="submit" id="inv-btn">Add account</button>
                     </div>
                 </form>
+                <p class="muted" id="inv-preview"></p>
+                <div id="new-account" class="notice ok hidden"></div>
             </div>
 
             <div class="card">
@@ -61,12 +65,13 @@
             <div class="card">
                 <h3>Users</h3>
                 <p class="muted">
-                    <span class="role-tag role-owner">owner</span> manages admins (set only from the Firebase console) ·
-                    <span class="role-tag role-admin">admin</span> manages moderators, deletes pages ·
-                    <span class="role-tag role-moderator">moderator</span> creates and edits pages ·
-                    <span class="role-tag role-pending">pending</span> waiting for approval ·
+                    <span class="role-tag role-owner">owner</span> manages admins (set only from the Firebase console or tools/accounts.mjs) ·
+                    <span class="role-tag role-admin">admin</span> manages editors, deletes pages ·
+                    <span class="role-tag role-editor">editor</span> creates and edits pages ·
+                    <span class="role-tag role-user">user</span> can only read ·
                     <span class="role-tag role-disabled">disabled</span> blocked
                 </p>
+                <p class="muted">Forgotten password of a staff username: an owner runs <code>node tools/accounts.mjs reset Editor.Name</code> (see STAFF_SETUP.md). Changing the role here does not rename the login.</p>
                 <div class="toolbar"><input type="text" id="user-search" placeholder="Search e-mail…" style="max-width:300px"></div>
                 <div class="table-wrap"><table class="wiki-table" id="users-table"></table></div>
             </div>

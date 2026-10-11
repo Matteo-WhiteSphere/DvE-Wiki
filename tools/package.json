@@ -1,0 +1,12 @@
+{
+  "name": "dve-wiki-tools",
+  "private": true,
+  "type": "module",
+  "description": "Account management for the DvE wiki staff area (Firebase Admin SDK).",
+  "scripts": {
+    "accounts": "node accounts.mjs"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.0"
+  }
+}

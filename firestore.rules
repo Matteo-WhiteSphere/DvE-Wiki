@@ -3,40 +3,57 @@ rules_version = '2';
 // Dragon vs Eagle Wiki — Firestore security rules.
 //
 // Roles (stored in users/{uid}.role):
-//   owner     – set ONLY from the Firebase console. Can manage admins.
-//   admin     – manages moderators, invites, deletes pages, reads the audit log.
-//   moderator – creates and edits wiki pages.
-//   pending   – signed in but not approved yet. No write access.
-//   disabled  – blocked account. No write access.
+//   owner    – set ONLY from the Firebase console or tools/accounts.mjs. Can manage admins.
+//   admin    – manages editors, creates staff accounts, deletes pages, reads the audit log.
+//   editor   – creates and edits wiki pages.
+//   user     – signed in, no write access (default for new sign-ins).
+//   disabled – blocked account. No write access.
 //
-// Every privileged action also requires a verified e-mail address.
+// Staff accounts use the "Role.Name" login (e.g. Editor.Rapha). They are e-mail/password
+// accounts on the reserved domain below, which can never receive mail, so they count as
+// verified. Every other account needs a verified e-mail address.
+// Keep STAFF_DOMAIN in sync with USERNAME_DOMAIN in js/firebase-config.js.
 
 service cloud.firestore {
   match /databases/{database}/documents {
 
+    function staffLoginRe() { return '^[a-z]+[.][a-z0-9_-]+@dve-wiki[.]invalid$'; }
+
     function signedIn() { return request.auth != null; }
-    function verified() { return signedIn() && request.auth.token.email_verified == true; }
     function myEmail() { return request.auth.token.email.lower(); }
+    function realEmailVerified() { return signedIn() && request.auth.token.email_verified == true; }
+    function staffLogin() {
+      return signedIn()
+        && request.auth.token.firebase.sign_in_provider == 'password'
+        && myEmail().matches(staffLoginRe());
+    }
+    function verified() { return realEmailVerified() || staffLogin(); }
 
     function profilePath(uid) { return /databases/$(database)/documents/users/$(uid); }
     function invitePath(email) { return /databases/$(database)/documents/invites/$(email); }
 
     function hasProfile() { return signedIn() && exists(profilePath(request.auth.uid)); }
-    function myRole() { return get(profilePath(request.auth.uid)).data.role; }
+    function myProfile() { return get(profilePath(request.auth.uid)).data; }
 
-    function isEditor() { return verified() && hasProfile() && myRole() in ['moderator', 'admin', 'owner']; }
-    function isAdmin()  { return verified() && hasProfile() && myRole() in ['admin', 'owner']; }
-    function isOwner()  { return verified() && hasProfile() && myRole() == 'owner'; }
+    // A temporary password must be changed before the account gets any power.
+    function active() {
+      return verified() && hasProfile() && myProfile().get('mustChangePassword', false) == false;
+    }
+
+    function isEditor() { return active() && myProfile().role in ['editor', 'admin', 'owner']; }
+    function isAdmin()  { return active() && myProfile().role in ['admin', 'owner']; }
+    function isOwner()  { return active() && myProfile().role == 'owner'; }
 
     // Roles the current user is allowed to grant or take away.
     // Nobody can grant "owner" from the website.
     function canAssign(role) {
-      return (isOwner() && role in ['pending', 'moderator', 'admin', 'disabled'])
-          || (isAdmin() && role in ['pending', 'moderator', 'disabled']);
+      return (isOwner() && role in ['user', 'editor', 'admin', 'disabled'])
+          || (isAdmin() && role in ['user', 'editor', 'disabled']);
     }
 
+    // Invitations are only for real, verified e-mail addresses (Google or e-mail accounts).
     function hasInviteFor(role) {
-      return verified()
+      return realEmailVerified()
         && exists(invitePath(myEmail()))
         && get(invitePath(myEmail())).data.role == role;
     }
@@ -46,28 +63,45 @@ service cloud.firestore {
       allow get: if signedIn() && (request.auth.uid == uid || isAdmin());
       allow list: if isAdmin();
 
-      // A user creates their own profile on first login: "pending", or the
-      // role an admin invited their (verified) e-mail address with.
-      allow create: if signedIn()
-        && request.auth.uid == uid
-        && request.resource.data.keys().hasOnly(['email', 'displayName', 'role', 'createdAt', 'lastLogin'])
-        && request.resource.data.email == myEmail()
-        && request.resource.data.displayName is string
-        && request.resource.data.displayName.size() <= 80
-        && request.resource.data.createdAt == request.time
-        && request.resource.data.lastLogin == request.time
-        && (request.resource.data.role == 'pending' || hasInviteFor(request.resource.data.role));
-
-      allow update: if
-        // Self: only cosmetic fields.
-        (signedIn() && request.auth.uid == uid
-          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['displayName', 'lastLogin'])
+      allow create: if
+        // A user creates their own profile on first login: "user", or the role an
+        // admin invited their (verified) e-mail address with.
+        (signedIn()
+          && request.auth.uid == uid
+          && request.resource.data.keys().hasOnly(['email', 'displayName', 'role', 'createdAt', 'lastLogin'])
+          && request.resource.data.email == myEmail()
           && request.resource.data.displayName is string
           && request.resource.data.displayName.size() <= 80
-          && request.resource.data.lastLogin == request.time)
-        // Self: a pending user that has been invited later picks up the invited role.
+          && request.resource.data.createdAt == request.time
+          && request.resource.data.lastLogin == request.time
+          && (request.resource.data.role == 'user' || hasInviteFor(request.resource.data.role)))
+        // An admin creates the profile of a new "Role.Name" staff account.
+        || (isAdmin()
+          && request.auth.uid != uid
+          && request.resource.data.keys().hasOnly(['email', 'displayName', 'role', 'createdAt', 'createdBy', 'mustChangePassword'])
+          && request.resource.data.email is string
+          && request.resource.data.email.matches(staffLoginRe())
+          && request.resource.data.displayName is string
+          && request.resource.data.displayName.size() <= 80
+          && request.resource.data.role in ['editor', 'admin']
+          && canAssign(request.resource.data.role)
+          && request.resource.data.createdBy == request.auth.uid
+          && request.resource.data.createdAt == request.time
+          && request.resource.data.mustChangePassword == true);
+
+      allow update: if
+        // Self: cosmetic fields, and clearing the "change your password" flag.
+        (signedIn() && request.auth.uid == uid
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['displayName', 'lastLogin', 'mustChangePassword'])
+          && request.resource.data.displayName is string
+          && request.resource.data.displayName.size() <= 80
+          && (!('mustChangePassword' in request.resource.data.diff(resource.data).affectedKeys())
+              || request.resource.data.mustChangePassword == false)
+          && (!('lastLogin' in request.resource.data.diff(resource.data).affectedKeys())
+              || request.resource.data.lastLogin == request.time))
+        // Self: a plain user that has been invited later picks up the invited role.
         || (signedIn() && request.auth.uid == uid
-          && resource.data.role == 'pending'
+          && resource.data.role == 'user'
           && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['role', 'lastLogin'])
           && request.resource.data.lastLogin == request.time
           && hasInviteFor(request.resource.data.role))
@@ -85,18 +119,19 @@ service cloud.firestore {
     // -------------------------------------------------------------- invites
     // Document id = lower-case e-mail address.
     match /invites/{email} {
-      allow get: if (verified() && myEmail() == email) || isAdmin();
+      allow get: if (realEmailVerified() && myEmail() == email) || isAdmin();
       allow list: if isAdmin();
       allow create, update: if isAdmin()
         && email == email.lower()
         && email.matches('^[^@\\s/]+@[^@\\s/]+\\.[^@\\s/]+$')
+        && !email.matches(staffLoginRe())
         && request.resource.data.keys().hasOnly(['role', 'method', 'invitedBy', 'createdAt'])
-        && request.resource.data.role in ['moderator', 'admin']
+        && request.resource.data.role in ['editor', 'admin']
         && canAssign(request.resource.data.role)
         && request.resource.data.method in ['google', 'password']
         && request.resource.data.invitedBy == request.auth.uid
         && request.resource.data.createdAt == request.time;
-      allow delete: if isAdmin() || (verified() && myEmail() == email);
+      allow delete: if isAdmin() || (realEmailVerified() && myEmail() == email);
     }
 
     // ---------------------------------------------------------------- pages
@@ -135,7 +170,7 @@ service cloud.firestore {
         && request.resource.data.createdBy == resource.data.createdBy
         && request.resource.data.createdAt == resource.data.createdAt;
 
-      // Moderators can unpublish; only admins can delete.
+      // Editors can unpublish; only admins can delete.
       allow delete: if isAdmin();
 
       // Immutable history of every save.

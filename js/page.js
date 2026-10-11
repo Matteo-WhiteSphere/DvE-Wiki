@@ -1,7 +1,7 @@
 // Public renderer for wiki pages stored in Firestore: page.html?p=<slug>
 import {
     db, isConfigured, watchSession, loadSeeds, renderHeader, renderSections, el,
-    isEditorRole, SLUG_RE, formatDate
+    isEditorRole, SLUG_RE, formatDate, accountLabel
 } from './wiki.js';
 import {
     doc, getDoc, collection, query, where, getDocs
@@ -56,7 +56,18 @@ async function fetchSiblings(group, role) {
     return [...items.values()].sort((a, b) => a.order - b.order || a.label.localeCompare(b.label));
 }
 
-async function renderNav(page, role) {
+function loginLink(session) {
+    const signedIn = session && session.user;
+    const label = signedIn ? accountLabel(session.profile, session.user) || 'Account' : 'Login';
+    return el('a', {
+        href: signedIn && isEditorRole(session.role) ? 'editor.html' : 'login.html',
+        class: 'nav-login',
+        title: signedIn ? `Signed in as ${label} (${session.role})` : 'Sign in (staff and user accounts)',
+        text: '\u{1F464} ' + label
+    });
+}
+
+async function renderNav(page, role, session) {
     const links = [
         el('a', { href: 'index.html', text: 'Home / Countries' }),
         el('a', { href: 'ideologies.html', text: 'Ideologies List' })
@@ -73,6 +84,7 @@ async function renderNav(page, role) {
             }
         }
     }
+    links.push(loginLink(session));
     navEl.replaceChildren(...links);
 }
 
@@ -87,7 +99,8 @@ function renderStaffBar(role, exists) {
 }
 
 let renderToken = 0;
-async function render({ role }) {
+async function render(session) {
+    const { role } = session;
     const token = ++renderToken;
 
     if (!SLUG_RE.test(slug)) {
@@ -108,7 +121,7 @@ async function render({ role }) {
         contentEl.replaceChildren(el('div', { class: 'card' },
             el('p', { text: hidden ? 'This page has not been published yet.' : 'This page does not exist (yet).' }),
             error ? el('p', { class: 'muted', text: 'Could not reach the database.' }) : ''));
-        await renderNav(null, role);
+        await renderNav(null, role, session);
         renderStaffBar(role, false);
         return;
     }
@@ -116,7 +129,7 @@ async function render({ role }) {
     renderHeader(headerEl, shown);
     document.title = `${shown.title} - Dragon vs Eagle Wiki`;
     renderSections(contentEl, shown.sections);
-    await renderNav(shown, role);
+    await renderNav(shown, role, session);
     if (token !== renderToken) return;
 
     if (page && !page.published) {

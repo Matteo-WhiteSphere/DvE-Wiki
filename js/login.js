@@ -1,11 +1,13 @@
-// Staff login: Google or e-mail/password.
+// Staff login: Google, "Role.Name" staff accounts or e-mail/password.
 import {
-    auth, isConfigured, watchSession, logout, friendlyError, el, isEditorRole, isAdminRole
+    auth, db, isConfigured, watchSession, logout, friendlyError, el, isEditorRole, isAdminRole,
+    loginToEmail, isStaffEmail, accountLabel
 } from './wiki.js';
 import {
     GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword, sendPasswordResetEmail,
-    sendEmailVerification
+    sendEmailVerification, updatePassword
 } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
+import { doc, updateDoc } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
 const $ = (id) => document.getElementById(id);
 const params = new URLSearchParams(location.search);
@@ -39,18 +41,25 @@ $('google-btn').addEventListener('click', async () => {
 
 $('email-form').addEventListener('submit', async (ev) => {
     ev.preventDefault();
+    const email = loginToEmail($('email').value);
+    if (!email) { notice('Write your username as Role.Name (e.g. Editor.Rapha) or your e-mail address.', 'error'); return; }
     busy(true);
     try {
-        await signInWithEmailAndPassword(auth, $('email').value.trim(), $('password').value);
+        await signInWithEmailAndPassword(auth, email, $('password').value);
         $('password').value = '';
+        notice(null);
     } catch (e) {
         notice(friendlyError(e), 'error');
     } finally { busy(false); }
 });
 
 $('reset-btn').addEventListener('click', async () => {
-    const email = $('email').value.trim();
-    if (!email) { notice('Type your e-mail address first, then press "Forgot password?".'); return; }
+    const email = loginToEmail($('email').value);
+    if (!email) { notice('Type your username or e-mail first, then press "Forgot password?".'); return; }
+    if (isStaffEmail(email)) {
+        notice('Staff usernames have no e-mail: ask an owner to reset your password.');
+        return;
+    }
     busy(true);
     try {
         await sendPasswordResetEmail(auth, email);
@@ -59,17 +68,62 @@ $('reset-btn').addEventListener('click', async () => {
     busy(false);
 });
 
+// ------------------------------------------------------- password change
+
+let session = null;
+let forced = false;
+
+function showPasswordForm(isForced) {
+    forced = isForced;
+    $('change-password').classList.remove('hidden');
+    $('signed-in').classList.toggle('hidden', isForced);
+    $('pw-logout').classList.toggle('hidden', !isForced);
+    $('pw-username').value = session && session.user ? accountLabel(session.profile, session.user) : '';
+    $('new-password').focus();
+}
+
+$('pw-logout').addEventListener('click', () => logout());
+
+$('password-form').addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    const pw = $('new-password').value;
+    if (pw !== $('new-password2').value) { notice('The two passwords are different.', 'error'); return; }
+    if (pw.length < 10 || !/[a-z]/.test(pw) || !/[A-Z]/.test(pw) || !/[0-9]/.test(pw)) {
+        notice('At least 10 characters, with upper-case and lower-case letters and a number.', 'error');
+        return;
+    }
+    $('pw-btn').disabled = true;
+    try {
+        await updatePassword(session.user, pw);
+        if (session.profile && session.profile.mustChangePassword) {
+            await updateDoc(doc(db, 'users', session.user.uid), { mustChangePassword: false });
+        }
+        $('password-form').reset();
+        $('change-password').classList.add('hidden');
+        notice('Password saved.', 'ok');
+        if (forced) { location.reload(); return; }
+        $('signed-in').classList.remove('hidden');
+    } catch (e) {
+        notice(friendlyError(e), 'error');
+    } finally { $('pw-btn').disabled = false; }
+});
+
+// ---------------------------------------------------------------- state
+
 function roleTag(role) {
     return el('span', { class: 'role-tag role-' + role, text: role });
 }
 
-watchSession(({ user, profile, role, error }) => {
+watchSession((s) => {
+    session = s;
+    const { user, profile, role, error } = s;
     if (!isConfigured) { $('signed-out').classList.remove('hidden'); busy(true); return; }
     $('signed-out').classList.toggle('hidden', !!user);
     $('signed-in').classList.toggle('hidden', !user);
+    $('change-password').classList.add('hidden');
     if (!user) return;
 
-    $('me-email').textContent = user.email || '—';
+    $('me-email').textContent = accountLabel(profile, user) || '—';
     $('me-role').replaceChildren(roleTag(role));
     const status = $('me-status');
     const actions = $('me-actions');
@@ -77,9 +131,16 @@ watchSession(({ user, profile, role, error }) => {
     actions.replaceChildren();
 
     const isPasswordUser = user.providerData.some((p) => p.providerId === 'password');
+    const staff = isStaffEmail(user.email);
+
+    if (profile && profile.mustChangePassword) {
+        showPasswordForm(true);
+        return;
+    }
+
     if (error) {
         status.append(el('div', { class: 'notice error', text: 'Could not load your profile: ' + friendlyError(error) }));
-    } else if (!user.emailVerified && isPasswordUser) {
+    } else if (!user.emailVerified && isPasswordUser && !staff) {
         status.append(el('div', { class: 'notice' },
             el('strong', { text: 'E-mail not verified. ' }),
             'You must verify your address before you can edit the wiki.'));
@@ -91,10 +152,10 @@ watchSession(({ user, profile, role, error }) => {
             } }),
             el('button', { class: 'btn', text: 'I verified it', onclick: async () => { await user.reload(); await user.getIdToken(true); location.reload(); } })
         );
-    } else if (role === 'pending') {
+    } else if (role === 'user') {
         status.append(el('div', { class: 'notice' },
-            el('strong', { text: 'Waiting for approval. ' }),
-            'An administrator must grant you the moderator role. Send them the e-mail address shown above.'));
+            el('strong', { text: 'User account. ' }),
+            'You can read the wiki. To edit pages, ask an administrator for the editor role (send them the account shown above).'));
     } else if (role === 'disabled') {
         status.append(el('div', { class: 'notice error', text: 'This account has been disabled by an administrator.' }));
     } else if (isEditorRole(role)) {
@@ -103,6 +164,6 @@ watchSession(({ user, profile, role, error }) => {
         actions.append(el('a', { class: 'btn primary', href: 'editor.html', text: 'Open page editor' }));
         if (isAdminRole(role)) actions.append(el('a', { class: 'btn', href: 'admin.html', text: 'Admin panel' }));
     }
+    if (isPasswordUser) actions.append(el('button', { class: 'btn', text: 'Change password', onclick: () => showPasswordForm(false) }));
     actions.append(el('button', { class: 'btn danger', text: 'Sign out', onclick: () => logout() }));
-    if (profile && profile.displayName) $('me-email').textContent = `${profile.displayName} <${user.email}>`;
 });

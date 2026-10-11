@@ -5,3 +5,7 @@ firebase-debug.log
 firestore-debug.log
 ui-debug.log
 .firebase/
+tools/package-lock.json
+# Firebase service-account keys: never commit them
+*service-account*.json
+*firebase-adminsdk*.json
