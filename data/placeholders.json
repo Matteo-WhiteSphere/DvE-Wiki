@@ -1,0 +1,4175 @@
+{
+ "afg": {
+  "title": "AFGHANISTAN (AFG)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "afg",
+  "tag": "AFG",
+  "accent": "#503714",
+  "navOrder": 0,
+  "navLabel": "Afghanistan",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** AFG  \n**Starting Ideology:** Fundamentalism  \n**Sub-Ideology:** Islamic Fundamentalism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "ago": {
+  "title": "ANGOLA (AGO)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "ago",
+  "tag": "AGO",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Angola",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** AGO  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Patriotic Socialism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "alb": {
+  "title": "ALBANIA (ALB)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "alb",
+  "tag": "ALB",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Albania",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** ALB  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "and": {
+  "title": "ANDORRA (AND)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "and",
+  "tag": "AND",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Andorra",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** AND  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "are": {
+  "title": "UNITED ARAB EMIRATES (ARE)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "are",
+  "tag": "ARE",
+  "accent": "#c8aa14",
+  "navOrder": 0,
+  "navLabel": "United Arab Emirates",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** ARE  \n**Starting Ideology:** Absolutism  \n**Sub-Ideology:** Absolute Monarchy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "arg": {
+  "title": "ARGENTINA (ARG)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "arg",
+  "tag": "ARG",
+  "accent": "#3080b4",
+  "navOrder": 0,
+  "navLabel": "Argentina",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** ARG  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Classical Populism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "arm": {
+  "title": "ARMENIA (ARM)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "arm",
+  "tag": "ARM",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Armenia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** ARM  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Centrist Populism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "aus": {
+  "title": "AUSTRALIA (AUS)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "aus",
+  "tag": "AUS",
+  "accent": "#0066ff",
+  "navOrder": 0,
+  "navLabel": "Australia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** AUS  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Conservatism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "aut": {
+  "title": "AUSTRIA (AUT)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "aut",
+  "tag": "AUT",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Austria",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** AUT  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Christian Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "aze": {
+  "title": "AZERBAIJAN (AZE)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "aze",
+  "tag": "AZE",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Azerbaijan",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** AZE  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Dynastic Authoritarianism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "bdi": {
+  "title": "BURUNDI (BDI)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "bdi",
+  "tag": "BDI",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Burundi",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** BDI  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Paternalism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "bel": {
+  "title": "BELGIUM (BEL)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "bel",
+  "tag": "BEL",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Belgium",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** BEL  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "ben": {
+  "title": "BENIN (BEN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "ben",
+  "tag": "BEN",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Benin",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** BEN  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "bfa": {
+  "title": "BURKINA FASO (BFA)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "bfa",
+  "tag": "BFA",
+  "accent": "#461464",
+  "navOrder": 0,
+  "navLabel": "Burkina Faso",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** BFA  \n**Starting Ideology:** Autocracy  \n**Sub-Ideology:** Military Junta"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "bgd": {
+  "title": "BANGLADESH (BGD)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "bgd",
+  "tag": "BGD",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Bangladesh",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** BGD  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Illiberal Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "bgr": {
+  "title": "BULGARIA (BGR)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "bgr",
+  "tag": "BGR",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Bulgaria",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** BGR  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "bhr": {
+  "title": "BAHRAIN (BHR)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "bhr",
+  "tag": "BHR",
+  "accent": "#c8aa14",
+  "navOrder": 0,
+  "navLabel": "Bahrain",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** BHR  \n**Starting Ideology:** Absolutism  \n**Sub-Ideology:** Absolute Monarchy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "bhs": {
+  "title": "BAHAMAS (BHS)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "bhs",
+  "tag": "BHS",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Bahamas",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** BHS  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "bih": {
+  "title": "BOSNIA AND HERZEGOVINA (BIH)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "bih",
+  "tag": "BIH",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Bosnia And Herzegovina",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** BIH  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "blr": {
+  "title": "BELARUS (BLR)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "blr",
+  "tag": "BLR",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Belarus",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** BLR  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Putinism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "blz": {
+  "title": "BELIZE (BLZ)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "blz",
+  "tag": "BLZ",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Belize",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** BLZ  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "bol": {
+  "title": "BOLIVIA (BOL)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "bol",
+  "tag": "BOL",
+  "accent": "#dc3c64",
+  "navOrder": 0,
+  "navLabel": "Bolivia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** BOL  \n**Starting Ideology:** Progressive  \n**Sub-Ideology:** Left Populism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "bra": {
+  "title": "BRAZIL (BRA)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "bra",
+  "tag": "BRA",
+  "accent": "#dc3c64",
+  "navOrder": 0,
+  "navLabel": "Brazil",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** BRA  \n**Starting Ideology:** Progressive  \n**Sub-Ideology:** Left Populism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "brb": {
+  "title": "BARBADOS (BRB)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "brb",
+  "tag": "BRB",
+  "accent": "#dc3c64",
+  "navOrder": 0,
+  "navLabel": "Barbados",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** BRB  \n**Starting Ideology:** Progressive  \n**Sub-Ideology:** Social Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "brn": {
+  "title": "BRUNEI (BRN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "brn",
+  "tag": "BRN",
+  "accent": "#c8aa14",
+  "navOrder": 0,
+  "navLabel": "Brunei",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** BRN  \n**Starting Ideology:** Absolutism  \n**Sub-Ideology:** Absolute Monarchy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "btn": {
+  "title": "BHUTAN (BTN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "btn",
+  "tag": "BTN",
+  "accent": "#c8aa14",
+  "navOrder": 0,
+  "navLabel": "Bhutan",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** BTN  \n**Starting Ideology:** Absolutism  \n**Sub-Ideology:** Monarchism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "bwa": {
+  "title": "BOTSWANA (BWA)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "bwa",
+  "tag": "BWA",
+  "accent": "#3080b4",
+  "navOrder": 0,
+  "navLabel": "Botswana",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** BWA  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Conservatism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "caf": {
+  "title": "CENTRAL AFRICAN REPUBLIC (CAF)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "caf",
+  "tag": "CAF",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Central African Republic",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** CAF  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Paternalism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "can": {
+  "title": "CANADA (CAN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "can",
+  "tag": "CAN",
+  "accent": "#0066ff",
+  "navOrder": 0,
+  "navLabel": "Canada",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** CAN  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "che": {
+  "title": "SWITZERLAND (CHE)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "che",
+  "tag": "CHE",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Switzerland",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** CHE  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "chl": {
+  "title": "CHILE (CHL)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "chl",
+  "tag": "CHL",
+  "accent": "#dc3c64",
+  "navOrder": 0,
+  "navLabel": "Chile",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** CHL  \n**Starting Ideology:** Progressive  \n**Sub-Ideology:** Social Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "chn_communist": {
+  "title": "PEOPLE'S REPUBLIC OF CHINA",
+  "subtitle": "CPC CENTRAL COMMITTEE PATH (COMMUNIST BLOC)",
+  "category": "path",
+  "group": "chn",
+  "tag": "CHN",
+  "accent": "#ff0000",
+  "navOrder": 2,
+  "navLabel": "Communist Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** CPC Central Committee  \n**Target Ideology:** totalitarian_communism  \n**Sub-Ideology:** xi_jinping_thought  \n**Overview:** Maintain CPC supremacy and expand global socialist economic power."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "chn_democratic": {
+  "title": "PEOPLE'S REPUBLIC OF CHINA",
+  "subtitle": "REPUBLIC OF CHINA (MAINLAND) PATH (DEMOCRATIC BLOC)",
+  "category": "path",
+  "group": "chn",
+  "tag": "CHN",
+  "accent": "#ff0000",
+  "navOrder": 1,
+  "navLabel": "Democratic Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** Republic of China (Mainland)  \n**Target Ideology:** centrist  \n**Sub-Ideology:** liberal_socialdemocrat  \n**Overview:** Democratic reformist movement overthrowing single-party rule."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "chn_fascist": {
+  "title": "PEOPLE'S REPUBLIC OF CHINA",
+  "subtitle": "HAN NATIONAL SALVATION FRONT PATH (FASCIST BLOC)",
+  "category": "path",
+  "group": "chn",
+  "tag": "CHN",
+  "accent": "#ff0000",
+  "navOrder": 3,
+  "navLabel": "Fascist Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** Han National Salvation Front  \n**Target Ideology:** ultranationalism  \n**Sub-Ideology:** nazi_maoism  \n**Overview:** Ultranationalist Han supremacy regime."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "chn_nonaligned": {
+  "title": "PEOPLE'S REPUBLIC OF CHINA",
+  "subtitle": "PLA SUPREME COMMAND PATH (NONALIGNED BLOC)",
+  "category": "path",
+  "group": "chn",
+  "tag": "CHN",
+  "accent": "#ff0000",
+  "navOrder": 4,
+  "navLabel": "Non-Aligned Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** PLA Supreme Command  \n**Target Ideology:** autocracy  \n**Sub-Ideology:** peoples_liberation_army  \n**Overview:** Direct rule by the Military Commission during national crisis."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "cmr": {
+  "title": "CAMEROON (CMR)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "cmr",
+  "tag": "CMR",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Cameroon",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** CMR  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Personal Dictatorship"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "cod": {
+  "title": "DR CONGO (COD)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "cod",
+  "tag": "COD",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Dr Congo",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** COD  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Illiberal Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "cog": {
+  "title": "REPUBLIC OF THE CONGO (COG)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "cog",
+  "tag": "COG",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Republic Of The Congo",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** COG  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Patriotic Socialism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "col": {
+  "title": "COLOMBIA (COL)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "col",
+  "tag": "COL",
+  "accent": "#dc3c64",
+  "navOrder": 0,
+  "navLabel": "Colombia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** COL  \n**Starting Ideology:** Progressive  \n**Sub-Ideology:** Left Populism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "com": {
+  "title": "COMOROS (COM)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "com",
+  "tag": "COM",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Comoros",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** COM  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Paternalism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "cpv": {
+  "title": "CAPE VERDE (CPV)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "cpv",
+  "tag": "CPV",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Cape Verde",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** CPV  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "cri": {
+  "title": "COSTA RICA (CRI)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "cri",
+  "tag": "CRI",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Costa Rica",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** CRI  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "cub": {
+  "title": "CUBA (CUB)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "cub",
+  "tag": "CUB",
+  "accent": "#b21010",
+  "navOrder": 0,
+  "navLabel": "Cuba",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** CUB  \n**Starting Ideology:** Totalitarian Communism  \n**Sub-Ideology:** Stalinism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "cyp": {
+  "title": "CYPRUS (CYP)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "cyp",
+  "tag": "CYP",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Cyprus",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** CYP  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Christian Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "cze": {
+  "title": "CZECH REPUBLIC (CZE)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "cze",
+  "tag": "CZE",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Czech Republic",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** CZE  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Centrist Populism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "dji": {
+  "title": "DJIBOUTI (DJI)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "dji",
+  "tag": "DJI",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Djibouti",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** DJI  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Personal Dictatorship"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "dnk": {
+  "title": "DENMARK (DNK)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "dnk",
+  "tag": "DNK",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Denmark",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** DNK  \n**Starting Ideology:** Progressive  \n**Sub-Ideology:** Social Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "dom": {
+  "title": "DOMINICAN REPUBLIC (DOM)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "dom",
+  "tag": "DOM",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Dominican Republic",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** DOM  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "dza": {
+  "title": "ALGERIA (DZA)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "dza",
+  "tag": "DZA",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Algeria",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** DZA  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Patriotic Socialism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "ecu": {
+  "title": "ECUADOR (ECU)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "ecu",
+  "tag": "ECU",
+  "accent": "#3080b4",
+  "navOrder": 0,
+  "navLabel": "Ecuador",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** ECU  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Classical Liberalism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "egy": {
+  "title": "EGYPT (EGY)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "egy",
+  "tag": "EGY",
+  "accent": "#461464",
+  "navOrder": 0,
+  "navLabel": "Egypt",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** EGY  \n**Starting Ideology:** Autocracy  \n**Sub-Ideology:** Military Junta"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "eri": {
+  "title": "ERITREA (ERI)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "eri",
+  "tag": "ERI",
+  "accent": "#461464",
+  "navOrder": 0,
+  "navLabel": "Eritrea",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** ERI  \n**Starting Ideology:** Autocracy  \n**Sub-Ideology:** Personal Dictatorship"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "esp": {
+  "title": "SPAIN (ESP)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "esp",
+  "tag": "ESP",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Spain",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** ESP  \n**Starting Ideology:** Progressive  \n**Sub-Ideology:** Social Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "est": {
+  "title": "ESTONIA (EST)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "est",
+  "tag": "EST",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Estonia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** EST  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Ultra Liberalism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "eth": {
+  "title": "ETHIOPIA (ETH)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "eth",
+  "tag": "ETH",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Ethiopia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** ETH  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Patriotic Socialism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "fji": {
+  "title": "FIJI (FJI)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "fji",
+  "tag": "FJI",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Fiji",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** FJI  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "fra_communist": {
+  "title": "FRENCH REPUBLIC",
+  "subtitle": "POPULAR FRONT COMMUNE PATH (COMMUNIST BLOC)",
+  "category": "path",
+  "group": "fra",
+  "tag": "FRA",
+  "accent": "#3399ff",
+  "navOrder": 2,
+  "navLabel": "Communist Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** Popular Front Commune  \n**Target Ideology:** totalitarian_communism  \n**Sub-Ideology:** jacobinism  \n**Overview:** Radical left-wing Jacobin revolution."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "fra_democratic": {
+  "title": "FRENCH REPUBLIC",
+  "subtitle": "SIXTH REPUBLIC PATH (DEMOCRATIC BLOC)",
+  "category": "path",
+  "group": "fra",
+  "tag": "FRA",
+  "accent": "#3399ff",
+  "navOrder": 1,
+  "navLabel": "Democratic Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** Sixth Republic  \n**Target Ideology:** progressive / centrist  \n**Sub-Ideology:** progressivism / centrist_populism  \n**Overview:** Centrist or social-democratic constitutional renewal."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "fra_fascist": {
+  "title": "FRENCH REPUBLIC",
+  "subtitle": "FRENCH STATE PATH (FASCIST BLOC)",
+  "category": "path",
+  "group": "fra",
+  "tag": "FRA",
+  "accent": "#3399ff",
+  "navOrder": 3,
+  "navLabel": "Fascist Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** French State  \n**Target Ideology:** reactionary / ultranationalism  \n**Sub-Ideology:** hardline_conservatism / neo_fascist  \n**Overview:** Rassemblement National hardliner takeover."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "fra_nonaligned": {
+  "title": "FRENCH REPUBLIC",
+  "subtitle": "MILITARY DIRECTORATE PATH (NONALIGNED BLOC)",
+  "category": "path",
+  "group": "fra",
+  "tag": "FRA",
+  "accent": "#3399ff",
+  "navOrder": 4,
+  "navLabel": "Non-Aligned Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** Military Directorate  \n**Target Ideology:** autocracy  \n**Sub-Ideology:** military_junta  \n**Overview:** General staff martial administration."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "gab": {
+  "title": "GABON (GAB)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "gab",
+  "tag": "GAB",
+  "accent": "#461464",
+  "navOrder": 0,
+  "navLabel": "Gabon",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** GAB  \n**Starting Ideology:** Autocracy  \n**Sub-Ideology:** Military Junta"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "gbr_communist": {
+  "title": "UNITED KINGDOM",
+  "subtitle": "BRITISH SOCIALIST FEDERATION PATH (COMMUNIST BLOC)",
+  "category": "path",
+  "group": "gbr",
+  "tag": "GBR",
+  "accent": "#2a52be",
+  "navOrder": 2,
+  "navLabel": "Communist Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** British Socialist Federation  \n**Target Ideology:** revolutionary_socialism  \n**Sub-Ideology:** syndicalism  \n**Overview:** Trade union radicalization and abolition of the monarchy."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "gbr_democratic": {
+  "title": "UNITED KINGDOM",
+  "subtitle": "PARLIAMENTARY DEMOCRACY PATH (DEMOCRATIC BLOC)",
+  "category": "path",
+  "group": "gbr",
+  "tag": "GBR",
+  "accent": "#2a52be",
+  "navOrder": 1,
+  "navLabel": "Democratic Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** Parliamentary Democracy  \n**Target Ideology:** conservative / centrist  \n**Sub-Ideology:** conservatism / liberal_socialdemocrat  \n**Overview:** Standard parliamentary rule under Labour or Conservatives."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "gbr_fascist": {
+  "title": "UNITED KINGDOM",
+  "subtitle": "NEW ALBION ORDER PATH (FASCIST BLOC)",
+  "category": "path",
+  "group": "gbr",
+  "tag": "GBR",
+  "accent": "#2a52be",
+  "navOrder": 3,
+  "navLabel": "Fascist Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** New Albion Order  \n**Target Ideology:** ultranationalism  \n**Sub-Ideology:** neo_fascist  \n**Overview:** Far-right nationalist takeover of Westminster."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "gbr_nonaligned": {
+  "title": "UNITED KINGDOM",
+  "subtitle": "CROWN REGENCY COUNCIL PATH (NONALIGNED BLOC)",
+  "category": "path",
+  "group": "gbr",
+  "tag": "GBR",
+  "accent": "#2a52be",
+  "navOrder": 4,
+  "navLabel": "Non-Aligned Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** Crown Regency Council  \n**Target Ideology:** absolutism  \n**Sub-Ideology:** monarchism  \n**Overview:** Direct royal governance amidst parliamentary breakdown."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "geo": {
+  "title": "GEORGIA (GEO)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "geo",
+  "tag": "GEO",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Georgia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** GEO  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Oligarchy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "ger_communist": {
+  "title": "FEDERAL REPUBLIC OF GERMANY",
+  "subtitle": "RED STAR REPUBLIC PATH (COMMUNIST BLOC)",
+  "category": "path",
+  "group": "ger",
+  "tag": "GER",
+  "accent": "#00bfff",
+  "navOrder": 2,
+  "navLabel": "Communist Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** Red Star Republic  \n**Target Ideology:** vanguard_socialism  \n**Sub-Ideology:** leninist_internationalism  \n**Overview:** Leftist uprising and reconstitution of socialist Germany."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "ger_democratic": {
+  "title": "FEDERAL REPUBLIC OF GERMANY",
+  "subtitle": "FEDERAL REPUBLIC PATH (DEMOCRATIC BLOC)",
+  "category": "path",
+  "group": "ger",
+  "tag": "GER",
+  "accent": "#00bfff",
+  "navOrder": 1,
+  "navLabel": "Democratic Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** Federal Republic  \n**Target Ideology:** conservative / progressive  \n**Sub-Ideology:** christian_democracy / green_leftist  \n**Overview:** Constitutional parliamentary governance in Berlin."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "ger_fascist": {
+  "title": "FEDERAL REPUBLIC OF GERMANY",
+  "subtitle": "PATRIOTIC RESISTANCE FRONT PATH (FASCIST BLOC)",
+  "category": "path",
+  "group": "ger",
+  "tag": "GER",
+  "accent": "#00bfff",
+  "navOrder": 3,
+  "navLabel": "Fascist Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** Patriotic Resistance Front  \n**Target Ideology:** authoritarianism / ultranationalism  \n**Sub-Ideology:** hardline_conservatism / neo_nazist  \n**Overview:** Far-right AfD coalition establishing authoritarian control."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "ger_nonaligned": {
+  "title": "FEDERAL REPUBLIC OF GERMANY",
+  "subtitle": "BUNDESWEHR EMERGENCY COMMAND PATH (NONALIGNED BLOC)",
+  "category": "path",
+  "group": "ger",
+  "tag": "GER",
+  "accent": "#00bfff",
+  "navOrder": 4,
+  "navLabel": "Non-Aligned Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** Bundeswehr Emergency Command  \n**Target Ideology:** autocracy  \n**Sub-Ideology:** military_junta  \n**Overview:** Military stabilization council during state collapse."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "gha": {
+  "title": "GHANA (GHA)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "gha",
+  "tag": "GHA",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Ghana",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** GHA  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "gin": {
+  "title": "GUINEA (GIN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "gin",
+  "tag": "GIN",
+  "accent": "#461464",
+  "navOrder": 0,
+  "navLabel": "Guinea",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** GIN  \n**Starting Ideology:** Autocracy  \n**Sub-Ideology:** Military Junta"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "gmb": {
+  "title": "GAMBIA (GMB)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "gmb",
+  "tag": "GMB",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Gambia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** GMB  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "gnb": {
+  "title": "GUINEA-BISSAU (GNB)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "gnb",
+  "tag": "GNB",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Guinea-Bissau",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** GNB  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Paternalism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "gnq": {
+  "title": "EQUATORIAL GUINEA (GNQ)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "gnq",
+  "tag": "GNQ",
+  "accent": "#461464",
+  "navOrder": 0,
+  "navLabel": "Equatorial Guinea",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** GNQ  \n**Starting Ideology:** Autocracy  \n**Sub-Ideology:** Personal Dictatorship"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "grc": {
+  "title": "GREECE (GRC)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "grc",
+  "tag": "GRC",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Greece",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** GRC  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Christian Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "gtm": {
+  "title": "GUATEMALA (GTM)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "gtm",
+  "tag": "GTM",
+  "accent": "#dc3c64",
+  "navOrder": 0,
+  "navLabel": "Guatemala",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** GTM  \n**Starting Ideology:** Progressive  \n**Sub-Ideology:** Reformist Socialism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "guy": {
+  "title": "GUYANA (GUY)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "guy",
+  "tag": "GUY",
+  "accent": "#dc3c64",
+  "navOrder": 0,
+  "navLabel": "Guyana",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** GUY  \n**Starting Ideology:** Progressive  \n**Sub-Ideology:** Reformist Socialism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "hnd": {
+  "title": "HONDURAS (HND)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "hnd",
+  "tag": "HND",
+  "accent": "#dc3c64",
+  "navOrder": 0,
+  "navLabel": "Honduras",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** HND  \n**Starting Ideology:** Progressive  \n**Sub-Ideology:** Left Populism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "hrv": {
+  "title": "CROATIA (HRV)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "hrv",
+  "tag": "HRV",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Croatia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** HRV  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Christian Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "hti": {
+  "title": "HAITI (HTI)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "hti",
+  "tag": "HTI",
+  "accent": "#461464",
+  "navOrder": 0,
+  "navLabel": "Haiti",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** HTI  \n**Starting Ideology:** Autocracy  \n**Sub-Ideology:** Kleptocracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "hun": {
+  "title": "HUNGARY (HUN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "hun",
+  "tag": "HUN",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Hungary",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** HUN  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Illiberal Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "idn": {
+  "title": "INDONESIA (IDN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "idn",
+  "tag": "IDN",
+  "accent": "#3080b4",
+  "navOrder": 0,
+  "navLabel": "Indonesia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** IDN  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Classical Populism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "ind": {
+  "title": "INDIA (IND)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "ind",
+  "tag": "IND",
+  "accent": "#503714",
+  "navOrder": 0,
+  "navLabel": "India",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** IND  \n**Starting Ideology:** Fundamentalism  \n**Sub-Ideology:** Hindu Nationalism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "irl": {
+  "title": "IRELAND (IRL)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "irl",
+  "tag": "IRL",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Ireland",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** IRL  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "irn": {
+  "title": "IRAN (IRN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "irn",
+  "tag": "IRN",
+  "accent": "#503714",
+  "navOrder": 0,
+  "navLabel": "Iran",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** IRN  \n**Starting Ideology:** Fundamentalism  \n**Sub-Ideology:** Islamic Fundamentalism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "irq": {
+  "title": "IRAQ (IRQ)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "irq",
+  "tag": "IRQ",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Iraq",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** IRQ  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Illiberal Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "isl": {
+  "title": "ICELAND (ISL)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "isl",
+  "tag": "ISL",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Iceland",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** ISL  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "isr": {
+  "title": "ISRAEL (ISR)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "isr",
+  "tag": "ISR",
+  "accent": "#142878",
+  "navOrder": 0,
+  "navLabel": "Israel",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** ISR  \n**Starting Ideology:** Reactionary  \n**Sub-Ideology:** Traditionalismo"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "ita_nonaligned": {
+  "title": "ITALIAN REPUBLIC",
+  "subtitle": "KINGDOM OF ITALY PATH (NONALIGNED BLOC)",
+  "category": "path",
+  "group": "ita",
+  "tag": "ITA",
+  "accent": "#00c8ff",
+  "navOrder": 4,
+  "navLabel": "Non-Aligned Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** Kingdom of Italy  \n**Target Ideology:** absolutism  \n**Sub-Ideology:** casa_savoia  \n**Overview:** Restoration of the House of Savoy."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "jam": {
+  "title": "JAMAICA (JAM)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "jam",
+  "tag": "JAM",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Jamaica",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** JAM  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "jor": {
+  "title": "JORDAN (JOR)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "jor",
+  "tag": "JOR",
+  "accent": "#c8aa14",
+  "navOrder": 0,
+  "navLabel": "Jordan",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** JOR  \n**Starting Ideology:** Absolutism  \n**Sub-Ideology:** Monarchism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "jpn": {
+  "title": "JAPAN (JPN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "jpn",
+  "tag": "JPN",
+  "accent": "#3080b4",
+  "navOrder": 0,
+  "navLabel": "Japan",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** JPN  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Conservatism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "kaz": {
+  "title": "KAZAKHSTAN (KAZ)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "kaz",
+  "tag": "KAZ",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Kazakhstan",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** KAZ  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Guided Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "ken": {
+  "title": "KENYA (KEN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "ken",
+  "tag": "KEN",
+  "accent": "#3080b4",
+  "navOrder": 0,
+  "navLabel": "Kenya",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** KEN  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Classical Populism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "kgz": {
+  "title": "KYRGYZSTAN (KGZ)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "kgz",
+  "tag": "KGZ",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Kyrgyzstan",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** KGZ  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Illiberal Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "khm": {
+  "title": "CAMBODIA (KHM)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "khm",
+  "tag": "KHM",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Cambodia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** KHM  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Guided Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "kor": {
+  "title": "SOUTH KOREA (KOR)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "kor",
+  "tag": "KOR",
+  "accent": "#3080b4",
+  "navOrder": 0,
+  "navLabel": "South Korea",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** KOR  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Conservatism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "kwt": {
+  "title": "KUWAIT (KWT)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "kwt",
+  "tag": "KWT",
+  "accent": "#c8aa14",
+  "navOrder": 0,
+  "navLabel": "Kuwait",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** KWT  \n**Starting Ideology:** Absolutism  \n**Sub-Ideology:** Monarchism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "lao": {
+  "title": "LAOS (LAO)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "lao",
+  "tag": "LAO",
+  "accent": "#b21010",
+  "navOrder": 0,
+  "navLabel": "Laos",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** LAO  \n**Starting Ideology:** Totalitarian Communism  \n**Sub-Ideology:** Market Socialism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "lbn": {
+  "title": "LEBANON (LBN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "lbn",
+  "tag": "LBN",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Lebanon",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** LBN  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Sectarian Confessionalism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "lbr": {
+  "title": "LIBERIA (LBR)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "lbr",
+  "tag": "LBR",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Liberia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** LBR  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "lby": {
+  "title": "LIBYA (LBY)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "lby",
+  "tag": "LBY",
+  "accent": "#461464",
+  "navOrder": 0,
+  "navLabel": "Libya",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** LBY  \n**Starting Ideology:** Autocracy  \n**Sub-Ideology:** Military Junta"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "lka": {
+  "title": "SRI LANKA (LKA)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "lka",
+  "tag": "LKA",
+  "accent": "#dc3c64",
+  "navOrder": 0,
+  "navLabel": "Sri Lanka",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** LKA  \n**Starting Ideology:** Progressive  \n**Sub-Ideology:** Left Populism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "lso": {
+  "title": "LESOTHO (LSO)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "lso",
+  "tag": "LSO",
+  "accent": "#c8aa14",
+  "navOrder": 0,
+  "navLabel": "Lesotho",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** LSO  \n**Starting Ideology:** Absolutism  \n**Sub-Ideology:** Monarchism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "ltu": {
+  "title": "LITHUANIA (LTU)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "ltu",
+  "tag": "LTU",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Lithuania",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** LTU  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Christian Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "lux": {
+  "title": "LUXEMBOURG (LUX)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "lux",
+  "tag": "LUX",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Luxembourg",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** LUX  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "lva": {
+  "title": "LATVIA (LVA)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "lva",
+  "tag": "LVA",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Latvia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** LVA  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Conservatism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "mar": {
+  "title": "MOROCCO (MAR)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "mar",
+  "tag": "MAR",
+  "accent": "#c8aa14",
+  "navOrder": 0,
+  "navLabel": "Morocco",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** MAR  \n**Starting Ideology:** Absolutism  \n**Sub-Ideology:** Monarchism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "mco": {
+  "title": "MONACO (MCO)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "mco",
+  "tag": "MCO",
+  "accent": "#c8aa14",
+  "navOrder": 0,
+  "navLabel": "Monaco",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** MCO  \n**Starting Ideology:** Absolutism  \n**Sub-Ideology:** Monarchism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "mda": {
+  "title": "MOLDOVA (MDA)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "mda",
+  "tag": "MDA",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Moldova",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** MDA  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "mdg": {
+  "title": "MADAGASCAR (MDG)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "mdg",
+  "tag": "MDG",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Madagascar",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** MDG  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "mdv": {
+  "title": "MALDIVES (MDV)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "mdv",
+  "tag": "MDV",
+  "accent": "#3080b4",
+  "navOrder": 0,
+  "navLabel": "Maldives",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** MDV  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Conservatism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "mex": {
+  "title": "MEXICO (MEX)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "mex",
+  "tag": "MEX",
+  "accent": "#dc3c64",
+  "navOrder": 0,
+  "navLabel": "Mexico",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** MEX  \n**Starting Ideology:** Progressive  \n**Sub-Ideology:** Left Populism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "mkd": {
+  "title": "NORTH MACEDONIA (MKD)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "mkd",
+  "tag": "MKD",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "North Macedonia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** MKD  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "mli": {
+  "title": "MALI (MLI)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "mli",
+  "tag": "MLI",
+  "accent": "#461464",
+  "navOrder": 0,
+  "navLabel": "Mali",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** MLI  \n**Starting Ideology:** Autocracy  \n**Sub-Ideology:** Military Junta"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "mlt": {
+  "title": "MALTA (MLT)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "mlt",
+  "tag": "MLT",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Malta",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** MLT  \n**Starting Ideology:** Progressive  \n**Sub-Ideology:** Social Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "mmr": {
+  "title": "MYANMAR (MMR)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "mmr",
+  "tag": "MMR",
+  "accent": "#461464",
+  "navOrder": 0,
+  "navLabel": "Myanmar",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** MMR  \n**Starting Ideology:** Autocracy  \n**Sub-Ideology:** Military Junta"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "mne": {
+  "title": "MONTENEGRO (MNE)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "mne",
+  "tag": "MNE",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Montenegro",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** MNE  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "mng": {
+  "title": "MONGOLIA (MNG)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "mng",
+  "tag": "MNG",
+  "accent": "#dc3c64",
+  "navOrder": 0,
+  "navLabel": "Mongolia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** MNG  \n**Starting Ideology:** Progressive  \n**Sub-Ideology:** Social Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "moz": {
+  "title": "MOZAMBIQUE (MOZ)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "moz",
+  "tag": "MOZ",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Mozambique",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** MOZ  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Patriotic Socialism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "mrt": {
+  "title": "MAURITANIA (MRT)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "mrt",
+  "tag": "MRT",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Mauritania",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** MRT  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Paternalism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "mus": {
+  "title": "MAURITIUS (MUS)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "mus",
+  "tag": "MUS",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Mauritius",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** MUS  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "mwi": {
+  "title": "MALAWI (MWI)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "mwi",
+  "tag": "MWI",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Malawi",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** MWI  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "mys": {
+  "title": "MALAYSIA (MYS)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "mys",
+  "tag": "MYS",
+  "accent": "#3080b4",
+  "navOrder": 0,
+  "navLabel": "Malaysia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** MYS  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Civic Nationalism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "nam": {
+  "title": "NAMIBIA (NAM)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "nam",
+  "tag": "NAM",
+  "accent": "#dc3c64",
+  "navOrder": 0,
+  "navLabel": "Namibia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** NAM  \n**Starting Ideology:** Progressive  \n**Sub-Ideology:** Social Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "ner": {
+  "title": "NIGER (NER)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "ner",
+  "tag": "NER",
+  "accent": "#461464",
+  "navOrder": 0,
+  "navLabel": "Niger",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** NER  \n**Starting Ideology:** Autocracy  \n**Sub-Ideology:** Military Junta"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "nga": {
+  "title": "NIGERIA (NGA)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "nga",
+  "tag": "NGA",
+  "accent": "#3080b4",
+  "navOrder": 0,
+  "navLabel": "Nigeria",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** NGA  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Classical Populism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "nic": {
+  "title": "NICARAGUA (NIC)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "nic",
+  "tag": "NIC",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Nicaragua",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** NIC  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Patriotic Socialism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "nld": {
+  "title": "NETHERLANDS (NLD)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "nld",
+  "tag": "NLD",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Netherlands",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** NLD  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "nor": {
+  "title": "NORWAY (NOR)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "nor",
+  "tag": "NOR",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Norway",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** NOR  \n**Starting Ideology:** Progressive  \n**Sub-Ideology:** Social Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "npl": {
+  "title": "NEPAL (NPL)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "npl",
+  "tag": "NPL",
+  "accent": "#b21010",
+  "navOrder": 0,
+  "navLabel": "Nepal",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** NPL  \n**Starting Ideology:** Totalitarian Communism  \n**Sub-Ideology:** Market Socialism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "nzl": {
+  "title": "NEW ZEALAND (NZL)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "nzl",
+  "tag": "NZL",
+  "accent": "#0066ff",
+  "navOrder": 0,
+  "navLabel": "New Zealand",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** NZL  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Conservatism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "omn": {
+  "title": "OMAN (OMN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "omn",
+  "tag": "OMN",
+  "accent": "#c8aa14",
+  "navOrder": 0,
+  "navLabel": "Oman",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** OMN  \n**Starting Ideology:** Absolutism  \n**Sub-Ideology:** Absolute Monarchy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "pak": {
+  "title": "PAKISTAN (PAK)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "pak",
+  "tag": "PAK",
+  "accent": "#461464",
+  "navOrder": 0,
+  "navLabel": "Pakistan",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** PAK  \n**Starting Ideology:** Autocracy  \n**Sub-Ideology:** Military Junta"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "pan": {
+  "title": "PANAMA (PAN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "pan",
+  "tag": "PAN",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Panama",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** PAN  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "per": {
+  "title": "PERU (PER)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "per",
+  "tag": "PER",
+  "accent": "#3080b4",
+  "navOrder": 0,
+  "navLabel": "Peru",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** PER  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Conservatism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "phl": {
+  "title": "PHILIPPINES (PHL)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "phl",
+  "tag": "PHL",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Philippines",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** PHL  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Illiberal Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "png": {
+  "title": "PAPUA NEW GUINEA (PNG)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "png",
+  "tag": "PNG",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Papua New Guinea",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** PNG  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "pol": {
+  "title": "POLAND (POL)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "pol",
+  "tag": "POL",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Poland",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** POL  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Christian Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "prk": {
+  "title": "NORTH KOREA (PRK)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "prk",
+  "tag": "PRK",
+  "accent": "#b21010",
+  "navOrder": 0,
+  "navLabel": "North Korea",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** PRK  \n**Starting Ideology:** Totalitarian Communism  \n**Sub-Ideology:** Stalinism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "prt": {
+  "title": "PORTUGAL (PRT)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "prt",
+  "tag": "PRT",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Portugal",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** PRT  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "pry": {
+  "title": "PARAGUAY (PRY)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "pry",
+  "tag": "PRY",
+  "accent": "#3080b4",
+  "navOrder": 0,
+  "navLabel": "Paraguay",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** PRY  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Conservatism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "qat": {
+  "title": "QATAR (QAT)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "qat",
+  "tag": "QAT",
+  "accent": "#c8aa14",
+  "navOrder": 0,
+  "navLabel": "Qatar",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** QAT  \n**Starting Ideology:** Absolutism  \n**Sub-Ideology:** Absolute Monarchy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "rou": {
+  "title": "ROMANIA (ROU)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "rou",
+  "tag": "ROU",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Romania",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** ROU  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "rus_communist": {
+  "title": "RUSSIAN FEDERATION",
+  "subtitle": "NEO-SOVIET UNION PATH (COMMUNIST BLOC)",
+  "category": "path",
+  "group": "rus",
+  "tag": "RUS",
+  "accent": "#8b0000",
+  "navOrder": 2,
+  "navLabel": "Communist Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** Neo-Soviet Union  \n**Target Ideology:** vanguard_socialism  \n**Sub-Ideology:** neo_sovietism  \n**Overview:** Re-establishment of the Soviet socialist framework."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "rus_democratic": {
+  "title": "RUSSIAN FEDERATION",
+  "subtitle": "RUSSIAN REPUBLIC PATH (DEMOCRATIC BLOC)",
+  "category": "path",
+  "group": "rus",
+  "tag": "RUS",
+  "accent": "#8b0000",
+  "navOrder": 1,
+  "navLabel": "Democratic Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** Russian Republic  \n**Target Ideology:** centrist  \n**Sub-Ideology:** liberal_socialdemocrat  \n**Overview:** Pro-Western democratic transition and federalization."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "rus_fascist": {
+  "title": "RUSSIAN FEDERATION",
+  "subtitle": "EURASIAN NATIONAL STATE PATH (FASCIST BLOC)",
+  "category": "path",
+  "group": "rus",
+  "tag": "RUS",
+  "accent": "#8b0000",
+  "navOrder": 3,
+  "navLabel": "Fascist Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** Eurasian National State  \n**Target Ideology:** ultranationalism  \n**Sub-Ideology:** national_bolshevism  \n**Overview:** Eurasianist expansionist military dictatorship."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "rus_nonaligned": {
+  "title": "RUSSIAN FEDERATION",
+  "subtitle": "KREMLIN EXECUTIVE PATH (NONALIGNED BLOC)",
+  "category": "path",
+  "group": "rus",
+  "tag": "RUS",
+  "accent": "#8b0000",
+  "navOrder": 4,
+  "navLabel": "Non-Aligned Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** Kremlin Executive  \n**Target Ideology:** authoritarianism  \n**Sub-Ideology:** putinism  \n**Overview:** Maintain the sovereign vertical of power in Moscow."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "rwa": {
+  "title": "RWANDA (RWA)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "rwa",
+  "tag": "RWA",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Rwanda",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** RWA  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Personal Dictatorship"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "sau": {
+  "title": "SAUDI ARABIA (SAU)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "sau",
+  "tag": "SAU",
+  "accent": "#c8aa14",
+  "navOrder": 0,
+  "navLabel": "Saudi Arabia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** SAU  \n**Starting Ideology:** Absolutism  \n**Sub-Ideology:** Absolute Monarchy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "sdn": {
+  "title": "SUDAN (SDN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "sdn",
+  "tag": "SDN",
+  "accent": "#461464",
+  "navOrder": 0,
+  "navLabel": "Sudan",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** SDN  \n**Starting Ideology:** Autocracy  \n**Sub-Ideology:** Military Junta"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "sen": {
+  "title": "SENEGAL (SEN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "sen",
+  "tag": "SEN",
+  "accent": "#dc3c64",
+  "navOrder": 0,
+  "navLabel": "Senegal",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** SEN  \n**Starting Ideology:** Progressive  \n**Sub-Ideology:** Reformist Socialism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "sgp": {
+  "title": "SINGAPORE (SGP)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "sgp",
+  "tag": "SGP",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Singapore",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** SGP  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Technocracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "slv": {
+  "title": "EL SALVADOR (SLV)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "slv",
+  "tag": "SLV",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "El Salvador",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** SLV  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Illiberal Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "som": {
+  "title": "SOMALIA (SOM)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "som",
+  "tag": "SOM",
+  "accent": "#461464",
+  "navOrder": 0,
+  "navLabel": "Somalia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** SOM  \n**Starting Ideology:** Autocracy  \n**Sub-Ideology:** Kleptocracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "srb": {
+  "title": "SERBIA (SRB)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "srb",
+  "tag": "SRB",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Serbia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** SRB  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Illiberal Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "svk": {
+  "title": "SLOVAKIA (SVK)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "svk",
+  "tag": "SVK",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Slovakia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** SVK  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Illiberal Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "svn": {
+  "title": "SLOVENIA (SVN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "svn",
+  "tag": "SVN",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Slovenia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** SVN  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "swe": {
+  "title": "SWEDEN (SWE)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "swe",
+  "tag": "SWE",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Sweden",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** SWE  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Conservatism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "swz": {
+  "title": "ESWATINI (SWZ)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "swz",
+  "tag": "SWZ",
+  "accent": "#c8aa14",
+  "navOrder": 0,
+  "navLabel": "Eswatini",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** SWZ  \n**Starting Ideology:** Absolutism  \n**Sub-Ideology:** Absolute Monarchy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "syr": {
+  "title": "SYRIA (SYR)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "syr",
+  "tag": "SYR",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Syria",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** SYR  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Patriotic Socialism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "tcd": {
+  "title": "CHAD (TCD)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "tcd",
+  "tag": "TCD",
+  "accent": "#461464",
+  "navOrder": 0,
+  "navLabel": "Chad",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** TCD  \n**Starting Ideology:** Autocracy  \n**Sub-Ideology:** Military Junta"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "tha": {
+  "title": "THAILAND (THA)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "tha",
+  "tag": "THA",
+  "accent": "#3080b4",
+  "navOrder": 0,
+  "navLabel": "Thailand",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** THA  \n**Starting Ideology:** Conservative  \n**Sub-Ideology:** Monarchist Conservatism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "tjk": {
+  "title": "TAJIKISTAN (TJK)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "tjk",
+  "tag": "TJK",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Tajikistan",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** TJK  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Personal Dictatorship"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "tkm": {
+  "title": "TURKMENISTAN (TKM)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "tkm",
+  "tag": "TKM",
+  "accent": "#461464",
+  "navOrder": 0,
+  "navLabel": "Turkmenistan",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** TKM  \n**Starting Ideology:** Autocracy  \n**Sub-Ideology:** Personal Dictatorship"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "tun": {
+  "title": "TUNISIA (TUN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "tun",
+  "tag": "TUN",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Tunisia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** TUN  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Personal Dictatorship"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "tur": {
+  "title": "TURKEY (TUR)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "tur",
+  "tag": "TUR",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Turkey",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** TUR  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Illiberal Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "twn": {
+  "title": "TAIWAN (TWN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "twn",
+  "tag": "TWN",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Taiwan",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** TWN  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "tza": {
+  "title": "TANZANIA (TZA)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "tza",
+  "tag": "TZA",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Tanzania",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** TZA  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Patriotic Socialism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "uga": {
+  "title": "UGANDA (UGA)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "uga",
+  "tag": "UGA",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Uganda",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** UGA  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Personal Dictatorship"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "ukr": {
+  "title": "UKRAINE (UKR)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "ukr",
+  "tag": "UKR",
+  "accent": "#00c8ff",
+  "navOrder": 0,
+  "navLabel": "Ukraine",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** UKR  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Centrist Populism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "ury": {
+  "title": "URUGUAY (URY)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "ury",
+  "tag": "URY",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Uruguay",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** URY  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "usa_communist": {
+  "title": "UNITED STATES OF AMERICA",
+  "subtitle": "AMERICAN SOCIALIST REPUBLIC PATH (COMMUNIST BLOC)",
+  "category": "path",
+  "group": "usa",
+  "tag": "USA",
+  "accent": "#0066ff",
+  "navOrder": 2,
+  "navLabel": "Communist Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** American Socialist Republic  \n**Target Ideology:** vanguard_socialism  \n**Sub-Ideology:** neo_communism  \n**Overview:** Worker uprising and establishment of the Vanguard Socialist Union of America."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "usa_democratic": {
+  "title": "UNITED STATES OF AMERICA",
+  "subtitle": "DEMOCRATIC UNION PATH (DEMOCRATIC BLOC)",
+  "category": "path",
+  "group": "usa",
+  "tag": "USA",
+  "accent": "#0066ff",
+  "navOrder": 1,
+  "navLabel": "Democratic Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** Democratic Union  \n**Target Ideology:** conservative / progressive  \n**Sub-Ideology:** trumpism / progressivism  \n**Overview:** Preserve the constitutional republic under Democratic or Republican leadership."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "usa_fascist": {
+  "title": "UNITED STATES OF AMERICA",
+  "subtitle": "PATRIOT IMPERIUM PATH (FASCIST BLOC)",
+  "category": "path",
+  "group": "usa",
+  "tag": "USA",
+  "accent": "#0066ff",
+  "navOrder": 3,
+  "navLabel": "Fascist Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** Patriot Imperium  \n**Target Ideology:** ultranationalism  \n**Sub-Ideology:** neo_fascist  \n**Overview:** Nationalist coup establishing a centralized authoritarian regime."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "usa_nonaligned": {
+  "title": "UNITED STATES OF AMERICA",
+  "subtitle": "US ARMED FORCES EMERGENCY GOVT PATH (NONALIGNED BLOC)",
+  "category": "path",
+  "group": "usa",
+  "tag": "USA",
+  "accent": "#0066ff",
+  "navOrder": 4,
+  "navLabel": "Non-Aligned Path",
+  "sections": [
+   {
+    "title": "Focus Tree & Path Overview",
+    "layout": "full",
+    "body": "**Path Title:** US Armed Forces Emergency Govt  \n**Target Ideology:** autocracy  \n**Sub-Ideology:** us_army  \n**Overview:** Pentagon emergency junta rule under national martial law."
+   },
+   {
+    "title": "Key Focuses",
+    "layout": "half",
+    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+   },
+   {
+    "title": "Political Effects",
+    "layout": "half",
+    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+   }
+  ]
+ },
+ "uzb": {
+  "title": "UZBEKISTAN (UZB)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "uzb",
+  "tag": "UZB",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Uzbekistan",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** UZB  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Technocracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "ven": {
+  "title": "VENEZUELA (VEN)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "ven",
+  "tag": "VEN",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Venezuela",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** VEN  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Patriotic Socialism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "vnm": {
+  "title": "VIETNAM (VNM)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "vnm",
+  "tag": "VNM",
+  "accent": "#b21010",
+  "navOrder": 0,
+  "navLabel": "Vietnam",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** VNM  \n**Starting Ideology:** Totalitarian Communism  \n**Sub-Ideology:** Market Socialism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "yem": {
+  "title": "YEMEN (YEM)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "yem",
+  "tag": "YEM",
+  "accent": "#503714",
+  "navOrder": 0,
+  "navLabel": "Yemen",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** YEM  \n**Starting Ideology:** Fundamentalism  \n**Sub-Ideology:** Islamic Fundamentalism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "zaf": {
+  "title": "SOUTH AFRICA (ZAF)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "zaf",
+  "tag": "ZAF",
+  "accent": "#dc3c64",
+  "navOrder": 0,
+  "navLabel": "South Africa",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** ZAF  \n**Starting Ideology:** Progressive  \n**Sub-Ideology:** Social Democracy"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "zmb": {
+  "title": "ZAMBIA (ZMB)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "zmb",
+  "tag": "ZMB",
+  "accent": "#ffdc00",
+  "navOrder": 0,
+  "navLabel": "Zambia",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** ZMB  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ },
+ "zwe": {
+  "title": "ZIMBABWE (ZWE)",
+  "subtitle": "2025 Starting Country Overview",
+  "category": "country",
+  "group": "zwe",
+  "tag": "ZWE",
+  "accent": "#641e8c",
+  "navOrder": 0,
+  "navLabel": "Zimbabwe",
+  "sections": [
+   {
+    "title": "Country Information",
+    "layout": "full",
+    "body": "**TAG:** ZWE  \n**Starting Ideology:** Authoritarianism  \n**Sub-Ideology:** Patriotic Socialism"
+   },
+   {
+    "title": "National Focus Tree",
+    "layout": "full",
+    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+   }
+  ]
+ }
+}

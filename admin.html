@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin Panel - Dragon vs Eagle Wiki</title>
+    <link rel="stylesheet" href="css/wiki.css">
+    <script type="module" src="js/admin.js"></script>
+</head>
+<body>
+    <header>
+        <h1>ADMIN PANEL</h1>
+        <p>Accounts, roles and activity log</p>
+    </header>
+    <nav>
+        <a href="index.html">Home / Countries</a>
+        <a href="editor.html">Page Editor</a>
+        <a href="admin.html" class="attivo">Admin Panel</a>
+        <a href="login.html">Account</a>
+    </nav>
+    <div class="container wide">
+        <div id="admin-notice"></div>
+
+        <div id="admin-root" class="hidden">
+            <div class="card">
+                <h3>Add a staff account</h3>
+                <p class="muted">Creates the login <code>Role.Name</code> (e.g. <code>Editor.Rapha</code>) with a temporary password that you send privately; it must be changed at the first login.</p>
+                <form id="create-form" class="row">
+                    <div>
+                        <label for="new-role">Role</label>
+                        <select id="new-role"></select>
+                    </div>
+                    <div style="flex:2 1 260px">
+                        <label for="new-name">Name</label>
+                        <input type="text" id="new-name" required maxlength="32" autocomplete="off" spellcheck="false" placeholder="Rapha">
+                    </div>
+                    <div class="shrink">
+                        <button class="btn primary" type="submit" id="create-btn">Add account</button>
+                    </div>
+                </form>
+                <p class="muted" id="new-preview"></p>
+                <div id="new-account" class="notice ok hidden"></div>
+            </div>
+
+            <div class="card">
+                <h3>Create several staff accounts</h3>
+                <p class="muted">One username per line, written as <code>Role.Name</code> (Owner / Admin / Editor). Accounts that already exist are skipped. Each account gets a temporary password, shown only once below, that must be changed at the first login.</p>
+                <textarea id="bulk-list" spellcheck="false" style="min-height:140px"></textarea>
+                <div class="toolbar" style="margin-top:10px">
+                    <button class="btn primary" type="button" id="bulk-btn">Create accounts</button>
+                    <span class="muted" id="bulk-status"></span>
+                </div>
+                <div id="bulk-result" class="notice ok hidden" style="margin-top:14px"></div>
+            </div>
+
+            <div class="card">
+                <h3>Users</h3>
+                <p class="muted">
+                    <span class="role-tag role-owner">owner</span> creates owners and admins ·
+                    <span class="role-tag role-admin">admin</span> manages editors, deletes pages ·
+                    <span class="role-tag role-editor">editor</span> creates and edits pages ·
+                    <span class="role-tag role-disabled">disabled</span> cannot sign in
+                </p>
+                <p class="muted">Changing the role also renames the login (e.g. Editor.Pyro → Admin.Pyro). <strong>Reset password</strong> gives a new temporary password and signs the person out everywhere. Owners cannot be changed from here.</p>
+                <div class="toolbar"><input type="text" id="user-search" placeholder="Search…" style="max-width:300px"></div>
+                <div class="table-wrap"><table class="wiki-table" id="users-table"></table></div>
+            </div>
+
+            <div class="card">
+                <h3>Activity log</h3>
+                <p class="muted">Every page change and account change is recorded here. Entries cannot be edited or deleted.</p>
+                <div class="toolbar"><button class="btn small" type="button" id="audit-more">Load more</button></div>
+                <div class="table-wrap"><table class="wiki-table" id="audit-table"></table></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Dragon vs Eagle (DvE) 2025 HOI4 Mod Wiki — Staff area</p>
+        <p class="muted" id="whoami"></p>
+    </footer>
+</body>
+</html>

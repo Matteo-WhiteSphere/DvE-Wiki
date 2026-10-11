@@ -1,0 +1,70 @@
+{
+  "_comment": "Staff accounts. tempPassword is the HASH of a temporary password (made with tools/temp-passwords.mjs); the site applies it once for every new \"reset\" value, and the password must be changed at the next login. Never write real passwords in this file: the repository is public.",
+  "accounts": [
+    {
+      "username": "Owner.RedMatteo",
+      "tempPassword": "scrypt$32768$8$1$Ctkbqrle8VSEFCV5lnyBcg==$pDXFwVnmZmEEUb6g6RLKnsYfi4w9bj3LvdQs3CYdLDQ=",
+      "reset": "2026-10-11T10:43:24.141Z"
+    },
+    {
+      "username": "Owner.EC",
+      "tempPassword": "scrypt$32768$8$1$+zxCegsqJVGZzlirhGWhTg==$G9sJPmXeQdnvxwK6wLpgghkCI990+DBPB9s8oTv5RDU=",
+      "reset": "2026-10-11T10:43:24.141Z"
+    },
+    {
+      "username": "Admin.Kylo",
+      "tempPassword": "scrypt$32768$8$1$7gkIBNFxHCXHrwqJtUvZNg==$IY0lQ3RjpGiidPvz2CStZZ1+JXebbBJU0ozQcORaRiA=",
+      "reset": "2026-10-11T10:43:24.141Z"
+    },
+    {
+      "username": "Editor.Rapha",
+      "tempPassword": "scrypt$32768$8$1$LyHz0Ql09i6Onib2Gkz4oA==$HFIcp4Vy7caQiItuAQ/c2UeNdbGIPSejNy8t2oHo6uU=",
+      "reset": "2026-10-11T10:43:24.141Z"
+    },
+    {
+      "username": "Editor.Pyro",
+      "tempPassword": "scrypt$32768$8$1$7GqNZ8NyoL1x3y8PX/prZg==$LRQ5dOjvMQeU4zR0u242It87+14UsuRZmsVHuUzY2xA=",
+      "reset": "2026-10-11T10:43:24.141Z"
+    },
+    {
+      "username": "Editor.Tazi",
+      "tempPassword": "scrypt$32768$8$1$JDnxS4J1A2q+TXdO+o+e+w==$8Xa762XsNleU2C1RjQFOiONix65jXn6zc61Xr0tknC4=",
+      "reset": "2026-10-11T10:43:24.141Z"
+    },
+    {
+      "username": "Editor.Defort",
+      "tempPassword": "scrypt$32768$8$1$V1hCm6ACfGQqcoaeg3dqKg==$OVFZcN+OcO5/yoKn4nUiYstgQ8EUbt5E4gwUq2pMslw=",
+      "reset": "2026-10-11T10:43:24.141Z"
+    },
+    {
+      "username": "Editor.iowaderussr",
+      "tempPassword": "scrypt$32768$8$1$KhbI0+lkNedzQoERMbqViA==$EA9sqEEAlk64z5OA675SbMYya9TpniYM/NEqCvTSj1Y=",
+      "reset": "2026-10-11T10:43:24.141Z"
+    },
+    {
+      "username": "Editor.zelbobgg",
+      "tempPassword": "scrypt$32768$8$1$2ebLUVxstcvymNhiNyuPaw==$yXfFlIpFsGfYryXTjHkfJ6GwYuxa+/9EsPC8O58jP1E=",
+      "reset": "2026-10-11T11:16:08.406Z"
+    },
+    {
+      "username": "Editor.legoman",
+      "tempPassword": "scrypt$32768$8$1$XPIz3lOXEfk/EABvhg1Rnw==$EOHX6oE3eatrTlA9fw2HFVlJ2AtfVIpLEeTQJj/uzP0=",
+      "reset": "2026-10-11T11:16:08.406Z"
+    },
+    {
+      "username": "Editor.Alipizaso",
+      "tempPassword": "scrypt$32768$8$1$+iu9TSZ3pl8hDpNWGHclOA==$XA5Wa0ueLnaxhIraCgyVwi2XGXd36UbNUboYHObJgeU=",
+      "reset": "2026-10-11T15:14:25.065Z"
+    },
+    {
+      "username": "Editor.Sa3edsly",
+      "tempPassword": "scrypt$32768$8$1$3S5dVvUwIkLSwb+wZv2ONw==$HAb5bjiyBRQyTKZLiXUNivqE5MZWKLVXmASuRSjZjt0=",
+      "reset": "2026-10-11T15:14:25.065Z"
+    },
+    {
+      "username": "Editor.eppuandromeda",
+      "tempPassword": "scrypt$32768$8$1$pRgVLHU1lhK2w6EitmWLCw==$irOFM2GlPl3pIP4oQ4FuI7OzZ25MQJtKIlsxLn4CTQc=",
+      "reset": "2026-10-11T17:22:30.657Z"
+    }
+  ]
+}

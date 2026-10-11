@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Page Editor - Dragon vs Eagle Wiki</title>
+    <link rel="stylesheet" href="css/wiki.css">
+    <script type="module" src="js/editor.js"></script>
+</head>
+<body>
+    <header>
+        <h1>PAGE EDITOR</h1>
+        <p>Create and edit wiki pages</p>
+    </header>
+    <nav>
+        <a href="index.html">Home / Countries</a>
+        <a href="editor.html" class="attivo">Page Editor</a>
+        <a href="admin.html" id="nav-admin" class="hidden">Admin Panel</a>
+        <a href="login.html" id="nav-account">Account</a>
+    </nav>
+    <div class="container wide">
+        <div id="editor-notice"></div>
+
+        <div class="editor-layout hidden" id="editor-root">
+            <aside class="card">
+                <h3>Pages</h3>
+                <button class="btn primary" id="new-page-btn" type="button" style="width:100%">+ New page</button>
+                <label for="page-search">Search</label>
+                <input type="text" id="page-search" placeholder="slug or title…">
+                <label for="page-filter">Show</label>
+                <select id="page-filter">
+                    <option value="all">All pages</option>
+                    <option value="published">Published</option>
+                    <option value="draft">Drafts</option>
+                    <option value="seed">Placeholders (not created yet)</option>
+                </select>
+                <ul class="page-list" id="page-list"></ul>
+            </aside>
+
+            <main>
+                <div class="card">
+                    <div class="sticky-actions toolbar">
+                        <strong id="edit-title">New page</strong>
+                        <span class="muted" id="dirty-flag"></span>
+                        <span style="flex:1"></span>
+                        <button class="btn primary" id="save-btn" type="button">Save</button>
+                        <button class="btn" id="preview-btn" type="button">Preview</button>
+                        <a class="btn" id="view-btn" target="_blank" rel="noopener">View page</a>
+                        <button class="btn" id="history-btn" type="button">History</button>
+                        <button class="btn danger hidden" id="delete-btn" type="button">Delete</button>
+                    </div>
+
+                    <div class="row">
+                        <div style="flex:2 1 300px">
+                            <label for="f-title">Title (page header)</label>
+                            <input type="text" id="f-title" maxlength="120" placeholder="e.g. ITALIAN REPUBLIC">
+                        </div>
+                        <div style="flex:2 1 300px">
+                            <label for="f-subtitle">Subtitle</label>
+                            <input type="text" id="f-subtitle" maxlength="200" placeholder="e.g. Democratic Path">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <label for="f-slug">Page address (slug)</label>
+                            <input type="text" id="f-slug" maxlength="64" placeholder="ita_democratic">
+                        </div>
+                        <div>
+                            <label for="f-category">Category</label>
+                            <select id="f-category">
+                                <option value="country">Country</option>
+                                <option value="path">Country path</option>
+                                <option value="guide">Guide</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="f-group">Group (shared nav)</label>
+                            <input type="text" id="f-group" maxlength="40" placeholder="ita">
+                        </div>
+                        <div class="shrink" style="width:90px">
+                            <label for="f-tag">TAG</label>
+                            <input type="text" id="f-tag" maxlength="4" placeholder="ITA">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <label for="f-navlabel">Label in navigation</label>
+                            <input type="text" id="f-navlabel" maxlength="60" placeholder="Democratic Path">
+                        </div>
+                        <div class="shrink" style="width:110px">
+                            <label for="f-navorder">Nav order</label>
+                            <input type="number" id="f-navorder" min="0" max="999" step="1" value="0">
+                        </div>
+                        <div class="shrink">
+                            <label for="f-accent-text">Accent colour</label>
+                            <div class="row" style="gap:6px;flex-wrap:nowrap">
+                                <input type="color" id="f-accent" value="#00f3ff">
+                                <input type="text" id="f-accent-text" maxlength="7" style="width:100px" value="#00f3ff">
+                            </div>
+                        </div>
+                        <div class="shrink">
+                            <label class="check"><input type="checkbox" id="f-published"> Published (visible to everyone)</label>
+                        </div>
+                    </div>
+                    <p class="muted">Pages with the same <em>group</em> are linked together in the navigation bar (e.g. all paths of a country), sorted by <em>nav order</em>.</p>
+                </div>
+
+                <div id="history-panel" class="card hidden">
+                    <h3>History</h3>
+                    <p class="muted">Every save is kept. Loading an old version puts it in the editor: press Save to restore it.</p>
+                    <div id="history-list"></div>
+                </div>
+
+                <h3>Sections</h3>
+                <div id="sections"></div>
+                <div class="toolbar">
+                    <button class="btn" id="add-section-btn" type="button">+ Add section</button>
+                </div>
+
+                <details class="card cheatsheet" style="margin-top:20px">
+                    <summary><strong>Formatting help (Markdown)</strong></summary>
+                    <table class="wiki-table">
+                        <tr><th>You write</th><th>You get</th></tr>
+                        <tr><td><code>**bold**</code> / <code>*italic*</code></td><td>bold / italic</td></tr>
+                        <tr><td><code>`ITA_focus_id`</code></td><td>code style (focus ids, tags)</td></tr>
+                        <tr><td><code>- item</code></td><td>bullet list</td></tr>
+                        <tr><td><code>[text](page.html?p=ita_communist)</code></td><td>link to another page</td></tr>
+                        <tr><td><code>![Giorgia Meloni](images/leaders/giorgia_meloni.png)</code></td><td>image from the repository</td></tr>
+                        <tr><td><code>| Spirit | Effects |<br>|---|---|<br>| Public Debt | -10% |</code></td><td>table</td></tr>
+                        <tr><td><code>&lt;img class="leader-avatar" src="images/leaders/x.png" alt="x"&gt;</code></td><td>leader portrait (works inside tables)</td></tr>
+                        <tr><td><code>&lt;span class="badge" style="background-color:#ff6868"&gt;Progressive&lt;/span&gt;</code></td><td>coloured badge</td></tr>
+                        <tr><td><code>&gt; quote</code></td><td>flavour quote</td></tr>
+                    </table>
+                    <p class="muted">Scripts, iframes, forms and unsafe styles are removed automatically.</p>
+                </details>
+
+                <div id="preview-panel" class="hidden" style="margin-top:20px">
+                    <h3>Preview</h3>
+                    <div class="preview-frame" id="preview"></div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <footer>
+        <p>Dragon vs Eagle (DvE) 2025 HOI4 Mod Wiki — Staff area</p>
+        <p class="muted" id="whoami"></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Staff Login - Dragon vs Eagle Wiki</title>
+    <link rel="stylesheet" href="css/wiki.css">
+    <script type="module" src="js/login.js"></script>
+</head>
+<body>
+    <header>
+        <h1>STAFF AREA</h1>
+        <p>Dragon vs Eagle Wiki — Login</p>
+    </header>
+    <nav>
+        <a href="index.html">Home / Countries</a>
+        <a href="ideologies.html">Ideologies List</a>
+        <a href="login.html" class="attivo">&#128100; Login</a>
+    </nav>
+    <div class="container">
+        <div class="auth-box">
+            <div id="login-notice"></div>
+
+            <div class="card hidden" id="signed-out">
+                <h3>Sign in</h3>
+                <form id="login-form" autocomplete="on">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" autocomplete="username" autocapitalize="off" spellcheck="false" required maxlength="60" placeholder="Editor.Name">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" autocomplete="current-password" required maxlength="200">
+                    <div class="row" style="margin-top:14px">
+                        <button class="btn primary" type="submit" id="login-btn">Sign in</button>
+                        <button class="btn shrink" type="button" id="forgot-btn">Forgot password?</button>
+                    </div>
+                </form>
+                <p class="muted" style="margin-top:16px">Usernames look like <code>Role.Name</code> (e.g. <code>Editor.Rapha</code>) and are created by the administrators.</p>
+            </div>
+
+            <div class="card hidden" id="change-password">
+                <h3>Choose your password</h3>
+                <p class="muted" id="pw-intro">You signed in with a temporary password. Choose your own password to activate the account.</p>
+                <form id="password-form">
+                    <input type="text" autocomplete="username" id="pw-username" class="hidden" readonly>
+                    <div id="current-password-box">
+                        <label for="current-password">Current password</label>
+                        <input type="password" id="current-password" autocomplete="current-password" maxlength="200">
+                    </div>
+                    <label for="new-password">New password</label>
+                    <input type="password" id="new-password" autocomplete="new-password" required minlength="10" maxlength="200">
+                    <label for="new-password2">Repeat new password</label>
+                    <input type="password" id="new-password2" autocomplete="new-password" required minlength="10" maxlength="200">
+                    <p class="muted">At least 10 characters, with upper-case and lower-case letters and a number.</p>
+                    <div class="row" style="margin-top:14px">
+                        <button class="btn primary" type="submit" id="pw-btn">Save password</button>
+                        <button class="btn shrink" type="button" id="pw-cancel">Cancel</button>
+                        <button class="btn shrink danger" type="button" id="pw-logout">Sign out</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card hidden" id="signed-in">
+                <h3>Your account</h3>
+                <p><strong>Account:</strong> <span id="me-email"></span></p>
+                <p><strong>Role:</strong> <span id="me-role"></span></p>
+                <div id="me-status"></div>
+                <div class="toolbar" style="margin-top:14px" id="me-actions"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Dragon vs Eagle (DvE) 2025 HOI4 Mod Wiki</p>
+    </footer>
+</body>
+</html>
