@@ -60,6 +60,11 @@
       "username": "Editor.Sa3edsly",
       "tempPassword": "scrypt$32768$8$1$3S5dVvUwIkLSwb+wZv2ONw==$HAb5bjiyBRQyTKZLiXUNivqE5MZWKLVXmASuRSjZjt0=",
       "reset": "2026-10-11T15:14:25.065Z"
+    },
+    {
+      "username": "Editor.eppuandromeda",
+      "tempPassword": "scrypt$32768$8$1$pRgVLHU1lhK2w6EitmWLCw==$irOFM2GlPl3pIP4oQ4FuI7OzZ25MQJtKIlsxLn4CTQc=",
+      "reset": "2026-10-11T17:22:30.657Z"
     }
   ]
 }
