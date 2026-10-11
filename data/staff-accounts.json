@@ -50,6 +50,16 @@
       "username": "Editor.legoman",
       "tempPassword": "scrypt$32768$8$1$XPIz3lOXEfk/EABvhg1Rnw==$EOHX6oE3eatrTlA9fw2HFVlJ2AtfVIpLEeTQJj/uzP0=",
       "reset": "2026-10-11T11:16:08.406Z"
+    },
+    {
+      "username": "Editor.Alipizaso",
+      "tempPassword": "scrypt$32768$8$1$+iu9TSZ3pl8hDpNWGHclOA==$XA5Wa0ueLnaxhIraCgyVwi2XGXd36UbNUboYHObJgeU=",
+      "reset": "2026-10-11T15:14:25.065Z"
+    },
+    {
+      "username": "Editor.Sa3edsly",
+      "tempPassword": "scrypt$32768$8$1$3S5dVvUwIkLSwb+wZv2ONw==$HAb5bjiyBRQyTKZLiXUNivqE5MZWKLVXmASuRSjZjt0=",
+      "reset": "2026-10-11T15:14:25.065Z"
     }
   ]
 }
