@@ -145,12 +145,14 @@ const unmatched = [];
 for (const row of oldCountries.countries) {
     const m = /page\.html\?p=([a-z0-9_-]+)/.exec(row.href);
     const slug = m && m[1];
-    // Names first: the wiki used ISO codes, and many differ from HOI4 tags (AUS = Austria in HOI4).
-    let mod = (MANUAL[row.tag] && modCountries.find((c) => c.tag === MANUAL[row.tag])) ||
+    // Data already generated from the mod: tags are HOI4 tags, match them directly.
+    // First import (old ISO codes): names first, since many ISO codes differ from HOI4 tags (AUS = Austria in HOI4).
+    let mod = oldCountries.source ? modCountries.find((c) => c.tag === row.tag) :
+        (MANUAL[row.tag] && modCountries.find((c) => c.tag === MANUAL[row.tag])) ||
         byName.get(fold(row.name)) ||
         modCountries.find((c) => fold(c.short) && (fold(row.name).includes(fold(c.short)) || fold(c.short).includes(fold(row.name))));
     if (process.env.SYNC_DEBUG && mod) console.log(`match ${row.tag} ${row.name} → ${mod.tag} ${mod.short}`);
-    if (mod && !slugOf.has(mod.tag)) slugOf.set(mod.tag, { slug, href: row.href, major: row.major, name: row.name });
+    if (mod && !slugOf.has(mod.tag)) slugOf.set(mod.tag, { slug, href: row.href, major: row.major, name: row.short || row.name });
     else unmatched.push(`${row.tag} ${row.name}${mod ? ' (duplicate of ' + mod.tag + ')' : ''}`);
 }
 report.wikiCountriesNotInMod = unmatched;

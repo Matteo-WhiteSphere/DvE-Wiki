@@ -7,7 +7,7 @@
    "noun": "Totalitarian Socialism",
    "color": "#640000",
    "icon": "images/ideologies/totalitarian_socialism.png",
-   "description": "",
+   "description": "Socialism as total mobilisation: one party, one doctrine and one leadership reach into every corner of life, and the security organs make sure that nothing is left outside the plan.",
    "types": [
     {
      "key": "maoism",
@@ -275,7 +275,7 @@
    "noun": "Vanguard Socialism",
    "color": "#cc0000",
    "icon": "images/ideologies/vanguard_socialism.png",
-   "description": "",
+   "description": "The revolution led by a disciplined party of professional militants. Power belongs to the workers' councils, the strategy to the party, and the horizon is the world rather than the nation.",
    "types": [
     {
      "key": "leninist_internationalism",
@@ -310,7 +310,7 @@
    "noun": "Revolutionary Socialism",
    "color": "#ff3333",
    "icon": "images/ideologies/revolutionary_socialism.png",
-   "description": "",
+   "description": "Capitalism is to be overthrown, not managed. A family of movements, from Trotskyists to syndicalists and anarchists, that agree on the uprising and on little else.",
    "types": [
     {
      "key": "trotskyism",
@@ -400,7 +400,7 @@
    "noun": "Reformist Socialism",
    "color": "#64ff64",
    "icon": "images/ideologies/progressive.png",
-   "description": "",
+   "description": "Socialism reached through elections, unions and legislation. The market is corrected and gradually outgrown, and the constitution is kept.",
    "types": [
     {
      "key": "progressivism",
@@ -676,7 +676,7 @@
    "noun": "Liberalism",
    "color": "#ff8c00",
    "icon": "",
-   "description": "",
+   "description": "Civil liberties, pluralism and a market economy with a social conscience. Rights come first, and the state exists to guarantee them and to widen access to them.",
    "types": [
     {
      "key": "social_liberal",
@@ -1323,7 +1323,7 @@
    "noun": "Conservatism",
    "color": "#2896ff",
    "icon": "images/ideologies/conservative.png",
-   "description": "",
+   "description": "Institutions, property and gradual change. The free market and the constitutional order are defended as an inheritance to be handed on intact.",
    "types": [
     {
      "key": "conservatism",
@@ -1697,7 +1697,7 @@
    "noun": "Reactionaryism",
    "color": "#142878",
    "icon": "images/ideologies/reactionary.png",
-   "description": "",
+   "description": "A right that wants to restore rather than conserve: nation, religion and hierarchy against a liberal order it holds responsible for decline.",
    "types": [
     {
      "key": "military_democracy",
@@ -1953,10 +1953,10 @@
   {
    "key": "authoritarianism",
    "name": "Authoritarian",
-   "noun": "",
+   "noun": "Authoritarianism",
    "color": "#5a5a5a",
    "icon": "images/ideologies/authoritarianism.png",
-   "description": "",
+   "description": "Power concentrated in an executive that tolerates elections and courts only as long as they do not get in the way. Stability is the stated aim, and the opposition is managed rather than defeated.",
    "types": [
     {
      "key": "patriotic_socialism",
@@ -2225,7 +2225,7 @@
    "noun": "Autocracy",
    "color": "#c83296",
    "icon": "images/ideologies/autocracy.png",
-   "description": "",
+   "description": "Rule by one man, one clique or one army, without any real limit. Institutions survive as scenery.",
    "types": [
     {
      "key": "putinism",
@@ -2443,7 +2443,7 @@
    "noun": "Absolutism",
    "color": "#9632c8",
    "icon": "images/ideologies/absolutism.png",
-   "description": "",
+   "description": "Sovereignty rests in a crown, by inheritance or by divine right. The dynasty is the state, and politics is what happens at court.",
    "types": [
     {
      "key": "monarchism",
@@ -2602,7 +2602,7 @@
    "noun": "Ultranationalism",
    "color": "#855e15",
    "icon": "images/ideologies/ultranationalism.png",
-   "description": "",
+   "description": "The nation as the supreme value, above law, class and individual. A single party and a single leader claim to embody it, and treat everything foreign as a threat.",
    "types": [
     {
      "key": "neo_fascist",
@@ -2698,10 +2698,10 @@
   {
    "key": "fundamentalism",
    "name": "Fundamentalist",
-   "noun": "Funamentamentalism",
+   "noun": "Fundamentalism",
    "color": "#ffa500",
    "icon": "images/ideologies/fundamentalism.png",
-   "description": "",
+   "description": "The state as an instrument of the faith. Religious law overrides civil law, and the clergy or their militants claim the last word.",
    "types": [
     {
      "key": "islamic_fundamentalism",
