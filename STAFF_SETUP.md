@@ -64,21 +64,17 @@ Le vecchie ~180 pagine placeholder sono in `data/placeholders.json` e vengono mo
 - Un **owner esistente non può essere modificato dal sito** (nemmeno da un altro owner).
 - Nel pannello admin: **Add a staff account** per una persona, **Create several staff accounts** per più persone (una per riga). La password temporanea viene mostrata **una sola volta**.
 
-### Recupero d'emergenza
+### Recupero d'emergenza (pagina `recover.html`)
 
-Se un owner perde la password (o non hai copiato il log del primo avvio):
+Se non trovi il log del primo avvio, o un owner perde la password:
 
-1. Netlify → *Site configuration → Environment variables* → aggiungi `DVE_RECOVERY_CODE` con un codice lungo e casuale (almeno 16 caratteri) e rifai il deploy.
-2. Da terminale:
+1. Netlify → **Environment variables → Add a variable**: chiave `DVE_RECOVERY_CODE`, valore un codice segreto inventato da te (almeno 16 caratteri). Salva.
+2. Rifai il deploy (Netlify → **Deploys → Trigger deploy**, oppure **Retry deploy** sulla deploy preview), così il server legge la variabile.
+3. Apri `recover.html` sul sito, scrivi il codice e l'username (es. `Owner.RedMatteo`): ricevi una nuova password temporanea.
+4. Entra; per gli altri account usa **Reset password** nel pannello admin (per un altro owner, es. `Owner.EC`, usa di nuovo `recover.html`).
+5. **Cancella** la variabile `DVE_RECOVERY_CODE` e rifai il deploy: la pagina smette di funzionare.
 
-   ```bash
-   curl -X POST https://dve-wiki.netlify.app/api/recover \
-     -H "X-DvE-Request: 1" -H "Content-Type: application/json" \
-     -d '{"code":"IL-TUO-CODICE","username":"Owner.RedMatteo"}'
-   ```
-
-   La risposta contiene una nuova password temporanea.
-3. **Togli** la variabile `DVE_RECOVERY_CODE` subito dopo.
+Dopo 5 codici sbagliati la pagina si blocca per 15 minuti per quell'indirizzo IP.
 
 ---
 
@@ -131,7 +127,7 @@ Al primo avvio locale le password temporanee compaiono nel terminale. Per ricomi
 | `netlify/lib/core.mjs` | Archivio dati, password, sessioni, ruoli, validazione |
 | `data/staff-accounts.json` | Account creati al primo avvio |
 | `js/wiki.js` | Modulo comune del browser: chiamate al server, rendering Markdown sicuro |
-| `js/page.js`, `js/editor.js`, `js/admin.js`, `js/login.js` | Pagine dinamiche e area staff |
+| `js/page.js`, `js/editor.js`, `js/admin.js`, `js/login.js`, `js/recover.js` | Pagine dinamiche, area staff e recupero |
 | `js/nav-account.js`, `js/index-extra.js` | Pulsante Login nelle pagine statiche, pagine nuove nella home |
 | `netlify.toml`, `_redirects`, `404.html` | Configurazione Netlify, header di sicurezza, redirect, pagina 404 |
 | `tools/dev-server.mjs` | Server di sviluppo locale |

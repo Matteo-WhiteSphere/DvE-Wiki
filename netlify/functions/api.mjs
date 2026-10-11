@@ -261,12 +261,15 @@ async function auditLog(url, session) {
 async function recover(req, context) {
     const code = process.env.DVE_RECOVERY_CODE || '';
     const ip = clientIp(req, context);
-    await checkLock('ip', ip);
+    await checkLock('recover', ip);
     const { code: given, username } = await body(req);
+    if (code.length < 16) {
+        throw new HttpError(403, 'Recovery is not enabled: set DVE_RECOVERY_CODE (at least 16 characters) in Netlify and redeploy.', { code: 'disabled' });
+    }
     const a = Buffer.from(String(given || '')), b = Buffer.from(code);
-    if (code.length < 16 || a.length !== b.length || !timingSafeEqual(a, b)) {
-        await recordFailure('ip', ip, 5);
-        throw new HttpError(403, 'Recovery is not enabled or the code is wrong.');
+    if (a.length !== b.length || !timingSafeEqual(a, b)) {
+        await recordFailure('recover', ip, 5);
+        throw new HttpError(403, 'Wrong recovery code.');
     }
     const parsed = parseUsername(username);
     const user = parsed && await getUser(parsed.key);

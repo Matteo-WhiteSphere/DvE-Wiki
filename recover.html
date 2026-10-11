@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="referrer" content="no-referrer">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Account Recovery - Dragon vs Eagle Wiki</title>
+    <link rel="stylesheet" href="css/wiki.css">
+    <script type="module" src="js/recover.js"></script>
+</head>
+<body>
+    <header>
+        <h1>ACCOUNT RECOVERY</h1>
+        <p>Dragon vs Eagle Wiki — for the site owner</p>
+    </header>
+    <nav>
+        <a href="index.html">Home / Countries</a>
+        <a href="login.html" class="nav-login">&#128100; Login</a>
+    </nav>
+    <div class="container">
+        <div class="auth-box">
+            <div id="recover-notice"></div>
+            <div class="card">
+                <h3>New temporary password</h3>
+                <p class="muted">Works only while the <code>DVE_RECOVERY_CODE</code> environment variable is set in Netlify. Use it to get into an account whose password is lost (e.g. an owner), then remove the variable.</p>
+                <form id="recover-form" autocomplete="off">
+                    <label for="code">Recovery code</label>
+                    <input type="password" id="code" required maxlength="200" autocomplete="off">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required maxlength="60" autocapitalize="off" spellcheck="false" placeholder="Owner.RedMatteo">
+                    <div class="row" style="margin-top:14px">
+                        <button class="btn primary" type="submit" id="recover-btn">Get a new password</button>
+                    </div>
+                </form>
+                <div id="recover-result" class="notice ok hidden" style="margin-top:16px"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Dragon vs Eagle (DvE) 2025 HOI4 Mod Wiki</p>
+    </footer>
+</body>
+</html>
