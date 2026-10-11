@@ -193,34 +193,61 @@ export function publicUser(u) {
     };
 }
 
-// --------------------------------------------------------------- bootstrap
+// ------------------------------------------------------- staff accounts file
 
-let bootstrapped = false;
+const HASH_RE = /^scrypt\$\d+\$\d+\$\d+\$[A-Za-z0-9+/=]+\$[A-Za-z0-9+/=]+$/;
+
 /**
- * First start of the site: creates the accounts listed in data/staff-accounts.json
- * and writes their temporary passwords to the function log (Netlify dashboard →
- * Logs → Functions → api), which only the site's Netlify team can read.
+ * Applies data/staff-accounts.json: every entry is
+ *   { "username": "Editor.Rapha", "tempPassword": "scrypt$…", "reset": "<id>" }
+ * where tempPassword is the HASH of a temporary password (never the password itself:
+ * the repository is public). Missing accounts are created; an existing account gets
+ * that temporary password once for every new "reset" id. Either way the password
+ * must be changed at the next login.
  */
-export async function ensureBootstrap() {
-    if (bootstrapped) return;
-    const meta = store('meta');
-    if (await meta.get('bootstrap')) { bootstrapped = true; return; }
-    const created = [];
-    for (const username of staffList.accounts || []) {
-        const r = await createUser(username, 'first start');
-        if (r) {
-            created.push(r);
-            await audit('first start', 'account.create', r.user.username, r.user.role);
+export async function syncStaffAccounts(entries) {
+    const users = store('users');
+    const results = [];
+    for (const entry of entries || []) {
+        const parsed = parseUsername(entry && entry.username);
+        if (!parsed || !HASH_RE.test(entry.tempPassword || '') || !entry.reset) continue;
+        const current = await users.getWithMetadata(parsed.key, { type: 'json' });
+        const user = current && current.data;
+        if (!user) {
+            const fresh = {
+                key: parsed.key, username: parsed.username, role: parsed.role,
+                passwordHash: entry.tempPassword, mustChangePassword: true, sessionVersion: 1,
+                appliedReset: String(entry.reset), createdAt: new Date().toISOString(),
+                createdBy: 'staff-accounts.json', lastLogin: null
+            };
+            const res = await users.setJSON(parsed.key, fresh, { onlyIfNew: true });
+            if (!res || res.modified !== false) {
+                await audit('staff-accounts.json', 'account.create', parsed.username, parsed.role);
+                results.push({ username: parsed.username, action: 'created' });
+            }
+        } else if (user.appliedReset !== String(entry.reset)) {
+            const updated = {
+                ...user, passwordHash: entry.tempPassword, mustChangePassword: true,
+                sessionVersion: user.sessionVersion + 1, appliedReset: String(entry.reset)
+            };
+            // Only if nobody changed the account meanwhile (e.g. a login on another server).
+            const res = await users.setJSON(parsed.key, updated, { onlyIfMatch: current.etag });
+            if (!res || res.modified !== false) {
+                await clearFailures('user', parsed.key);
+                await audit('staff-accounts.json', 'account.reset', user.username, 'temporary password from file');
+                results.push({ username: user.username, action: 'reset' });
+            }
         }
     }
-    await meta.set('bootstrap', new Date().toISOString());
-    bootstrapped = true;
-    if (created.length) {
-        const width = Math.max(...created.map((c) => c.user.username.length));
-        console.log('=== DvE wiki: staff accounts created. Temporary passwords (shown only once): ===\n' +
-            created.map((c) => `  ${c.user.username.padEnd(width)}   ${c.password}`).join('\n') +
-            '\n=== Each password must be changed at the first login. ===');
-    }
+    return results;
+}
+
+let synced = false;
+/** Runs the staff-accounts file sync once per server instance. */
+export async function ensureBootstrap() {
+    if (synced) return;
+    await syncStaffAccounts(staffList.accounts);
+    synced = true;
 }
 
 // ------------------------------------------------------------- rate limits

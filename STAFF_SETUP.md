@@ -19,34 +19,45 @@ Le vecchie ~180 pagine placeholder sono in `data/placeholders.json` e vengono mo
 
 ---
 
-## 1. Primo avvio (nessuna configurazione richiesta)
+## 1. Account e password temporanee (il "foglio" `data/staff-accounts.json`)
 
-1. Fai il merge della PR (o apri la deploy preview): Netlify pubblica sito e funzione da solo.
-2. Apri una pagina qualsiasi del sito. Alla **prima richiesta** il server crea gli account elencati in `data/staff-accounts.json`:
+Gli account dello staff sono elencati nel file **`data/staff-accounts.json`**:
 
-   | Username | Ruolo |
-   |---|---|
-   | `Owner.RedMatteo` | owner |
-   | `Owner.EC` | owner |
-   | `Admin.Kylo` | admin |
-   | `Editor.Rapha` | editor |
-   | `Editor.Pyro` | editor |
-   | `Editor.Tazi` | editor |
-   | `Editor.Defort` | editor |
-   | `Editor.iowaderussr` | editor |
+| Username | Ruolo |
+|---|---|
+| `Owner.RedMatteo` | owner |
+| `Owner.EC` | owner |
+| `Admin.Kylo` | admin |
+| `Editor.Rapha` | editor |
+| `Editor.Pyro` | editor |
+| `Editor.Tazi` | editor |
+| `Editor.Defort` | editor |
+| `Editor.iowaderussr` | editor |
 
-3. Le **password temporanee** vengono scritte **una sola volta** nel log del server: Netlify → il sito *dve-wiki* → **Logs → Functions → api**. Solo chi ha accesso al pannello Netlify del sito può leggerle.
-4. Mandale in privato a ognuno (es. Discord). Al primo accesso ognuno **deve scegliere la propria password**; prima di farlo l'account non può fare niente.
+Per ogni account il file contiene la **password temporanea in forma cifrata** (`"tempPassword": "scrypt$…"`) e un campo `"reset"`. Il repository è **pubblico**, per questo nel file c'è solo la versione cifrata: dalla versione cifrata non si può risalire alla password. La versione leggibile la conosce solo chi l'ha generata.
 
-> I dati sono condivisi tra sito principale e deploy preview: gli account creati una volta valgono ovunque.
+Ad ogni avvio il sito legge il file:
+- un account che non esiste ancora viene **creato** con quella password temporanea;
+- un account esistente riceve la password temporanea **una sola volta** per ogni nuovo valore di `"reset"`;
+- in entrambi i casi, al primo accesso la persona **deve scegliere la propria password**; prima di farlo l'account non può fare niente.
 
-**Se ti perdi il log** (o un owner dimentica la password): vedi *Recupero d'emergenza* più sotto.
+### Generare nuove password temporanee
+
+Serve [Node.js](https://nodejs.org) 20+ (nella cartella del repository, dopo `npm install`):
+
+```bash
+npm run temp-passwords                       # nuove password per tutti gli account del file
+npm run temp-passwords -- Editor.Rapha       # solo per alcuni (un nome nuovo viene aggiunto)
+```
+
+Il comando aggiorna `data/staff-accounts.json` (solo versioni cifrate) e stampa **una sola volta** le password leggibili: mandale in privato. Poi commit + push: al deploy successivo il sito le applica.
+
+Per le password dimenticate di tutti i giorni non serve: un admin/owner preme **Reset password** nel pannello admin.
 
 ### Le password: come funzionano
 
-- **Nessuna password è scritta nel repository o nel sito.**
+- **Nessuna password leggibile è scritta nel repository o nel sito.**
 - Il server salva solo un'**impronta cifrata** (scrypt) della password: nemmeno chi gestisce il sito può leggerla.
-- Password dimenticata: un admin/owner preme **Reset password** nel pannello admin e manda la nuova password temporanea.
 - Ognuno può cambiare la propria password da **👤 Login → Change password**.
 
 ---
@@ -66,7 +77,7 @@ Le vecchie ~180 pagine placeholder sono in `data/placeholders.json` e vengono mo
 
 ### Recupero d'emergenza (pagina `recover.html`)
 
-Se non trovi il log del primo avvio, o un owner perde la password:
+Se un owner perde la password e non puoi usare `npm run temp-passwords`:
 
 1. Netlify → **Environment variables → Add a variable**: chiave `DVE_RECOVERY_CODE`, valore un codice segreto inventato da te (almeno 16 caratteri). Salva.
 2. Rifai il deploy (Netlify → **Deploys → Trigger deploy**, oppure **Retry deploy** sulla deploy preview), così il server legge la variabile.
@@ -117,7 +128,7 @@ npm run dev      # sito + server su http://localhost:8888, dati in .dev-data/
 npm test         # test automatici del server e della sicurezza
 ```
 
-Al primo avvio locale le password temporanee compaiono nel terminale. Per ricominciare da zero cancella la cartella `.dev-data/`.
+In locale valgono le stesse password temporanee del file. Per ricominciare da zero cancella la cartella `.dev-data/`.
 
 ## 6. File principali
 
@@ -125,7 +136,8 @@ Al primo avvio locale le password temporanee compaiono nel terminale. Per ricomi
 |---|---|
 | `netlify/functions/api.mjs` | Server: login, pagine, account, registro |
 | `netlify/lib/core.mjs` | Archivio dati, password, sessioni, ruoli, validazione |
-| `data/staff-accounts.json` | Account creati al primo avvio |
+| `data/staff-accounts.json` | Account dello staff e password temporanee (cifrate) |
+| `tools/temp-passwords.mjs` | Genera nuove password temporanee per il file |
 | `js/wiki.js` | Modulo comune del browser: chiamate al server, rendering Markdown sicuro |
 | `js/page.js`, `js/editor.js`, `js/admin.js`, `js/login.js`, `js/recover.js` | Pagine dinamiche, area staff e recupero |
 | `js/nav-account.js`, `js/index-extra.js` | Pulsante Login nelle pagine statiche, pagine nuove nella home |

@@ -7,8 +7,7 @@ import { join } from 'node:path';
 import { setEnvironmentContext } from '@netlify/blobs';
 import { BlobsServer } from '@netlify/blobs/server';
 
-let server, dir, handler;
-const logs = [];
+let server, dir, handler, core;
 
 before(async () => {
     dir = await mkdtemp(join(tmpdir(), 'dve-test-'));
@@ -17,11 +16,9 @@ before(async () => {
     const url = `http://127.0.0.1:${port}`;
     setEnvironmentContext({ edgeURL: url, uncachedEdgeURL: url, siteID: 'test', token: 't' });
     process.env.DVE_RECOVERY_CODE = 'recovery-code-for-tests-123';
-    const origLog = console.log;
-    console.log = (...a) => { logs.push(a.join(' ')); };
     handler = (await import('../netlify/functions/api.mjs')).default;
-    await call('GET', 'me'); // triggers the first-start bootstrap
-    console.log = origLog;
+    core = await import('../netlify/lib/core.mjs');
+    await call('GET', 'me'); // applies data/staff-accounts.json
 });
 after(async () => { await server.stop(); await rm(dir, { recursive: true, force: true }); });
 
@@ -44,14 +41,23 @@ async function call(method, path, { body, cookie, headers = {}, ip } = {}) {
     return { status: res.status, data, setCookie, cookie: setCookie.length ? setCookie[setCookie.length - 1].split(';')[0] : cookie };
 }
 
-const initial = () => Object.fromEntries(logs.join('\n').split('\n')
-    .map((l) => l.trim().match(/^(\S+\.\S+)\s+(\S{4}-\S{4}-\S{4}-\S{4})$/)).filter(Boolean).map((m) => [m[1], m[2]]));
+// The real temporary passwords are not in the repository (only their hashes), so the
+// tests get a fresh temporary password for each account through the recovery code.
+const temp = {};
+async function initialPassword(username) {
+    if (!temp[username]) {
+        const r = await call('POST', 'recover', { body: { code: process.env.DVE_RECOVERY_CODE, username } });
+        assert.equal(r.status, 200, JSON.stringify(r.data));
+        temp[username] = r.data.password;
+    }
+    return temp[username];
+}
 
 /** Logs in with the temporary password, sets a real one and returns the session cookie. */
 const sessions = {};
 async function session(username) {
     if (sessions[username]) return sessions[username];
-    const login = await call('POST', 'login', { body: { username, password: initial()[username] } });
+    const login = await call('POST', 'login', { body: { username, password: await initialPassword(username) } });
     assert.equal(login.status, 200, `login ${username}: ${JSON.stringify(login.data)}`);
     const pw = await call('POST', 'password', { cookie: login.cookie, body: { newPassword: `Secret-${username}-2026` } });
     assert.equal(pw.status, 200);
@@ -65,27 +71,56 @@ const page = (extra = {}) => ({
 
 // ------------------------------------------------------------------ tests
 
-test('first start creates the 8 staff accounts with temporary passwords in the log', () => {
-    const creds = initial();
-    assert.deepEqual(Object.keys(creds).sort(), ['Admin.Kylo', 'Editor.Defort', 'Editor.Pyro', 'Editor.Rapha',
+test('the staff file creates the 8 accounts, all with a temporary password', async () => {
+    const owner = await session('Owner.RedMatteo');
+    const { users } = (await call('GET', 'users', { cookie: owner })).data;
+    assert.deepEqual(users.map((u) => u.username).sort(), ['Admin.Kylo', 'Editor.Defort', 'Editor.Pyro', 'Editor.Rapha',
         'Editor.Tazi', 'Editor.iowaderussr', 'Owner.EC', 'Owner.RedMatteo'].sort());
+    assert.ok(users.filter((u) => u.username !== 'Owner.RedMatteo').every((u) => u.mustChangePassword));
+});
+
+test('staff file entries are applied once per reset id', async () => {
+    const hash = await core.hashPassword('FileTemp-Pass-123');
+    const entry = { username: 'Editor.Filetest', tempPassword: hash, reset: 'r1' };
+    assert.deepEqual(await core.syncStaffAccounts([entry]), [{ username: 'Editor.Filetest', action: 'created' }]);
+    let login = await call('POST', 'login', { body: { username: 'Editor.Filetest', password: 'FileTemp-Pass-123' } });
+    assert.equal(login.data.user.mustChangePassword, true);
+    const changed = await call('POST', 'password', { cookie: login.cookie, body: { newPassword: 'MyOwnPassword2026' } });
+    assert.equal(changed.status, 200);
+    // same reset id: nothing happens, the personal password keeps working
+    assert.deepEqual(await core.syncStaffAccounts([entry]), []);
+    assert.equal((await call('POST', 'login', { body: { username: 'Editor.Filetest', password: 'MyOwnPassword2026' } })).status, 200);
+    // new reset id: the temporary password from the file applies again and old sessions end
+    assert.deepEqual(await core.syncStaffAccounts([{ ...entry, reset: 'r2' }]), [{ username: 'Editor.Filetest', action: 'reset' }]);
+    assert.equal((await call('GET', 'me', { cookie: changed.cookie })).data.user, null);
+    login = await call('POST', 'login', { body: { username: 'Editor.Filetest', password: 'FileTemp-Pass-123' } });
+    assert.equal(login.data.user.mustChangePassword, true);
+    // entries with a plain-text password instead of a hash are ignored
+    assert.deepEqual(await core.syncStaffAccounts([{ username: 'Editor.Plain', tempPassword: 'Secret123', reset: 'x' }]), []);
+});
+
+test('the repository file contains only hashes', async () => {
+    const { readFile } = await import('node:fs/promises');
+    const file = JSON.parse(await readFile(new URL('../data/staff-accounts.json', import.meta.url), 'utf8'));
+    for (const a of file.accounts) assert.match(a.tempPassword, /^scrypt\$/);
 });
 
 test('session cookie is HttpOnly, Secure, SameSite=Strict', async () => {
-    const r = await call('POST', 'login', { body: { username: 'Editor.Defort', password: initial()['Editor.Defort'] } });
+    const r = await call('POST', 'login', { body: { username: 'Editor.Defort', password: await initialPassword('Editor.Defort') } });
     assert.equal(r.status, 200);
     assert.match(r.setCookie[0], /^__Host-dve_session=.+; Path=\/; HttpOnly; Secure; SameSite=Strict; Max-Age=3600$/);
 });
 
 test('login: wrong password, wrong role prefix, case-insensitive username', async () => {
     assert.equal((await call('POST', 'login', { body: { username: 'Owner.EC', password: 'nope' } })).status, 401);
-    assert.equal((await call('POST', 'login', { body: { username: 'Editor.EC', password: initial()['Owner.EC'] } })).status, 401);
-    assert.equal((await call('POST', 'login', { body: { username: 'owner.ec', password: initial()['Owner.EC'] } })).status, 200);
+    assert.equal((await call('POST', 'login', { body: { username: 'Editor.EC', password: await initialPassword('Owner.EC') } })).status, 401);
+    assert.equal((await call('POST', 'login', { body: { username: 'owner.ec', password: await initialPassword('Owner.EC') } })).status, 200);
 });
 
 test('accounts lock after 5 failed attempts', async () => {
+    const pw = await initialPassword('Editor.Tazi');
     for (let i = 0; i < 5; i++) await call('POST', 'login', { body: { username: 'Editor.Tazi', password: 'bad' } });
-    const r = await call('POST', 'login', { body: { username: 'Editor.Tazi', password: initial()['Editor.Tazi'] } });
+    const r = await call('POST', 'login', { body: { username: 'Editor.Tazi', password: pw } });
     assert.equal(r.status, 429);
 });
 
@@ -103,7 +138,7 @@ test('requests without the custom header or from another site are refused', asyn
 });
 
 test('temporary password must be changed before doing anything', async () => {
-    const login = await call('POST', 'login', { body: { username: 'Editor.Pyro', password: initial()['Editor.Pyro'] } });
+    const login = await call('POST', 'login', { body: { username: 'Editor.Pyro', password: await initialPassword('Editor.Pyro') } });
     assert.equal(login.data.user.mustChangePassword, true);
     const save = await call('PUT', 'pages/x1', { cookie: login.cookie, body: { page: page(), baseRev: null } });
     assert.equal(save.status, 403);

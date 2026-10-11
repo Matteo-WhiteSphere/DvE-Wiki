@@ -145,7 +145,7 @@ async function prefillBulk() {
     try {
         const res = await fetch('data/staff-accounts.json', { cache: 'no-cache' });
         if (!res.ok) return;
-        const list = (await res.json()).accounts || [];
+        const list = ((await res.json()).accounts || []).map((a) => (typeof a === 'string' ? a : a.username));
         const allowed = creatableRoles(state.role);
         $('bulk-list').value = list
             .filter((u) => !exists(u) && allowed.includes(u.split('.')[0].toLowerCase()))
