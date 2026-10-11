@@ -1,0 +1,172 @@
+rules_version = '2';
+
+// Dragon vs Eagle Wiki — Firestore security rules.
+//
+// Roles (stored in users/{uid}.role):
+//   owner     – set ONLY from the Firebase console. Can manage admins.
+//   admin     – manages moderators, invites, deletes pages, reads the audit log.
+//   moderator – creates and edits wiki pages.
+//   pending   – signed in but not approved yet. No write access.
+//   disabled  – blocked account. No write access.
+//
+// Every privileged action also requires a verified e-mail address.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function verified() { return signedIn() && request.auth.token.email_verified == true; }
+    function myEmail() { return request.auth.token.email.lower(); }
+
+    function profilePath(uid) { return /databases/$(database)/documents/users/$(uid); }
+    function invitePath(email) { return /databases/$(database)/documents/invites/$(email); }
+
+    function hasProfile() { return signedIn() && exists(profilePath(request.auth.uid)); }
+    function myRole() { return get(profilePath(request.auth.uid)).data.role; }
+
+    function isEditor() { return verified() && hasProfile() && myRole() in ['moderator', 'admin', 'owner']; }
+    function isAdmin()  { return verified() && hasProfile() && myRole() in ['admin', 'owner']; }
+    function isOwner()  { return verified() && hasProfile() && myRole() == 'owner'; }
+
+    // Roles the current user is allowed to grant or take away.
+    // Nobody can grant "owner" from the website.
+    function canAssign(role) {
+      return (isOwner() && role in ['pending', 'moderator', 'admin', 'disabled'])
+          || (isAdmin() && role in ['pending', 'moderator', 'disabled']);
+    }
+
+    function hasInviteFor(role) {
+      return verified()
+        && exists(invitePath(myEmail()))
+        && get(invitePath(myEmail())).data.role == role;
+    }
+
+    // ---------------------------------------------------------------- users
+    match /users/{uid} {
+      allow get: if signedIn() && (request.auth.uid == uid || isAdmin());
+      allow list: if isAdmin();
+
+      // A user creates their own profile on first login: "pending", or the
+      // role an admin invited their (verified) e-mail address with.
+      allow create: if signedIn()
+        && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['email', 'displayName', 'role', 'createdAt', 'lastLogin'])
+        && request.resource.data.email == myEmail()
+        && request.resource.data.displayName is string
+        && request.resource.data.displayName.size() <= 80
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.lastLogin == request.time
+        && (request.resource.data.role == 'pending' || hasInviteFor(request.resource.data.role));
+
+      allow update: if
+        // Self: only cosmetic fields.
+        (signedIn() && request.auth.uid == uid
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['displayName', 'lastLogin'])
+          && request.resource.data.displayName is string
+          && request.resource.data.displayName.size() <= 80
+          && request.resource.data.lastLogin == request.time)
+        // Self: a pending user that has been invited later picks up the invited role.
+        || (signedIn() && request.auth.uid == uid
+          && resource.data.role == 'pending'
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['role', 'lastLogin'])
+          && request.resource.data.lastLogin == request.time
+          && hasInviteFor(request.resource.data.role))
+        // Admin / owner: role management, following the hierarchy. Never on yourself.
+        || (signedIn() && request.auth.uid != uid
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['role', 'roleUpdatedBy', 'roleUpdatedAt'])
+          && canAssign(resource.data.role)
+          && canAssign(request.resource.data.role)
+          && request.resource.data.roleUpdatedBy == request.auth.uid
+          && request.resource.data.roleUpdatedAt == request.time);
+
+      allow delete: if isOwner() && request.auth.uid != uid;
+    }
+
+    // -------------------------------------------------------------- invites
+    // Document id = lower-case e-mail address.
+    match /invites/{email} {
+      allow get: if (verified() && myEmail() == email) || isAdmin();
+      allow list: if isAdmin();
+      allow create, update: if isAdmin()
+        && email == email.lower()
+        && email.matches('^[^@\\s/]+@[^@\\s/]+\\.[^@\\s/]+$')
+        && request.resource.data.keys().hasOnly(['role', 'method', 'invitedBy', 'createdAt'])
+        && request.resource.data.role in ['moderator', 'admin']
+        && canAssign(request.resource.data.role)
+        && request.resource.data.method in ['google', 'password']
+        && request.resource.data.invitedBy == request.auth.uid
+        && request.resource.data.createdAt == request.time;
+      allow delete: if isAdmin() || (verified() && myEmail() == email);
+    }
+
+    // ---------------------------------------------------------------- pages
+    match /pages/{slug} {
+      function validPage() {
+        let d = request.resource.data;
+        return slug.matches('^[a-z0-9][a-z0-9_-]{0,63}$')
+          && d.keys().hasOnly(['title', 'subtitle', 'category', 'group', 'tag', 'accent', 'navLabel',
+                               'navOrder', 'sections', 'published', 'createdBy', 'createdAt',
+                               'updatedBy', 'updatedByEmail', 'updatedAt'])
+          && d.keys().hasAll(['title', 'subtitle', 'category', 'group', 'tag', 'accent', 'navLabel',
+                              'navOrder', 'sections', 'published', 'createdBy', 'createdAt',
+                              'updatedBy', 'updatedAt'])
+          && d.title is string && d.title.size() > 0 && d.title.size() <= 120
+          && d.subtitle is string && d.subtitle.size() <= 200
+          && d.category in ['country', 'path', 'guide', 'other']
+          && d.group is string && d.group.matches('^[a-z0-9_-]{0,40}$')
+          && d.tag is string && d.tag.matches('^[A-Z0-9]{0,4}$')
+          && d.accent is string && d.accent.matches('^#[0-9a-fA-F]{6}$')
+          && d.navLabel is string && d.navLabel.size() <= 60
+          && d.navOrder is int && d.navOrder >= 0 && d.navOrder <= 999
+          && d.sections is list && d.sections.size() <= 60
+          && d.published is bool
+          && d.updatedBy == request.auth.uid
+          && d.updatedAt == request.time;
+      }
+
+      allow get: if resource == null || resource.data.published == true || isEditor();
+      allow list: if resource.data.published == true || isEditor();
+
+      allow create: if isEditor() && validPage()
+        && request.resource.data.createdBy == request.auth.uid
+        && request.resource.data.createdAt == request.time;
+
+      allow update: if isEditor() && validPage()
+        && request.resource.data.createdBy == resource.data.createdBy
+        && request.resource.data.createdAt == resource.data.createdAt;
+
+      // Moderators can unpublish; only admins can delete.
+      allow delete: if isAdmin();
+
+      // Immutable history of every save.
+      match /revisions/{revId} {
+        allow read: if isEditor();
+        allow create: if isEditor()
+          && request.resource.data.savedBy == request.auth.uid
+          && request.resource.data.savedAt == request.time;
+        allow update: if false;
+        allow delete: if isAdmin();
+      }
+    }
+
+    // ------------------------------------------------------------ audit log
+    // Append-only. Nobody can edit or delete entries from the website.
+    match /audit/{entryId} {
+      allow read: if isAdmin();
+      allow create: if isEditor()
+        && request.resource.data.keys().hasOnly(['action', 'target', 'actor', 'actorEmail', 'at', 'details'])
+        && request.resource.data.action is string && request.resource.data.action.size() <= 40
+        && request.resource.data.target is string && request.resource.data.target.size() <= 200
+        && request.resource.data.details is string && request.resource.data.details.size() <= 500
+        && request.resource.data.actor == request.auth.uid
+        && request.resource.data.actorEmail == myEmail()
+        && request.resource.data.at == request.time;
+      allow update, delete: if false;
+    }
+
+    // Everything else is closed.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

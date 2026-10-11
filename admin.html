@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.gstatic.com https://apis.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://*.firebaseapp.com http://127.0.0.1:9099 http://127.0.0.1:8080; frame-src https://*.firebaseapp.com https://accounts.google.com http://127.0.0.1:9099; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin Panel - Dragon vs Eagle Wiki</title>
+    <link rel="stylesheet" href="css/wiki.css">
+    <script type="module" src="js/admin.js"></script>
+</head>
+<body>
+    <header>
+        <h1>ADMIN PANEL</h1>
+        <p>Accounts, roles and activity log</p>
+    </header>
+    <nav>
+        <a href="index.html">Home / Countries</a>
+        <a href="editor.html">Page Editor</a>
+        <a href="admin.html" class="attivo">Admin Panel</a>
+        <a href="login.html">Account</a>
+    </nav>
+    <div class="container wide">
+        <div id="admin-notice"></div>
+
+        <div id="admin-root" class="hidden">
+            <div class="card">
+                <h3>Add a staff account</h3>
+                <p class="muted">
+                    <strong>Google:</strong> the person signs in with that Google account and gets the role automatically.<br>
+                    <strong>E-mail + password:</strong> an account is created and the person receives an e-mail to choose their own password.
+                </p>
+                <form id="invite-form" class="row">
+                    <div style="flex:2 1 260px">
+                        <label for="inv-email">E-mail</label>
+                        <input type="email" id="inv-email" required maxlength="200" placeholder="dev@example.com">
+                    </div>
+                    <div>
+                        <label for="inv-role">Role</label>
+                        <select id="inv-role"></select>
+                    </div>
+                    <div>
+                        <label for="inv-method">Login method</label>
+                        <select id="inv-method">
+                            <option value="google">Google</option>
+                            <option value="password">E-mail + password</option>
+                        </select>
+                    </div>
+                    <div class="shrink">
+                        <button class="btn primary" type="submit" id="inv-btn">Add account</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>Pending invitations</h3>
+                <div class="table-wrap"><table class="wiki-table" id="invites-table"></table></div>
+            </div>
+
+            <div class="card">
+                <h3>Users</h3>
+                <p class="muted">
+                    <span class="role-tag role-owner">owner</span> manages admins (set only from the Firebase console) ·
+                    <span class="role-tag role-admin">admin</span> manages moderators, deletes pages ·
+                    <span class="role-tag role-moderator">moderator</span> creates and edits pages ·
+                    <span class="role-tag role-pending">pending</span> waiting for approval ·
+                    <span class="role-tag role-disabled">disabled</span> blocked
+                </p>
+                <div class="toolbar"><input type="text" id="user-search" placeholder="Search e-mail…" style="max-width:300px"></div>
+                <div class="table-wrap"><table class="wiki-table" id="users-table"></table></div>
+            </div>
+
+            <div class="card">
+                <h3>Activity log</h3>
+                <p class="muted">Every page change and account change is recorded here. Entries cannot be edited or deleted from the website.</p>
+                <div class="toolbar"><button class="btn small" type="button" id="audit-more">Load more</button></div>
+                <div class="table-wrap"><table class="wiki-table" id="audit-table"></table></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Dragon vs Eagle (DvE) 2025 HOI4 Mod Wiki — Staff area</p>
+        <p class="muted" id="whoami"></p>
+    </footer>
+</body>
+</html>

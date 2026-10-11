@@ -1,0 +1,7 @@
+node_modules/
+tests/node_modules/
+tests/package-lock.json
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.firebase/
