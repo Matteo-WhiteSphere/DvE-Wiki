@@ -11,7 +11,7 @@ Il wiki ha un'**area staff** dove i DEV della mod creano e modificano pagine dir
 
 Le vecchie ~180 pagine placeholder (`afg.html`, `usa_fascist.html`, …) sono state rimosse: il loro contenuto è in `data/placeholders.json` e viene mostrato come **bozza** finché un editor non scrive la pagina vera. I link della home puntano già a `page.html?p=…`.
 
-Il sito resta statico (GitHub Pages va benissimo). Login e database sono forniti da **Firebase** (piano gratuito *Spark*).
+Il sito resta statico ed è pubblicato su **Netlify** (configurazione in `netlify.toml` e `_redirects`). Login e database sono forniti da **Firebase** (piano gratuito *Spark*).
 
 ---
 
@@ -20,7 +20,7 @@ Il sito resta statico (GitHub Pages va benissimo). Login e database sono forniti
 1. Vai su <https://console.firebase.google.com> → **Aggiungi progetto** (Google Analytics non serve).
 2. **Impostazioni progetto → Generali → Le tue app → Web (`</>`)**: registra un'app web e copia i valori di `firebaseConfig` dentro `js/firebase-config.js` (al posto dei valori `YOUR_…`). Questi valori **non sono segreti**: la protezione è data dalle regole del database.
 3. **Authentication → Inizia → Sign-in method**: abilita **Email/Password** e **Google**.
-4. **Authentication → Impostazioni → Domini autorizzati**: aggiungi il dominio dove è pubblicato il wiki (es. `matteo-whitesphere.github.io`).
+4. **Authentication → Impostazioni → Domini autorizzati**: aggiungi i domini Netlify del wiki: `dve-wiki.netlify.app` e, per provare le anteprime, `deploy-preview-1--dve-wiki.netlify.app` (Firebase non accetta asterischi: ogni anteprima va aggiunta a mano; se colleghi un dominio personalizzato aggiungi anche quello).
 5. **Authentication → Impostazioni → Criteri password**: attivalo (minimo 10 caratteri, maiuscole, minuscole, numeri). Lascia attiva la **protezione dall'enumerazione delle e-mail**.
 6. **Firestore Database → Crea database** in *modalità produzione* (regione consigliata: `europe-west`).
 7. **Firestore → Regole**: incolla il contenuto di `firestore.rules` e premi **Pubblica**.
@@ -67,6 +67,15 @@ node accounts.mjs role Editor.Tazi disabled --key <chiave> # blocca l'account (a
 ```
 
 ---
+
+### Le password: come funzionano
+
+- **Nessuna password è scritta nel repository o nel sito.** Il repository è pubblico: qualsiasi password messa lì sarebbe visibile a tutti.
+- Le password **temporanee** vengono generate a caso dallo script nel momento in cui crei gli account, e stampate **solo nel tuo terminale**, una volta.
+- Tu le mandi in privato (es. messaggio su Discord) a ciascuno.
+- Al primo accesso ognuno **sceglie la propria password** (minimo 10 caratteri, maiuscole, minuscole e numeri). Da quel momento nemmeno tu la conosci: Firebase salva solo una versione cifrata.
+- Password dimenticata: un owner esegue `node accounts.mjs reset Editor.Nome` e manda la nuova password temporanea.
+- Ognuno può cambiare la propria password quando vuole da **👤 Login → Change password**.
 
 ## 3. Ruoli e account
 
@@ -146,6 +155,7 @@ cd tools && npm install && node accounts.mjs create --emulator   # crea gli acco
 | `js/page.js`, `js/editor.js`, `js/admin.js`, `js/login.js` | Logica delle pagine dinamiche e dell'area staff |
 | `js/nav-account.js`, `js/index-extra.js` | Pulsante Login nelle pagine statiche, pagine nuove nella home |
 | `tools/accounts.mjs`, `tools/staff-accounts.json` | Creazione e gestione degli account staff |
+| `netlify.toml`, `_redirects`, `404.html` | Header di sicurezza, redirect dai vecchi indirizzi (`afg.html` → `page.html?p=afg`), pagina 404 |
 | `css/wiki.css` | Stile condiviso (stesso tema del wiki) |
 | `data/placeholders.json` | Contenuto delle vecchie pagine placeholder |
 | `js/vendor/` | `marked` (Markdown) e `DOMPurify` (sanificazione), inclusi nel repo |
