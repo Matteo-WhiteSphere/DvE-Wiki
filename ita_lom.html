@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italy - Padania (LOM)</title>
+    <style>
+        :root {
+            --bg-color: #0b0e14;
+            --panel-bg: #131822;
+            --card-bg: #1a202c;
+            --border-color: #2d3748;
+            --text-primary: #e2e8f0;
+            --text-secondary: #a0aec0;
+            --accent-color: #f5b301;
+            --accent-glow: rgba(245, 179, 1, 0.35);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-color); color: var(--text-primary); font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+        header { background: linear-gradient(180deg, #151d2a 0%, #0b0e14 100%); border-bottom: 2px solid var(--accent-color); padding: 20px; text-align: center; box-shadow: 0 0 15px var(--accent-glow); }
+        header h1 { margin: 0; font-size: 2.2em; letter-spacing: 2px; color: var(--accent-color); text-shadow: 0 0 10px var(--accent-glow); }
+        header p { margin: 5px 0 0; color: var(--text-secondary); font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
+        nav { background-color: var(--panel-bg); border-bottom: 1px solid var(--border-color); padding: 10px 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        nav a { color: var(--text-primary); text-decoration: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9em; transition: all 0.2s ease; border: 1px solid transparent; }
+        nav a:hover, nav a[aria-current="page"] { color: var(--accent-color); border-color: var(--accent-color); box-shadow: 0 0 8px var(--accent-glow); }
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+        .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 20px; box-sizing: border-box; margin-bottom: 20px; overflow-x: auto; }
+        .card h3 { margin-top: 0; color: var(--accent-color); border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 12px; }
+        .card h4 { color: var(--text-primary); margin: 18px 0 6px; }
+        .card p, .card li { color: var(--text-secondary); line-height: 1.6; }
+        .card p + p { margin-top: 10px; }
+        .card ul { list-style-type: square; padding-left: 20px; margin-top: 8px; }
+        .card ul li { margin-bottom: 6px; }
+        .card a { color: var(--accent-color); }
+        .note { border-left: 3px solid var(--accent-color); padding: 8px 12px; background: var(--panel-bg); margin-top: 12px; }
+        .wiki-table { width: 100%; border-collapse: collapse; margin-top: 16px; background-color: var(--panel-bg); }
+        .wiki-table th, .wiki-table td { border: 1px solid var(--border-color); padding: 10px 12px; text-align: left; vertical-align: middle; color: var(--text-secondary); }
+        .wiki-table th { background-color: var(--card-bg); color: var(--accent-color); }
+        .wiki-table td small { color: var(--text-secondary); }
+        .leader-avatar { width: 84px; aspect-ratio: 154 / 210; height: auto; border-radius: 12px; object-fit: cover; background-color: var(--card-bg); box-shadow: none; }
+        .ideology-icon { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background-color: var(--card-bg); box-shadow: none; }
+        footer { text-align: center; padding: 20px; color: var(--text-secondary); font-size: 0.8em; border-top: 1px solid var(--border-color); margin-top: 40px; }
+        code { background: rgba(255,255,255,0.08); color: #8bd3ff; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        @media (max-width: 720px) { nav { flex-direction: column; align-items: center; } .container { padding: 0 12px; } }
+    </style>
+    <script type="module" src="js/nav-account.js"></script>
+</head>
+<body>
+    <header>
+        <h1>PADANIA</h1>
+        <p>LOM · THE NORTHERN SEPARATISTS, CIVIL WAR FACTION</p>
+    </header>
+    <nav>
+        <a href="index.html">Home / Countries</a>
+        <a href="ideologies.html">Ideologies List</a>
+        <a href="ita_democratic.html">Italian Republic (ITA)</a>
+        <a href="ita_int.html">The Internationale (INT)</a>
+        <a href="ita_sri.html">Socialist Republic (SRI)</a>
+        <a href="ita_rsi.html">Social Republic (RSI)</a>
+        <a href="ita_lom.html" aria-current="page">Padania (LOM)</a>
+        <a href="login.html" id="nav-login" class="nav-login" style="border-color: var(--accent-color, var(--accent-neon, #00f3ff));">&#128100; Login</a>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h3>1. Header &amp; Flavor Quotes</h3>
+<p><strong>Name:</strong> Padania (<code>LOM</code>); as the Italian People's Federation under the People's Workers' Party.</p>
+<p><strong>Leader:</strong> Matteo Salvini (Lega Nord).</p>
+<p><em>"Prima il Nord!"</em></p>
+        </div>
+
+        <div class="card">
+            <h3>Focus Tree &amp; Path Overview</h3>
+<p><strong>Target ideology:</strong> any of eight governments, from the Comunisti Padani to the Unione Nazionalista Padana.</p>
+<p><strong>Overview:</strong> the northern separatists. Padania wants independence, not the rest of Italy: it fights only Rome. After <em>Victory over Roma Ladrona</em> the player picks one of eight mutually exclusive governments, each with its own branch.</p>
+        </div>
+
+        <div class="card">
+            <h3>2. Technical Infobox &amp; Prerequisites</h3>
+<table class="wiki-table">
+<thead><tr><th>Field</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>Country Tag</td><td><code>LOM</code></td></tr>
+<tr><td>Capital</td><td>Veneto</td></tr>
+<tr><td>Territory</td><td>3 states: eastern Lombardy, Padania, Veneto</td></tr>
+<tr><td>Army</td><td>8 divisions "Guardia Padana"</td></tr>
+<tr><td>Ruling party</td><td><code>reactionary</code> – Lega Nord per l'Indipendenza della Padania, no elections</td></tr>
+<tr><td>Stability / War Support</td><td>55% / 45%</td></tr>
+<tr><td>Research slots</td><td>1</td></tr>
+<tr><td>At war with</td><td>ITA</td></tr>
+<tr><td>Focus Tree ID</td><td><code>LOM_focus</code></td></tr>
+</tbody></table>
+<table class="wiki-table">
+<thead><tr><th>Starting popularity</th><th>%</th></tr></thead>
+<tbody>
+<tr><td>Reactionary (Lega Nord)</td><td>55</td></tr>
+<tr><td>Conservative (Forza Padania)</td><td>15</td></tr>
+<tr><td>Fundamentalism (Cattolici Padani)</td><td>10</td></tr>
+<tr><td>Centrist (Lega Italia)</td><td>8</td></tr>
+<tr><td>Progressive (PSP)</td><td>5</td></tr>
+<tr><td>Liberal (Lavoro Padano)</td><td>3</td></tr>
+<tr><td>Each socialist ideology</td><td>1</td></tr>
+</tbody></table>
+        </div>
+
+        <div class="card">
+            <h3>3. Lore &amp; Geopolitical Goals</h3>
+<p><strong>Background:</strong> the old dream of the Lega Nord comes back when Rome collapses: Lombardy and the Veneto break away and the Guardia Padana takes to the streets.</p>
+<p><strong>Goals:</strong> beat "Roma Ladrona", then decide whether Padania is a nation of its own (cores on Piedmont, the Aosta Valley, Liguria, Lombardy, the Veneto, Trentino, Friuli-Venezia Giulia and Emilia-Romagna) or the core of a new Italy (claims on every Italian state).</p>
+        </div>
+
+        <div class="card">
+            <h3>4. National Spirits &amp; Modifiers</h3>
+<table class="wiki-table">
+<thead><tr><th>Spirit</th><th>From focus</th><th>Effects</th></tr></thead>
+<tbody>
+<tr><td>The Padanian Struggle</td><td>Prima il Nord!</td><td><code>War Support +10%</code>, <code>Stability +5%</code>, <code>Recruitable Population Factor +10%</code></td></tr>
+<tr><td>A New Italy</td><td>Myth of a New Italy</td><td><code>War Support +5%</code>, <code>Division Organization +5%</code></td></tr>
+<tr><td>The Padanian People</td><td>I Believe in the Padanians</td><td><code>Stability +5%</code>, <code>Political Power +0.10/day</code></td></tr>
+<tr><td>Forced Reindustrialization</td><td>Forced Reindustrialization</td><td><code>Factory Output +5%</code>, <code>Civilian Factory Construction +10%</code>, <code>Stability -5%</code></td></tr>
+<tr><td>State Collective Farms</td><td>State Collective Farms</td><td><code>Factory Output +10%</code>, <code>Civilian Factory Construction +10%</code>, <code>Consumer Goods -5%</code></td></tr>
+<tr><td>Central Committee</td><td>Central Committee</td><td><code>Political Power Gain +10%</code>, <code>Ideology Drift Defense +20%</code></td></tr>
+<tr><td>Supreme People&#x27;s Assembly</td><td>Supreme People&#x27;s Assembly</td><td><code>Political Power Gain +15%</code>, <code>Ideology Drift Defense +30%</code>, <code>Stability +5%</code></td></tr>
+<tr><td>People&#x27;s Workers&#x27; Army</td><td>People&#x27;s Workers&#x27; Army</td><td><code>Recruitable Population Factor +10%</code>, <code>Division Organization +5%</code></td></tr>
+<tr><td>Centralized Command</td><td>Centralized Command</td><td><code>Recruitable Population Factor +10%</code>, <code>Division Organization +5%</code>, <code>Command Power Gain +10%</code></td></tr>
+<tr><td>Revitalized Economy</td><td>Revitalizing the Economy</td><td><code>Consumer Goods -5%</code>, <code>Civilian Factory Construction +10%</code></td></tr>
+<tr><td>Revitalized Periphery</td><td>Revitalize the Italian Periphery</td><td><code>Consumer Goods -5%</code>, <code>Civilian Factory Construction +15%</code>, <code>Infrastructure Construction +15%</code></td></tr>
+<tr><td>Multiparty Democracy</td><td>Multiparty Democracy</td><td><code>Stability +10%</code>, <code>Political Power +0.10/day</code></td></tr>
+<tr><td>Centralized Federal System</td><td>Centralized Federal System</td><td><code>Stability +10%</code>, <code>Political Power Gain +10%</code>, <code>Ideology Drift Defense +15%</code></td></tr>
+<tr><td>Ministry of Defence</td><td>Ministry of Defence</td><td><code>Army Experience Gain +10%</code>, <code>Division Organization +5%</code></td></tr>
+<tr><td>Defending Padanian Democracy</td><td>Defending Padanian Democracy</td><td><code>Army Experience Gain +10%</code>, <code>Division Organization +5%</code>, <code>Division Defense +5%</code></td></tr>
+<tr><td>Private Economy</td><td>Fully Private Economy</td><td><code>Factory Output +5%</code>, <code>Construction Speed +10%</code></td></tr>
+<tr><td>Reduced Public Intervention</td><td>Reduction of Public Intervention</td><td><code>Factory Output +10%</code>, <code>Construction Speed +10%</code>, <code>Consumer Goods -5%</code></td></tr>
+<tr><td>Regionalist Democracy</td><td>Regionalist Democracy</td><td><code>Stability +5%</code>, <code>Political Power Gain +10%</code></td></tr>
+<tr><td>Localist Federal System</td><td>Localist Federal System</td><td><code>Stability +10%</code>, <code>Political Power Gain +10%</code>, <code>Ideology Drift Defense +15%</code></td></tr>
+<tr><td>Local-Level Defense</td><td>Local-Level Defense</td><td><code>Division Defense +5%</code>, <code>Entrenchment Speed +10%</code></td></tr>
+<tr><td>Defending Padanian Liberty</td><td>Defending Padanian Liberty</td><td><code>Division Defense +10%</code>, <code>Entrenchment Speed +15%</code>, <code>Army Experience Gain +5%</code></td></tr>
+<tr><td>Self-Employed Economy</td><td>Self-Employed Based Economy</td><td><code>Civilian Factory Construction +10%</code>, <code>Consumer Goods -5%</code></td></tr>
+<tr><td>Low Tax Pressure for Companies</td><td>Low Tax Pressure for Companies</td><td><code>Factory Output +10%</code>, <code>Civilian Factory Construction +10%</code>, <code>Consumer Goods -5%</code></td></tr>
+<tr><td>Presidentialist and Federalist Republic</td><td>Presidentialist and Federalist Republic</td><td><code>Political Power Gain +10%</code>, <code>Stability +5%</code></td></tr>
+<tr><td>Localist Presidential System</td><td>Localist Presidential System</td><td><code>Political Power Gain +15%</code>, <code>Stability +10%</code>, <code>Ideology Drift Defense +15%</code></td></tr>
+<tr><td>National Defense Committee</td><td>National Defense Committee</td><td><code>Army Experience Gain +10%</code>, <code>Command Power Gain +10%</code></td></tr>
+<tr><td>Defense of the North</td><td>Defense of the North</td><td><code>Division Defense +10%</code>, <code>Army Experience Gain +10%</code>, <code>Command Power Gain +10%</code></td></tr>
+<tr><td>Shopkeepers First</td><td>Shopkeepers First</td><td><code>Consumer Goods -5%</code>, <code>Civilian Factory Construction +10%</code></td></tr>
+<tr><td>Finances Small Businesses</td><td>Finances Small Businesses</td><td><code>Consumer Goods -5%</code>, <code>Civilian Factory Construction +10%</code>, <code>Factory Output +10%</code></td></tr>
+<tr><td>Federalism and Devolution</td><td>Federalism and Devolution</td><td><code>Stability +5%</code>, <code>Political Power Gain +10%</code></td></tr>
+<tr><td>Less Immigration, More Security</td><td>Less Immigration, More Security</td><td><code>Stability +10%</code>, <code>Political Power Gain +10%</code>, <code>Ideology Drift Defense +20%</code></td></tr>
+<tr><td>Padanian Professional Army</td><td>Padanian Professional Army</td><td><code>Division Organization +5%</code>, <code>Army Experience Gain +10%</code>, <code>Recruitable Population Factor -5%</code></td></tr>
+<tr><td>Sovereign Padanian Army</td><td>No NATO and No EU</td><td><code>Division Organization +5%</code>, <code>Army Experience Gain +10%</code>, <code>Division Attack +5%</code>, <code>War Support +5%</code>, <code>Recruitable Population Factor -5%</code></td></tr>
+<tr><td>Public Sector Serving the Private</td><td>Public Sector Serving the Private</td><td><code>Factory Output +5%</code>, <code>Military Factory Construction +10%</code></td></tr>
+<tr><td>Industrial Self-Sufficiency</td><td>Industrial Self-Sufficiency</td><td><code>Factory Output +10%</code>, <code>Military Factory Construction +10%</code>, <code>Resource Gain Efficiency +10%</code></td></tr>
+<tr><td>Zero Immigration</td><td>Zero Immigration</td><td><code>Stability +5%</code>, <code>Ideology Drift Defense +20%</code></td></tr>
+<tr><td>Hardline Catholics and Traditionalists</td><td>Hardline Catholics and Traditionalists</td><td><code>Stability +10%</code>, <code>Ideology Drift Defense +30%</code>, <code>Political Power Gain +10%</code></td></tr>
+<tr><td>National Army</td><td>National Army</td><td><code>Recruitable Population Factor +10%</code>, <code>Division Organization +5%</code></td></tr>
+<tr><td>Defense of the Padanian Nation</td><td>Defense of the Padanian Nation</td><td><code>Recruitable Population Factor +15%</code>, <code>Division Organization +5%</code>, <code>Division Defense +5%</code></td></tr>
+</tbody></table>
+        </div>
+
+        <div class="card">
+            <h3>5. Focus Tree Structure</h3>
+<table class="wiki-table">
+<thead><tr><th>Focus</th><th>Primary Effect</th></tr></thead>
+<tbody>
+<tr><td>Prima il Nord!</td><td>The Padanian Struggle spirit, +100 political power, +3% reactionary</td></tr>
+<tr><td>Padania Finally Free</td><td>2 Guardia Padana divisions, +10,000 manpower, equipment</td></tr>
+<tr><td>Italians First</td><td>+75 political power, +5% stability, +5% centrist. Mutually exclusive with Padanians First</td></tr>
+<tr><td>Myth of a New Italy</td><td>A New Italy spirit, claims on every Italian state</td></tr>
+<tr><td>Padanians First</td><td>+5% war support, +5% reactionary, claims on every state of Padania</td></tr>
+<tr><td>I Believe in the Padanians</td><td>The Padanian People spirit, cores on every state of Padania</td></tr>
+<tr><td>Victory over Roma Ladrona</td><td>Requires peace with ITA. Removes The Padanian Struggle, +150 political power, +10% stability, +1 research slot, cores on owned Italian states</td></tr>
+</tbody></table>
+<h4>The eight governments</h4>
+<p>Each government opens its own branch of economy, politics and defence, ending in the final focus listed here.</p>
+<table class="wiki-table">
+<thead><tr><th>Focus</th><th>Government</th><th>Final focus</th></tr></thead>
+<tbody>
+<tr><td>People's Workers' Party</td><td><code>authoritarian_socialism</code>, renamed Italian People's Federation (Partito dei Lavoratori Italiani)</td><td>Communism, Nation, Patriotism.</td></tr>
+<tr><td>Comunisti Padani</td><td><code>totalitarian_socialism</code></td><td>Communism, Nation, Patriotism.</td></tr>
+<tr><td>Lavoro Padano</td><td><code>liberal</code>, elections on</td><td>Padania, Europe, Freedom.</td></tr>
+<tr><td>Forza Padania</td><td><code>conservative</code>, elections on</td><td>Padania, Regionalism, Freedom.</td></tr>
+<tr><td>Keep Salvini's Lega</td><td><code>reactionary</code>, elections on</td><td>Padania, Nation, Identity.</td></tr>
+<tr><td>Destra Padana</td><td><code>authoritarianism</code></td><td>Padania, Nation, Identity.</td></tr>
+<tr><td>Bossi, Eternal Leader</td><td><code>absolutism</code>, leader Umberto Bossi (monarchism)</td><td>La Lega ce l'ha Duro</td></tr>
+<tr><td>Unione Nazionalista Padana</td><td><code>ultranationalism</code></td><td>For the State, God, and Padania</td></tr>
+</tbody></table>
+        </div>
+
+        <div class="card">
+            <h3>6. All Parties &amp; Leaders</h3>
+<table class="wiki-table">
+<thead><tr><th>Photo</th><th>Leader</th><th>Party</th><th>Ideology</th><th>Icon</th></tr></thead>
+<tbody>
+<tr><td><img class="leader-avatar" src="images/leaders/Central Committee.png" alt="Central Committee"></td><td>Central Committee</td><td>CP – Partito dei Comunisti Padani (HardLine)</td><td><code>totalitarian_socialism – juche</code><br><small>Totalitarian Socialism</small></td><td><img class="ideology-icon" src="images/ideologies/juche.png" alt="Juche"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/Central Committee.png" alt="Compagno Matteo"></td><td>Compagno Matteo</td><td>CP – Partito dei Comunisti Padani (Reformist)</td><td><code>authoritarian_socialism – left_nationalism</code><br><small>Authoritarian Socialism</small></td><td><img class="ideology-icon" src="images/ideologies/left_nationalism.png" alt="Left Nationalism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/workers_council.png" alt="Workers&#x27; Councils"></td><td>Workers&#x27; Councils</td><td>PCd&#x27;I – Partito Comunista d&#x27;Italia (Leninist)</td><td><code>vanguard_socialism – left_communism</code><br><small>Vanguard Socialism</small></td><td><img class="ideology-icon" src="images/ideologies/left_communism.png" alt="Left Communism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/central_council.png" alt="Central Council"></td><td>Central Council</td><td>PCd&#x27;I – Partito Comunista d&#x27;Italia (Revolutionary)</td><td><code>revolutionary_socialism – socialism</code><br><small>Revolutionary Socialism</small></td><td><img class="ideology-icon" src="images/ideologies/socialism.png" alt="Socialism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/enzo_maraio.png" alt="Enzo Maraio"></td><td>Enzo Maraio</td><td>PSP – Partito Socialista Padano</td><td><code>progressive – neo_socialism</code><br><small>Progressive</small></td><td><img class="ideology-icon" src="images/ideologies/neo_socialism.png" alt="Neo Socialism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/elly_schlein.png" alt="Elly Schlein"></td><td>Elly Schlein</td><td>Lavoro Padano – Democratici Europei</td><td><code>liberal – social_liberal</code><br><small>Liberal</small></td><td><img class="ideology-icon" src="images/ideologies/social_liberal.png" alt="Social Liberal"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/giorgia_meloni.png" alt="Giorgia Meloni"></td><td>Giorgia Meloni</td><td>Forza Padania – Liberaldemocratici</td><td><code>conservative – classical_populism</code><br><small>Conservative</small></td><td><img class="ideology-icon" src="images/ideologies/conservative.png" alt="Classical Populism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/matteo_salvini.png" alt="Matteo Salvini"></td><td>Matteo Salvini</td><td>Lega Nord per l&#x27;Indipendenza della Padania</td><td><code>reactionary – paternalism</code><br><small>Reactionary</small></td><td><img class="ideology-icon" src="images/ideologies/reactionary.png" alt="Paternalism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/roberto_vannacci.png" alt="Roberto Vannacci"></td><td>Roberto Vannacci</td><td>Destra Padana – Partito della Destra Padana</td><td><code>authoritarianism – illiberal_democracy</code><br><small>Authoritarianism</small></td><td><img class="ideology-icon" src="images/ideologies/illiberal_democracy.png" alt="Illiberal Democracy"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/grand_governing_leadership.png" alt="Grand Governing Leadership"></td><td>Grand Governing Leadership</td><td>UNP – Unione Nazionalista Padana</td><td><code>ultranationalism – neo_fascist</code><br><small>Ultranationalism</small></td><td><img class="ideology-icon" src="images/ideologies/neo_fascist.png" alt="Neo Fascist"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/emanuele_filiberto.png" alt="Emanuele Filiberto di Savoia"></td><td>Emanuele Filiberto di Savoia</td><td>Casa Bossi – Partito Monarchico Padano</td><td><code>absolutism – casa_savoia</code><br><small>Absolutism</small></td><td><img class="ideology-icon" src="images/ideologies/absolutism.png" alt="Casa Savoia"></td></tr>
+</tbody></table>
+<p>Other parties: <code>centrist</code> Lega Italia (Lega per l'Italia Sovrana), <code>autocracy</code> Guardia Padana, <code>fundamentalism</code> Cattolici Padani.</p>
+        </div>
+
+        <div class="card">
+            <h3>7. Unique Events &amp; Mechanics</h3>
+<ul>
+<li>Padania is played by picking it in <em>Italy Tears Itself Apart</em>.</li>
+<li>It stays out of the ideological wars: at the start it fights only the Republic.</li>
+<li>Victory over Roma Ladrona needs peace with ITA, so the war with Rome has to end first.</li>
+</ul>
+<p class="note">The six-faction civil war (ITA, INT, SRI, RSI, LOM, TYR) is in the mod but, in the current version, it can only be started from the debug decisions: no focus triggers it yet.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Dragon vs Eagle (DvE) 2025 HOI4 Mod Wiki</p>
+    </footer>
+
+    <script>
+    (function(){
+      function wrapImages(){
+        const images = Array.from(document.querySelectorAll('img'));
+        images.forEach(function(img){
+          if (img.closest('a')) return;
+          const href = img.getAttribute('src');
+          if (!href) return;
+          const link = document.createElement('a');
+          link.href = href;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.className = 'image-open-link';
+          img.parentNode.insertBefore(link, img);
+          link.appendChild(img);
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', wrapImages);
+      } else {
+        wrapImages();
+      }
+    })();
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Italy - Democratic Path</title>
+    <title>Italy - Italian Republic (ITA)</title>
     <style>
         :root {
             --bg-color: #0b0e14;
@@ -22,158 +22,203 @@
         header p { margin: 5px 0 0; color: var(--text-secondary); font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
         nav { background-color: var(--panel-bg); border-bottom: 1px solid var(--border-color); padding: 10px 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         nav a { color: var(--text-primary); text-decoration: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9em; transition: all 0.2s ease; border: 1px solid transparent; }
-        nav a:hover { color: var(--accent-color); border-color: var(--accent-color); box-shadow: 0 0 8px var(--accent-glow); }
+        nav a:hover, nav a[aria-current="page"] { color: var(--accent-color); border-color: var(--accent-color); box-shadow: 0 0 8px var(--accent-glow); }
         .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
-        .grid { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
-        .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 20px; flex: 1 1 280px; box-sizing: border-box; min-width: 280px; margin-bottom: 20px; }
+        .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 20px; box-sizing: border-box; margin-bottom: 20px; overflow-x: auto; }
         .card h3 { margin-top: 0; color: var(--accent-color); border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 12px; }
+        .card h4 { color: var(--text-primary); margin: 18px 0 6px; }
         .card p, .card li { color: var(--text-secondary); line-height: 1.6; }
-        .card ul { list-style-type: square; padding-left: 20px; }
+        .card p + p { margin-top: 10px; }
+        .card ul { list-style-type: square; padding-left: 20px; margin-top: 8px; }
         .card ul li { margin-bottom: 6px; }
+        .card a { color: var(--accent-color); }
+        .note { border-left: 3px solid var(--accent-color); padding: 8px 12px; background: var(--panel-bg); margin-top: 12px; }
         .wiki-table { width: 100%; border-collapse: collapse; margin-top: 16px; background-color: var(--panel-bg); }
-        .wiki-table th, .wiki-table td { border: 1px solid var(--border-color); padding: 12px; text-align: left; vertical-align: middle; }
+        .wiki-table th, .wiki-table td { border: 1px solid var(--border-color); padding: 10px 12px; text-align: left; vertical-align: middle; color: var(--text-secondary); }
         .wiki-table th { background-color: var(--card-bg); color: var(--accent-color); }
-        .leader-cell { display: flex; align-items: center; gap: 12px; }
+        .wiki-table td small { color: var(--text-secondary); }
         .leader-avatar { width: 84px; aspect-ratio: 154 / 210; height: auto; border-radius: 12px; object-fit: cover; background-color: var(--card-bg); box-shadow: none; }
         .ideology-icon { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background-color: var(--card-bg); box-shadow: none; }
-        .badge { display: inline-block; padding: 3px 8px; border-radius: 3px; font-size: 0.85em; font-weight: bold; text-transform: uppercase; }
-        .badge-prog { background-color: #ff6868; color: #fff; }
-        .badge-cent { background-color: #ff85fd; color: #fff; }
-        .badge-con { background-color: #113d94; color: #fff; }
-        .badge-abs { background-color: #666667; color: #fff; }
         footer { text-align: center; padding: 20px; color: var(--text-secondary); font-size: 0.8em; border-top: 1px solid var(--border-color); margin-top: 40px; }
         code { background: rgba(255,255,255,0.08); color: #8bd3ff; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
-        @media (max-width: 720px) { nav { flex-direction: column; align-items: center; } }
+        @media (max-width: 720px) { nav { flex-direction: column; align-items: center; } .container { padding: 0 12px; } }
     </style>
     <script type="module" src="js/nav-account.js"></script>
 </head>
 <body>
     <header>
         <h1>ITALIAN REPUBLIC</h1>
-        <p> DEMOCRATIC PATH</p>
+        <p>ITA · THE REPUBLIC AND THE GOVERNMENT SIDE OF THE CIVIL WAR</p>
     </header>
     <nav>
         <a href="index.html">Home / Countries</a>
         <a href="ideologies.html">Ideologies List</a>
-        <a href="ita_democratic.html">Democratic Path</a>
-        <a href="ita_communist.html">Communist Path</a>
-        <a href="ita_fascist.html">Fascist Path</a>
+        <a href="ita_democratic.html" aria-current="page">Italian Republic (ITA)</a>
+        <a href="ita_int.html">The Internationale (INT)</a>
+        <a href="ita_sri.html">Socialist Republic (SRI)</a>
+        <a href="ita_rsi.html">Social Republic (RSI)</a>
+        <a href="ita_lom.html">Padania (LOM)</a>
         <a href="login.html" id="nav-login" class="nav-login" style="border-color: var(--accent-color, var(--accent-neon, #00f3ff));">&#128100; Login</a>
     </nav>
 
     <div class="container">
-
-         <div class="card">
-        <h3>1. Header & Flavor Quotes</h3>
-            <p><strong>Starting Name:</strong> Republic of Italy</p>
-            <p><strong>Starting Leader:</strong> Giorgia Meloni.</p>
+        <div class="card">
+            <h3>1. Header &amp; Flavor Quotes</h3>
+<p><strong>Starting Name:</strong> Italian Republic (<code>ITA</code>)</p>
+<p><strong>Starting Leader:</strong> Giorgia Meloni (Centro-Destra: Fratelli d'Italia, Forza Italia, Lega).</p>
+<p><strong>Role in the civil war:</strong> the legitimate government in Rome. Two days after the collapse the Armed Forces Joint Command (<em>Comando Interforze F.F.A.A.</em>) takes power.</p>
         </div>
 
         <div class="card">
-            <h3>Focus Tree & Path Overview</h3>
-            <p><strong>Target Ideology:</strong> progressive / centrist / conservative / reactionary</p>
-            <p><strong>Sub-Ideology:</strong> progressivism / centrist_populism / conservatism / reactionary_populism</p>
-            <p><strong>Overview:</strong> Constitutional renewal, democratic stabilization, and European alignment.</p>
+            <h3>Focus Tree &amp; Path Overview</h3>
+<p>Italy is split into the factions of its civil war, and every path of the Italian focus tree leads to one of them. This page covers what stays <strong>Italian Republic</strong>: the parliamentary <em>Democratic Spectrum</em>, the House of Savoy restoration and the government side of the civil war.</p>
+<table class="wiki-table">
+<thead><tr><th>Path</th><th>Faction</th><th>Page</th></tr></thead>
+<tbody>
+<tr><td>Democratic Spectrum (elections of 2027)</td><td>Italian Republic (ITA)</td><td>this page</td></tr>
+<tr><td>Good old Days → Casa Savoia! (Kingdom of Italy)</td><td>Italian Republic (ITA)</td><td><a href="#monarchy">this page</a></td></tr>
+<tr><td>On the Side of the Proletariat → Leninist and Trotskyist Alliance</td><td>The Internationale (INT)</td><td><a href="ita_int.html">INT</a></td></tr>
+<tr><td>On the Side of the Proletariat → Hardline communist</td><td>Socialist Republic of Italy (SRI)</td><td><a href="ita_sri.html">SRI</a></td></tr>
+<tr><td>Good old Days → Second March on Rome</td><td>Italian Social Republic (RSI)</td><td><a href="ita_rsi.html">RSI</a></td></tr>
+<tr><td>Civil war only</td><td>Padania (LOM), South Tyrol (TYR)</td><td><a href="ita_lom.html">LOM</a></td></tr>
+</tbody></table>
         </div>
 
         <div class="card">
-            <h3>2. Technical Infobox & Prerequisites</h3>
-            <table class="wiki-table">
-                <tr><th>Field</th><th>Value</th></tr>
-                <tr><td>Main Ideology (start)</td><td><code>conservative</code> → subtype <code>conservatism</code> (FdI/FI/LN)</td></tr>
-                <tr><td>Capital</td><td>Rome</td></tr>
-                <tr><td>Country Tag</td><td><code>ITA</code></td></tr>
-                <tr><td>Focus Tree ID</td><td><code>italian_focus</code></td></tr>
-            </table>
-            <table class="wiki-table">
-                <thead><tr><th>Path</th><th>Trigger</th></tr></thead>
-                <tbody>
-                    <tr><td><span class="badge badge-prog">Progressive</span></td><td><code>ITA_2027_election</code> → <code>Socialist_victory</code></td></tr>
-                    <tr><td><span class="badge badge-cent">Centrist</span></td><td><code>ITA_2027_election</code> → <code>Centerleft_victory</code></td></tr>
-                    <tr><td><span class="badge badge-con">Conservative</span></td><td><code>ITA_2027_election</code> → <code>Conservative_victory</code></td></tr>
-                    <tr><td><span class="badge badge-abs">Reactionary</span></td><td><code>ITA_2027_election</code> → <code>Futuro_nazionale</code></td></tr>
-                </tbody>
-            </table>
+            <h3>2. Technical Infobox &amp; Prerequisites</h3>
+<table class="wiki-table">
+<thead><tr><th>Field</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>Country Tag</td><td><code>ITA</code></td></tr>
+<tr><td>Capital</td><td>Rome (state 2)</td></tr>
+<tr><td>Ruling party (start)</td><td><code>conservative</code> – Centro-Destra (Fratelli d'Italia, Forza Italia, Lega)</td></tr>
+<tr><td>Elections</td><td>allowed, every 60 months (last: 25 September 2022)</td></tr>
+<tr><td>Stability / War Support</td><td>65% / 40%</td></tr>
+<tr><td>Research slots</td><td>4</td></tr>
+<tr><td>Starting laws</td><td>Limited Exports, Volunteer Only, Civilian Economy</td></tr>
+<tr><td>Focus Tree ID</td><td><code>italian_focus</code></td></tr>
+</tbody></table>
+<table class="wiki-table">
+<thead><tr><th>Starting popularity</th><th>%</th></tr></thead>
+<tbody>
+<tr><td>Liberal (Campo Largo)</td><td>34</td></tr>
+<tr><td>Conservative (Centro-Destra)</td><td>31</td></tr>
+<tr><td>Progressive (PSI)</td><td>8</td></tr>
+<tr><td>Authoritarianism (Lega)</td><td>6</td></tr>
+<tr><td>Autocracy (FF.AA.)</td><td>4</td></tr>
+<tr><td>Reactionary (FN)</td><td>4</td></tr>
+<tr><td>Vanguard Socialism (Lotta Comunista)</td><td>3</td></tr>
+<tr><td>Revolutionary Socialism (PCR)</td><td>3</td></tr>
+<tr><td>Ultranationalism (CP-FN)</td><td>3</td></tr>
+<tr><td>Totalitarian Socialism (PdRC, PC)</td><td>2</td></tr>
+<tr><td>Authoritarian Socialism (PaP, CR-OSA)</td><td>2</td></tr>
+</tbody></table>
         </div>
 
         <div class="card">
-            <h3>3. Lore & Geopolitical Goals</h3>
-            <p><strong>Background:</strong> Italy in 2025 is a nation hanging in the balance. Giorgia Meloni's center-right government faces a chronic economic crisis, massive immigration, growing internal tensions, and an unstable Europe. Political forces are becoming radicalized: on the right, neo-fascists push for a "Second March on Rome," while on the left, PDRC, CR-OSA, and Potere al Popolo organize in factories and public squares. In the center, social democracy attempts to hold together a crumbling country.</p>
-            <p style="margin-top: 10px;"><strong>Short-term goals:</strong> stabilize the economy, control social tensions, define Italy's position inside or outside NATO and the EU.</p>
-            <p style="margin-top: 10px;"><strong>Long-term goals:</strong> build an advanced social-democratic Italy, expanded welfare, deep European integration.</p>
-            <p style="margin-top: 10px;"><strong>Main rivals:</strong> France, Germany, Austria, Croatia/Slovenia, Russia, USA/NATO, Vatican.</p>
+            <h3>3. Lore &amp; Geopolitical Goals</h3>
+<p><strong>Background:</strong> Italy enters 2025 under Giorgia Meloni's centre-right government while the radical left organises in Genoa's squares and factories. In autumn 2025 Lotta Comunista fills the city for the <em>March Against All Wars</em>, and in December the workers of the former Ilva plant strike against production cuts.</p>
+<p><strong>The collapse:</strong> when the Republic breaks apart, the Internationale holds the industrial north, the Stalinists rule from Naples, the Black Barons take Latina, and Padania and South Tyrol want nothing more to do with any of them. Rome keeps the centre, the islands and most of the south, and the generals take over.</p>
+<p><strong>Goal:</strong> hold the Republic together, either through the ballot box in 2027 or under the House of Savoy, and win back every state lost in the civil war.</p>
         </div>
 
         <div class="card">
-            <h3>4. National Spirits & Modifiers</h3>
-            <table class="wiki-table">
-                <thead><tr><th>Spirit</th><th>Effects</th></tr></thead>
-                <tbody>
-                    <tr><td>Italian Economic Crisis</td><td><code>Consumer Goods Factor +8%</code>, <code>Political Power -0.10/day</code>, <code>Stability -5%</code></td></tr>
-                    <tr><td>Public Debt</td><td><code>Construction Speed -10%</code>, <code>Factory Output -5%</code></td></tr>
-                    <tr><td>Social Tensions</td><td><code>Recruitable Population -5%</code>, <code>Monthly Popularity Change (ruling) -0.01</code></td></tr>
-                    <tr><td>NATO Member</td><td><code>Division Attack +5%</code>, <code>Join Faction Allowed</code></td></tr>
-                    <tr><td>Social Reform</td><td><code>Stability +10%</code>, <code>Consumer Goods +5%</code>, <code>Research Speed +5%</code></td></tr>
-                    <tr><td>Matteï Mediterranean Plan</td><td><code>Infrastructure +1 (Southern Italy)</code>, <code>Trade Efficiency +10%</code></td></tr>
-                </tbody>
-            </table>
+            <h3>4. National Spirits &amp; Modifiers</h3>
+<p>Italy starts with <strong>no national spirits</strong>, only its laws: <code>limited_exports</code>, <code>volunteer_only</code> and <code>civilian_economy</code>.</p>
+<p><em>Mattei's Mediterranean Plan</em> is meant to add the spirit <code>ITA_mediterranean_investments</code>, but that spirit is not defined in the mod yet.</p>
         </div>
 
         <div class="card">
             <h3>5. Focus Tree Structure</h3>
-            <p>The Italian tree has 5 main roots at <code>Y=0</code> rows.</p>
-            <ul>
-                <li><code>ITA_democratic_spectrum</code> — center-left / center-right</li>
-                <li><code>ITA_good_old_days</code> — ultranationalism</li>
-                <li><code>ITA_on_the_side_of_the_proletariat</code> — radical left</li>
-                <li><code>ITA_reorganize_the_state</code> — monarchism / autocracy</li>
-                <li><code>(NATO / neutral geopolitical focus)</code></li>
-            </ul>
-            <table class="wiki-table">
-                <thead><tr><th>Focus</th><th>Primary Effect</th></tr></thead>
-                <tbody>
-                    <tr><td><code>ITA_democratic_spectrum</code></td><td>Root of the center-left parliamentarian path</td></tr>
-                    <tr><td><code>ITA_socialist_victory</code></td><td><code>ruling_party = progressive</code></td></tr>
-                    <tr><td><code>ITA_centerleft_victory</code></td><td><code>ruling_party = centrist</code></td></tr>
-                    <tr><td><code>ITA_green_new_deal</code></td><td><code>+200 PP</code>, environmental focus</td></tr>
-                    <tr><td><code>ITA_european_integration</code></td><td><code>+Stability</code>, In-depth look at the EU</td></tr>
-                    <tr><td><code>ITA_2027_election</code></td><td>2027 Elections — choice between progressive and centrist paths</td></tr>
-                </tbody>
-            </table>
+<p>The Italian tree (<code>italian_focus</code>) has three mutually exclusive roots: <em>On the Side of the Proletariat</em> (to <a href="ita_int.html">INT</a> or <a href="ita_sri.html">SRI</a>), <em>Democratic Spectrum</em> and <em>Good old Days</em>.</p>
+<h4>Democratic Spectrum</h4>
+<table class="wiki-table">
+<thead><tr><th>Focus</th><th>Primary Effect</th></tr></thead>
+<tbody>
+<tr><td>Democratic Spectrum</td><td>+5% stability. Root of the parliamentary path.</td></tr>
+<tr><td>The Left Side / The Right Side</td><td>Mutually exclusive.</td></tr>
+<tr><td>Propaganda in the Neighborhoods (×2)</td><td>Left: +17% progressive, or +7% centrist popularity.</td></tr>
+<tr><td>Political Debates → Hold Conferences</td><td>+7% progressive or centrist, then +10% centrist.</td></tr>
+<tr><td>I AM GIORGIA → I AM A MOTHER, I AM A CHRISTIAN → NON ME LO TOGLIERETE!</td><td>Right: +5%, +5%, +10% conservative popularity.</td></tr>
+<tr><td>Refugees of the Lega → Fascist Sympathies → Our General</td><td>Right: +10%, +10%, +20% reactionary popularity.</td></tr>
+<tr><td>2027 Election</td><td>−100 political power. Unlocks the four results below.</td></tr>
+<tr><td>Socialist Victory → Francesco De Martino</td><td>Progressive government, elections on.</td></tr>
+<tr><td>Center-Left Victory → Elly Schlein</td><td>Centrist government, elections on. +10% stability.</td></tr>
+<tr><td>Conservative Victory → Giorgia Meloni</td><td>Meloni stays (no government change scripted).</td></tr>
+<tr><td>Futuro Nazionale → Roberto Vannacci</td><td>Vannacci's branch (no government change scripted).</td></tr>
+<tr><td>Minimum Salary, Funds for Schools, Green New Deal</td><td>Left economy: stability, civilian factories, +200 political power.</td></tr>
+<tr><td>Expand the Welfare State, Funding for Healthcare, New Jobs</td><td>More stability and civilian factories, +5,000 manpower.</td></tr>
+<tr><td>Scala Mobile, Revitalizing the Mezzogiorno, Carbon Neutrality</td><td>Civilian factories (4, 5 and 5).</td></tr>
+<tr><td>A Social-Democratic Italy</td><td>+100 political power, stability. Final focus of the left.</td></tr>
+<tr><td>Consolidate the Government, UE NATO Support</td><td>Meloni: +5% stability, +75 political power; +20% war support.</td></tr>
+<tr><td>Protect Made in Italy, Wink at the Army</td><td>2 civilian factories; 6 military factories.</td></tr>
+<tr><td>Mattei's Mediterranean Plan, Secure the Borders</td><td>+50 political power; war support and stability.</td></tr>
+<tr><td>Italy: Regional Power</td><td>+10% war support, +5% stability. Final focus of Meloni.</td></tr>
+<tr><td>Defend National Values, Connections in the Army</td><td>Vannacci: stability; +10 army experience.</td></tr>
+<tr><td>Popular Appeal, Secure the Borders, Italian Manufacturing, Patriotic to the End</td><td>+75 political power, 5 civilian and 5 military factories, war support.</td></tr>
+<tr><td>New National Republic</td><td>Final focus of Vannacci: war support and stability.</td></tr>
+</tbody></table>
+<h4 id="monarchy">Good old Days: the Kingdom of Italy</h4>
+<table class="wiki-table">
+<thead><tr><th>Focus</th><th>Primary Effect</th></tr></thead>
+<tbody>
+<tr><td>Good old Days</td><td>Reactionary government, elections off. Mutually exclusive with the other two roots.</td></tr>
+<tr><td>Casa Savoia!</td><td>Mutually exclusive with Second March on Rome (see <a href="ita_rsi.html">RSI</a>).</td></tr>
+<tr><td>Reorganize the State → A Loyal Administration → King's Parliament</td><td>+5% stability, +75 political power; King's Parliament: −10% stability, +10% war support.</td></tr>
+<tr><td>Restore the Crown → Emanuele Filiberto di Savoia → King's Industry</td><td>+10% stability.</td></tr>
+<tr><td>Irredentism → Give Istria Back You Thieves! / Give Corsica Back You Thieves!</td><td>No effects scripted yet.</td></tr>
+<tr><td>Irredentism → Traditional Values</td><td>+5% war support. Also unlocks The Empire Returns to Rome.</td></tr>
+<tr><td>The Kingdom Reborn</td><td>Final focus, after King's Parliament, King's Industry or Traditional Values (no effects scripted yet).</td></tr>
+</tbody></table>
         </div>
 
         <div class="card">
-            <h3>6. All Parties & Leaders</h3>
-            <table class="wiki-table">
-                <thead><tr><th>Photo</th><th>Leader</th><th>Party</th><th>Ideology</th><th>Icon</th></tr></thead>
-                <tbody>
-                    <tr><td><img class="leader-avatar" src="images/leaders/Central Committee.png" alt="Segreteria Generale"></td><td>Central Committee</td><td>Rifondazione Comunista, CR, PaP</td><td><code>totalitarian_communism-stalinism</code></td><td><img class="ideology-icon" src="images/ideologies/stalinism.png" alt="Totalitarian Communism"></td></tr>
-                    <tr><td><img class="leader-avatar" src="images/leaders/workers_council.png" alt="Workers' Councils"></td><td>Workers' Councils</td><td>Lotta Comunista</td><td><code>vanguard_socialism-leninism</code></td><td><img class="ideology-icon" src="images/ideologies/leninist_internationalism.png" alt="Vanguard Socialism"></td></tr>
-                    <tr><td><img class="leader-avatar" src="images/leaders/central_council.png" alt="Central Council"></td><td>Central Council</td><td>Partito Comunista Rivoluzionario</td><td><code>revolutionary_socialism—Trotskyism</code></td><td><img class="ideology-icon" src="images/ideologies/trotskyism.png" alt="Revolutionary Socialism"></td></tr>
-                    <tr><td><img class="leader-avatar" src="images/leaders/enzo_maraio.png" alt="Enzo Maraio"></td><td>Enzo Maraio</td><td>Partito Socialista Italiano</td><td><code>progressive-neo_socialism</code></td><td><img class="ideology-icon" src="images/ideologies/neo_socialism.png" alt="Progressive"></td></tr>
-                    <tr><td><img class="leader-avatar" src="images/leaders/elly_schlein.png" alt="Elly Schlein"></td><td>Elly Schlein</td><td>Partito Democratico, Verdi&Sinistra, 5 Stelle</td><td><code>centrist-liberal_socialdemocrat</code></td><td><img class="ideology-icon" src="images/ideologies/liberal_socialdemocrat.png" alt="Centrist"></td></tr>
-                    <tr><td><img class="leader-avatar" src="images/leaders/giorgia_meloni.png" alt="Giorgia Meloni"></td><td>Giorgia Meloni</td><td>Frtelli d'Italia, Forza Italia, Lega nord</td><td><code>conservative</code></td><td><img class="ideology-icon" src="images/ideologies/icon_conservative.png" alt="Conservative"></td></tr>
-                    <tr><td><img class="leader-avatar" src="images/leaders/roberto_vannacci.png" alt="Roberto Vannacci"></td><td>Roberto Vannacci</td><td>Futuro Nazionale</td><td><code>reactionary-reactionary_populism</code></td><td><img class="ideology-icon" src="images/ideologies/icon_reactionary.png" alt="Reactionary"></td></tr>
-                    <tr><td><img class="leader-avatar" src="images/leaders/grand_governing_leadership.png" alt="Grand Governing Leadership"></td><td>Grand Governing Leadership</td><td>CasaPound / Forza Nuova</td><td><code>ultranationalism-neo_fascist</code></td><td><img class="ideology-icon" src="images/ideologies/neo_fascist.png" alt="Reactionary"></td></tr>
-                    <tr><td><img class="leader-avatar" src="images/leaders/emanuele_filiberto.png" alt="Emanuele Filiberto di Savoia"></td><td>Emanuele Filiberto di Savoia</td><td>Casa Savoia</td><td><code>absolutism-monarchism</code></td><td><img class="ideology-icon" src="images/ideologies/absolute_monarchy.png" alt="Conservative"></td></tr>
-                </tbody>
-            </table>
+            <h3>6. All Parties &amp; Leaders</h3>
+<table class="wiki-table">
+<thead><tr><th>Photo</th><th>Leader</th><th>Party</th><th>Ideology</th><th>Icon</th></tr></thead>
+<tbody>
+<tr><td><img class="leader-avatar" src="images/leaders/Central Committee.png" alt="Central Committee"></td><td>Central Committee</td><td>PdRC, PC – Partito della Rifondazione Comunista</td><td><code>totalitarian_socialism – stalinism</code><br><small>Totalitarian Socialism</small></td><td><img class="ideology-icon" src="images/ideologies/stalinism.png" alt="Stalinism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/Central Committee.png" alt="Central Committee"></td><td>Central Committee</td><td>PdRC, PC – Partito della Rifondazione Comunista</td><td><code>totalitarian_socialism – maoism</code><br><small>Totalitarian Socialism</small></td><td><img class="ideology-icon" src="images/ideologies/maoism.png" alt="Maoism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/general_secretaries.png" alt="General Secretaries"></td><td>General Secretaries</td><td>PaP, CR-OSA – Potere al Popolo, Cambiare Rotta</td><td><code>authoritarian_socialism – populist_socialism</code><br><small>Authoritarian Socialism</small></td><td><img class="ideology-icon" src="images/ideologies/authoritarian_socialism.png" alt="Populist Socialism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/workers_council.png" alt="Workers&#x27; Councils"></td><td>Workers&#x27; Councils</td><td>Lotta Comunista (Internationalism)</td><td><code>vanguard_socialism – leninist_internationalism</code><br><small>Vanguard Socialism</small></td><td><img class="ideology-icon" src="images/ideologies/leninist_internationalism.png" alt="Leninist Internationalism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/central_council.png" alt="Central Council"></td><td>Central Council</td><td>PCR – Partito Comunista Rivoluzionario</td><td><code>revolutionary_socialism – trotskyism</code><br><small>Revolutionary Socialism</small></td><td><img class="ideology-icon" src="images/ideologies/trotskyism.png" alt="Trotskyism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/enzo_maraio.png" alt="Enzo Maraio"></td><td>Enzo Maraio</td><td>PSI – Avanti, Partito Socialista Italiano</td><td><code>progressive – neo_socialism</code><br><small>Progressive</small></td><td><img class="ideology-icon" src="images/ideologies/neo_socialism.png" alt="Neo Socialism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/elly_schlein.png" alt="Elly Schlein"></td><td>Elly Schlein</td><td>Campo Largo – PD, Verdi e Sinistra, M5S, +E</td><td><code>liberal – social_liberal</code><br><small>Liberal</small></td><td><img class="ideology-icon" src="images/ideologies/social_liberal.png" alt="Social Liberal"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/giorgia_meloni.png" alt="Giorgia Meloni"></td><td>Giorgia Meloni</td><td>Centro-Destra – Fratelli d&#x27;Italia, Forza Italia, Lega</td><td><code>conservative – classical_populism</code><br><small>Conservative</small></td><td><img class="ideology-icon" src="images/ideologies/conservative.png" alt="Classical Populism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/matteo_salvini.png" alt="Matteo Salvini"></td><td>Matteo Salvini</td><td>FN – Futuro Nazionale</td><td><code>reactionary – hardline_conservatism</code><br><small>Reactionary</small></td><td><img class="ideology-icon" src="images/ideologies/reactionary.png" alt="Hardline Conservatism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/roberto_vannacci.png" alt="Roberto Vannacci"></td><td>Roberto Vannacci</td><td>Lega – Lega Nord</td><td><code>authoritarianism – illiberal_democracy</code><br><small>Authoritarianism</small></td><td><img class="ideology-icon" src="images/ideologies/illiberal_democracy.png" alt="Illiberal Democracy"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/grand_governing_leadership.png" alt="Grand Governing Leadership"></td><td>Grand Governing Leadership</td><td>CP-FN – CasaPound, Forza Nuova</td><td><code>ultranationalism – neo_fascist</code><br><small>Ultranationalism</small></td><td><img class="ideology-icon" src="images/ideologies/neo_fascist.png" alt="Neo Fascist"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/emanuele_filiberto.png" alt="Emanuele Filiberto di Savoia"></td><td>Emanuele Filiberto di Savoia</td><td>Casa Savoia – Partito Nazionale Monarchico</td><td><code>absolutism – casa_savoia</code><br><small>Absolutism</small></td><td><img class="ideology-icon" src="images/ideologies/absolutism.png" alt="Casa Savoia"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/ffaa_joint_command.png" alt="Comando Interforze F.F.A.A."></td><td>Comando Interforze F.F.A.A.</td><td>FF.AA. – Forze Armate Italiane (civil war only)</td><td><code>autocracy – military_dictatorship</code><br><small>Autocracy</small></td><td><img class="ideology-icon" src="images/ideologies/autocracy.png" alt="Military Dictatorship"></td></tr>
+</tbody></table>
+<p>Other parties: <code>centrist</code> IV, Azione, UdC; <code>fundamentalism</code> PP – Partito Pontificio. President Sergio Mattarella (social liberal) is also recruited at the start.</p>
         </div>
 
         <div class="card">
-            <h3>7. Unique Events & Mechanics</h3>
-            <p><strong>2027 Elections:</strong> the <code>ITA_2027_election</code> focus generates a branching event that offers the player the choice between the progressive and centrist paths, based on the popularity of the ideologies (<code>has_popularity > 0.40</code>).</p>
-            <p style="margin-top: 10px;"><strong>Revolutionary Coup:</strong> <code>ITA_start_the_coup_de_main</code> requires <code>has_party_popularity vanguard_socialism > 0.50</code> and <code>has_war = no</code>, and unlocks three parallel paths (vanguard, revolutionary, totalitarian) based on the completed focuses.</p>
-            <table class="wiki-table">
-                <thead><tr><th>#</th><th>Event</th><th>Trigger</th><th>Consequence</th></tr></thead>
-                <tbody>
-                    <tr><td>1</td><td>The Second March on Rome</td><td><code>ITA_second_march_on_rome</code></td><td>Street clashes, <code>Stability -20%</code></td></tr>
-                    <tr><td>2</td><td>The International Rises</td><td><code>ITA_the_international</code></td><td>Declaration of the international</td></tr>
-                    <tr><td>3</td><td>The King Returns to Rome</td><td><code>ITA_the_kingdom_reborn</code></td><td>Proclamation of the Kingdom of Italy</td></tr>
-                    <tr><td>4</td><td>2027 Elections</td><td><code>ITA_2027_election</code></td><td>Branching between center-left and progressive center-right paths</td></tr>
-                </tbody>
-            </table>
+            <h3>7. Unique Events &amp; Mechanics</h3>
+<table class="wiki-table">
+<thead><tr><th>#</th><th>Event</th><th>Trigger</th><th>Consequence</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>March Against All Wars</td><td>news, 18 October 2025 (Genoa)</td><td>Italy: +5% revolutionary, +5% vanguard, +6% authoritarian socialism</td></tr>
+<tr><td>2</td><td>The Strike for Ilva</td><td>news, 5 December 2025 (Genoa)</td><td>Italy: +2% revolutionary, +6% vanguard socialism</td></tr>
+<tr><td>3</td><td>Italy Tears Itself Apart</td><td>the civil war starts</td><td>The player picks a side: stay with the Republic or play INT, SRI, RSI, LOM or TYR</td></tr>
+<tr><td>4</td><td>The Guns Fall Silent, the Generals Speak</td><td>2 days into the civil war</td><td>Autocracy government, elections off, +30% autocracy, −5% stability, +5% war support; leader Comando Interforze F.F.A.A.</td></tr>
+</tbody></table>
+<h4>The civil war</h4>
+<p>When the civil war starts Italy leaves its faction (NATO), loses 30% stability, gains 10% war support and declares war on all five breakaway factions. The communists also fight the fascists and each other; Padania and South Tyrol only fight Rome.</p>
+<table class="wiki-table">
+<thead><tr><th>Faction</th><th>Tag</th><th>States</th><th>Capital</th><th>Divisions</th><th>At war with</th></tr></thead>
+<tbody>
+<tr><td>Italian Republic</td><td>ITA</td><td>18: Rome, Sardinia (3), Sicily, Abruzzo, Trentino, northern Lombardy, Aosta Valley, Piedmont (2), Friuli-Venezia Giulia, Umbria, northern Lazio, Marche, Molise, Campania-Salerno, Basilicata</td><td>Rome</td><td>3 + 8 garrisons</td><td>INT, SRI, RSI, LOM, TYR</td></tr>
+<tr><td><a href="ita_int.html">The Internationale</a></td><td>INT</td><td>9: Turin, Milan-Pavia, Liguria, Emilia, Bologna-Romagna, northern and southern Tuscany, Trieste, Taranto</td><td>Genoa</td><td>36</td><td>ITA, SRI, RSI</td></tr>
+<tr><td><a href="ita_sri.html">Socialist Republic of Italy</a></td><td>SRI</td><td>3: Naples, Puglia, Calabria</td><td>Naples</td><td>16</td><td>ITA, INT, RSI</td></tr>
+<tr><td><a href="ita_rsi.html">Italian Social Republic</a></td><td>RSI</td><td>1: Latina</td><td>Latina</td><td>14</td><td>ITA, INT, SRI</td></tr>
+<tr><td><a href="ita_lom.html">Padania</a></td><td>LOM</td><td>3: eastern Lombardy, Padania, Veneto</td><td>Veneto</td><td>8</td><td>ITA</td></tr>
+<tr><td>South Tyrol</td><td>TYR</td><td>1: South Tyrol</td><td>Bolzano</td><td>4</td><td>ITA</td></tr>
+</tbody></table>
+<p class="note">The six-faction civil war (ITA, INT, SRI, RSI, LOM, TYR) is in the mod but, in the current version, it can only be started from the debug decisions: no focus triggers it yet.</p>
         </div>
+
     </div>
 
     <footer>
@@ -204,6 +249,5 @@
       }
     })();
     </script>
-    
 </body>
 </html>

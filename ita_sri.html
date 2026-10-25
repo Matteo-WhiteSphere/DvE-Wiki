@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italy - Socialist Republic of Italy (SRI)</title>
+    <style>
+        :root {
+            --bg-color: #0b0e14;
+            --panel-bg: #131822;
+            --card-bg: #1a202c;
+            --border-color: #2d3748;
+            --text-primary: #e2e8f0;
+            --text-secondary: #a0aec0;
+            --accent-color: #f87171;
+            --accent-glow: rgba(185, 28, 28, 0.45);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-color); color: var(--text-primary); font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+        header { background: linear-gradient(180deg, #151d2a 0%, #0b0e14 100%); border-bottom: 2px solid var(--accent-color); padding: 20px; text-align: center; box-shadow: 0 0 15px var(--accent-glow); }
+        header h1 { margin: 0; font-size: 2.2em; letter-spacing: 2px; color: var(--accent-color); text-shadow: 0 0 10px var(--accent-glow); }
+        header p { margin: 5px 0 0; color: var(--text-secondary); font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
+        nav { background-color: var(--panel-bg); border-bottom: 1px solid var(--border-color); padding: 10px 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        nav a { color: var(--text-primary); text-decoration: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9em; transition: all 0.2s ease; border: 1px solid transparent; }
+        nav a:hover, nav a[aria-current="page"] { color: var(--accent-color); border-color: var(--accent-color); box-shadow: 0 0 8px var(--accent-glow); }
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+        .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 20px; box-sizing: border-box; margin-bottom: 20px; overflow-x: auto; }
+        .card h3 { margin-top: 0; color: var(--accent-color); border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 12px; }
+        .card h4 { color: var(--text-primary); margin: 18px 0 6px; }
+        .card p, .card li { color: var(--text-secondary); line-height: 1.6; }
+        .card p + p { margin-top: 10px; }
+        .card ul { list-style-type: square; padding-left: 20px; margin-top: 8px; }
+        .card ul li { margin-bottom: 6px; }
+        .card a { color: var(--accent-color); }
+        .note { border-left: 3px solid var(--accent-color); padding: 8px 12px; background: var(--panel-bg); margin-top: 12px; }
+        .wiki-table { width: 100%; border-collapse: collapse; margin-top: 16px; background-color: var(--panel-bg); }
+        .wiki-table th, .wiki-table td { border: 1px solid var(--border-color); padding: 10px 12px; text-align: left; vertical-align: middle; color: var(--text-secondary); }
+        .wiki-table th { background-color: var(--card-bg); color: var(--accent-color); }
+        .wiki-table td small { color: var(--text-secondary); }
+        .leader-avatar { width: 84px; aspect-ratio: 154 / 210; height: auto; border-radius: 12px; object-fit: cover; background-color: var(--card-bg); box-shadow: none; }
+        .ideology-icon { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background-color: var(--card-bg); box-shadow: none; }
+        footer { text-align: center; padding: 20px; color: var(--text-secondary); font-size: 0.8em; border-top: 1px solid var(--border-color); margin-top: 40px; }
+        code { background: rgba(255,255,255,0.08); color: #8bd3ff; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        @media (max-width: 720px) { nav { flex-direction: column; align-items: center; } .container { padding: 0 12px; } }
+    </style>
+    <script type="module" src="js/nav-account.js"></script>
+</head>
+<body>
+    <header>
+        <h1>SOCIALIST REPUBLIC OF ITALY</h1>
+        <p>SRI · THE PCI-U AND THE STALINIST CURRENT, CIVIL WAR FACTION</p>
+    </header>
+    <nav>
+        <a href="index.html">Home / Countries</a>
+        <a href="ideologies.html">Ideologies List</a>
+        <a href="ita_democratic.html">Italian Republic (ITA)</a>
+        <a href="ita_int.html">The Internationale (INT)</a>
+        <a href="ita_sri.html" aria-current="page">Socialist Republic (SRI)</a>
+        <a href="ita_rsi.html">Social Republic (RSI)</a>
+        <a href="ita_lom.html">Padania (LOM)</a>
+        <a href="login.html" id="nav-login" class="nav-login" style="border-color: var(--accent-color, var(--accent-neon, #00f3ff));">&#128100; Login</a>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h3>1. Header &amp; Flavor Quotes</h3>
+<p><strong>Name:</strong> Socialist Republic of Italy (<code>SRI</code>) – PdRC-PaP Front</p>
+<p><strong>Leader:</strong> the General Secretaries of the PCI-U (reformist faction).</p>
+<p><em>"One card and one line for every communist in Italy."</em></p>
+        </div>
+
+        <div class="card">
+            <h3>Focus Tree &amp; Path Overview</h3>
+<p><strong>Target ideology:</strong> <code>authoritarian_socialism</code> (Reformist Faction) or <code>totalitarian_socialism</code> (HardLine Factions).</p>
+<p><strong>Overview:</strong> the Stalinist current of the Italian left. It unites the communists in one party, wins the civil war from Naples with Chinese help, then chooses between a reformist "XXI century" socialism and an old-school one-party state.</p>
+<table class="wiki-table">
+<thead><tr><th>Route</th><th>Requirement</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td><strong>Stalinist Coup</strong> (Italian tree)</td><td>On the Side of the Proletariat → Hardline communist</td><td>Authoritarian socialist government, elections off, then Italy becomes SRI</td></tr>
+<tr><td><strong>Civil war</strong></td><td>Pick the Socialist Republic in "Italy Tears Itself Apart"</td><td>3 states, 16 divisions</td></tr>
+</tbody></table>
+        </div>
+
+        <div class="card">
+            <h3>2. Technical Infobox &amp; Prerequisites</h3>
+<table class="wiki-table">
+<thead><tr><th>Field</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>Country Tag</td><td><code>SRI</code></td></tr>
+<tr><td>Capital</td><td>Naples during the civil war; Rome after the Stalinist Coup or after Victory Over the Social-Fascists</td></tr>
+<tr><td>Ruling party</td><td><code>authoritarian_socialism</code> – PCI-U (Reformist), no elections</td></tr>
+<tr><td>Stability / War Support</td><td>45% / 50%</td></tr>
+<tr><td>Research slots</td><td>2</td></tr>
+<tr><td>Focus Tree ID</td><td><code>SRI_focus</code> (the civil war focuses sit at the top of the same tree)</td></tr>
+</tbody></table>
+<table class="wiki-table">
+<thead><tr><th>Starting popularity</th><th>%</th></tr></thead>
+<tbody>
+<tr><td>Authoritarian Socialism (PCI-U Reformist)</td><td>45</td></tr>
+<tr><td>Totalitarian Socialism (PCI-U HardLine)</td><td>35</td></tr>
+<tr><td>Vanguard Socialism</td><td>7</td></tr>
+<tr><td>Revolutionary Socialism</td><td>5</td></tr>
+<tr><td>Progressive (U.S.B.)</td><td>3</td></tr>
+<tr><td>Liberal, Authoritarianism, Autocracy, Absolutism, Ultranationalism</td><td>1 each</td></tr>
+</tbody></table>
+<h4>The road from Italy</h4>
+<p><em>Hardline communist</em> is mutually exclusive with <em>Leninist and Trotskyist Alliance</em>. <em>Stalinist Coup</em> gives SRI all of Italy's technology, units, stockpiles and states, keeps Rome as capital, adds 20% authoritarian socialism and 20 "Guardia di Stato" divisions, and loads <code>SRI_focus</code>.</p>
+        </div>
+
+        <div class="card">
+            <h3>3. Lore &amp; Geopolitical Goals</h3>
+<p><strong>Background:</strong> Rifondazione, Potere al Popolo and the old cadres refuse both the "Trotskyists" of the north and the "Black Barons" of Latina. From Naples they rebuild a party with a state, and look to Beijing for weapons and investors.</p>
+<p><strong>Short-term goals:</strong> unite the communists in the PCI-U, defeat the Internationale, the Republic and the RSI, take Rome.</p>
+<p><strong>Long-term goals:</strong> a Gosplan economy or Chinese-style market socialism, the Soviet Army, and an alliance with China.</p>
+        </div>
+
+        <div class="card">
+            <h3>4. National Spirits &amp; Modifiers</h3>
+<table class="wiki-table">
+<thead><tr><th>Spirit</th><th>From focus</th><th>Effects</th></tr></thead>
+<tbody>
+<tr><td>The Unified Party</td><td>All Unite in a Party</td><td><code>Political Power Gain +10%</code>, <code>Stability +5%</code></td></tr>
+<tr><td>Authority of the Party</td><td>Restore the Authority of the Party</td><td><code>Political Power Gain +10%</code>, <code>Stability +5%</code></td></tr>
+<tr><td>The KGB</td><td>KGB Model</td><td><code>Ideology Drift Defense +25%</code>, <code>Stability +3%</code></td></tr>
+<tr><td>XXI Century Communism</td><td>XXI Century Communism</td><td><code>Research Speed +5%</code>, <code>Political Power Gain +5%</code></td></tr>
+<tr><td>People&#x27;s Democratic Dictatorship</td><td>People&#x27;s Democratic Dictatorship Model</td><td><code>Authoritarian Socialism Drift +0.03/day</code>, <code>Ideology Drift Defense +15%</code>, <code>Stability +5%</code></td></tr>
+<tr><td>Inner-Party Democracy</td><td>Democracy Within the PCI-U</td><td><code>Political Power +0.10/day</code>, <code>Research Speed +3%</code></td></tr>
+<tr><td>Anti-Corruption Campaign</td><td>Anti-Corruption Campaign</td><td><code>Consumer Goods -3%</code>, <code>Construction Speed +5%</code></td></tr>
+<tr><td>Bureaucracy Serves the People</td><td>Bureaucracy Serves the People</td><td><code>Construction Speed +10%</code>, <code>Stability +3%</code></td></tr>
+<tr><td>New Socialism for a New Age</td><td>New Socialism for a New Age</td><td><code>Political Power Gain +15%</code>, <code>Stability +10%</code>, <code>Research Speed +5%</code></td></tr>
+<tr><td>Old-School Communism</td><td>Old-School Communism</td><td><code>War Support +10%</code>, <code>Totalitarian Socialism Drift +0.03/day</code></td></tr>
+<tr><td>The NKVD</td><td>NKVD Model</td><td><code>Ideology Drift Defense +30%</code>, <code>Stability +5%</code>, <code>Political Power Gain -5%</code></td></tr>
+<tr><td>Cadre Planning</td><td>Cadre Bureaucratic Based Planning</td><td><code>Construction Speed +10%</code></td></tr>
+<tr><td>Bureaucracy at the Helm</td><td>Bureaucracy at the Helm</td><td><code>Construction Speed +15%</code>, <code>Factory Output +5%</code></td></tr>
+<tr><td>Socialist People&#x27;s Republic</td><td>Socialist People&#x27;s Republic Model</td><td><code>Stability +8%</code>, <code>Ideology Drift Defense +15%</code></td></tr>
+<tr><td>Politburo of Yes Men</td><td>Politburo of Yes Men</td><td><code>Political Power Gain +15%</code>, <code>Research Speed -3%</code></td></tr>
+<tr><td>A Wave of Purges</td><td>A Wave of Purges</td><td><code>Stability -5%</code>, <code>Political Power Gain +15%</code>, <code>Ideology Drift Defense +25%</code></td></tr>
+<tr><td>A Party With a State</td><td>A Party With a State</td><td><code>Political Power Gain +20%</code>, <code>Stability +15%</code>, <code>Research Speed -5%</code></td></tr>
+<tr><td>State Capitalism</td><td>State Capitalism</td><td><code>Construction Speed +10%</code>, <code>Resource Gain Efficiency +10%</code>, <code>Stability -3%</code></td></tr>
+<tr><td>Command Economy</td><td>Repeal the Liberal Reforms</td><td><code>Construction Speed +15%</code>, <code>Resource Gain Efficiency +10%</code>, <code>Factory Output +5%</code>, <code>Stability -3%</code></td></tr>
+<tr><td>A Socialist Economy as God Teaches</td><td>A Socialist Economy as God Teaches</td><td><code>Construction Speed +20%</code>, <code>Resource Gain Efficiency +15%</code>, <code>Factory Output +10%</code>, <code>Consumer Goods +3%</code></td></tr>
+<tr><td>Comprehensive Work Planning</td><td>Comprehensive Work Planning</td><td><code>Factory Efficiency Growth +10%</code></td></tr>
+<tr><td>Centralized Work Assignment</td><td>Centralized Work Assignment</td><td><code>Factory Efficiency Growth +15%</code>, <code>Max Factory Efficiency +5%</code></td></tr>
+<tr><td>Demographic Policy</td><td>Tackle the Demographic Collapse</td><td><code>Monthly Population +15%</code>, <code>Recruitable Population Factor +5%</code></td></tr>
+<tr><td>Tolerated Shopkeepers</td><td>Tolerate the Shopkeepers</td><td><code>Consumer Goods -3%</code></td></tr>
+<tr><td>Quantity Over Quality</td><td>Quantity Over Quality</td><td><code>Factory Output +10%</code>, <code>Research Speed -3%</code></td></tr>
+<tr><td>Market Socialism</td><td>Market Socialism</td><td><code>Consumer Goods -5%</code>, <code>Max Factory Efficiency +5%</code>, <code>Ideology Drift Defense -10%</code></td></tr>
+<tr><td>Chinese Partnership</td><td>Economic Partnership with China</td><td><code>Consumer Goods -7%</code>, <code>Max Factory Efficiency +8%</code>, <code>Research Speed +3%</code>, <code>Ideology Drift Defense -10%</code></td></tr>
+<tr><td>The New Factory of the World</td><td>The New Factory of the World</td><td><code>Consumer Goods -8%</code>, <code>Factory Output +15%</code>, <code>Max Factory Efficiency +10%</code>, <code>Resource Gain Efficiency +10%</code>, <code>Research Speed +5%</code></td></tr>
+<tr><td>Socialist Consumerism</td><td>Socialist Consumerism</td><td><code>Stability +5%</code>, <code>Consumer Goods +2%</code></td></tr>
+<tr><td>Meritocratic System</td><td>Meritocratic System</td><td><code>Research Speed +5%</code></td></tr>
+<tr><td>Export Economy</td><td>Export of Processed Products</td><td><code>Factory Output +5%</code>, <code>Trade Opinion +10%</code></td></tr>
+<tr><td>WTO Member</td><td>Join the WTO</td><td><code>Trade Opinion +20%</code>, <code>Consumer Goods -2%</code></td></tr>
+<tr><td>The Soviet Army</td><td>Create the Soviet Army</td><td><code>Recruitable Population Factor +10%</code>, <code>Division Organization +5%</code>, <code>Army Experience Gain -5%</code></td></tr>
+<tr><td>The Soviet Army</td><td>Centralize Military Structures</td><td><code>Recruitable Population Factor +10%</code>, <code>Division Organization +8%</code>, <code>Division Recovery Rate +5%</code></td></tr>
+<tr><td>URA!</td><td>URA! URAA!! URAAA!!!</td><td><code>Recruitable Population +2%</code>, <code>War Support +15%</code>, <code>Division Organization +10%</code>, <code>Division Attack +5%</code></td></tr>
+<tr><td>Political Commissars</td><td>Political Commissars</td><td><code>Division Recovery Rate +5%</code>, <code>War Support +5%</code></td></tr>
+<tr><td>Red Terror</td><td>Red Terror</td><td><code>Stability -5%</code>, <code>War Support +10%</code>, <code>Ideology Drift Defense +25%</code></td></tr>
+<tr><td>Sino-Italian Agreement</td><td>Sino-Italian Agreement</td><td><code>Factory Output +10%</code>, <code>Research Speed +5%</code></td></tr>
+<tr><td>Italian-Chinese Alliance</td><td>Italian-Chinese Alliance</td><td><code>Recruitable Population Factor +15%</code>, <code>War Support +10%</code></td></tr>
+<tr><td>No Step Back</td><td>No Step Back Policy</td><td><code>Division Defense +5%</code>, <code>War Support +5%</code></td></tr>
+</tbody></table>
+        </div>
+
+        <div class="card">
+            <h3>5. Focus Tree Structure</h3>
+<table class="wiki-table">
+<thead><tr><th>Focus</th><th>Primary Effect</th></tr></thead>
+<tbody>
+<tr><td>United Communist Front</td><td>+120 political power, +10% stability and war support</td></tr>
+<tr><td>All Unite in a Party</td><td>The Unified Party spirit, +100 political power</td></tr>
+<tr><td>Buy Weapons from China</td><td>Infantry, support and artillery equipment</td></tr>
+<tr><td>Against the Trotskyists and the Black Barons</td><td>+10% war support, +30 army experience, +50 command power</td></tr>
+<tr><td>Request Chinese Forces</td><td>+20,000 manpower; China becomes more willing to send volunteers</td></tr>
+<tr><td>The Red Militia</td><td>+60,000 manpower, "Milizia Rossa" division</td></tr>
+<tr><td>Victory Over the Social-Fascists</td><td>Requires Rome and peace with ITA, INT and RSI. Capital to Rome, cores on every Italian state, +1 research slot</td></tr>
+<tr><td>PCI-U Congress</td><td>+150 political power. Unlocks the two factions below</td></tr>
+<tr><td>Reformist Faction Majority</td><td><code>authoritarian_socialism</code> government; opens Market Socialism</td></tr>
+<tr><td>HardLine Factions Majority</td><td><code>totalitarian_socialism</code> government; opens State Capitalism</td></tr>
+</tbody></table>
+<ul>
+<li><strong>Reformist politics:</strong> KGB Model, XXI Century Communism, Restore the Authority of the Party → The Socialist Dream, People's Democratic Dictatorship Model, Ensure People's Support → Repudiate Trotskyism, Democracy Within the PCI-U, New Party Cadres → Anti-Corruption Campaign, Long Live the General Secretaries, Bureaucracy Serves the People → <em>New Socialism for a New Age</em> (+1 research slot).</li>
+<li><strong>HardLine politics:</strong> Restore the Authority of the Party, Old-School Communism, NKVD Model → Cadre Bureaucratic Based Planning, Socialist People's Republic Model, Trotskyism Is a Degeneration of Socialism → Politburo of Yes Men, State Commanded from Above, A Wave of Purges → Bureaucracy at the Helm, Long Live the Central Committee, Arrest All the Counter-Revolutionaries → <em>A Party With a State</em> (+1 research slot).</li>
+<li><strong>State Capitalism</strong> (HardLine): Renationalization, Gosplan, the Cult of Industrialization → Repeal the Liberal Reforms → the periphery, demography and land → Building Stalinkas, Skyrocketing Production Quotas → <em>A Socialist Economy as God Teaches</em>.</li>
+<li><strong>Market Socialism</strong> (Reformist): The Belt and Road Initiative, NEP Restarts, A Red Consumer Market → Economic Partnership with China → The Red Stock Exchange, Join the WTO → <em>The New Factory of the World</em>.</li>
+<li><strong>Military</strong> (either faction): Create the Soviet Army → Politicized Military, Purge the Traitors of the People, Political Commissars → Red Terror → Italian-Chinese Alliance or Sino-Italian Agreement → No Step Back Policy, Red Patriotism, Mass Conscription → <em>URA! URAA!! URAAA!!!</em></li>
+</ul>
+        </div>
+
+        <div class="card">
+            <h3>6. All Parties &amp; Leaders</h3>
+<table class="wiki-table">
+<thead><tr><th>Photo</th><th>Leader</th><th>Party</th><th>Ideology</th><th>Icon</th></tr></thead>
+<tbody>
+<tr><td><img class="leader-avatar" src="images/leaders/Central Committee.png" alt="Central Committee of the PCI-U"></td><td>Central Committee of the PCI-U</td><td>PCI-U – Partito Comunista Italiano Unificato (HardLine)</td><td><code>totalitarian_socialism – stalinism</code><br><small>Totalitarian Socialism</small></td><td><img class="ideology-icon" src="images/ideologies/stalinism.png" alt="Stalinism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/general_secretaries.png" alt="General Secretaries"></td><td>General Secretaries</td><td>PCI-U – Partito Comunista Italiano Unificato (Reformist)</td><td><code>authoritarian_socialism – populist_socialism</code><br><small>Authoritarian Socialism</small></td><td><img class="ideology-icon" src="images/ideologies/authoritarian_socialism.png" alt="Populist Socialism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/workers_council.png" alt="Workers&#x27; Councils"></td><td>Workers&#x27; Councils</td><td>[Banned] LC – Lotta Comunista, Internazionalismo</td><td><code>vanguard_socialism – leninist_internationalism</code><br><small>Vanguard Socialism</small></td><td><img class="ideology-icon" src="images/ideologies/leninist_internationalism.png" alt="Leninist Internationalism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/central_council.png" alt="Central Council"></td><td>Central Council</td><td>[Banned] PCR – Partito Comunista Rivoluzionario</td><td><code>revolutionary_socialism – trotskyism</code><br><small>Revolutionary Socialism</small></td><td><img class="ideology-icon" src="images/ideologies/trotskyism.png" alt="Trotskyism"></td></tr>
+</tbody></table>
+<p>Other parties: <code>progressive</code> U.S.B. – Unione Sindacale di Base, <code>authoritarianism</code> nuove Brigate Rosse, <code>autocracy</code> Guardia Rossa; all the others are banned.</p>
+        </div>
+
+        <div class="card">
+            <h3>7. Unique Events &amp; Mechanics</h3>
+<ul>
+<li><strong>Chinese support:</strong> Request Chinese Forces makes China far more willing to send volunteers; the military branch ends in an Italian-Chinese Alliance or a Sino-Italian Agreement.</li>
+<li><strong>Victory:</strong> after Victory Over the Social-Fascists the SRI gains cores on every Italian state.</li>
+<li><strong>After a coup:</strong> an SRI born from the Stalinist Coup already holds Rome and is at peace, so Victory Over the Social-Fascists is available as soon as its prerequisites are done.</li>
+</ul>
+<p class="note">The six-faction civil war (ITA, INT, SRI, RSI, LOM, TYR) is in the mod but, in the current version, it can only be started from the debug decisions: no focus triggers it yet.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Dragon vs Eagle (DvE) 2025 HOI4 Mod Wiki</p>
+    </footer>
+
+    <script>
+    (function(){
+      function wrapImages(){
+        const images = Array.from(document.querySelectorAll('img'));
+        images.forEach(function(img){
+          if (img.closest('a')) return;
+          const href = img.getAttribute('src');
+          if (!href) return;
+          const link = document.createElement('a');
+          link.href = href;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.className = 'image-open-link';
+          img.parentNode.insertBefore(link, img);
+          link.appendChild(img);
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', wrapImages);
+      } else {
+        wrapImages();
+      }
+    })();
+    </script>
+</body>
+</html>

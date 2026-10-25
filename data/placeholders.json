@@ -1252,110 +1252,159 @@
   ]
  },
  "fra_communist": {
-  "title": "FRENCH REPUBLIC",
-  "subtitle": "POPULAR FRONT COMMUNE PATH (COMMUNIST BLOC)",
+  "title": "THE FRENCH LEFT",
+  "subtitle": "CMU · FSR · ANF — LEFT-WING FACTIONS OF THE FRENCH CIVIL WAR",
   "category": "path",
   "group": "fra",
-  "tag": "FRA",
-  "accent": "#3399ff",
+  "tag": "CMU",
+  "accent": "#d21e1e",
   "navOrder": 2,
-  "navLabel": "Communist Path",
+  "navLabel": "The Left (CMU, FSR, ANF)",
+  "complete": true,
   "sections": [
    {
-    "title": "Focus Tree & Path Overview",
+    "title": "Communard Republic (CMU)",
     "layout": "full",
-    "body": "**Path Title:** Popular Front Commune  \n**Target Ideology:** totalitarian_communism  \n**Sub-Ideology:** jacobinism  \n**Overview:** Radical left-wing Jacobin revolution."
+    "body": "**Appears:** day 1, with Paris, Marseille, Champagne and Centre Sud (capital Paris)  \n**Ruling Party:** PCF – Parti Communiste Français (Authoritarian Socialism)  \n**Leader:** Fabien Roussel  \n**Stability / War Support:** 55% / 55%  \n**Army:** 14 × Garde Communarde  \n**At war with:** the French Republic and the French State from day 1, everyone from day 7\n\n| Photo | Leader | Party | Ideology |\n|---|---|---|---|\n| — | Fadi Kassem | PRCF – Pôle de Renaissance Communiste en France | <img src=\"images/ideologies/jacobinism.png\" alt=\"Jacobinism\" width=\"28\"> Totalitarian Socialism (Jacobinism) |\n| <img src=\"images/leaders/fabien_roussel.png\" alt=\"Fabien Roussel\" width=\"64\"> | Fabien Roussel | PCF – Parti Communiste Français | <img src=\"images/ideologies/Workerism.png\" alt=\"Workerism\" width=\"28\"> Authoritarian Socialism (Workerism) |\n| <img src=\"images/leaders/fra_cgt.png\" alt=\"Committees of the CGT and Workers' Clubs\" width=\"64\"> | Committees of the CGT and Workers' Clubs | Parti de Internationaliste communiste | <img src=\"images/ideologies/leninist_internationalism.png\" alt=\"Leninist Internationalism\" width=\"28\"> Vanguard Socialism (Leninist Internationalism) |\n| <img src=\"images/leaders/fra_commune_government.png\" alt=\"Revolutionary Committees\" width=\"64\"> | Revolutionary Committees | RC – Comités révolutionnaires | <img src=\"images/ideologies/socialism.png\" alt=\"Socialism\" width=\"28\"> Revolutionary Socialism (Socialism) |\n\nPopularity: Authoritarian Socialism 50%, Totalitarian Socialism 15%, Vanguard Socialism 10%, Revolutionary Socialism 10%, Progressive (CGT) 5%."
    },
    {
-    "title": "Key Focuses",
-    "layout": "half",
-    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+    "title": "French Socialist Republic (FSR)",
+    "layout": "full",
+    "body": "**Appears:** day 7, with Pas-de-Calais and Picardy (capital Pas-de-Calais)  \n**Ruling Party:** PS – Parti Socialiste (Progressive), elections suspended  \n**Leader:** Olivier Faure  \n**Stability / War Support:** 60% / 60%  \n**Army:** 12 × Milice Socialiste  \n**Spirit:** Socialist Solidarity (volunteers and lend-lease without world tension)\n\n| Photo | Leader | Party | Ideology |\n|---|---|---|---|\n| — | Fadi Kassem | PRCF | <img src=\"images/ideologies/jacobinism.png\" alt=\"Jacobinism\" width=\"28\"> Totalitarian Socialism (Jacobinism) |\n| <img src=\"images/leaders/fra_comite_central.png\" alt=\"Central Council\" width=\"64\"> | Central Council | Internationaliste communiste | <img src=\"images/ideologies/leninist_internationalism.png\" alt=\"Leninist Internationalism\" width=\"28\"> Vanguard Socialism (Leninist Internationalism) |\n| <img src=\"images/leaders/fabien_roussel.png\" alt=\"Fabien Roussel\" width=\"64\"> | Fabien Roussel | PCF | <img src=\"images/ideologies/Workerism.png\" alt=\"Workerism\" width=\"28\"> Authoritarian Socialism (Workerism) |\n| <img src=\"images/leaders/jean_luc_melenchon.png\" alt=\"Jean-Luc Mélenchon\" width=\"64\"> | Jean-Luc Mélenchon | MoDem | <img src=\"images/ideologies/left_populism.png\" alt=\"Left Populism\" width=\"28\"> Liberal (Left Populism) |\n| <img src=\"images/leaders/olivier_faure.png\" alt=\"Olivier Faure\" width=\"64\"> | Olivier Faure | PS – Parti Socialiste | <img src=\"images/ideologies/reformist_socialism.png\" alt=\"Reformist Socialism\" width=\"28\"> Progressive (Reformist Socialism) |\n\nPopularity: Progressive 45%, Vanguard Socialism 30%, Totalitarian Socialism 5%, Revolutionary Socialism 4%, Liberal 4%. The FSR also carries the roster of right-wing leaders shared with France (Macron, Wauquiez, Bardella, Burkhard, de Villiers, Napoléon, Zemmour, Poisson)."
    },
    {
-    "title": "Political Effects",
-    "layout": "half",
-    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+    "title": "FSR Focus Tree: The French Socialist Republic",
+    "layout": "full",
+    "body": "A short tree that settles which current takes over the revolution.\n\n**Trunk.** *The French Socialist Republic* (+100 PP, +5% stability, a Garde Rouge division) → *Rebuild the Apparatus*, *Nationalise the Commanding Heights* (two civilian factories, industry research bonus) and *Raise the People's Army* (+30,000 manpower, +25 army experience, another Garde Rouge division) → *The First Congress*.\n\nAfter the Congress the player picks one of four mutually exclusive currents. Each one has three steps, a final focus that sets the ruling party and suspends elections, and a closing focus (+10% stability, +10% war support, +200 PP, +40 army experience).\n\n| Current | Steps | Takes power with | New ruling ideology |\n|---|---|---|---|\n| INTERNATIONALISTE (Communist Struggle) | Democratic Centralism → The Formation of Cadres | All Power to The Soviets → The International Is the Party | Vanguard Socialism |\n| PCR (Parti communiste révolutionnaire) | The Factory Councils → Permanent Revolution | All Power to The Revolution → A Revolution Without End | Revolutionary Socialism |\n| PCM | The Party School → The Politburo | All Power to The Party → A Party With a State | Totalitarian Socialism |\n| Comité Central | The Ministries Keep Their Files → No Second Congress | All Power to The Committee → The Republic as It Stands | Authoritarian Socialism |"
+   },
+   {
+    "title": "Anarchist France (ANF)",
+    "layout": "full",
+    "body": "**Appears:** day 7, with the French Basque Country, Midi-Pyrénées and Northern Catalonia (capital Basque Country)  \n**Ruling Party:** FA – Fédération Anarchiste (Revolutionary Socialism)  \n**Stability / War Support:** 35% / 40%  \n**Army:** 10 × Milices Autonomes\n\n| Photo | Leader | Party | Ideology |\n|---|---|---|---|\n| <img src=\"images/leaders/workers_council.png\" alt=\"Confédération des Collectifs\" width=\"64\"> | Confédération des Collectifs | FA – Fédération Anarchiste | <img src=\"images/ideologies/left_anarchist.png\" alt=\"Left Anarchist\" width=\"28\"> Revolutionary Socialism (Left Anarchist) |\n\nThe only other legal party is PS-LFI (Progressive, 15%). Revolutionary Socialism starts at 50%."
+   },
+   {
+    "title": "The Civil War",
+    "layout": "full",
+    "body": "> **Note:** in the current version of the mod the French civil war can only be started from the debug tools (`FRA_civil_war_effect`); no focus, decision or event triggers it yet.\n\nSee [French Republic](page.html?p=fra_democratic) for how the war unfolds.\n\n| Day | Faction | States | Capital | Starting army | Ruling party | Wiki page |\n|---|---|---|---|---|---|---|\n| 1 | The French State (FRS) | 10 | Bouches-du-Rhône | 30 × Milice Nationale | RN (Reactionary) | [The French State](page.html?p=fra_fascist) |\n| 1 | Communard Republic (CMU) | 4: Paris, Marseille, Champagne, Centre Sud | Paris | 14 × Garde Communarde | PCF (Authoritarian Socialism) | [The Left](page.html?p=fra_communist) |\n| 1 | Corsica (COR) | 1 | Corsica | 6 × Milizia Corsa | RNC (Reactionary) | [Crown, Army and Regions](page.html?p=fra_nonaligned) |\n| 7 | Monarchist France (MOF) | 1: Pays-de-la-Loire | Pays-de-la-Loire | 8 × Garde Royale | AR (Absolutism) | [Crown, Army and Regions](page.html?p=fra_nonaligned) |\n| 7 | French Socialist Republic (FSR) | 2: Pas-de-Calais, Picardy | Pas-de-Calais | 12 × Milice Socialiste | PS (Progressive) | [The Left](page.html?p=fra_communist) |\n| 7 | Anarchist France (ANF) | 3: Basque Country, Midi-Pyrénées, Northern Catalonia | Basque Country | 10 × Milices Autonomes | FA (Revolutionary Socialism) | [The Left](page.html?p=fra_communist) |\n| 7 | Brittany (BRY) | 1: Brittany (taken from FRS) | Brittany | 6 × Kad Breizh | Adsav (Reactionary) | [Crown, Army and Regions](page.html?p=fra_nonaligned) |\n| 7 | French Army Command (FAC) | 9 (all the other FRS states) | Rhône-Alpes | 20 × Forces de Reconquête | CDSN (Authoritarianism) | [Crown, Army and Regions](page.html?p=fra_nonaligned) |"
    }
   ]
  },
  "fra_democratic": {
   "title": "FRENCH REPUBLIC",
-  "subtitle": "SIXTH REPUBLIC PATH (DEMOCRATIC BLOC)",
+  "subtitle": "FRA · THE FIFTH REPUBLIC AND THE 2027 CIVIL WAR",
   "category": "path",
   "group": "fra",
   "tag": "FRA",
   "accent": "#3399ff",
   "navOrder": 1,
-  "navLabel": "Democratic Path",
+  "navLabel": "French Republic (FRA)",
+  "complete": true,
   "sections": [
    {
-    "title": "Focus Tree & Path Overview",
+    "title": "Country Information",
     "layout": "full",
-    "body": "**Path Title:** Sixth Republic  \n**Target Ideology:** progressive / centrist  \n**Sub-Ideology:** progressivism / centrist_populism  \n**Overview:** Centrist or social-democratic constitutional renewal."
+    "body": "**TAG:** FRA  \n**Capital:** Paris (moves to Versailles, Île-de-France, when the Communards take Paris)  \n**Starting Ideology:** Centrist (Centrist Populism)  \n**Head of State:** Emmanuel Macron (RE)  \n**Elections:** every 60 months, last held on 10 April 2022  \n**Stability:** 45% (50% without *Götterdämmerung*)  \n**War Support:** 10% (15% without *Man the Guns*)  \n**Research Slots:** 3  \n**Focus Tree:** none yet. The starting event *France Development* is the developers' to-do list (new national spirits, rewrite of the civil war)."
    },
    {
-    "title": "Key Focuses",
+    "title": "Starting Popularity",
     "layout": "half",
-    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+    "body": "| Ideology | Popularity |\n|---|---|\n| Reactionary | 28% |\n| Liberal | 25% |\n| Centrist | 23% |\n| Progressive | 8% |\n| Conservative | 5% |\n| Authoritarian Socialism | 3% |\n| Authoritarianism | 3% |\n| Vanguard Socialism | 2% |\n| Ultranationalism | 2% |\n| Revolutionary Socialism | 1% |"
    },
    {
-    "title": "Political Effects",
+    "title": "National Spirits",
     "layout": "half",
-    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+    "body": "| Spirit | Effects |\n|---|---|\n| Unstable Parliament | −10% stability, −0.10 political power per day |\n| Crisis of Confidence | −5% stability, −5% political power gain |\n| Agricultural Unrest | −3% stability |\n| Social Discontent | −5% stability, −5% war support |"
+   },
+   {
+    "title": "Agricultural Decisions",
+    "layout": "full",
+    "body": "| Decision | Cost | Effect |\n|---|---|---|\n| Open Negotiations with Farmers | 25 PP | +3% stability |\n| Reduce the Administrative Burden | 50 PP | +2% stability |\n| Provide Emergency Aid to Farmers | 75 PP | +4% stability |\n| Oppose the Mercosur Agreement | 50 PP | +2% stability |\n| Establish a Long-Term Agricultural Plan | 100 PP | +3% stability, removes *Agricultural Unrest* |"
+   },
+   {
+    "title": "All Parties & Leaders",
+    "layout": "full",
+    "body": "| Photo | Leader | Party | Ideology |\n|---|---|---|---|\n| — | Fadi Kassem | PRCF – Pôle de Renaissance Communiste en France | <img src=\"images/ideologies/stalinism.png\" alt=\"Stalinism\" width=\"28\"> Totalitarian Socialism (Stalinism) |\n| <img src=\"images/leaders/fra_comite_central.png\" alt=\"Central Council\" width=\"64\"> | Central Council | Internationaliste – Lutte Communiste | <img src=\"images/ideologies/leninist_internationalism.png\" alt=\"Leninist Internationalism\" width=\"28\"> Vanguard Socialism (Leninist Internationalism) |\n| <img src=\"images/leaders/fabien_roussel.png\" alt=\"Fabien Roussel\" width=\"64\"> | Fabien Roussel | PCF (NFP) – Parti Communiste Français | <img src=\"images/ideologies/Workerism.png\" alt=\"Workerism\" width=\"28\"> Authoritarian Socialism (Workerism) |\n| <img src=\"images/leaders/jean_luc_melenchon.png\" alt=\"Jean-Luc Mélenchon\" width=\"64\"> | Jean-Luc Mélenchon | LFI (NFP) – La France Insoumise | <img src=\"images/ideologies/liberal_socialdemocrat.png\" alt=\"Liberal Socialdemocrat\" width=\"28\"> Liberal (Liberal Socialdemocrat) |\n| <img src=\"images/leaders/olivier_faure.png\" alt=\"Olivier Faure\" width=\"64\"> | Olivier Faure | PS (NFP) – Parti Socialiste | <img src=\"images/ideologies/reformist_socialism.png\" alt=\"Reformist Socialism\" width=\"28\"> Progressive (Reformist Socialism) |\n| <img src=\"images/leaders/emmanuel_macron.png\" alt=\"Emmanuel Macron\" width=\"64\"> | Emmanuel Macron | RE – Renaissance | <img src=\"images/ideologies/centrist_populism.png\" alt=\"Centrist Populism\" width=\"28\"> Centrist (Centrist Populism) |\n| — | Laurent Wauquiez | LR – Les Républicains | <img src=\"images/ideologies/conservatism.png\" alt=\"Conservatism\" width=\"28\"> Conservative (Conservatism) |\n| <img src=\"images/leaders/jordan_bardella.png\" alt=\"Jordan Bardella\" width=\"64\"> | Jordan Bardella | RN – Rassemblement National | <img src=\"images/ideologies/reactionary.png\" alt=\"Corporatism\" width=\"28\"> Reactionary (Corporatism) |\n| — | Thierry Burkhard | CDSN – Conseil de Défense et de Sécurité Nationale | <img src=\"images/ideologies/putinism.png\" alt=\"Putinism\" width=\"28\"> Autocracy (Putinism) |\n| — | Pierre de Villiers | CDSN – Conseil de Défense et de Sécurité Nationale | <img src=\"images/ideologies/autocracy.png\" alt=\"Military Junta\" width=\"28\"> Autocracy (Military Junta) |\n| — | Jean-Christophe Napoléon | AR – Alliance Royale | <img src=\"images/ideologies/absolute_monarchy.png\" alt=\"Absolute Monarchy\" width=\"28\"> Absolutism (Absolute Monarchy) |\n| — | Éric Zemmour | REC – Reconquête | <img src=\"images/ideologies/neo_fascist.png\" alt=\"Neo Fascist\" width=\"28\"> Ultranationalism (Neo Fascist) |\n| — | Jean-Frédéric Poisson | VIA – Via, la voie du peuple | <img src=\"images/ideologies/fundamentalism.png\" alt=\"Clerical Fascism\" width=\"28\"> Fundamentalism (Clerical Fascism) |\n\nThe PCR (Revolutionary Socialism) has no leader. Portraits of Wauquiez, Burkhard, de Villiers, Napoléon, Zemmour and Poisson are referenced by the mod but not included yet."
+   },
+   {
+    "title": "Protests",
+    "layout": "full",
+    "body": "Three news events raise the left: *Protests Across France* (17 September 2026), *Occupied Schools in France* (1 October 2026) and *Expansion of Protests in France* (7 October 2026). Each one gives +2% Progressive, +5% Revolutionary Socialism, +5% Vanguard Socialism and +6% Authoritarian Socialism popularity."
+   },
+   {
+    "title": "The 2027 Civil War",
+    "layout": "full",
+    "body": "> **Note:** in the current version of the mod the French civil war can only be started from the debug tools (`FRA_civil_war_effect`); no focus, decision or event triggers it yet.\n\n**Day 1.** France leaves its faction, loses 35% stability and gains 10% war support. Mélenchon becomes president (LFI, Liberal; Left Populism), elections are suspended and Liberal popularity rises by 20%. The French State, the Communard Republic and Corsica break away, and the government moves from Paris to Versailles. A human player chooses a side in *France Tears Itself Apart*.\n\n**Day 7.** *The Centre Cannot Hold*: the French State collapses (Brittany and the French Army Command split its territory between them), the royalists, socialists and anarchists carve their own states out of the Republic and Germany occupies Alsace-Lorraine. A player still playing France can switch faction in *New Flags over France*. The Republic is left with 13 states (6 metropolitan, 7 overseas). Every faction is at war with every other.\n\n| Day | Faction | States | Capital | Starting army | Ruling party | Wiki page |\n|---|---|---|---|---|---|---|\n| 1 | The French State (FRS) | 10 | Bouches-du-Rhône | 30 × Milice Nationale | RN (Reactionary) | [The French State](page.html?p=fra_fascist) |\n| 1 | Communard Republic (CMU) | 4: Paris, Marseille, Champagne, Centre Sud | Paris | 14 × Garde Communarde | PCF (Authoritarian Socialism) | [The Left](page.html?p=fra_communist) |\n| 1 | Corsica (COR) | 1 | Corsica | 6 × Milizia Corsa | RNC (Reactionary) | [Crown, Army and Regions](page.html?p=fra_nonaligned) |\n| 7 | Monarchist France (MOF) | 1: Pays-de-la-Loire | Pays-de-la-Loire | 8 × Garde Royale | AR (Absolutism) | [Crown, Army and Regions](page.html?p=fra_nonaligned) |\n| 7 | French Socialist Republic (FSR) | 2: Pas-de-Calais, Picardy | Pas-de-Calais | 12 × Milice Socialiste | PS (Progressive) | [The Left](page.html?p=fra_communist) |\n| 7 | Anarchist France (ANF) | 3: Basque Country, Midi-Pyrénées, Northern Catalonia | Basque Country | 10 × Milices Autonomes | FA (Revolutionary Socialism) | [The Left](page.html?p=fra_communist) |\n| 7 | Brittany (BRY) | 1: Brittany (taken from FRS) | Brittany | 6 × Kad Breizh | Adsav (Reactionary) | [Crown, Army and Regions](page.html?p=fra_nonaligned) |\n| 7 | French Army Command (FAC) | 9 (all the other FRS states) | Rhône-Alpes | 20 × Forces de Reconquête | CDSN (Authoritarianism) | [Crown, Army and Regions](page.html?p=fra_nonaligned) |"
    }
   ]
  },
  "fra_fascist": {
-  "title": "FRENCH REPUBLIC",
-  "subtitle": "FRENCH STATE PATH (FASCIST BLOC)",
+  "title": "THE FRENCH STATE",
+  "subtitle": "FRS · THE NATIONALIST RIGHT IN THE FRENCH CIVIL WAR",
   "category": "path",
   "group": "fra",
-  "tag": "FRA",
-  "accent": "#3399ff",
+  "tag": "FRS",
+  "accent": "#142878",
   "navOrder": 3,
-  "navLabel": "Fascist Path",
+  "navLabel": "The French State (FRS)",
+  "complete": true,
   "sections": [
    {
-    "title": "Focus Tree & Path Overview",
+    "title": "Faction Overview",
     "layout": "full",
-    "body": "**Path Title:** French State  \n**Target Ideology:** reactionary / ultranationalism  \n**Sub-Ideology:** hardline_conservatism / neo_fascist  \n**Overview:** Rassemblement National hardliner takeover."
+    "body": "**TAG:** FRS  \n**Appears:** day 1 of the civil war, with 10 states in the south and west: Languedoc, Bouches-du-Rhône, Savoy, Var, Rhône-Alpes, Rhône, Auvergne, Limousin, Brittany, Normandy  \n**Capital:** Bouches-du-Rhône  \n**Ruling Party:** RN – Rassemblement National (Reactionary)  \n**Stability / War Support:** 55% / 65%  \n**Army:** 30 × Milice Nationale, the largest of the war  \n**At war with:** the French Republic and the Communards from day 1\n\nOn day 7 the French State **collapses**: Brittany takes Brittany and the French Army Command takes the other nine states, so FRS is left with nothing. A player who joins FRS in *France Tears Itself Apart* loses the country a week later.\n\n> **Note:** in the current version of the mod the French civil war can only be started from the debug tools (`FRA_civil_war_effect`); no focus, decision or event triggers it yet."
    },
    {
-    "title": "Key Focuses",
-    "layout": "half",
-    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+    "title": "All Parties & Leaders",
+    "layout": "full",
+    "body": "| Photo | Leader | Party | Ideology |\n|---|---|---|---|\n| <img src=\"images/leaders/jordan_bardella.png\" alt=\"Jordan Bardella\" width=\"64\"> | Jordan Bardella | RN – Rassemblement National | <img src=\"images/ideologies/reactionary.png\" alt=\"Corporatism\" width=\"28\"> Reactionary (Corporatism) |\n| <img src=\"images/leaders/marine_le_pen.png\" alt=\"Marine Le Pen\" width=\"64\"> | Marine Le Pen | RN – Rassemblement National | <img src=\"images/ideologies/reactionary.png\" alt=\"Paternalism\" width=\"28\"> Reactionary (Paternalism) |\n\nOther parties: LR (Conservative), RN \"Cassemblement National\" (Authoritarianism), EMA – État-Major des Armées (Autocracy), AR (Absolutism), REC (Ultranationalism), VIA (Fundamentalism). The left is banned."
    },
    {
-    "title": "Political Effects",
-    "layout": "half",
-    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+    "title": "Starting Popularity",
+    "layout": "full",
+    "body": "| Ideology | Popularity |\n|---|---|\n| Reactionary | 45% |\n| Ultranationalism | 15% |\n| Conservative | 10% |\n| Authoritarianism | 8% |\n| Autocracy | 5% |\n| Fundamentalism | 5% |\n| Totalitarian Socialism | 2% |\n| Revolutionary Socialism | 2% |\n| Progressive | 2% |\n| Liberal | 2% |\n| Absolutism | 2% |\n| Authoritarian Socialism | 1% |\n| Vanguard Socialism | 1% |"
+   },
+   {
+    "title": "The Civil War",
+    "layout": "full",
+    "body": "See [French Republic](page.html?p=fra_democratic) for how the war unfolds.\n\n| Day | Faction | States | Capital | Starting army | Ruling party | Wiki page |\n|---|---|---|---|---|---|---|\n| 1 | The French State (FRS) | 10 | Bouches-du-Rhône | 30 × Milice Nationale | RN (Reactionary) | [The French State](page.html?p=fra_fascist) |\n| 1 | Communard Republic (CMU) | 4: Paris, Marseille, Champagne, Centre Sud | Paris | 14 × Garde Communarde | PCF (Authoritarian Socialism) | [The Left](page.html?p=fra_communist) |\n| 1 | Corsica (COR) | 1 | Corsica | 6 × Milizia Corsa | RNC (Reactionary) | [Crown, Army and Regions](page.html?p=fra_nonaligned) |\n| 7 | Monarchist France (MOF) | 1: Pays-de-la-Loire | Pays-de-la-Loire | 8 × Garde Royale | AR (Absolutism) | [Crown, Army and Regions](page.html?p=fra_nonaligned) |\n| 7 | French Socialist Republic (FSR) | 2: Pas-de-Calais, Picardy | Pas-de-Calais | 12 × Milice Socialiste | PS (Progressive) | [The Left](page.html?p=fra_communist) |\n| 7 | Anarchist France (ANF) | 3: Basque Country, Midi-Pyrénées, Northern Catalonia | Basque Country | 10 × Milices Autonomes | FA (Revolutionary Socialism) | [The Left](page.html?p=fra_communist) |\n| 7 | Brittany (BRY) | 1: Brittany (taken from FRS) | Brittany | 6 × Kad Breizh | Adsav (Reactionary) | [Crown, Army and Regions](page.html?p=fra_nonaligned) |\n| 7 | French Army Command (FAC) | 9 (all the other FRS states) | Rhône-Alpes | 20 × Forces de Reconquête | CDSN (Authoritarianism) | [Crown, Army and Regions](page.html?p=fra_nonaligned) |"
    }
   ]
  },
  "fra_nonaligned": {
-  "title": "FRENCH REPUBLIC",
-  "subtitle": "MILITARY DIRECTORATE PATH (NONALIGNED BLOC)",
+  "title": "CROWN, ARMY AND REGIONS",
+  "subtitle": "MOF · FAC · COR · BRY — ROYALISTS, THE OFFICER CORPS AND THE SEPARATISTS",
   "category": "path",
   "group": "fra",
-  "tag": "FRA",
-  "accent": "#3399ff",
+  "tag": "MOF",
+  "accent": "#c8aa14",
   "navOrder": 4,
-  "navLabel": "Non-Aligned Path",
+  "navLabel": "Crown, Army and Regions",
+  "complete": true,
   "sections": [
    {
-    "title": "Focus Tree & Path Overview",
+    "title": "Monarchist France (MOF)",
     "layout": "full",
-    "body": "**Path Title:** Military Directorate  \n**Target Ideology:** autocracy  \n**Sub-Ideology:** military_junta  \n**Overview:** General staff martial administration."
+    "body": "**Appears:** day 7, with Pays-de-la-Loire  \n**Ruling Party:** AR – Alliance Royale (Absolutism)  \n**Stability / War Support:** 55% / 50%  \n**Army:** 8 × Garde Royale\n\n| Photo | Leader | Party | Ideology |\n|---|---|---|---|\n| — | Comte de Paris | AR – Alliance Royale | <img src=\"images/ideologies/absolutism.png\" alt=\"Divine Monarchy\" width=\"28\"> Absolutism (Divine Monarchy) |\n| — | Philippe de Villiers | AR – Alliance Royale | <img src=\"images/ideologies/monarchism.png\" alt=\"Monarchism\" width=\"28\"> Absolutism (Monarchism) |\n\nPopularity: Absolutism 35%, Reactionary 20%, Conservative 15%, Fundamentalism 15%. Legal parties: LR, RN, AR, VIA. The two portraits are referenced by the mod but not included yet."
    },
    {
-    "title": "Key Focuses",
-    "layout": "half",
-    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
+    "title": "French Army Command (FAC)",
+    "layout": "full",
+    "body": "**Appears:** day 7, taking nine states from the collapsing French State (Savoy, Var, Bouches-du-Rhône, Languedoc, Rhône-Alpes, Rhône, Auvergne, Limousin, Normandy)  \n**Capital:** Rhône-Alpes  \n**Ruling Party:** CDSN – Conseil de Défense et de Sécurité Nationale (Authoritarianism)  \n**Leader:** Général Mongros (Technocracy, no portrait yet)  \n**Stability / War Support:** 65% / 55%  \n**Army:** 20 × Forces de Reconquête, the best equipped of the second wave\n\nPopularity: Authoritarianism 60%, Autocracy 15% (EMA), Conservative 10% (LR)."
    },
    {
-    "title": "Political Effects",
-    "layout": "half",
-    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+    "title": "Corsica (COR)",
+    "layout": "full",
+    "body": "**Appears:** day 1, with Corsica  \n**Ruling Party:** RNC – Rassemblement National Corse (Reactionary)  \n**Leader:** Gilles Simeoni (Corporatism)  \n**Army:** 6 × Milizia Corsa\n\nOther leaders, without portraits: Jean-Guy Talamoni (Social Democracy), Laurent Marcangeli (Conservatism), FLNC Executive Committee (Ultranationalism). Every ideology has its own Corsican party, from the Partitu Cumunista di Corsica to the Regno di Corsica Restaurato.\n\nPopularity: Reactionary 40%, Progressive 20% (Femu a Corsica), Revolutionary Socialism 15% (Corsica Libera), Conservative 15%, Ultranationalism 10% (FLNC)."
+   },
+   {
+    "title": "Brittany (BRY)",
+    "layout": "full",
+    "body": "**Appears:** day 7, taking Brittany from the French State  \n**Ruling Party:** Adsav – Nationalisme Breton (Reactionary)  \n**Leader:** Conseil des Quatre Tendances (Traditionalismo, no portrait yet)  \n**Stability / War Support:** 55% / 45%  \n**Army:** 6 × Kad Breizh\n\nPopularity: Reactionary 30%, Progressive 25% (UDB), Revolutionary Socialism 20% (Breizhistance), Centrist 15% (Parti Breton), Conservative 5%."
+   },
+   {
+    "title": "The Civil War",
+    "layout": "full",
+    "body": "> **Note:** in the current version of the mod the French civil war can only be started from the debug tools (`FRA_civil_war_effect`); no focus, decision or event triggers it yet.\n\nSee [French Republic](page.html?p=fra_democratic) for how the war unfolds.\n\n| Day | Faction | States | Capital | Starting army | Ruling party | Wiki page |\n|---|---|---|---|---|---|---|\n| 1 | The French State (FRS) | 10 | Bouches-du-Rhône | 30 × Milice Nationale | RN (Reactionary) | [The French State](page.html?p=fra_fascist) |\n| 1 | Communard Republic (CMU) | 4: Paris, Marseille, Champagne, Centre Sud | Paris | 14 × Garde Communarde | PCF (Authoritarian Socialism) | [The Left](page.html?p=fra_communist) |\n| 1 | Corsica (COR) | 1 | Corsica | 6 × Milizia Corsa | RNC (Reactionary) | [Crown, Army and Regions](page.html?p=fra_nonaligned) |\n| 7 | Monarchist France (MOF) | 1: Pays-de-la-Loire | Pays-de-la-Loire | 8 × Garde Royale | AR (Absolutism) | [Crown, Army and Regions](page.html?p=fra_nonaligned) |\n| 7 | French Socialist Republic (FSR) | 2: Pas-de-Calais, Picardy | Pas-de-Calais | 12 × Milice Socialiste | PS (Progressive) | [The Left](page.html?p=fra_communist) |\n| 7 | Anarchist France (ANF) | 3: Basque Country, Midi-Pyrénées, Northern Catalonia | Basque Country | 10 × Milices Autonomes | FA (Revolutionary Socialism) | [The Left](page.html?p=fra_communist) |\n| 7 | Brittany (BRY) | 1: Brittany (taken from FRS) | Brittany | 6 × Kad Breizh | Adsav (Reactionary) | [Crown, Army and Regions](page.html?p=fra_nonaligned) |\n| 7 | French Army Command (FAC) | 9 (all the other FRS states) | Rhône-Alpes | 20 × Forces de Reconquête | CDSN (Authoritarianism) | [Crown, Army and Regions](page.html?p=fra_nonaligned) |"
    }
   ]
  },
@@ -2038,29 +2087,20 @@
   ]
  },
  "ita_nonaligned": {
-  "title": "ITALIAN REPUBLIC",
-  "subtitle": "KINGDOM OF ITALY PATH (NONALIGNED BLOC)",
+  "title": "KINGDOM OF ITALY",
+  "subtitle": "CASA SAVOIA — PART OF THE ITALIAN REPUBLIC PAGE",
   "category": "path",
   "group": "ita",
   "tag": "ITA",
   "accent": "#00c8ff",
   "navOrder": 4,
-  "navLabel": "Non-Aligned Path",
+  "navLabel": "Kingdom of Italy",
+  "complete": true,
   "sections": [
    {
-    "title": "Focus Tree & Path Overview",
+    "title": "Kingdom of Italy",
     "layout": "full",
-    "body": "**Path Title:** Kingdom of Italy  \n**Target Ideology:** absolutism  \n**Sub-Ideology:** casa_savoia  \n**Overview:** Restoration of the House of Savoy."
-   },
-   {
-    "title": "Key Focuses",
-    "layout": "half",
-    "body": "- National Emergency Measures\n- Ideological Consolidation\n- Diplomatic Alignment & Bloc Joining\n- Economic Modernization 2025\n- Military Rearmament Program"
-   },
-   {
-    "title": "Political Effects",
-    "layout": "half",
-    "body": "- Changes national leader and ruling party.\n- Unlocks unique national spirits and faction options.\n- Adjusts world tension impact according to ideology parameters."
+    "body": "The Italian pages are now organised by civil-war faction. The monarchist path (Casa Savoia) is part of the Italian Republic's tree and is described on the [Italian Republic page](ita_democratic.html#monarchy).\n\nOther factions: [The Internationale (INT)](ita_int.html) · [Socialist Republic (SRI)](ita_sri.html) · [Social Republic (RSI)](ita_rsi.html) · [Padania (LOM)](ita_lom.html)"
    }
   ]
  },
@@ -3253,24 +3293,55 @@
   ]
  },
  "rou": {
-  "title": "ROMANIA (ROU)",
+  "title": "ROMANIA (ROM)",
   "subtitle": "2025 Starting Country Overview",
-  "category": "country",
+  "category": "path",
   "group": "rou",
-  "tag": "ROU",
+  "tag": "ROM",
   "accent": "#00c8ff",
   "navOrder": 0,
   "navLabel": "Romania",
+  "complete": true,
   "sections": [
    {
     "title": "Country Information",
     "layout": "full",
-    "body": "**TAG:** ROU  \n**Starting Ideology:** Centrist  \n**Sub-Ideology:** Liberal Socialdemocrat"
+    "body": "**TAG:** ROM  \n**Starting Ideology:** Conservative (Conservatism)  \n**Head of State:** Klaus Iohannis (PNL)  \n**Elections:** every 48 months, last held on 1 December 2024  \n**Stability / War Support:** 60% / 60%  \n**Research Slots:** 3"
    },
    {
-    "title": "National Focus Tree",
+    "title": "Starting Popularity",
+    "layout": "half",
+    "body": "| Ideology | Popularity |\n|---|---|\n| Progressive | 25% |\n| Conservative | 23% |\n| Reactionary | 20% |\n| Centrist | 14% |\n| Ultranationalism | 9% |\n| Authoritarianism | 9% |"
+   },
+   {
+    "title": "Starting Spirits",
+    "layout": "half",
+    "body": "| Spirit | Effects |\n|---|---|\n| The January Strikes (event, 3 January 2025) | −10% stability, −10% war support, −0.5 political power per day, +30% consumer goods |\n| Stagnant Economy (focus) | +10% factory efficiency growth, −10% consumer goods, +10% construction speed |"
+   },
+   {
+    "title": "All Parties & Leaders",
     "layout": "full",
-    "body": "Uses Generic / Regional 2025 Focus Tree Branch.\n\n- Industrial Expansion\n- Political Stabilization\n- Regional Alliance Orientation"
+    "body": "| Photo | Leader | Party | Ideology |\n|---|---|---|---|\n| <img src=\"images/leaders/klaus_iohannis.png\" alt=\"Klaus Iohannis\" width=\"64\"> | Klaus Iohannis | PNL – Partidul National Liberal | <img src=\"images/ideologies/conservatism.png\" alt=\"Conservatism\" width=\"28\"> Conservative (Conservatism) |\n| <img src=\"images/leaders/ilie_bolojan.png\" alt=\"Ilie Bolojan\" width=\"64\"> | Ilie Bolojan | PNL – Partidul National Liberal | <img src=\"images/ideologies/conservatism.png\" alt=\"Conservatism\" width=\"28\"> Conservative (Conservatism) |\n| <img src=\"images/leaders/nicusor_dan.png\" alt=\"Nicusor Dan\" width=\"64\"> | Nicusor Dan | PNL – Partidul National Liberal | <img src=\"images/ideologies/conservatism.png\" alt=\"Conservatism\" width=\"28\"> Conservative (Conservatism) |\n| <img src=\"images/leaders/crin_antonescu.png\" alt=\"Crin Antonescu\" width=\"64\"> | Crin Antonescu | PSD – Partidul Social Democrat | <img src=\"images/ideologies/social_democracy.png\" alt=\"Social Democracy\" width=\"28\"> Progressive (Social Democracy) |\n| — | Elena Lasconi | USR – Uniunea Salvati Romania | <img src=\"images/ideologies/centrist_populism.png\" alt=\"Centrist Populism\" width=\"28\"> Centrist (Centrist Populism) |\n| <img src=\"images/leaders/george_simion.png\" alt=\"George Simion\" width=\"64\"> | George Simion | AUR – Alianta pentru Unirea Romanilor | <img src=\"images/ideologies/reactionary.png\" alt=\"Paleoconservatism\" width=\"28\"> Reactionary (Paleoconservatism) |\n| — | Diana Sosoaca | SOS – S.O.S. Romania | <img src=\"images/ideologies/ultranationalism.png\" alt=\"Ultranationalism Party\" width=\"28\"> Ultranationalism (Ultranationalism Party) |\n| — | Anamaria Gavrila | POT – Partidul Oamenilor Tineri | <img src=\"images/ideologies/illiberal_democracy.png\" alt=\"Illiberal Democracy\" width=\"28\"> Authoritarianism (Illiberal Democracy) |\n| — | Gheorghita Vlad | AMA – Armata Romana | <img src=\"images/ideologies/authoritarianism.png\" alt=\"Autocratic Liberalism\" width=\"28\"> Authoritarianism (Autocratic Liberalism) |\n| — | Queen Marageta | CRR – Casa Regala a Romaniei | <img src=\"images/ideologies/absolute_monarchy.png\" alt=\"Absolute Monarchy\" width=\"28\"> Absolutism (Absolute Monarchy) |\n| — | Patriarch Daniel | BOR – Biserica Othodoxa Romaneasca | <img src=\"images/ideologies/fundamentalism.png\" alt=\"Christian Fundamentalism\" width=\"28\"> Fundamentalism (Christian Fundamentalism) |\n\nIlie Bolojan and Nicusor Dan are characters who take over during the game (see the events)."
+   },
+   {
+    "title": "Events",
+    "layout": "full",
+    "body": "| Date | Event | Effect |\n|---|---|---|\n| 1 January 2025 | Romania and Bulgaria in Schengen | News |\n| 3 January 2025 | The January Strikes | Adds *The January Strikes* |\n| 10 February 2025 | Klaus Iohannis Resigns | Ilie Bolojan takes over as interim leader |\n| 26 February 2025 | The Detention of Calin Georgescu | News |\n| focus *The 2025 Elections* | The Presidential Election (set on 18 May 2025) | Nicusor Dan (Conservative), Crin Antonescu (Progressive) or George Simion (Reactionary) wins; a fourth option rejects all three |\n| focus *Screw the Elections* | The 2nd Romanian Revolution (super event) | Opens the uprising tree |"
+   },
+   {
+    "title": "Focus Tree: The 2025 Elections",
+    "layout": "full",
+    "body": "**Start.** *The New Year* → *Remove the Strikes* (removes *The January Strikes*) → *Stagnate the Economy* → *Announce the New Candidates*. Then one of two mutually exclusive focuses replaces the whole tree:\n\n- *The 2025 Elections* fires *The Presidential Election* and loads the **elections tree**.\n- *Screw the Elections* fires the super event *The 2nd Romanian Revolution* and loads the **uprising tree**."
+   },
+   {
+    "title": "Elections Tree",
+    "layout": "full",
+    "body": "| Branch | Key focuses | Outcome |\n|---|---|---|\n| Nicusor Dan | Nicusor Victory → A Nation of Tradition / Reform the Government / Euro-Atlantic Anchor → Moldova and Ukraine | *The Conservative State of Romania* (Conservative), *Three Seas Alliance*, *Guardian of the Black Sea* |\n| George Simion | Simion's Victory → Release Calin Georgescu → Implement a Nationalist Idea → Pact of Sovereign Nations, Claim the Lost Lands | *Go Full Fascism* (Ultranationalism), *Greater Romania* |\n| Crin Antonescu | Victory for Antonescu → Stick With Socialism or Turn Back to Communism | *The Socialist State of Romania*: Progressive, or Vanguard Socialism on the communist branch; *Beacon of the Balkans* |\n| Shared | Army Reform Command, Air Force Modernisation, Naval Modernisation, economy | *The Romanian Great Power* |"
+   },
+   {
+    "title": "Uprising Tree",
+    "layout": "full",
+    "body": "| Path | First focus | Final focus |\n|---|---|---|\n| Monarchy | Bring Back the Monarchy (*The Crown Restored*) | *One Crown, One Nation*: +10% stability, +10% war support, +10% political power |\n| Military rule | A Military Rule (*Military Junta*) | *The Iron Marshals*: +10% war support, +10% organisation, +10% political power, −5% stability |\n| Orthodox state | The Orthodox State | *Holy Romania*: +10% stability, +10% war support, +10% political power |\n\nThe uprising paths do not change the ruling party yet; they work through national spirits."
    }
   ]
  },

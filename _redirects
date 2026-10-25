@@ -90,6 +90,10 @@
 /isl.html  /page.html?p=isl  301
 /isr.html  /page.html?p=isr  301
 /ita_nonaligned.html  /page.html?p=ita_nonaligned  301
+/ita_communist.html  /ita_int.html  301
+/ita_communist  /ita_int.html  301
+/ita_fascist.html  /ita_rsi.html  301
+/ita_fascist  /ita_rsi.html  301
 /jam.html  /page.html?p=jam  301
 /jor.html  /page.html?p=jor  301
 /jpn.html  /page.html?p=jpn  301

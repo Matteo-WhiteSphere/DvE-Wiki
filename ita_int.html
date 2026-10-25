@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italy - The Internationale (INT)</title>
+    <style>
+        :root {
+            --bg-color: #0b0e14;
+            --panel-bg: #131822;
+            --card-bg: #1a202c;
+            --border-color: #2d3748;
+            --text-primary: #e2e8f0;
+            --text-secondary: #a0aec0;
+            --accent-color: #e11d48;
+            --accent-glow: rgba(225, 29, 72, 0.4);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-color); color: var(--text-primary); font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+        header { background: linear-gradient(180deg, #151d2a 0%, #0b0e14 100%); border-bottom: 2px solid var(--accent-color); padding: 20px; text-align: center; box-shadow: 0 0 15px var(--accent-glow); }
+        header h1 { margin: 0; font-size: 2.2em; letter-spacing: 2px; color: var(--accent-color); text-shadow: 0 0 10px var(--accent-glow); }
+        header p { margin: 5px 0 0; color: var(--text-secondary); font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
+        nav { background-color: var(--panel-bg); border-bottom: 1px solid var(--border-color); padding: 10px 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        nav a { color: var(--text-primary); text-decoration: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9em; transition: all 0.2s ease; border: 1px solid transparent; }
+        nav a:hover, nav a[aria-current="page"] { color: var(--accent-color); border-color: var(--accent-color); box-shadow: 0 0 8px var(--accent-glow); }
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+        .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 20px; box-sizing: border-box; margin-bottom: 20px; overflow-x: auto; }
+        .card h3 { margin-top: 0; color: var(--accent-color); border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 12px; }
+        .card h4 { color: var(--text-primary); margin: 18px 0 6px; }
+        .card p, .card li { color: var(--text-secondary); line-height: 1.6; }
+        .card p + p { margin-top: 10px; }
+        .card ul { list-style-type: square; padding-left: 20px; margin-top: 8px; }
+        .card ul li { margin-bottom: 6px; }
+        .card a { color: var(--accent-color); }
+        .note { border-left: 3px solid var(--accent-color); padding: 8px 12px; background: var(--panel-bg); margin-top: 12px; }
+        .wiki-table { width: 100%; border-collapse: collapse; margin-top: 16px; background-color: var(--panel-bg); }
+        .wiki-table th, .wiki-table td { border: 1px solid var(--border-color); padding: 10px 12px; text-align: left; vertical-align: middle; color: var(--text-secondary); }
+        .wiki-table th { background-color: var(--card-bg); color: var(--accent-color); }
+        .wiki-table td small { color: var(--text-secondary); }
+        .leader-avatar { width: 84px; aspect-ratio: 154 / 210; height: auto; border-radius: 12px; object-fit: cover; background-color: var(--card-bg); box-shadow: none; }
+        .ideology-icon { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background-color: var(--card-bg); box-shadow: none; }
+        footer { text-align: center; padding: 20px; color: var(--text-secondary); font-size: 0.8em; border-top: 1px solid var(--border-color); margin-top: 40px; }
+        code { background: rgba(255,255,255,0.08); color: #8bd3ff; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        @media (max-width: 720px) { nav { flex-direction: column; align-items: center; } .container { padding: 0 12px; } }
+    </style>
+    <script type="module" src="js/nav-account.js"></script>
+</head>
+<body>
+    <header>
+        <h1>THE INTERNATIONALE</h1>
+        <p>INT · LOTTA COMUNISTA AND THE PCR, CIVIL WAR FACTION</p>
+    </header>
+    <nav>
+        <a href="index.html">Home / Countries</a>
+        <a href="ideologies.html">Ideologies List</a>
+        <a href="ita_democratic.html">Italian Republic (ITA)</a>
+        <a href="ita_int.html" aria-current="page">The Internationale (INT)</a>
+        <a href="ita_sri.html">Socialist Republic (SRI)</a>
+        <a href="ita_rsi.html">Social Republic (RSI)</a>
+        <a href="ita_lom.html">Padania (LOM)</a>
+        <a href="login.html" id="nav-login" class="nav-login" style="border-color: var(--accent-color, var(--accent-neon, #00f3ff));">&#128100; Login</a>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h3>1. Header &amp; Flavor Quotes</h3>
+<p><strong>Name:</strong> The Internationale (<code>INT</code>) – Lotta Comunista, L'Internazionale</p>
+<p><strong>Leader:</strong> the Direzione dei Circoli Operai (CGIL-FIOM) when the civil war breaks out; the Workers' Central Councils of Lotta Comunista after the Coup de Main.</p>
+<p><em>"Lotta Comunista, the PCR and the metalworkers of the FIOM have spent decades arguing over who betrayed the working class first. Now they man the same barricades from Turin to Trieste."</em></p>
+        </div>
+
+        <div class="card">
+            <h3>Focus Tree &amp; Path Overview</h3>
+<p><strong>Target ideology:</strong> <code>vanguard_socialism</code> (Lotta Comunista) or <code>revolutionary_socialism</code> (PCR).</p>
+<p><strong>Overview:</strong> Italy's internationalist revolution. The Internationale wins the civil war from the industrial north, then founds the <em>International</em> and exports the revolution across Europe.</p>
+<table class="wiki-table">
+<thead><tr><th>Route</th><th>Requirement</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td><strong>Coup de Main</strong> (Italian tree)</td><td>One of Infiltration into the Army, Communist Demonstrations or Occupied Factories</td><td>+30% vanguard socialism, then Italy becomes INT</td></tr>
+<tr><td><strong>Against War: REVOLUTION!!!</strong> (Italian tree)</td><td>Italy is at war (no prerequisite focus)</td><td>Vanguard socialist government, +70% vanguard socialism, then Italy becomes INT</td></tr>
+<tr><td><strong>Civil war</strong></td><td>Pick the Internationale in "Italy Tears Itself Apart"</td><td>9 states, 36 divisions, civil war tree</td></tr>
+</tbody></table>
+        </div>
+
+        <div class="card">
+            <h3>2. Technical Infobox &amp; Prerequisites</h3>
+<table class="wiki-table">
+<thead><tr><th>Field</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>Country Tag</td><td><code>INT</code></td></tr>
+<tr><td>Capital</td><td>Genoa during the civil war; Milan after the Coup de Main or after winning the civil war</td></tr>
+<tr><td>Ruling party (civil war)</td><td><code>progressive</code> – CGIL-FIOM, elections every 12 months</td></tr>
+<tr><td>Ruling party (after the coup)</td><td><code>vanguard_socialism</code> – Lotta Comunista, elections allowed</td></tr>
+<tr><td>Stability / War Support</td><td>60% / 70%</td></tr>
+<tr><td>Research slots</td><td>3</td></tr>
+<tr><td>Cores</td><td>all 35 states of the Republic (not Monaco, San Marino, the Vatican, Malta or Istria)</td></tr>
+<tr><td>Focus Tree IDs</td><td><code>INT_civil_war_focus</code> (civil war), then <code>INT_focus</code></td></tr>
+</tbody></table>
+<table class="wiki-table">
+<thead><tr><th>Starting popularity</th><th>%</th></tr></thead>
+<tbody>
+<tr><td>Vanguard Socialism (Lotta Comunista)</td><td>36</td></tr>
+<tr><td>Revolutionary Socialism (PCR)</td><td>30</td></tr>
+<tr><td>Progressive (CGIL-FIOM)</td><td>25</td></tr>
+<tr><td>Authoritarian Socialism (PCd&#x27;I)</td><td>5</td></tr>
+<tr><td>Liberal (PDS)</td><td>3</td></tr>
+<tr><td>Reactionary</td><td>1</td></tr>
+</tbody></table>
+<h4>The road from Italy</h4>
+<p>In the Italian tree: <em>On the Side of the Proletariat</em> → <em>Leninist and Trotskyist Alliance</em> (mutually exclusive with Hardline communist) → <em>Rooting of the Party</em> / <em>Make the Union Yours</em> → <em>Infiltration into the Army</em>, <em>Communist Demonstrations</em>, <em>Occupied Factories</em> (+10% vanguard, +5% revolutionary socialism each) → <em>Coup de Main</em>. <em>Against War: REVOLUTION!!!</em> has no prerequisite: Italy can take it whenever it is at war, and it locks out the Coup de Main.</p>
+<p>The tag switch gives INT all of Italy's technology, units, stockpiles, fleet, air force and states, moves the capital to Milan, adds 20% vanguard socialism and 30 "Guardia Internazionalista" divisions, loads <code>INT_focus</code> and founds the International.</p>
+        </div>
+
+        <div class="card">
+            <h3>3. Lore &amp; Geopolitical Goals</h3>
+<p><strong>Background:</strong> in Naples the Stalinists have hung the old portraits back on the walls; in Rome the Black Barons have dusted off the fasces. Two enemies, two fronts, and one conclusion: the revolution will be internationalist or it will not happen at all.</p>
+<p><strong>Short-term goals:</strong> hold the north, take Rome and end the war against the Republic, the SRI and the RSI.</p>
+<p><strong>Long-term goals:</strong> settle the line of the party (Lotta Comunista or PCR), build a planned economy and carry the revolution to France, Spain, Germany, Britain, the Balkans, Scandinavia, Russia and the United States.</p>
+        </div>
+
+        <div class="card">
+            <h3>4. National Spirits &amp; Modifiers</h3>
+<table class="wiki-table">
+<thead><tr><th>Spirit</th><th>From focus</th><th>Effects</th></tr></thead>
+<tbody>
+<tr><td>Socialized Economy</td><td>Socialization of the Means of Production</td><td><code>Stability +5%</code>, <code>Factory Efficiency Growth +5%</code></td></tr>
+<tr><td>Planned Socialized Economy</td><td>Five-Year Plans</td><td><code>Stability +5%</code>, <code>Factory Efficiency Growth +10%</code>, <code>Max Factory Efficiency +5%</code></td></tr>
+<tr><td>Digital Marxism</td><td>Full-Blown Digital Marxism</td><td><code>Stability +10%</code>, <code>Factory Efficiency Growth +15%</code>, <code>Max Factory Efficiency +10%</code>, <code>Research Speed +10%</code></td></tr>
+<tr><td>Collectivized Economy</td><td>Collectivization of the Means of Production</td><td><code>Factory Output +5%</code>, <code>Construction Speed +5%</code></td></tr>
+<tr><td>Collective Economic Outlook</td><td>Collective Economic Outlook</td><td><code>Factory Output +10%</code>, <code>Construction Speed +10%</code>, <code>Consumer Goods -3%</code></td></tr>
+<tr><td>Arsenal of the Revolution</td><td>A True Trotskyist Revolution</td><td><code>Factory Output +15%</code>, <code>Construction Speed +15%</code>, <code>Political Power Gain +10%</code>, <code>Consumer Goods -5%</code></td></tr>
+<tr><td>Work Coercion</td><td>Work Coercion</td><td><code>Construction Speed +15%</code>, <code>Stability -5%</code></td></tr>
+<tr><td>Centralized Economic Planning</td><td>Centralize Economic Planning</td><td><code>Max Factory Efficiency +5%</code>, <code>Political Power Gain +5%</code></td></tr>
+<tr><td>The Cheka</td><td>Cheka Model</td><td><code>Ideology Drift Defense +25%</code>, <code>Stability +3%</code></td></tr>
+<tr><td>Agit-Prop</td><td>A New Agit-Prop</td><td><code>Vanguard Socialism Drift +0.05/day</code>, <code>War Support +5%</code></td></tr>
+<tr><td>Communism or Barbarism</td><td>Communism or Barbarism</td><td><code>Vanguard Socialism Drift +0.08/day</code>, <code>War Support +10%</code>, <code>Division Recovery Rate +5%</code></td></tr>
+<tr><td>The State of the Councils</td><td>The State of the Councils</td><td><code>Political Power +0.10/day</code>, <code>Stability +3%</code></td></tr>
+<tr><td>All Power to the Councils</td><td>All Power to the Councils!</td><td><code>Political Power +0.20/day</code>, <code>Stability +8%</code>, <code>Factory Efficiency Growth +5%</code></td></tr>
+<tr><td>Democratic Centralism</td><td>Democratic Centralism</td><td><code>Political Power Gain +10%</code>, <code>Ideology Drift Defense +10%</code></td></tr>
+<tr><td>European Leninism</td><td>A True European Leninism</td><td><code>Political Power +0.15/day</code>, <code>Stability +5%</code>, <code>War Support +5%</code></td></tr>
+<tr><td>A Party Full of Factions</td><td>A Party Full of Factions</td><td><code>Political Power Gain +10%</code>, <code>Stability +8%</code>, <code>Ideology Drift Defense +10%</code></td></tr>
+<tr><td>City Soviets</td><td>Create the City Soviets</td><td><code>Political Power +0.10/day</code>, <code>Stability +3%</code></td></tr>
+<tr><td>Militarized Labour Unions</td><td>Militarized Labour Unions</td><td><code>Military Factory Construction +10%</code>, <code>Recruitable Population Factor +5%</code></td></tr>
+<tr><td>Support for the World Revolution</td><td>Support ComRev Around the World</td><td><code>Volunteer Divisions +2</code>, <code>Volunteer Tension Limit -50%</code>, <code>Lend-Lease Tension Limit -50%</code></td></tr>
+<tr><td>Trotskyism Is Young Once Again</td><td>Trotskyism Is Young Once Again</td><td><code>Political Power +0.15/day</code>, <code>War Support +10%</code>, <code>Stability +5%</code></td></tr>
+<tr><td>The Councils&#x27; International</td><td>Long Live the Councils&#x27; International</td><td><code>Volunteer Divisions +1</code>, <code>Political Power +0.05/day</code></td></tr>
+<tr><td>Internationalist Europe</td><td>Internationalist Europe</td><td><code>Volunteer Divisions +2</code>, <code>Political Power +0.10/day</code>, <code>War Support +5%</code></td></tr>
+<tr><td>Permanent Revolution</td><td>Principle of Permanent Revolution</td><td><code>Volunteer Divisions +2</code>, <code>Volunteer Tension Limit -50%</code>, <code>War Support +5%</code></td></tr>
+<tr><td>Revolutionary Europe</td><td>Revolutionary Europe</td><td><code>Volunteer Divisions +3</code>, <code>Volunteer Tension Limit -100%</code>, <code>War Support +10%</code></td></tr>
+<tr><td>The Red Army</td><td>The Red Army</td><td><code>Division Recovery Rate +5%</code>, <code>Army Experience Gain +5%</code></td></tr>
+<tr><td>The Red Army</td><td>Loyal to the Revolution</td><td><code>Division Recovery Rate +8%</code>, <code>Division Organization +5%</code>, <code>Army Experience Gain +10%</code></td></tr>
+<tr><td>The Army of the World&#x27;s Workers</td><td>Workers of the World Unite</td><td><code>Division Recovery Rate +10%</code>, <code>Division Organization +8%</code>, <code>Division Attack +5%</code>, <code>Division Defense +5%</code>, <code>Army Experience Gain +10%</code></td></tr>
+<tr><td>National Academies of Sciences</td><td>National Academies of Sciences</td><td><code>Research Speed +5%</code></td></tr>
+<tr><td>Optimized Production Lines</td><td>Optimize Production Lines</td><td><code>Factory Efficiency Growth +10%</code>, <code>Max Factory Efficiency +5%</code></td></tr>
+<tr><td>Centralized Military Structures</td><td>Centralize Military Structures</td><td><code>Max Command Power +30</code>, <code>Command Power Gain +10%</code></td></tr>
+<tr><td>The Revolution Above All</td><td>The Revolution Above All!</td><td><code>War Support +10%</code>, <code>Division Recovery Rate +5%</code>, <code>Division Attack +5%</code></td></tr>
+</tbody></table>
+<p>The civil war tree also adds the laws <code>war_economy</code> (Confiscate the Means of Production) and <code>extensive_conscription</code> (Conscription for Women Too).</p>
+        </div>
+
+        <div class="card">
+            <h3>5. Focus Tree Structure</h3>
+<h4>Civil war tree (<code>INT_civil_war_focus</code>)</h4>
+<table class="wiki-table">
+<thead><tr><th>Focus</th><th>Primary Effect</th></tr></thead>
+<tbody>
+<tr><td>Internationalist United Front</td><td>+120 political power, +15% stability, +10% war support, 1 division "Guardia Internazionalista"</td></tr>
+<tr><td>Against the Stalinists and the Black Barons</td><td>+10% war support, +30 army experience, land doctrine bonus, equipment</td></tr>
+<tr><td>Permit International Brigades</td><td>+40,000 manpower, volunteers from revolutionary countries, "Brigata Internazionale" division</td></tr>
+<tr><td>Leonardo and Beretta, the New Putilov</td><td>Military factories in the capital and Turin, infantry weapons bonus</td></tr>
+<tr><td>The Red Guards</td><td>+50,000 manpower, +15 army experience</td></tr>
+<tr><td>Use Political Commissars</td><td>+100 political power, war support, army experience</td></tr>
+<tr><td>Confiscate the Means of Production</td><td>War economy, 2 civilian + 2 military factories, −10% stability</td></tr>
+<tr><td>Conscription for Women Too</td><td>Extensive conscription, +80,000 manpower</td></tr>
+<tr><td>Every Weapon Must Be Used</td><td>Old rifles and support equipment, army experience</td></tr>
+<tr><td>Rehabilitating Factories for the Revolution</td><td>Factories and an industry bonus</td></tr>
+<tr><td>Call to Arms for the Proletariat</td><td>+100,000 manpower, +40 army experience</td></tr>
+<tr><td>Revolutionary Fervor</td><td>+15% war support, +5% stability, +100 political power</td></tr>
+<tr><td>A Revolutionary Vanguard Army</td><td>+80 army experience, +100 command power, "Avanguardia Rivoluzionaria" division</td></tr>
+<tr><td>If Lenin Could See Us...</td><td>Requires Rome and peace with ITA, SRI and RSI. Capital to Milan, +1 research slot, super event, loads <code>INT_focus</code></td></tr>
+</tbody></table>
+<h4>National tree (<code>INT_focus</code>)</h4>
+<p><strong>Politics.</strong> <em>Unified Congress of Internationalist Communists</em> → <em>Lotta Comunista Majority</em> (<code>vanguard_socialism</code>) or <em>PCR Majority</em> (<code>revolutionary_socialism</code>). This choice also decides which economic and foreign branch opens.</p>
+<ul>
+<li><strong>Lotta Comunista:</strong> Cheka Model → A New Agit-Prop → Repudiate Stalinism → China Is Imperialist → The US Is a Decrepit Wreck → Communism or Barbarism; The State of the Councils → Workers' Clubs → Factory Councils → City Councils → Economic Planning Based on Councils → All Power to the Councils!; Marx, Engels, Cervetto → True Leninism → Democratic Centralism → the Councils' Political Commissariats → Flexible Tactics → Relentless Strategy. All three lines end in <em>A True European Leninism</em>.</li>
+<li><strong>PCR:</strong> Trotskyism → United Front Tactic → Concessions to the Leninists, the LeftCom and the Soc-Dem → A Party Full of Factions; New Communism for a New Age → Create the City Soviets → Militarized Labour Unions → Militarization of the Policy → A Complete Ideological Revolution → Absolute Loyalty to the Revolution; Stalinism Is a Degeneration of Socialism → China, a Deviated Socialism → Contacts with Vietnam → Contacts with the African Socialists → Alliance with Cuba → Support ComRev Around the World. All three lines end in <em>Trotskyism Is Young Once Again</em>.</li>
+</ul>
+<p><strong>Economy.</strong> <em>The Question of the Socialist Economy</em> → <em>Socialization of the Means of Production</em> (needs Lotta Comunista Majority) up to <em>Full-Blown Digital Marxism</em>, or <em>Collectivization of the Means of Production</em> (needs PCR Majority) up to <em>A True Trotskyist Revolution</em>. Both finals give +1 research slot.</p>
+<p><strong>Foreign policy.</strong> <em>Revolution Crosses the Alps</em> → <em>Long Live the Councils' International</em> (Lotta Comunista) or <em>Revolutionary International</em> (PCR); both create the faction "The International". The following focuses make socialist governments abroad join the International as members or puppets:</p>
+<ul>
+<li><strong>Councils' line:</strong> Leninist France (CMU, FSR), Leninist Spain (SPA, PRS), Leninist Germany (GDR), Leninist Britain (SRB, ENG), Yugoslav Revolution (YUG), Scandinavian Revolution (SSR), The World Is Burning (GSR), Domino Effect (PPR) → Internationalist Europe → support for the Leninists in Ukraine, the Baltics, Russia and Belarus.</li>
+<li><strong>Revolutionary line:</strong> Principle of Permanent Revolution → Exporting the Revolution → They Are All Sister Republics → Cascade Effect → Revolutionary Europe → Revolutionary Communists of Russia and Ukraine → Bring the Revolution Back to Russia (war goal on Russia) → Exporting the Revolution to the US.</li>
+</ul>
+<p><strong>Military.</strong> Military Decision Center → The Red Army → commissars, reform and smart manufacturing → Loyal to the Revolution → air force, navy, armour and industry lines → <em>The Revolution Above All!</em> and <em>A Red Tsunami</em>.</p>
+        </div>
+
+        <div class="card">
+            <h3>6. All Parties &amp; Leaders</h3>
+<table class="wiki-table">
+<thead><tr><th>Photo</th><th>Leader</th><th>Party</th><th>Ideology</th><th>Icon</th></tr></thead>
+<tbody>
+<tr><td><img class="leader-avatar" src="images/leaders/Central Committee.png" alt="Central Committee"></td><td>Central Committee</td><td>[Banned] PdRC – Partito della Ridondazione Comunista</td><td><code>totalitarian_socialism – stalinism</code><br><small>Totalitarian Socialism</small></td><td><img class="ideology-icon" src="images/ideologies/stalinism.png" alt="Stalinism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/Central Committee.png" alt="Central Committee"></td><td>Central Committee</td><td>PCd&#x27;I – Partito Comunista d&#x27;Italia</td><td><code>authoritarian_socialism – maximalism</code><br><small>Authoritarian Socialism</small></td><td><img class="ideology-icon" src="images/ideologies/maximalism.png" alt="Maximalism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/workers_council.png" alt="Workers&#x27; Central Councils"></td><td>Workers&#x27; Central Councils</td><td>Lotta Comunista – L&#x27;Internazionale</td><td><code>vanguard_socialism – leninist_internationalism</code><br><small>Vanguard Socialism</small></td><td><img class="ideology-icon" src="images/ideologies/leninist_internationalism.png" alt="Leninist Internationalism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/central_council.png" alt="PCR Central Council"></td><td>PCR Central Council</td><td>PCR – Partito Comunista Rivoluzionario</td><td><code>revolutionary_socialism – trotskyism</code><br><small>Revolutionary Socialism</small></td><td><img class="ideology-icon" src="images/ideologies/trotskyism.png" alt="Trotskyism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/circoli_operai.png" alt="Direzione dei Circoli Operai"></td><td>Direzione dei Circoli Operai</td><td>CGIL-FIOM – Federazione Sindacale degli Impiegati, Operai e Metallurgici</td><td><code>progressive – neo_socialism</code><br><small>Progressive</small></td><td><img class="ideology-icon" src="images/ideologies/neo_socialism.png" alt="Neo Socialism"></td></tr>
+</tbody></table>
+<p>Other parties: <code>liberal</code> PDS, <code>conservative</code> PD, <code>reactionary</code> Armata Rossa, <code>authoritarianism</code> [Banned] nuove Brigate Rosse; the four right-wing ideologies are the [Banned] Azione Anti-Communista. Political advisors: Workers' Circles, Local Secretaries, Central Council.</p>
+<h4>Military Commanders</h4>
+<table class="wiki-table">
+<thead><tr><th>Photo</th><th>Commander</th><th>Role</th><th>Skill</th><th>Atk</th><th>Def</th><th>Plan</th><th>Log</th></tr></thead>
+<tbody>
+<tr><td><img class="leader-avatar" src="images/leaders/int_general_command.png" alt="Comando Generale"></td><td>Comando Generale</td><td>Field Marshal</td><td>4</td><td>3</td><td>4</td><td>4</td><td>3</td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/int_red_guard_command.png" alt="Comando della Guardia Rossa"></td><td>Comando della Guardia Rossa</td><td>General</td><td>3</td><td>4</td><td>2</td><td>3</td><td>2</td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/int_1st_command.png" alt="1º Comando"></td><td>1º Comando</td><td>General</td><td>3</td><td>3</td><td>3</td><td>2</td><td>3</td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/int_2nd_command.png" alt="2º Comando"></td><td>2º Comando</td><td>General</td><td>3</td><td>3</td><td>3</td><td>3</td><td>2</td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/int_3rd_command.png" alt="3º Comando"></td><td>3º Comando</td><td>General</td><td>3</td><td>2</td><td>3</td><td>3</td><td>3</td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/int_4th_command.png" alt="4º Comando"></td><td>4º Comando</td><td>General</td><td>3</td><td>3</td><td>2</td><td>3</td><td>3</td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/int_colonel_rossi.png" alt="Colonnello Rossi"></td><td>Colonnello Rossi</td><td>General</td><td>2</td><td>2</td><td>2</td><td>3</td><td>2</td></tr>
+</tbody></table>
+<p>No commander has traits yet.</p>
+        </div>
+
+        <div class="card">
+            <h3>7. Unique Events &amp; Mechanics</h3>
+<h4>The International</h4>
+<p>INT founds and chairs the International, the organisation of the socialist states. Each member holds seats in the Central Council (1,000 in total, shared by industry) and a standing from 0 to 100. Motions are voted by the currents of the Council (Neo-Communists, Orthodox Marxists, Leninists, Trotskyists, Left Communists); admissions are voted by the member states, one vote each, with five votes and a veto for INT.</p>
+<p>Motions: Common Economic Plan, Solidarity Fund, Open Borders of the International, Internationalist Mobilization, The Red Helmets. Decision categories: <em>The International: Central Council</em> (members) and <em>The International: The Fight for Recognition</em> (applicants).</p>
+<h4>The Unions Are Ready</h4>
+<p>Decisions to call the Communard, Spanish, German, Portuguese and British unions to arms (50 political power, every 30 days). The target gets <em>The Unions Take the Streets</em>: take power, or wait and fail (<em>The Uprising Failed</em>).</p>
+<table class="wiki-table">
+<thead><tr><th>#</th><th>Event</th><th>Trigger</th><th>Consequence</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>The Internationale Asks for Union</td><td>INT asks a member state</td><td>Accept and become INT&#x27;s puppet, or refuse (−15 standing)</td></tr>
+<tr><td>2</td><td>A Seat in the International</td><td>admission approved</td><td>The new member votes and can put motions</td></tr>
+<tr><td>3</td><td>If Lenin Could See Us... (super event)</td><td>INT wins the civil war</td><td>The red flag flies over the Quirinale</td></tr>
+</tbody></table>
+<p class="note">The six-faction civil war (ITA, INT, SRI, RSI, LOM, TYR) is in the mod but, in the current version, it can only be started from the debug decisions: no focus triggers it yet.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Dragon vs Eagle (DvE) 2025 HOI4 Mod Wiki</p>
+    </footer>
+
+    <script>
+    (function(){
+      function wrapImages(){
+        const images = Array.from(document.querySelectorAll('img'));
+        images.forEach(function(img){
+          if (img.closest('a')) return;
+          const href = img.getAttribute('src');
+          if (!href) return;
+          const link = document.createElement('a');
+          link.href = href;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.className = 'image-open-link';
+          img.parentNode.insertBefore(link, img);
+          link.appendChild(img);
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', wrapImages);
+      } else {
+        wrapImages();
+      }
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italy - Italian Social Republic (RSI)</title>
+    <style>
+        :root {
+            --bg-color: #0b0e14;
+            --panel-bg: #131822;
+            --card-bg: #1a202c;
+            --border-color: #2d3748;
+            --text-primary: #e2e8f0;
+            --text-secondary: #a0aec0;
+            --accent-color: #9ca3af;
+            --accent-glow: rgba(107, 114, 128, 0.45);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-color); color: var(--text-primary); font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+        header { background: linear-gradient(180deg, #151d2a 0%, #0b0e14 100%); border-bottom: 2px solid var(--accent-color); padding: 20px; text-align: center; box-shadow: 0 0 15px var(--accent-glow); }
+        header h1 { margin: 0; font-size: 2.2em; letter-spacing: 2px; color: var(--accent-color); text-shadow: 0 0 10px var(--accent-glow); }
+        header p { margin: 5px 0 0; color: var(--text-secondary); font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
+        nav { background-color: var(--panel-bg); border-bottom: 1px solid var(--border-color); padding: 10px 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        nav a { color: var(--text-primary); text-decoration: none; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9em; transition: all 0.2s ease; border: 1px solid transparent; }
+        nav a:hover, nav a[aria-current="page"] { color: var(--accent-color); border-color: var(--accent-color); box-shadow: 0 0 8px var(--accent-glow); }
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+        .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 20px; box-sizing: border-box; margin-bottom: 20px; overflow-x: auto; }
+        .card h3 { margin-top: 0; color: var(--accent-color); border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 12px; }
+        .card h4 { color: var(--text-primary); margin: 18px 0 6px; }
+        .card p, .card li { color: var(--text-secondary); line-height: 1.6; }
+        .card p + p { margin-top: 10px; }
+        .card ul { list-style-type: square; padding-left: 20px; margin-top: 8px; }
+        .card ul li { margin-bottom: 6px; }
+        .card a { color: var(--accent-color); }
+        .note { border-left: 3px solid var(--accent-color); padding: 8px 12px; background: var(--panel-bg); margin-top: 12px; }
+        .wiki-table { width: 100%; border-collapse: collapse; margin-top: 16px; background-color: var(--panel-bg); }
+        .wiki-table th, .wiki-table td { border: 1px solid var(--border-color); padding: 10px 12px; text-align: left; vertical-align: middle; color: var(--text-secondary); }
+        .wiki-table th { background-color: var(--card-bg); color: var(--accent-color); }
+        .wiki-table td small { color: var(--text-secondary); }
+        .leader-avatar { width: 84px; aspect-ratio: 154 / 210; height: auto; border-radius: 12px; object-fit: cover; background-color: var(--card-bg); box-shadow: none; }
+        .ideology-icon { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; background-color: var(--card-bg); box-shadow: none; }
+        footer { text-align: center; padding: 20px; color: var(--text-secondary); font-size: 0.8em; border-top: 1px solid var(--border-color); margin-top: 40px; }
+        code { background: rgba(255,255,255,0.08); color: #8bd3ff; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        @media (max-width: 720px) { nav { flex-direction: column; align-items: center; } .container { padding: 0 12px; } }
+    </style>
+    <script type="module" src="js/nav-account.js"></script>
+</head>
+<body>
+    <header>
+        <h1>ITALIAN SOCIAL REPUBLIC</h1>
+        <p>RSI · THE FASCIST FRONT, CIVIL WAR FACTION</p>
+    </header>
+    <nav>
+        <a href="index.html">Home / Countries</a>
+        <a href="ideologies.html">Ideologies List</a>
+        <a href="ita_democratic.html">Italian Republic (ITA)</a>
+        <a href="ita_int.html">The Internationale (INT)</a>
+        <a href="ita_sri.html">Socialist Republic (SRI)</a>
+        <a href="ita_rsi.html" aria-current="page">Social Republic (RSI)</a>
+        <a href="ita_lom.html">Padania (LOM)</a>
+        <a href="login.html" id="nav-login" class="nav-login" style="border-color: var(--accent-color, var(--accent-neon, #00f3ff));">&#128100; Login</a>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h3>1. Header &amp; Flavor Quotes</h3>
+<p><strong>Name:</strong> Italian Social Republic (<code>RSI</code>) – Repubblica Sociale Italiana, the Fascist Front</p>
+<p><strong>Leader:</strong> the Direttorio Nazionale (CasaPound – Forza Nuova).</p>
+<p><em>"The Black Barons have dusted off the fasces."</em></p>
+        </div>
+
+        <div class="card">
+            <h3>Focus Tree &amp; Path Overview</h3>
+<p><strong>Target ideology:</strong> <code>ultranationalism</code>.</p>
+<p><strong>Overview:</strong> the neo-fascist faction of the civil war. Before the war, Italy's own fascist road is the <em>Second March on Rome</em> branch of the Italian tree, which keeps the <code>ITA</code> tag.</p>
+<p>The RSI has <strong>no focus tree yet</strong>; it can be played only in the civil war.</p>
+        </div>
+
+        <div class="card">
+            <h3>2. Technical Infobox &amp; Prerequisites</h3>
+<table class="wiki-table">
+<thead><tr><th>Field</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td>Country Tag</td><td><code>RSI</code></td></tr>
+<tr><td>Capital</td><td>Latina during the civil war (the RSI claims Rome)</td></tr>
+<tr><td>Territory</td><td>1 state: Latina</td></tr>
+<tr><td>Army</td><td>14 divisions "Guardia Nazionale Repubblicana"</td></tr>
+<tr><td>Ruling party</td><td><code>ultranationalism</code> – CP-FN (CasaPound, Forza Nuova), no elections</td></tr>
+<tr><td>Stability / War Support</td><td>45% / 60%</td></tr>
+<tr><td>Research slots</td><td>2</td></tr>
+<tr><td>At war with</td><td>ITA, INT, SRI</td></tr>
+</tbody></table>
+<table class="wiki-table">
+<thead><tr><th>Starting popularity</th><th>%</th></tr></thead>
+<tbody>
+<tr><td>Ultranationalism (CP-FN)</td><td>65</td></tr>
+<tr><td>Reactionary (FN)</td><td>10</td></tr>
+<tr><td>Conservative (Centro-Destra)</td><td>8</td></tr>
+<tr><td>Authoritarianism (Lega)</td><td>6</td></tr>
+<tr><td>Autocracy (Esercito Nazionale)</td><td>5</td></tr>
+<tr><td>Fundamentalism</td><td>5</td></tr>
+<tr><td>Centrist</td><td>1</td></tr>
+</tbody></table>
+        </div>
+
+        <div class="card">
+            <h3>3. Lore &amp; Geopolitical Goals</h3>
+<p><strong>Background:</strong> when the Republic falls apart, CasaPound, Forza Nuova and the militias seize Latina and proclaim a new Social Republic at the gates of Rome. Every other faction is an enemy: the communists of the north and of Naples, and the generals in Rome.</p>
+<p><strong>Goal:</strong> take Rome and the Republic's legitimacy, and survive a three-front war.</p>
+        </div>
+
+        <div class="card">
+            <h3>4. National Spirits &amp; Modifiers</h3>
+<p>The RSI has no national spirits yet, and the Italian fascist branch adds none.</p>
+        </div>
+
+        <div class="card">
+            <h3>5. Focus Tree Structure</h3>
+<p>The fascist road is in the Italian tree (<code>italian_focus</code>), under <em>Good old Days</em>:</p>
+<table class="wiki-table">
+<thead><tr><th>Focus</th><th>Primary Effect</th></tr></thead>
+<tbody>
+<tr><td>Good old Days</td><td>Reactionary government, elections off. Mutually exclusive with Democratic Spectrum and On the Side of the Proletariat.</td></tr>
+<tr><td>Second March on Rome</td><td>+50 political power, +50% war support, −20% stability. Mutually exclusive with Casa Savoia!</td></tr>
+<tr><td>Fascism is Back!</td><td>Big stability loss.</td></tr>
+<tr><td>Expand State Authority → Restore the Storic Allience</td><td>Stability.</td></tr>
+<tr><td>The DVX is Back → Gran Consiglio del Fascismo</td><td>War support; +200 political power.</td></tr>
+<tr><td>National Revival → Propaganda Manifest</td><td>War support; +50 political power, stability, +20 army experience.</td></tr>
+<tr><td>The Empire Returns to Rome</td><td>Final focus: stability and war support.</td></tr>
+</tbody></table>
+<p>The other half of Good old Days, <em>Casa Savoia!</em>, restores the monarchy: see the <a href="ita_democratic.html#monarchy">Italian Republic</a> page.</p>
+        </div>
+
+        <div class="card">
+            <h3>6. All Parties &amp; Leaders</h3>
+<table class="wiki-table">
+<thead><tr><th>Photo</th><th>Leader</th><th>Party</th><th>Ideology</th><th>Icon</th></tr></thead>
+<tbody>
+<tr><td>—</td><td>Direttorio Nazionale</td><td>CP-FN – CasaPound, Forza Nuova</td><td><code>ultranationalism – fascist</code><br><small>Ultranationalism</small></td><td><img class="ideology-icon" src="images/ideologies/fascist.png" alt="Fascist"></td></tr>
+<tr><td>—</td><td>Comando della Milizia</td><td>CP-FN – CasaPound, Forza Nuova</td><td><code>ultranationalism – national_syndicalism</code><br><small>Ultranationalism</small></td><td><img class="ideology-icon" src="images/ideologies/ultranationalism.png" alt="National Syndicalism"></td></tr>
+<tr><td><img class="leader-avatar" src="images/leaders/grand_governing_leadership.png" alt="Grand Governing Leadership (Italy)"></td><td>Grand Governing Leadership (Italy)</td><td>CP-FN – CasaPound, Forza Nuova</td><td><code>ultranationalism – neo_fascist</code><br><small>Ultranationalism</small></td><td><img class="ideology-icon" src="images/ideologies/neo_fascist.png" alt="Neo Fascist"></td></tr>
+</tbody></table>
+<p>Other RSI parties: <code>conservative</code> Centro-Destra, <code>reactionary</code> FN – Futuro Nazionale, <code>authoritarianism</code> Lega Nord, <code>autocracy</code> Esercito Nazionale (Forze Armate della Repubblica Sociale); all the left-wing and monarchist parties are banned. The Grand Governing Leadership is Italy's ultranationalist leader before the war.</p>
+        </div>
+
+        <div class="card">
+            <h3>7. Unique Events &amp; Mechanics</h3>
+<ul>
+<li>The RSI is played by picking the Italian Social Republic in <em>Italy Tears Itself Apart</em>.</li>
+<li>It starts at war with the Republic, the Internationale and the Socialist Republic, all at once.</li>
+</ul>
+<p class="note">The six-faction civil war (ITA, INT, SRI, RSI, LOM, TYR) is in the mod but, in the current version, it can only be started from the debug decisions: no focus triggers it yet.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Dragon vs Eagle (DvE) 2025 HOI4 Mod Wiki</p>
+    </footer>
+
+    <script>
+    (function(){
+      function wrapImages(){
+        const images = Array.from(document.querySelectorAll('img'));
+        images.forEach(function(img){
+          if (img.closest('a')) return;
+          const href = img.getAttribute('src');
+          if (!href) return;
+          const link = document.createElement('a');
+          link.href = href;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.className = 'image-open-link';
+          img.parentNode.insertBefore(link, img);
+          link.appendChild(img);
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', wrapImages);
+      } else {
+        wrapImages();
+      }
+    })();
+    </script>
+</body>
+</html>
