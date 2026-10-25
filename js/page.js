@@ -121,7 +121,7 @@ async function render(session) {
 
     if (page && !page.published) {
         notice([el('strong', { text: 'Draft — ' }), 'only staff can see this version. Publish it from the editor.']);
-    } else if (!page) {
+    } else if (!page && !(seed && seed.complete)) {
         notice([el('strong', { text: 'Placeholder page — ' }), 'detailed content for this page has not been written yet.']);
     }
 
