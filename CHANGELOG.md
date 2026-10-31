@@ -10,6 +10,7 @@
 * [Padania (LOM)](https://dve-wiki.netlify.app/page.html?p=ita_cw_lom) — new: the northern separatists with their 87-focus tree and six ideological paths.
 * [South Tyrol (TYR)](https://dve-wiki.netlify.app/page.html?p=ita_cw_tyr) — new: the Tyrolean separatists (no focus tree yet).
 * [Home / Countries](https://dve-wiki.netlify.app/index.html) — new "Italian Civil War" card linking the seven pages.
+* [Ideologies List](https://dve-wiki.netlify.app/ideologies.html#left_communism) — new icon for Left Communism (the old one was the pre-1991 style).
 * [Italy – Democratic](https://dve-wiki.netlify.app/ita_democratic.html), [Italy – Communist](https://dve-wiki.netlify.app/ita_communist.html), [Italy – Fascist](https://dve-wiki.netlify.app/ita_fascist.html) — added a "Civil War" link to the navigation bar.
 * [Search](https://dve-wiki.netlify.app/search.html) — the civil war pages are searchable (e.g. "Guardia Padana", "Schützen", "Ilva").
 * [Mod sync tools](https://github.com/Matteo-WhiteSphere/DvE-Wiki/tree/main/tools) — new `npm run sync-italy` regenerates the civil war pages from the mod.
