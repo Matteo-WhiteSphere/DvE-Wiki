@@ -71,7 +71,7 @@ function drawList() {
         rows.push({ slug, title: p.title, kind: p.published ? 'published' : 'draft' });
     }
     for (const [slug, p] of Object.entries(state.seeds)) {
-        if (!state.pages.has(slug)) rows.push({ slug, title: p.title, kind: 'seed' });
+        if (!state.pages.has(slug)) rows.push({ slug, title: p.title, kind: 'seed', generated: !!p.generated });
     }
     rows.sort((a, b) => a.slug.localeCompare(b.slug));
     const list = $('page-list');
@@ -79,7 +79,7 @@ function drawList() {
     for (const r of rows) {
         if (filter !== 'all' && r.kind !== filter) continue;
         if (q && !r.slug.includes(q) && !(r.title || '').toLowerCase().includes(q)) continue;
-        const label = { published: 'published', draft: 'draft', seed: 'placeholder' }[r.kind];
+        const label = { published: 'published', draft: 'draft', seed: r.generated ? 'from the mod' : 'placeholder' }[r.kind];
         list.append(el('li', {
             class: r.slug === state.slug ? 'active' : null,
             title: r.title || '',
@@ -271,7 +271,9 @@ async function openPage(slug, { force = false } = {}) {
             if (row) base = { ideology: row.ideology, subIdeology: row.subIdeology, ideologyColor: row.ideologyColor, navLabel: row.short || row.name };
         }
         fillForm(seed ? { ...seed, ...base, published: false } : { title: '', category: 'other', accent: '#00f3ff' });
-        if (seed) notice('This page is still a placeholder. Its old content has been loaded: edit it and press Save to create the page.');
+        if (seed) notice(seed.generated
+            ? 'This page is generated from the mod files. Its content has been loaded: edit it and press Save to create the page (the generated version is then replaced by yours).'
+            : 'This page is still a placeholder. Its old content has been loaded: edit it and press Save to create the page.');
     }
     state.slug = slug;
     $('f-slug').value = slug;

@@ -184,6 +184,7 @@ const countries = modCountries.map((c) => {
 });
 // Majors keep their custom cards; tag and name follow the mod.
 const majors = oldCountries.majors.map((m) => {
+    if (m.custom) return m; // cards made by hand (e.g. the Italian civil war) keep their own name
     const row = countries.find((c) => c.major && c.href === m.paths[0]?.href) || countries.find((c) => c.major && c.tag === m.tag);
     return row ? { ...m, tag: row.tag, name: row.name || m.name } : m;
 });

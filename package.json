@@ -10,7 +10,8 @@
     "dev": "node tools/dev-server.mjs",
     "test": "node --test tests/api.test.mjs",
     "temp-passwords": "node tools/temp-passwords.mjs",
-    "sync-mod": "node tools/sync-from-mod.mjs"
+    "sync-mod": "node tools/sync-from-mod.mjs",
+    "sync-italy": "node tools/sync-italy.mjs"
   },
   "dependencies": {
     "@netlify/blobs": "10.7.13"

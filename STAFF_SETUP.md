@@ -143,6 +143,16 @@ Poi commit + push. Cosa viene aggiornato:
 
 Come vengono letti i dati: per ogni nazione si applica il file `history/countries` come fa il gioco (prima la parte senza data, poi i blocchi datati fino alla data del bookmark 2025); il leader è l'**ultimo** definito per il partito al governo; i nomi vengono dalla localisation inglese della mod.
 
+### Guerra civile italiana
+
+Le 7 pagine sulla guerra civile italiana (`ita_civil_war` e `ita_cw_ita`, `ita_cw_int`, `ita_cw_sri`, `ita_cw_rsi`, `ita_cw_lom`, `ita_cw_tyr`: ITA, INT, SRI, RSI, LOM, TYR) si generano dalla mod con:
+
+```bash
+npm run sync-italy -- ../2025-Dragon-Vs.-Eagle
+```
+
+Il comando legge lo script della guerra civile (`DVE_ITA_civil_war_effects.txt`: spartizione dei 35 stati, eserciti, guerre dichiarate), la storia, la localisation, gli eventi e gli alberi dei focus di ogni fazione, e riscrive quelle pagine in `data/placeholders.json` (le altre pagine del file non vengono toccate). Le pagine restano "generate dalla mod" finché un editor non ne salva una versione dall'editor web; la versione dell'editor sostituisce allora quella generata. Esegui prima `npm run sync-mod` se sono cambiati nazioni o ideologie.
+
 `data/mod-report.json` elenca le incoerenze della mod utili ai DEV: nazioni senza un leader per il partito al governo (in gioco ne viene generato uno a caso), partito al governo con popolarità 0%, nazioni senza `set_politics`.
 
 ## 6. Sviluppo in locale
@@ -169,7 +179,7 @@ In locale valgono le stesse password temporanee del file. Per ricominciare da ze
 | `js/page.js`, `js/editor.js`, `js/admin.js`, `js/login.js`, `js/recover.js` | Pagine dinamiche, area staff e recupero |
 | `js/home.js`, `data/countries.json` | Home dinamica: nazioni principali e tabella dei paesi (dati della mod + pagine dell'editor) |
 | `ideologies.html`, `js/ideologies.js`, `data/ideologies.json` | Pagina delle ideologie (dati della mod) |
-| `tools/sync-from-mod.mjs`, `tools/hoi4-parser.mjs`, `tools/convert-mod-icons.py` | Allineamento con la mod |
+| `tools/sync-from-mod.mjs`, `tools/sync-italy.mjs`, `tools/hoi4-parser.mjs`, `tools/convert-mod-icons.py` | Allineamento con la mod (nazioni, ideologie, guerra civile italiana) |
 | `search.html`, `js/search.js` | Ricerca nel wiki |
 | `js/nav-account.js` | Pulsante Login nelle pagine statiche |
 | `netlify.toml`, `_redirects`, `404.html` | Configurazione Netlify, header di sicurezza, redirect, pagina 404 |

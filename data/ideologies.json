@@ -25,9 +25,9 @@
      "art": "images/ideologies/art/stalinism.jpg",
      "countries": [
       {
-       "tag": "NKO",
-       "name": "North Korea",
-       "href": "page.html?p=prk"
+       "tag": "LAO",
+       "name": "Laos",
+       "href": "page.html?p=lao"
       }
      ]
     },
@@ -61,7 +61,13 @@
      "description": "Self-reliance raised to a state religion: one leader, one line, and a nation organised as a single fortress that owes nothing to anybody.",
      "icon": "images/ideologies/juche.png",
      "art": "images/ideologies/art/juche.jpg",
-     "countries": []
+     "countries": [
+      {
+       "tag": "NKO",
+       "name": "North Korea",
+       "href": "page.html?p=prk"
+      }
+     ]
     },
     {
      "key": "Pol_Pot_Thought",
@@ -150,7 +156,13 @@
      "description": "Socialism inside one nation and for it: the class struggle is fought first of all against foreign capital, and the flag flies over the red banner.",
      "icon": "images/ideologies/left_nationalism.png",
      "art": "images/ideologies/art/left_nationalism.jpg",
-     "countries": []
+     "countries": [
+      {
+       "tag": "NIC",
+       "name": "Nicaragua",
+       "href": "page.html?p=nic"
+      }
+     ]
     },
     {
      "key": "market_socialism",
@@ -233,7 +245,13 @@
      "description": "Socialism run from the rally, not the politburo. The line comes from whoever the crowd is still listening to this month, and the party apparatus exists to keep up with them.",
      "icon": "images/ideologies/populist_socialism.png",
      "art": "images/ideologies/art/populist_socialism.jpg",
-     "countries": []
+     "countries": [
+      {
+       "tag": "VEN",
+       "name": "Venezuela",
+       "href": "page.html?p=ven"
+      }
+     ]
     }
    ],
    "countries": [
@@ -246,6 +264,11 @@
      "tag": "CUB",
      "name": "Cuba",
      "href": "page.html?p=cub"
+    },
+    {
+     "tag": "NIC",
+     "name": "Nicaragua",
+     "href": "page.html?p=nic"
     },
     {
      "tag": "PRC",
@@ -261,6 +284,11 @@
      "tag": "SLO",
      "name": "Slovakia",
      "href": "page.html?p=svk"
+    },
+    {
+     "tag": "VEN",
+     "name": "Venezuela",
+     "href": "page.html?p=ven"
     },
     {
      "tag": "VIN",
@@ -462,7 +490,18 @@
      "description": "Socialism by ballot and by statute. Capitalism is to be outgrown through nationalisations, strong unions and a welfare state, without anybody storming anything.",
      "icon": "images/ideologies/reformist_socialism.png",
      "art": "images/ideologies/art/reformist_socialism.jpg",
-     "countries": []
+     "countries": [
+      {
+       "tag": "BOL",
+       "name": "Bolivia",
+       "href": "page.html?p=bol"
+      },
+      {
+       "tag": "HON",
+       "name": "Honduras",
+       "href": "page.html?p=hnd"
+      }
+     ]
     },
     {
      "key": "social_democracy",
@@ -507,6 +546,11 @@
        "href": "page.html?p=col"
       },
       {
+       "tag": "GUA",
+       "name": "Guatemala",
+       "href": "page.html?p=gtm"
+      },
+      {
        "tag": "KOS",
        "name": "Kosovo",
        "href": "page.html?p=kos"
@@ -525,11 +569,6 @@
        "tag": "NOR",
        "name": "Norway",
        "href": "page.html?p=nor"
-      },
-      {
-       "tag": "SPR",
-       "name": "Spain",
-       "href": "page.html?p=esp"
       },
       {
        "tag": "STK",
@@ -589,6 +628,11 @@
      "href": "page.html?p=blz"
     },
     {
+     "tag": "BOL",
+     "name": "Bolivia",
+     "href": "page.html?p=bol"
+    },
+    {
      "tag": "BOS",
      "name": "Bosnia and Herzegovina",
      "href": "page.html?p=bih"
@@ -634,6 +678,16 @@
      "href": "page.html?p=col"
     },
     {
+     "tag": "GUA",
+     "name": "Guatemala",
+     "href": "page.html?p=gtm"
+    },
+    {
+     "tag": "HON",
+     "name": "Honduras",
+     "href": "page.html?p=hnd"
+    },
+    {
      "tag": "KOS",
      "name": "Kosovo",
      "href": "page.html?p=kos"
@@ -652,11 +706,6 @@
      "tag": "NOR",
      "name": "Norway",
      "href": "page.html?p=nor"
-    },
-    {
-     "tag": "SPR",
-     "name": "Spain",
-     "href": "page.html?p=esp"
     },
     {
      "tag": "STK",
@@ -689,6 +738,16 @@
        "tag": "GER",
        "name": "Federal Republic of Germany",
        "href": "page.html?p=ger_democratic"
+      },
+      {
+       "tag": "MAL",
+       "name": "Malaysia",
+       "href": "page.html?p=mys"
+      },
+      {
+       "tag": "SPR",
+       "name": "Spain",
+       "href": "page.html?p=esp"
       }
      ]
     },
@@ -714,7 +773,13 @@
      "description": "The people against the oligarchy. A charismatic movement that turns anger at the elites into a programme of redistribution, sovereignty and direct appeal to the squares.",
      "icon": "images/ideologies/left_populism.png",
      "art": "images/ideologies/art/left_populism.jpg",
-     "countries": []
+     "countries": [
+      {
+       "tag": "MEX",
+       "name": "Mexico",
+       "href": "page.html?p=mex"
+      }
+     ]
     },
     {
      "key": "left_centrist",
@@ -730,6 +795,21 @@
      "tag": "GER",
      "name": "Federal Republic of Germany",
      "href": "page.html?p=ger_democratic"
+    },
+    {
+     "tag": "MAL",
+     "name": "Malaysia",
+     "href": "page.html?p=mys"
+    },
+    {
+     "tag": "MEX",
+     "name": "Mexico",
+     "href": "page.html?p=mex"
+    },
+    {
+     "tag": "SPR",
+     "name": "Spain",
+     "href": "page.html?p=esp"
     }
    ]
   },
@@ -802,9 +882,19 @@
      "art": "images/ideologies/art/centrist_populism.jpg",
      "countries": [
       {
+       "tag": "BAN",
+       "name": "Bangladesh",
+       "href": "page.html?p=bgd"
+      },
+      {
        "tag": "DEN",
        "name": "Denmark",
        "href": "page.html?p=dnk"
+      },
+      {
+       "tag": "ECU",
+       "name": "Ecuador",
+       "href": "page.html?p=ecu"
       },
       {
        "tag": "ETH",
@@ -812,14 +902,29 @@
        "href": "page.html?p=eth"
       },
       {
+       "tag": "FIJ",
+       "name": "Fiji",
+       "href": "page.html?p=fji"
+      },
+      {
        "tag": "FRA",
        "name": "French Republic",
        "href": "page.html?p=fra_democratic"
       },
       {
+       "tag": "FSM",
+       "name": "Micronesia",
+       "href": "page.html?p=fsm"
+      },
+      {
        "tag": "IRQ",
        "name": "Iraq",
        "href": "page.html?p=irq"
+      },
+      {
+       "tag": "LBA",
+       "name": "Libya",
+       "href": "page.html?p=lby"
       },
       {
        "tag": "LEB",
@@ -847,24 +952,39 @@
        "href": "page.html?p=moz"
       },
       {
+       "tag": "PNG",
+       "name": "Papua New Guinea",
+       "href": "page.html?p=png"
+      },
+      {
+       "tag": "SIA",
+       "name": "Thailand",
+       "href": "page.html?p=tha"
+      },
+      {
        "tag": "SOD",
        "name": "Somaliland",
        "href": "page.html?p=sod"
       },
       {
+       "tag": "TML",
+       "name": "Timor Leste",
+       "href": "page.html?p=tml"
+      },
+      {
        "tag": "UKR",
        "name": "Ukraine",
        "href": "page.html?p=ukr"
+      },
+      {
+       "tag": "VAN",
+       "name": "Vanuatu",
+       "href": "page.html?p=van"
       }
      ]
     }
    ],
    "countries": [
-    {
-     "tag": "ARG",
-     "name": "Argentina",
-     "href": "page.html?p=arg"
-    },
     {
      "tag": "BAN",
      "name": "Bangladesh",
@@ -874,11 +994,6 @@
      "tag": "BEL",
      "name": "Belgium",
      "href": "page.html?p=bel"
-    },
-    {
-     "tag": "BOL",
-     "name": "Bolivia",
-     "href": "page.html?p=bol"
     },
     {
      "tag": "CBV",
@@ -909,11 +1024,6 @@
      "tag": "ECU",
      "name": "Ecuador",
      "href": "page.html?p=ecu"
-    },
-    {
-     "tag": "ELS",
-     "name": "El Salvador",
-     "href": "page.html?p=slv"
     },
     {
      "tag": "EMZ",
@@ -966,11 +1076,6 @@
      "href": "page.html?p=grd"
     },
     {
-     "tag": "GUA",
-     "name": "Guatemala",
-     "href": "page.html?p=gtm"
-    },
-    {
      "tag": "GYA",
      "name": "Guyana",
      "href": "page.html?p=guy"
@@ -981,11 +1086,6 @@
      "href": "page.html?p=hti"
     },
     {
-     "tag": "HON",
-     "name": "Honduras",
-     "href": "page.html?p=hnd"
-    },
-    {
      "tag": "HUN",
      "name": "Hungary",
      "href": "page.html?p=hun"
@@ -994,11 +1094,6 @@
      "tag": "ICE",
      "name": "Iceland",
      "href": "page.html?p=isl"
-    },
-    {
-     "tag": "INS",
-     "name": "Indonesia",
-     "href": "page.html?p=idn"
     },
     {
      "tag": "IRQ",
@@ -1081,11 +1176,6 @@
      "href": "page.html?p=mdg"
     },
     {
-     "tag": "MAL",
-     "name": "Malaysia",
-     "href": "page.html?p=mys"
-    },
-    {
      "tag": "MAR",
      "name": "Marshall Islands",
      "href": "page.html?p=mar_marshall_islands"
@@ -1094,11 +1184,6 @@
      "tag": "MAU",
      "name": "Mauritius",
      "href": "page.html?p=mus"
-    },
-    {
-     "tag": "MEX",
-     "name": "Mexico",
-     "href": "page.html?p=mex"
     },
     {
      "tag": "MLD",
@@ -1161,29 +1246,14 @@
      "href": "page.html?p=nam"
     },
     {
-     "tag": "NZL",
-     "name": "New Zealand",
-     "href": "page.html?p=nzl"
-    },
-    {
      "tag": "PAK",
      "name": "Pakistan",
      "href": "page.html?p=pak"
     },
     {
-     "tag": "PAN",
-     "name": "Panama",
-     "href": "page.html?p=pan"
-    },
-    {
      "tag": "PAP",
      "name": "Papal States",
      "href": "page.html?p=pap"
-    },
-    {
-     "tag": "PAR",
-     "name": "Paraguay",
-     "href": "page.html?p=pry"
     },
     {
      "tag": "PLU",
@@ -1194,11 +1264,6 @@
      "tag": "PNG",
      "name": "Papua New Guinea",
      "href": "page.html?p=png"
-    },
-    {
-     "tag": "PRU",
-     "name": "Peru",
-     "href": "page.html?p=per"
     },
     {
      "tag": "PUN",
@@ -1244,11 +1309,6 @@
      "tag": "SMA",
      "name": "San Marino",
      "href": "page.html?p=sma"
-    },
-    {
-     "tag": "SNG",
-     "name": "Singapore",
-     "href": "page.html?p=sgp"
     },
     {
      "tag": "SOD",
@@ -1356,6 +1416,16 @@
        "tag": "MAC",
        "name": "North Macedonia",
        "href": "page.html?p=mkd"
+      },
+      {
+       "tag": "NZL",
+       "name": "New Zealand",
+       "href": "page.html?p=nzl"
+      },
+      {
+       "tag": "PAR",
+       "name": "Paraguay",
+       "href": "page.html?p=pry"
       },
       {
        "tag": "POR",
@@ -1523,6 +1593,11 @@
        "href": "page.html?p=lux"
       },
       {
+       "tag": "PAN",
+       "name": "Panama",
+       "href": "page.html?p=pan"
+      },
+      {
        "tag": "PHI",
        "name": "Philippines",
        "href": "page.html?p=phl"
@@ -1628,6 +1703,21 @@
      "tag": "MAC",
      "name": "North Macedonia",
      "href": "page.html?p=mkd"
+    },
+    {
+     "tag": "NZL",
+     "name": "New Zealand",
+     "href": "page.html?p=nzl"
+    },
+    {
+     "tag": "PAN",
+     "name": "Panama",
+     "href": "page.html?p=pan"
+    },
+    {
+     "tag": "PAR",
+     "name": "Paraguay",
+     "href": "page.html?p=pry"
     },
     {
      "tag": "PHI",
@@ -1740,11 +1830,6 @@
        "tag": "HOU",
        "name": "Houthis",
        "href": "page.html?p=hou"
-      },
-      {
-       "tag": "PER",
-       "name": "Iran",
-       "href": "page.html?p=irn"
       }
      ]
     },
@@ -1763,6 +1848,11 @@
      "icon": "images/ideologies/hardline_conservatism.png",
      "art": "images/ideologies/art/hardline_conservatism.jpg",
      "countries": [
+      {
+       "tag": "ARG",
+       "name": "Argentina",
+       "href": "page.html?p=arg"
+      },
       {
        "tag": "CAM",
        "name": "Cambodia",
@@ -1792,6 +1882,11 @@
        "tag": "HOL",
        "name": "Netherlands",
        "href": "page.html?p=nld"
+      },
+      {
+       "tag": "INS",
+       "name": "Indonesia",
+       "href": "page.html?p=idn"
       },
       {
        "tag": "NCY",
@@ -1834,6 +1929,11 @@
    ],
    "countries": [
     {
+     "tag": "ARG",
+     "name": "Argentina",
+     "href": "page.html?p=arg"
+    },
+    {
      "tag": "BHU",
      "name": "Bhutan",
      "href": "page.html?p=btn"
@@ -1864,11 +1964,6 @@
      "href": "page.html?p=cri"
     },
     {
-     "tag": "FEZ",
-     "name": "Fezzan",
-     "href": "page.html?p=fez"
-    },
-    {
      "tag": "HOL",
      "name": "Netherlands",
      "href": "page.html?p=nld"
@@ -1877,6 +1972,11 @@
      "tag": "HOU",
      "name": "Houthis",
      "href": "page.html?p=hou"
+    },
+    {
+     "tag": "INS",
+     "name": "Indonesia",
+     "href": "page.html?p=idn"
     },
     {
      "tag": "MLI",
@@ -1897,16 +1997,6 @@
      "tag": "NGR",
      "name": "Niger",
      "href": "page.html?p=ner"
-    },
-    {
-     "tag": "NIC",
-     "name": "Nicaragua",
-     "href": "page.html?p=nic"
-    },
-    {
-     "tag": "PER",
-     "name": "Iran",
-     "href": "page.html?p=irn"
     },
     {
      "tag": "RAJ",
@@ -1932,11 +2022,6 @@
      "tag": "UGA",
      "name": "Uganda",
      "href": "page.html?p=uga"
-    },
-    {
-     "tag": "VEN",
-     "name": "Venezuela",
-     "href": "page.html?p=ven"
     },
     {
      "tag": "VOL",
@@ -2004,6 +2089,11 @@
        "href": "page.html?p=egy"
       },
       {
+       "tag": "ELS",
+       "name": "El Salvador",
+       "href": "page.html?p=slv"
+      },
+      {
        "tag": "EQG",
        "name": "Equatorial Guinea",
        "href": "page.html?p=gnq"
@@ -2039,6 +2129,11 @@
        "href": "page.html?p=noa"
       },
       {
+       "tag": "PRU",
+       "name": "Peru",
+       "href": "page.html?p=per"
+      },
+      {
        "tag": "UZB",
        "name": "Uzbekistan",
        "href": "page.html?p=uzb"
@@ -2052,6 +2147,11 @@
      "icon": "images/ideologies/oligarchy.png",
      "art": "images/ideologies/art/oligarchy.jpg",
      "countries": [
+      {
+       "tag": "FEZ",
+       "name": "Fezzan",
+       "href": "page.html?p=fez"
+      },
       {
        "tag": "SSU",
        "name": "South Sudan",
@@ -2085,6 +2185,11 @@
        "tag": "PAL",
        "name": "Palestine",
        "href": "page.html?p=pal"
+      },
+      {
+       "tag": "SNG",
+       "name": "Singapore",
+       "href": "page.html?p=sgp"
       }
      ]
     },
@@ -2143,6 +2248,11 @@
      "href": "page.html?p=egy"
     },
     {
+     "tag": "ELS",
+     "name": "El Salvador",
+     "href": "page.html?p=slv"
+    },
+    {
      "tag": "EQG",
      "name": "Equatorial Guinea",
      "href": "page.html?p=gnq"
@@ -2151,6 +2261,11 @@
      "tag": "ERI",
      "name": "Eritrea",
      "href": "page.html?p=eri"
+    },
+    {
+     "tag": "FEZ",
+     "name": "Fezzan",
+     "href": "page.html?p=fez"
     },
     {
      "tag": "GAB",
@@ -2188,9 +2303,19 @@
      "href": "page.html?p=pal"
     },
     {
+     "tag": "PRU",
+     "name": "Peru",
+     "href": "page.html?p=per"
+    },
+    {
      "tag": "RSF",
      "name": "Rapid Support Forces",
      "href": "page.html?p=rsf"
+    },
+    {
+     "tag": "SNG",
+     "name": "Singapore",
+     "href": "page.html?p=sgp"
     },
     {
      "tag": "SSU",
@@ -2255,7 +2380,13 @@
      "description": "A general rules in his own name, with the army as his party. The constitution is suspended until further notice, and notice is never given.",
      "icon": "images/ideologies/military_dictatorship.png",
      "art": "images/ideologies/art/military_dictatorship.jpg",
-     "countries": []
+     "countries": [
+      {
+       "tag": "LNA",
+       "name": "Libyan National Army",
+       "href": "page.html?p=lna"
+      }
+     ]
     },
     {
      "key": "personalist_dictatorship",
@@ -2714,6 +2845,11 @@
        "tag": "AFG",
        "name": "Afghanistan",
        "href": "page.html?p=afg"
+      },
+      {
+       "tag": "PER",
+       "name": "Iran",
+       "href": "page.html?p=irn"
       }
      ]
     },
@@ -2808,6 +2944,11 @@
      "tag": "IRS",
      "name": "Islamic Somalia",
      "href": "page.html?p=irs"
+    },
+    {
+     "tag": "PER",
+     "name": "Iran",
+     "href": "page.html?p=irn"
     }
    ]
   }

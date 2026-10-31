@@ -122,7 +122,13 @@ async function render(session) {
     if (page && !page.published) {
         notice([el('strong', { text: 'Draft — ' }), 'only staff can see this version. Publish it from the editor.']);
     } else if (!page) {
-        notice([el('strong', { text: 'Placeholder page — ' }), 'detailed content for this page has not been written yet.']);
+        if (shown.generated) {
+            const commit = shown.source && shown.source.commit;
+            notice([el('strong', { text: 'From the mod files — ' }),
+                `this page is generated from the mod${commit ? ` (version ${commit})` : ''}. Editors can open it in the editor and improve it.`]);
+        } else {
+            notice([el('strong', { text: 'Placeholder page — ' }), 'detailed content for this page has not been written yet.']);
+        }
     }
 
     metaEl.textContent = page && page.updatedAt ? 'Last updated: ' + formatDate(page.updatedAt) : '';

@@ -9,7 +9,7 @@ const STATIC_PAGES = ['events_guide.html', 'fin.html', 'ita_democratic.html', 'i
 
 const KIND_LABEL = {
     country: 'Country', path: 'Country path', guide: 'Guide', other: 'Page',
-    ideology: 'Ideology', section: 'Section', draft: 'Placeholder'
+    ideology: 'Ideology', section: 'Section', draft: 'Placeholder', modpage: 'From the mod'
 };
 
 const clean = (s) => String(s || '').replace(/\s+/g, ' ').trim();
@@ -116,7 +116,7 @@ function buildIndex() {
             if (written.has(slug)) continue;
             docs.push({
                 title: p.category === 'country' ? p.navLabel || p.title : p.title,
-                url: 'page.html?p=' + encodeURIComponent(slug), kind: 'draft', tag: p.tag,
+                url: 'page.html?p=' + encodeURIComponent(slug), kind: p.generated ? 'modpage' : 'draft', tag: p.tag,
                 context: clean([p.title, p.subtitle].join(' · ')),
                 text: clean([p.title, p.subtitle, p.tag, ...p.sections.map((s) => `${s.title} ${s.body}`)].join(' ').replace(/[*#>|`-]/g, ' '))
             });
@@ -160,6 +160,7 @@ function score(d, terms) {
     // Real pages before placeholders and generic page entries.
     if (d.kind === 'country' || d.kind === 'ideology') s += 3;
     if (d.kind === 'draft') s -= 2;
+    if (d.kind === 'modpage') s += 1;
     return s;
 }
 

@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-10-31
+
+* [Italian Civil War](https://dve-wiki.netlify.app/page.html?p=ita_civil_war) — new: overview of the six-faction civil war (partition of the 35 states, armies at the outbreak, who fights whom, events), from the current mod files.
+* [Italy (ITA)](https://dve-wiki.netlify.app/page.html?p=ita_cw_ita) — new: the Armed Forces Joint Command government, its 18 states, parties, leaders and the 55-focus Italian focus tree.
+* [The Internationale (INT)](https://dve-wiki.netlify.app/page.html?p=ita_cw_int) — new: the revolutionary left, with its civil war focus tree and the 157-focus post-war tree (economy, politics, foreign policy, military).
+* [Socialist Republic of Italy (SRI)](https://dve-wiki.netlify.app/page.html?p=ita_cw_sri) — new: the Stalinist front, with its 100-focus tree.
+* [Italian Social Republic (RSI)](https://dve-wiki.netlify.app/page.html?p=ita_cw_rsi) — new: the fascist front and its 22-focus tree.
+* [Padania (LOM)](https://dve-wiki.netlify.app/page.html?p=ita_cw_lom) — new: the northern separatists with their 87-focus tree and six ideological paths.
+* [South Tyrol (TYR)](https://dve-wiki.netlify.app/page.html?p=ita_cw_tyr) — new: the Tyrolean separatists (no focus tree yet).
+* [Home / Countries](https://dve-wiki.netlify.app/index.html) — new "Italian Civil War" card linking the seven pages.
+* [Italy – Democratic](https://dve-wiki.netlify.app/ita_democratic.html), [Italy – Communist](https://dve-wiki.netlify.app/ita_communist.html), [Italy – Fascist](https://dve-wiki.netlify.app/ita_fascist.html) — added a "Civil War" link to the navigation bar.
+* [Search](https://dve-wiki.netlify.app/search.html) — the civil war pages are searchable (e.g. "Guardia Padana", "Schützen", "Ilva").
+* [Mod sync tools](https://github.com/Matteo-WhiteSphere/DvE-Wiki/tree/main/tools) — new `npm run sync-italy` regenerates the civil war pages from the mod.
+
 ## 2026-10-11
 
 * [Home / Countries](https://dve-wiki.netlify.app/index.html) — the country table is now built from the mod: 220 countries on the 2025 map with HOI4 tags, in-game names, starting ideology, sub-ideology and the new **Leader** column; filter by name/TAG/leader and by ideology; search box; pages created in the editor appear automatically (new countries, new paths in the major nation cards, guides under "More Wiki Pages").
