@@ -3095,7 +3095,7 @@
    {
     "title": "Available Leaders",
     "layout": "half",
-    "body": "| Leader | Sub-ideology | Ideology |\n|---|---|---|\n| Prabowo Subianto | Hardline Conservatism | Reactionary |\n| Bahlil Lahadalia | Conservatism | Conservative |\n| Surya Paloh | Centrist Populism | Centrist |\n| Megawati Sukarnoputri | Social Democracy | Reformist Socialist |\n| Ahmad Syaikhu | Islamic Fundamentalism | Fundamentalist |\n| Kaesang Pangarep | Social Liberalism | Liberal |\n| General Agus Subiyanto | Military Junta | Autocratic |\n| Said Iqbal | Syndicalism | Revolutionary Socialist |"
+    "body": "| Leader | Sub-ideology | Ideology |\n|---|---|---|\n| Prabowo Subianto | Hardline Conservatism | Reactionary |\n| Bahlil Lahadalia | Conservatism | Conservative |\n| Surya Paloh | Centrist Populism | Centrist |\n| Megawati Sukarnoputri | Social Democracy | Reformist Socialist |\n| Ahmad Syaikhu | Islamic Fundamentalism | Fundamentalist |\n| Kaesang Pangarep | Social Liberalism | Liberal |\n| General Agus Subiyanto | Military Junta | Autocratic |\n| Said Iqbal | Syndicalism | Reformist Socialist |"
    }
   ]
  },
@@ -3155,7 +3155,7 @@
    {
     "title": "Available Leaders",
     "layout": "half",
-    "body": "| Leader | Sub-ideology | Ideology |\n|---|---|---|\n| Adnan Fihan | Stalinism | Totalitarian Socialist |\n| Hassan Muanes | Leninist Internationalism | Vanguard Socialist |\n| Muhsin Al-Mandalawi | Syndicalism | Revolutionary Socialist |\n| Shaswar Abdulwahid | Progressivism | Reformist Socialist |\n| Abdul Latif Rashid | Liberal Socialdemocrat | Liberal |\n| Masoud Barzani | Conservatism | Conservative |\n| Mohamed Al-Halbousi | Hardline Conservatism | Reactionary |\n| Mohammed Shia' al-Sudani | Technocracy | Authoritarian |\n| Nouri al-Maliki | Personal Dictatorship | Autocratic |\n| Humam Hamoudi | Absolute Monarchy | Absolutist |\n| Hadi al-Amiri | Neo-Fascist | Ultranationalist |\n| Abu Ala al-Walai | Clerical Fascism | Fundamentalist |\n| Abdul Latif Rashid | Centrist Populism | Centrist |"
+    "body": "| Leader | Sub-ideology | Ideology |\n|---|---|---|\n| Adnan Fihan | Stalinism | Totalitarian Socialist |\n| Hassan Muanes | Leninist Internationalism | Vanguard Socialist |\n| Muhsin Al-Mandalawi | Syndicalism | Reformist Socialist |\n| Shaswar Abdulwahid | Progressivism | Reformist Socialist |\n| Abdul Latif Rashid | Liberal Socialdemocrat | Liberal |\n| Masoud Barzani | Conservatism | Conservative |\n| Mohamed Al-Halbousi | Hardline Conservatism | Reactionary |\n| Mohammed Shia' al-Sudani | Technocracy | Authoritarian |\n| Nouri al-Maliki | Personal Dictatorship | Autocratic |\n| Humam Hamoudi | Absolute Monarchy | Absolutist |\n| Hadi al-Amiri | Neo-Fascist | Ultranationalist |\n| Abu Ala al-Walai | Clerical Fascism | Fundamentalist |\n| Abdul Latif Rashid | Centrist Populism | Centrist |"
    }
   ]
  },
@@ -6836,7 +6836,7 @@
   ],
   "source": {
    "repository": "https://github.com/ECModder/2025-Dragon-Vs.-Eagle",
-   "commit": "a4fc20d"
+   "commit": "8d22a53"
   }
  },
  "ita_cw_ita": {
@@ -6901,7 +6901,7 @@
   ],
   "source": {
    "repository": "https://github.com/ECModder/2025-Dragon-Vs.-Eagle",
-   "commit": "a4fc20d"
+   "commit": "8d22a53"
   }
  },
  "ita_cw_int": {
@@ -6976,7 +6976,7 @@
   ],
   "source": {
    "repository": "https://github.com/ECModder/2025-Dragon-Vs.-Eagle",
-   "commit": "a4fc20d"
+   "commit": "8d22a53"
   }
  },
  "ita_cw_sri": {
@@ -7046,7 +7046,7 @@
   ],
   "source": {
    "repository": "https://github.com/ECModder/2025-Dragon-Vs.-Eagle",
-   "commit": "a4fc20d"
+   "commit": "8d22a53"
   }
  },
  "ita_cw_rsi": {
@@ -7096,7 +7096,7 @@
   ],
   "source": {
    "repository": "https://github.com/ECModder/2025-Dragon-Vs.-Eagle",
-   "commit": "a4fc20d"
+   "commit": "8d22a53"
   }
  },
  "ita_cw_lom": {
@@ -7176,7 +7176,7 @@
   ],
   "source": {
    "repository": "https://github.com/ECModder/2025-Dragon-Vs.-Eagle",
-   "commit": "a4fc20d"
+   "commit": "8d22a53"
   }
  },
  "ita_cw_tyr": {
@@ -7226,7 +7226,7 @@
   ],
   "source": {
    "repository": "https://github.com/ECModder/2025-Dragon-Vs.-Eagle",
-   "commit": "a4fc20d"
+   "commit": "8d22a53"
   }
  }
 }

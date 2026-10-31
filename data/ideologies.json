@@ -328,6 +328,30 @@
      "icon": "images/ideologies/neo_sovietism.png",
      "art": "images/ideologies/art/neo_sovietism.jpg",
      "countries": []
+    },
+    {
+     "key": "communism_vanguard",
+     "name": "Communism",
+     "description": "The classless society, reached through a party that leads the workers to it. Property is held in common, the economy is planned, and the state is expected to wither away once its work is done.",
+     "icon": "images/ideologies/communism_vanguard.png",
+     "art": "images/ideologies/art/communism_vanguard.jpg",
+     "countries": []
+    },
+    {
+     "key": "marxism",
+     "name": "Marxism",
+     "description": "History as the struggle between classes, and capital as the machine that drives it. The party reads the world through Marx and organises the workers to take the means of production.",
+     "icon": "images/ideologies/marxism.png",
+     "art": "images/ideologies/art/marxism.jpg",
+     "countries": []
+    },
+    {
+     "key": "scientific_socialism",
+     "name": "Scientific Socialism",
+     "description": "Socialism as a method rather than a hope. The laws of history are studied, the economy is modelled and planned, and the party answers to the data before it answers to sentiment.",
+     "icon": "images/ideologies/scientific_socialism.png",
+     "art": "images/ideologies/art/scientific_socialism.jpg",
+     "countries": []
     }
    ],
    "countries": []
@@ -369,14 +393,6 @@
        "href": "page.html?p=roj"
       }
      ]
-    },
-    {
-     "key": "syndicalism",
-     "name": "Syndicalism",
-     "description": "The union is the school, the weapon and the future government of the working class. The general strike takes the economy, and the federations of producers run it.",
-     "icon": "images/ideologies/syndicalism.png",
-     "art": "images/ideologies/art/syndicalism.jpg",
-     "countries": []
     },
     {
      "key": "nasserism",
@@ -588,6 +604,22 @@
      "description": "Planning, order and the nation in place of class war. A socialism that has lost patience with parliament and looks to a strong state and its technicians.",
      "icon": "images/ideologies/neo_socialism.png",
      "art": "images/ideologies/art/neo_socialism.jpg",
+     "countries": []
+    },
+    {
+     "key": "syndicalism",
+     "name": "Syndicalism",
+     "description": "The union is the school, the weapon and the future government of the working class. The general strike takes the economy, and the federations of producers run it.",
+     "icon": "images/ideologies/syndicalism.png",
+     "art": "images/ideologies/art/syndicalism.jpg",
+     "countries": []
+    },
+    {
+     "key": "eurocommunism",
+     "name": "Eurocommunism",
+     "description": "Communists who accepted the ballot box. Free elections, civil liberties and a plural party system: a road to socialism that owes nothing to Moscow and everything to parliament.",
+     "icon": "images/ideologies/eurocommunism.png",
+     "art": "images/ideologies/art/eurocommunism.jpg",
      "countries": []
     }
    ],
@@ -982,6 +1014,30 @@
        "href": "page.html?p=van"
       }
      ]
+    },
+    {
+     "key": "neo_liberalism",
+     "name": "Neo-Liberalism",
+     "description": "The market as the answer to almost every question. Privatisation, deregulation, open borders for capital and balanced budgets, with the state reduced to referee and enforcer of contracts.",
+     "icon": "images/ideologies/neo_liberalism.png",
+     "art": "images/ideologies/art/neo_liberalism.jpg",
+     "countries": []
+    },
+    {
+     "key": "liberal_zionism",
+     "name": "Liberal Zionism",
+     "description": "A Jewish state that is also a liberal democracy: equal rights for all its citizens, an independent judiciary and a negotiated settlement with the Palestinians, all within the Zionist project.",
+     "icon": "images/ideologies/liberal_zionism.png",
+     "art": "images/ideologies/art/liberal_zionism.jpg",
+     "countries": []
+    },
+    {
+     "key": "techno_zionism",
+     "name": "Techno-Zionism",
+     "description": "The start-up nation as grand strategy. Cyber, defence technology and water engineering are the state's best exports and its best insurance, and the country is run like a laboratory.",
+     "icon": "images/ideologies/techno_zionism.png",
+     "art": "images/ideologies/art/techno_zionism.jpg",
+     "countries": []
     }
    ],
    "countries": [
@@ -1616,6 +1672,22 @@
      "icon": "images/ideologies/national_liberalism.png",
      "art": "images/ideologies/art/national_liberalism.jpg",
      "countries": []
+    },
+    {
+     "key": "zionist_conservatism",
+     "name": "Zionist Conservatism",
+     "description": "The family, the synagogue and the army as the pillars of the Jewish state. Low taxes, a cautious government and tradition first, with security never put up for experiment.",
+     "icon": "images/ideologies/zionist_conservatism.png",
+     "art": "images/ideologies/art/zionist_conservatism.jpg",
+     "countries": []
+    },
+    {
+     "key": "national_liberal_zionism",
+     "name": "National Liberal Zionism",
+     "description": "Open markets and civil rights for citizens, a firm hand beyond the border. Liberal at home, nationalist abroad, and sure that the Jewish state is the guarantee of its own liberty.",
+     "icon": "images/ideologies/national_liberal_zionism.png",
+     "art": "images/ideologies/art/national_liberal_zionism.jpg",
+     "countries": []
     }
    ],
    "countries": [
@@ -1924,6 +1996,14 @@
      "description": "Security first, and the whole Land of Israel: a strong army, free enterprise and a national identity rooted in tradition, with little faith in concessions.",
      "icon": "images/ideologies/conservative_zionist.png",
      "art": "images/ideologies/art/conservative_zionist.jpg",
+     "countries": []
+    },
+    {
+     "key": "red_army",
+     "name": "Red Army",
+     "description": "The army that won the civil war has not handed the state back. Commanders and commissars govern in the name of the revolution, by order of the day.",
+     "icon": "images/ideologies/red_army.png",
+     "art": "images/ideologies/art/red_army.jpg",
      "countries": []
     }
    ],
@@ -2458,14 +2538,6 @@
      "countries": []
     },
     {
-     "key": "red_army",
-     "name": "Red Army",
-     "description": "The army that won the civil war has not handed the state back. Commanders and commissars govern in the name of the revolution, by order of the day.",
-     "icon": "images/ideologies/red_army.png",
-     "art": "images/ideologies/art/red_army.jpg",
-     "countries": []
-    },
-    {
      "key": "peoples_liberation_army",
      "name": "People's Liberation Army",
      "description": "The gun commands the party. The armed forces rule directly, combining a Marxist vocabulary with the habits of a general staff.",
@@ -2522,6 +2594,14 @@
      "description": "The state exists to be looted by those who run it. Offices are investments, the budget is the return, and elections are a business expense.",
      "icon": "images/ideologies/kleptocracy.png",
      "art": "images/ideologies/art/kleptocracy.jpg",
+     "countries": []
+    },
+    {
+     "key": "zionist_stratocracy",
+     "name": "Zionist Stratocracy",
+     "description": "The army is the state. A security cabinet of generals governs in the name of survival, and civilian politics lasts only as far as the General Staff allows.",
+     "icon": "images/ideologies/zionist_stratocracy.png",
+     "art": "images/ideologies/art/zionist_stratocracy.jpg",
      "countries": []
     }
    ],
@@ -2676,6 +2756,14 @@
      "description": "Crown and altar in one person. The monarch is both sovereign and guardian of the faith, and governs with the clergy as his natural ministers.",
      "icon": "images/ideologies/theocratic_monarchy.png",
      "art": "images/ideologies/art/theocratic_monarchy.jpg",
+     "countries": []
+    },
+    {
+     "key": "monarcho_zionism",
+     "name": "Monarcho-Zionism",
+     "description": "A crowned head for the Jewish state. A king in Jerusalem stands above the parties and the courts, and the Zionist project takes the form of a single dynasty.",
+     "icon": "images/ideologies/monarcho_zionism.png",
+     "art": "images/ideologies/art/monarcho_zionism.jpg",
      "countries": []
     }
    ],
@@ -2926,6 +3014,22 @@
      "description": "Hindutva: the nation defined as a Hindu civilisation. A mass movement of cadres and temples that wants the state to reflect the faith of the majority.",
      "icon": "images/ideologies/hindu_nationalism.png",
      "art": "images/ideologies/art/hindu_nationalism.jpg",
+     "countries": []
+    },
+    {
+     "key": "bibism",
+     "name": "Bibism",
+     "description": "The devotion and the system of power that grew around the Israeli prime minister, known by his nickname 'Bibi'. Coalition partners, party and state institutions orbit one leader, and his political survival becomes the purpose of the government.",
+     "icon": "images/ideologies/bibism.png",
+     "art": "images/ideologies/art/bibism.jpg",
+     "countries": []
+    },
+    {
+     "key": "religious_zionism",
+     "name": "Religious Zionism",
+     "description": "The settlement of the whole Land of Israel as a religious duty. The state is the beginning of redemption, the rabbis its guides and Halakha the measure of its laws.",
+     "icon": "images/ideologies/religious_zionism.png",
+     "art": "images/ideologies/art/religious_zionism.jpg",
      "countries": []
     }
    ],
