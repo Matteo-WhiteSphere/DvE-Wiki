@@ -14,6 +14,7 @@ before(async () => {
     server = new BlobsServer({ directory: dir, port: 0, token: 't' });
     const { port } = await server.start();
     const url = `http://127.0.0.1:${port}`;
+    server._testUrl = url;
     setEnvironmentContext({ edgeURL: url, uncachedEdgeURL: url, siteID: 'test', token: 't' });
     process.env.DVE_RECOVERY_CODE = 'recovery-code-for-tests-123';
     handler = (await import('../netlify/functions/api.mjs')).default;
@@ -291,4 +292,41 @@ test('search index: published pages only, plain text, country fields', async () 
     assert.equal(summary.ideologyColor, '#b21010');
     const bad = await call('PUT', 'pages/s3', { cookie: ed, body: { page: page({ ideologyColor: 'red' }), baseRev: null } });
     assert.equal(bad.status, 400);
+});
+
+// On Netlify the storage credentials are different for every function invocation. A
+// connection kept from an earlier request (a "warm" function) would then be refused.
+test('storage credentials that change between requests keep working (warm function)', async () => {
+    const url = server._testUrl;
+    const port = Number(new URL(url).port);
+    const owner = await session('Owner.RedMatteo');
+    assert.equal((await call('GET', 'me', { cookie: owner })).data.user.username, 'Owner.RedMatteo');
+    await server.stop();
+    server = new BlobsServer({ directory: dir, port, token: 'rotated-token' });
+    await server.start();
+    server._testUrl = url;
+    setEnvironmentContext({ edgeURL: url, uncachedEdgeURL: url, siteID: 'test', token: 'rotated-token' });
+    const again = await call('GET', 'me', { cookie: owner });
+    assert.equal(again.status, 200, JSON.stringify(again.data));
+    assert.equal(again.data.user.username, 'Owner.RedMatteo');
+    const bad = await call('POST', 'login', { body: { username: 'Editor.Rapha', password: 'not-the-password' } });
+    assert.equal(bad.status, 401); // a normal answer, not "Server error"
+});
+
+test('health check reports a working storage, and a failing one without details', async () => {
+    const ok = await call('GET', 'health');
+    assert.equal(ok.status, 200);
+    assert.deepEqual(ok.data, { ok: true });
+    // Break the storage on purpose: wrong token.
+    const url = server._testUrl;
+    setEnvironmentContext({ edgeURL: url, uncachedEdgeURL: url, siteID: 'test', token: 'wrong' });
+    const down = await call('GET', 'health');
+    assert.equal(down.status, 503);
+    assert.equal(down.data.ok, false);
+    assert.match(down.data.problem, /Error$/);
+    assert.equal(JSON.stringify(down.data).includes('wrong'), false);
+    const login = await call('POST', 'login', { body: { username: 'Owner.EC', password: 'x' } });
+    assert.equal(login.status, 500);
+    assert.match(login.data.error, /^Server error \(ref [0-9a-f]{6}\)\.$/);
+    setEnvironmentContext({ edgeURL: url, uncachedEdgeURL: url, siteID: 'test', token: 'rotated-token' });
 });

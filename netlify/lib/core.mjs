@@ -6,10 +6,11 @@ import staffList from '../../data/staff-accounts.json' with { type: 'json' };
 
 // ----------------------------------------------------------------- storage
 
-const stores = {};
 export function store(name) {
     // Strong consistency: a write is visible to the very next read (logins, roles, pages).
-    return (stores[name] ||= getStore({ name, consistency: 'strong' }));
+    // Never keep the store between requests: Netlify gives every function invocation its own
+    // storage credentials, and a connection from an earlier request is refused (403).
+    return getStore({ name, consistency: 'strong' });
 }
 
 // --------------------------------------------------------------- constants

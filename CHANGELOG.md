@@ -13,6 +13,7 @@
 * [Ideologies List](https://dve-wiki.netlify.app/ideologies.html#left_communism) — new icon for Left Communism (the old one was the pre-1991 style).
 * [Italy – Democratic](https://dve-wiki.netlify.app/ita_democratic.html), [Italy – Communist](https://dve-wiki.netlify.app/ita_communist.html), [Italy – Fascist](https://dve-wiki.netlify.app/ita_fascist.html) — added a "Civil War" link to the navigation bar.
 * [Search](https://dve-wiki.netlify.app/search.html) — the civil war pages are searchable (e.g. "Guardia Padana", "Schützen", "Ilva").
+* [Login](https://dve-wiki.netlify.app/login.html) — fix: "Server error" after the first request (the server kept a database connection that Netlify refuses on the next request). Errors now show a reference code, and [/api/health](https://dve-wiki.netlify.app/api/health) reports whether the database works.
 * [Mod sync tools](https://github.com/Matteo-WhiteSphere/DvE-Wiki/tree/main/tools) — new `npm run sync-italy` regenerates the civil war pages from the mod.
 
 ## 2026-10-11

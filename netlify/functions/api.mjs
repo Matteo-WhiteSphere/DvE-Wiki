@@ -65,6 +65,17 @@ function requireAdmin(session) {
 
 // ------------------------------------------------------------------ routes
 
+/** Public check that the storage works: only says ok, or the kind of problem (no details). */
+async function health() {
+    try {
+        await store('meta').get('health-check');
+        return json({ ok: true });
+    } catch (e) {
+        console.error('[api health]', e);
+        return json({ ok: false, problem: e && e.name ? e.name : 'Error' }, 503);
+    }
+}
+
 async function login(req, context) {
     const { username, password } = await body(req);
     const ip = clientIp(req, context);
@@ -309,6 +320,7 @@ export default async function handler(req, context) {
         let res;
         switch (route) {
             case 'GET /me': res = json({ user: session ? publicUser(session.user) : null }); break;
+            case 'GET /health': res = await health(); break;
             case 'POST /login': return await login(req, context);
             case 'POST /logout':
                 return json({ ok: true }, 200, { 'Set-Cookie': sessionCookie('', 0) });
@@ -344,7 +356,9 @@ export default async function handler(req, context) {
         return res;
     } catch (e) {
         if (e instanceof HttpError) return json({ error: e.message, ...e.extra }, e.status);
-        console.error(e);
-        return json({ error: 'Server error.' }, 500);
+        // The reference lets an administrator find this exact failure in the function log.
+        const ref = randomBytes(3).toString('hex');
+        console.error(`[api ${ref}] ${req.method} ${url.pathname}`, e);
+        return json({ error: `Server error (ref ${ref}).`, ref }, 500);
     }
 }

@@ -106,6 +106,13 @@ Dopo 5 codici sbagliati la pagina si blocca per 15 minuti per quell'indirizzo IP
 
 ---
 
+### Se compare "Server error"
+
+- Il messaggio ha un codice, per esempio `Server error (ref 3fa9c1)`. Su Netlify apri **Cloud compute → Functions → api → Function log** e cerca quel codice: accanto c'è l'errore completo.
+- `https://dve-wiki.netlify.app/api/health` dice se il database funziona: `{"ok":true}` va bene; `{"ok":false,"problem":"…"}` indica il tipo di problema (senza dettagli riservati).
+
+---
+
 ## 4. Guida rapida per i DEV (editor)
 
 1. Premi **👤 Login** in alto, accedi con il tuo `Editor.Nome` → **Open page editor**.
