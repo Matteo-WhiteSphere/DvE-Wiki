@@ -60,7 +60,11 @@ const icon = (key) => {
     for (const name of [key, key.toLowerCase()]) if (existsSync(join(root, 'images/ideologies', name + '.png'))) return `images/ideologies/${name}.png`;
     return '';
 };
-const art = (key) => existsSync(join(root, 'images/ideologies/art', key + '.jpg')) ? `images/ideologies/art/${key}.jpg` : '';
+// File names in the mod are lower case ("workerism.jpg") while some keys are not ("Workerism").
+const art = (key) => {
+    for (const name of [key, key.toLowerCase()]) if (existsSync(join(root, 'images/ideologies/art', name + '.jpg'))) return `images/ideologies/art/${name}.jpg`;
+    return '';
+};
 const ideologies = ideologyBlock.filter((e) => Array.isArray(e.value)).map((e) => {
     const color = (val(e.value, 'color') || []).map((x) => x.value);
     return {

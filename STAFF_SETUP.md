@@ -129,7 +129,7 @@ Dopo 5 codici sbagliati la pagina si blocca per 15 minuti per quell'indirizzo IP
 
 ## 5. Allineamento con la mod
 
-Nazioni, TAG, ideologie, sotto-ideologie, leader, nomi in gioco, icone e illustrazioni del wiki vengono **dalla mod stessa** (repository [ECModder/2025-Dragon-Vs.-Eagle](https://github.com/ECModder/2025-Dragon-Vs.-Eagle)). Quando la mod cambia, si riallinea il wiki così (serve Node.js 20+ e Python 3 con Pillow):
+Nazioni, TAG, ideologie, sotto-ideologie, leader, nomi in gioco, icone e illustrazioni del wiki vengono **dalla mod stessa** (repository [ECModder/2025-Dragon-Vs.-Eagle](https://github.com/ECModder/2025-Dragon-Vs.-Eagle)). Quando la mod cambia, si riallinea il wiki così (serve Node.js 20+ e Python 3 con Pillow e numpy (`pip install pillow numpy`)):
 
 ```bash
 git clone --depth 1 https://github.com/ECModder/2025-Dragon-Vs.-Eagle ../2025-Dragon-Vs.-Eagle   # la prima volta

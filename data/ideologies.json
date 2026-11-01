@@ -74,7 +74,7 @@
      "name": "Pol Pot Thought",
      "description": "Year Zero. Cities are emptied, money is abolished and the past is declared closed, in the name of a peasant utopia that only the Organisation can see.",
      "icon": "images/ideologies/Pol_Pot_Thought.png",
-     "art": "",
+     "art": "images/ideologies/art/pol_pot_thought.jpg",
      "countries": []
     }
    ],
@@ -131,7 +131,7 @@
      "name": "Workerism",
      "description": "Politics begins and ends at the factory gate. The party exists to serve the shop floor, and anyone who has never worked a shift has no business speaking for those who have.",
      "icon": "images/ideologies/Workerism.png",
-     "art": "",
+     "art": "images/ideologies/art/workerism.jpg",
      "countries": []
     },
     {
@@ -212,7 +212,7 @@
      "name": "Deutsche Communism",
      "description": "The German road to socialism, built on heavy industry, a vast security apparatus and the conviction that the workers' state must never be left unguarded.",
      "icon": "images/ideologies/Deutsche_Communism.png",
-     "art": "",
+     "art": "images/ideologies/art/deutsche_communism.jpg",
      "countries": []
     },
     {
@@ -2908,7 +2908,7 @@
      "name": "Kahanism",
      "description": "A religious ultranationalism that wants a state governed by religious law and emptied of those it considers foreign to it.",
      "icon": "images/ideologies/Kahanism.png",
-     "art": "",
+     "art": "images/ideologies/art/kahanism.jpg",
      "countries": []
     }
    ],

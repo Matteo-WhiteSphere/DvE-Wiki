@@ -6530,7 +6530,7 @@
   ]
  },
  "ven": {
-  "title": "SOCIALIST REPUBLIC OF VENEZUELA",
+  "title": "BOLIVARIAN REPUBLIC OF VENEZUELA",
   "subtitle": "2025 Starting Country Overview",
   "category": "country",
   "group": "ven",
@@ -6545,7 +6545,7 @@
    {
     "title": "Country Information",
     "layout": "full",
-    "body": "**TAG:** `VEN`  \n**Official name:** Socialist Republic of Venezuela  \n**Starting ideology:** Authoritarian Socialist  \n**Sub-ideology:** Populist Socialism  \n**Leader:** Nicolás Maduro  \n**States at start:** 3"
+    "body": "**TAG:** `VEN`  \n**Official name:** Bolivarian Republic of Venezuela  \n**Starting ideology:** Authoritarian Socialist  \n**Sub-ideology:** Populist Socialism  \n**Leader:** Nicolás Maduro  \n**States at start:** 3"
    },
    {
     "title": "Political Landscape (2025)",
@@ -6836,7 +6836,7 @@
   ],
   "source": {
    "repository": "https://github.com/ECModder/2025-Dragon-Vs.-Eagle",
-   "commit": "8d22a53"
+   "commit": "d91257f"
   }
  },
  "ita_cw_ita": {
@@ -6901,7 +6901,7 @@
   ],
   "source": {
    "repository": "https://github.com/ECModder/2025-Dragon-Vs.-Eagle",
-   "commit": "8d22a53"
+   "commit": "d91257f"
   }
  },
  "ita_cw_int": {
@@ -6976,7 +6976,7 @@
   ],
   "source": {
    "repository": "https://github.com/ECModder/2025-Dragon-Vs.-Eagle",
-   "commit": "8d22a53"
+   "commit": "d91257f"
   }
  },
  "ita_cw_sri": {
@@ -7046,7 +7046,7 @@
   ],
   "source": {
    "repository": "https://github.com/ECModder/2025-Dragon-Vs.-Eagle",
-   "commit": "8d22a53"
+   "commit": "d91257f"
   }
  },
  "ita_cw_rsi": {
@@ -7096,7 +7096,7 @@
   ],
   "source": {
    "repository": "https://github.com/ECModder/2025-Dragon-Vs.-Eagle",
-   "commit": "8d22a53"
+   "commit": "d91257f"
   }
  },
  "ita_cw_lom": {
@@ -7176,7 +7176,7 @@
   ],
   "source": {
    "repository": "https://github.com/ECModder/2025-Dragon-Vs.-Eagle",
-   "commit": "8d22a53"
+   "commit": "d91257f"
   }
  },
  "ita_cw_tyr": {
@@ -7226,7 +7226,7 @@
   ],
   "source": {
    "repository": "https://github.com/ECModder/2025-Dragon-Vs.-Eagle",
-   "commit": "8d22a53"
+   "commit": "d91257f"
   }
  }
 }
