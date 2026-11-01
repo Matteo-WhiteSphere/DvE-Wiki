@@ -28,8 +28,8 @@ SPRITE = re.compile(r'name\s*=\s*"?GFX_ideology_([A-Za-z0-9_]+?)(?:_icon)?"?\s+t
 
 
 # sub-ideology -> sibling illustration whose background is reused
-# marxism: the mod's picture is a full-size portrait of Marx and Engels
-ICON_ART = {'marxism': 'scientific_socialism'}
+# marxism: the mod's picture is a full-size portrait of Marx and Engels; communism_vanguard: new icon
+ICON_ART = {'marxism': 'scientific_socialism', 'communism_vanguard': 'scientific_socialism'}
 ICON_SCALE = 2.0       # the icon is shown twice its size in the standard illustrations
 ICON_OFFSET = (-1, 0)  # measured on the existing illustrations
 
