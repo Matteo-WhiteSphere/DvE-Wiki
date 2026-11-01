@@ -4,7 +4,7 @@ import {
     store, HttpError, ensureBootstrap, parseUsername, renameForRole, verifyPassword, hashPassword,
     passwordProblem, tempPassword, signSession, readSession, sessionCookie, SESSION_COOKIE,
     getUser, listUsers, saveUser, createUser, publicUser, checkLock, recordFailure, clearFailures,
-    audit, cleanPage, pageSummary, SLUG_RE, isEditorRole, isAdminRole, canCreate, canManage,
+    audit, cleanPage, pageSummary, searchEntry, SLUG_RE, isEditorRole, isAdminRole, canCreate, canManage,
     canAssign, MAX_FAILED_LOGINS, MAX_IP_ATTEMPTS
 } from '../lib/core.mjs';
 
@@ -65,6 +65,17 @@ function requireAdmin(session) {
 
 // ------------------------------------------------------------------ routes
 
+/** Public check that the storage works: only says ok, or the kind of problem (no details). */
+async function health() {
+    try {
+        await store('meta').get('health-check');
+        return json({ ok: true });
+    } catch (e) {
+        console.error('[api health]', e);
+        return json({ ok: false, problem: e && e.name ? e.name : 'Error' }, 503);
+    }
+}
+
 async function login(req, context) {
     const { username, password } = await body(req);
     const ip = clientIp(req, context);
@@ -115,6 +126,17 @@ async function listPages(url, session) {
     }));
     const result = all.filter((p) => p && (editor || p.published) && (!group || p.group === group));
     return json({ pages: result });
+}
+
+/** Text of every published page, for the wiki search (search.html). */
+async function searchIndex() {
+    const pages = store('pages');
+    const { blobs } = await pages.list();
+    const all = await Promise.all(blobs.map(async (b) => {
+        const p = await pages.get(b.key, { type: 'json' });
+        return p && p.published ? searchEntry(b.key, p) : null;
+    }));
+    return json({ pages: all.filter(Boolean) });
 }
 
 async function getPage(slug, session) {
@@ -298,11 +320,13 @@ export default async function handler(req, context) {
         let res;
         switch (route) {
             case 'GET /me': res = json({ user: session ? publicUser(session.user) : null }); break;
+            case 'GET /health': res = await health(); break;
             case 'POST /login': return await login(req, context);
             case 'POST /logout':
                 return json({ ok: true }, 200, { 'Set-Cookie': sessionCookie('', 0) });
             case 'POST /password': return await changePassword(req, session);
             case 'GET /pages': res = await listPages(url, session); break;
+            case 'GET /search': res = await searchIndex(); break;
             case 'GET /pages/:': res = await getPage(parts[1], session); break;
             case 'PUT /pages/:': res = await savePage(req, parts[1], session); break;
             case 'DELETE /pages/:': res = await deletePage(parts[1], session); break;
@@ -332,7 +356,9 @@ export default async function handler(req, context) {
         return res;
     } catch (e) {
         if (e instanceof HttpError) return json({ error: e.message, ...e.extra }, e.status);
-        console.error(e);
-        return json({ error: 'Server error.' }, 500);
+        // The reference lets an administrator find this exact failure in the function log.
+        const ref = randomBytes(3).toString('hex');
+        console.error(`[api ${ref}] ${req.method} ${url.pathname}`, e);
+        return json({ error: `Server error (ref ${ref}).`, ref }, 500);
     }
 }
