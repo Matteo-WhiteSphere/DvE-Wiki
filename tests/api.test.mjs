@@ -330,3 +330,14 @@ test('health check reports a working storage, and a failing one without details'
     assert.match(login.data.error, /^Server error \(ref [0-9a-f]{6}\)\.$/);
     setEnvironmentContext({ edgeURL: url, uncachedEdgeURL: url, siteID: 'test', token: 'rotated-token' });
 });
+
+// Behind a custom domain / proxy the function may see another host than the browser used.
+test('same-origin check: accepts the proxied host, refuses other sites', async () => {
+    const owner = await session('Owner.RedMatteo');
+    const post = (origin, extra = {}) => call('POST', 'logout', { cookie: owner, headers: { Origin: origin, ...extra } });
+    assert.equal((await post('https://wiki.test')).status, 200);
+    const proxied = await post('https://unitesociety.network', { 'X-Forwarded-Host': 'unitesociety.network' });
+    assert.equal(proxied.status, 200, JSON.stringify(proxied.data));
+    const evil = await post('https://evil.example');
+    assert.equal(evil.status, 403);
+});

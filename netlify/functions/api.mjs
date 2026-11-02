@@ -39,12 +39,36 @@ function clientIp(req, context) {
     return (context && context.ip) || req.headers.get('x-nf-client-connection-ip') || 'unknown';
 }
 
+/** Hosts this site answers to: the one the request arrived on (also behind a proxy / custom
+ *  domain), the site's own addresses and the optional DVE_ALLOWED_HOSTS list. */
+function ownHosts(req) {
+    const hosts = new Set();
+    const add = (v) => {
+        for (const part of String(v || '').split(',')) {
+            const h = part.trim().toLowerCase().replace(/^https?:\/\//, '').replace(/\/.*$/, '');
+            if (h) hosts.add(h);
+        }
+    };
+    try { add(new URL(req.url).host); } catch { /* ignore */ }
+    add(req.headers.get('host'));
+    add(req.headers.get('x-forwarded-host'));
+    add(process.env.URL);
+    add(process.env.DVE_ALLOWED_HOSTS);
+    return hosts;
+}
+
 /** Blocks cross-site requests: same-origin header + custom header that forms cannot send. */
 function checkCsrf(req) {
     if (req.method === 'GET' || req.method === 'HEAD') return;
     if (req.headers.get('x-dve-request') !== '1') throw new HttpError(403, 'Missing request header.');
     const origin = req.headers.get('origin');
-    if (origin && new URL(origin).host !== new URL(req.url).host) throw new HttpError(403, 'Cross-site request refused.');
+    if (!origin) return;
+    let host;
+    try { host = new URL(origin).host.toLowerCase(); } catch { throw new HttpError(403, 'Cross-site request refused.'); }
+    if (!ownHosts(req).has(host)) {
+        console.warn('[api] refused origin', host, 'expected one of', [...ownHosts(req)].join(' '));
+        throw new HttpError(403, 'Cross-site request refused.');
+    }
 }
 
 function requireUser(session) {
