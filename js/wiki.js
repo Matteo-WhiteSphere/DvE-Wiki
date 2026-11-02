@@ -101,6 +101,42 @@ export async function loadSeeds() {
     return seedCache;
 }
 
+let countriesCache = null;
+/** Base data of the home page (data/countries.json): major nations and country table. */
+export async function loadCountries() {
+    if (!countriesCache) {
+        try {
+            const res = await fetch('data/countries.json', { cache: 'no-cache' });
+            countriesCache = res.ok ? await res.json() : { majors: [], countries: [] };
+        } catch { countriesCache = { majors: [], countries: [] }; }
+    }
+    return countriesCache;
+}
+
+/** Normalizes text for searching: lower case, no accents. */
+export function fold(s) {
+    return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+/** Readable text colour (black or white) on a given background. */
+export function textColorOn(hex) {
+    if (!COLOR_RE.test(hex || '')) return '#ffffff';
+    const n = parseInt(hex.slice(1), 16);
+    const lum = (0.299 * ((n >> 16) & 255) + 0.587 * ((n >> 8) & 255) + 0.114 * (n & 255)) / 255;
+    return lum > 0.62 ? '#000000' : '#ffffff';
+}
+
+/** Same hue, lightened until it is readable as text on the dark theme. */
+export function readableOnDark(hex) {
+    if (!COLOR_RE.test(hex || '')) return '#00f3ff';
+    let [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
+    const lum = () => (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+    for (let i = 0; i < 12 && lum() < 0.45; i++) {
+        r += (255 - r) * 0.15; g += (255 - g) * 0.15; b += (255 - b) * 0.15;
+    }
+    return '#' + [r, g, b].map((v) => Math.round(v).toString(16).padStart(2, '0')).join('');
+}
+
 // --------------------------------------------------------------- helpers
 
 export const SLUG_RE = /^[a-z0-9][a-z0-9_-]{0,63}$/;
@@ -134,7 +170,8 @@ export function hexToRgba(hex, alpha) {
 }
 
 export function applyAccent(target, hex) {
-    const color = COLOR_RE.test(hex || '') ? hex : '#00f3ff';
+    // Very dark accents (e.g. ideology colours of the mod) are lightened to stay readable.
+    const color = readableOnDark(COLOR_RE.test(hex || '') ? hex : '#00f3ff');
     target.style.setProperty('--accent-color', color);
     target.style.setProperty('--accent-glow', hexToRgba(color, 0.35));
 }

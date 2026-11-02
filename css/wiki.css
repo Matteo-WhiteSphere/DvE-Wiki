@@ -192,7 +192,7 @@ footer a { color: var(--text-secondary); }
 .btn.google:hover { color: #1f1f1f; }
 
 label { display: block; font-size: 0.85em; color: var(--text-secondary); margin: 10px 0 4px; font-weight: bold; }
-input[type=text], input[type=email], input[type=password], input[type=number], select, textarea {
+input[type=text], input[type=search], input[type=email], input[type=password], input[type=number], select, textarea {
     width: 100%;
     background: var(--bg-color);
     border: 1px solid var(--border-color);
@@ -248,3 +248,18 @@ input[type=color] { width: 48px; height: 36px; border: 1px solid var(--border-co
 }
 
 nav a.nav-login { border-color: var(--accent-color); }
+
+/* ---------- search ---------- */
+.search-box { display: flex; gap: 10px; margin-bottom: 10px; }
+.search-box input { flex: 1; min-width: 0; font-size: 1.1em; padding: 12px 14px; }
+.results { list-style: none; padding: 0; margin: 10px 0 0; }
+.result { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 14px 16px; margin-bottom: 10px; }
+.result-title { font-weight: bold; font-size: 1.1em; text-decoration: none; margin-right: 8px; }
+.result-title:hover { text-decoration: underline; }
+.result-kind { display: inline-block; font-size: 0.72em; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 7px; border-radius: 10px; border: 1px solid var(--border-color); color: var(--text-secondary); vertical-align: middle; }
+.result-kind.kind-country, .result-kind.kind-path { color: var(--accent-neon); border-color: var(--accent-neon); }
+.result-kind.kind-ideology { color: #ff6868; border-color: #ff6868; }
+.result-kind.kind-draft { color: #777; }
+.result-context { color: var(--text-secondary); font-size: 0.85em; margin-top: 4px; }
+.result-snippet { color: var(--text-secondary); font-size: 0.9em; margin-top: 6px; line-height: 1.5; }
+mark { background: rgba(0, 243, 255, 0.25); color: var(--text-primary); border-radius: 2px; padding: 0 1px; }

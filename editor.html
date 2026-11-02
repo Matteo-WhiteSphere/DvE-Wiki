@@ -107,6 +107,26 @@
                         </div>
                     </div>
                     <p class="muted">Pages with the same <em>group</em> are linked together in the navigation bar (e.g. all paths of a country), sorted by <em>nav order</em>.</p>
+                    <div id="country-fields">
+                        <div class="row">
+                            <div>
+                                <label for="f-ideology">Starting ideology (home table)</label>
+                                <input type="text" id="f-ideology" maxlength="60" placeholder="Conservative">
+                            </div>
+                            <div>
+                                <label for="f-subideology">Sub-ideology</label>
+                                <input type="text" id="f-subideology" maxlength="60" placeholder="Populism">
+                            </div>
+                            <div class="shrink">
+                                <label for="f-ideocolor-text">Ideology colour</label>
+                                <div class="row" style="gap:6px;flex-wrap:nowrap">
+                                    <input type="color" id="f-ideocolor" value="#1e50b4">
+                                    <input type="text" id="f-ideocolor-text" maxlength="7" style="width:100px" placeholder="#1e50b4">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="muted">For <em>Country</em> pages: name (label in navigation), TAG and ideology appear in the country table of the home page. Path pages appear in the card of their group.</p>
+                    </div>
                 </div>
 
                 <div id="history-panel" class="card hidden">

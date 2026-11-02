@@ -1,6 +1,6 @@
 // Page editor for editors / admins / owners.
 import {
-    api, watchSession, loadSeeds, renderSections, el, applyAccent, isEditorRole, isAdminRole,
+    api, watchSession, loadSeeds, loadCountries, renderSections, el, applyAccent, isEditorRole, isAdminRole,
     accountActive, SLUG_RE, COLOR_RE, slugify, formatDate, friendlyError
 } from './wiki.js';
 
@@ -71,7 +71,7 @@ function drawList() {
         rows.push({ slug, title: p.title, kind: p.published ? 'published' : 'draft' });
     }
     for (const [slug, p] of Object.entries(state.seeds)) {
-        if (!state.pages.has(slug)) rows.push({ slug, title: p.title, kind: 'seed' });
+        if (!state.pages.has(slug)) rows.push({ slug, title: p.title, kind: 'seed', generated: !!p.generated });
     }
     rows.sort((a, b) => a.slug.localeCompare(b.slug));
     const list = $('page-list');
@@ -79,7 +79,7 @@ function drawList() {
     for (const r of rows) {
         if (filter !== 'all' && r.kind !== filter) continue;
         if (q && !r.slug.includes(q) && !(r.title || '').toLowerCase().includes(q)) continue;
-        const label = { published: 'published', draft: 'draft', seed: 'placeholder' }[r.kind];
+        const label = { published: 'published', draft: 'draft', seed: r.generated ? 'from the mod' : 'placeholder' }[r.kind];
         list.append(el('li', {
             class: r.slug === state.slug ? 'active' : null,
             title: r.title || '',
@@ -149,6 +149,11 @@ function fillForm(p) {
     $('f-tag').value = p.tag || '';
     $('f-navlabel').value = p.navLabel || '';
     $('f-navorder').value = Number.isInteger(p.navOrder) ? p.navOrder : 0;
+    $('f-ideology').value = p.ideology || '';
+    $('f-subideology').value = p.subIdeology || '';
+    $('f-ideocolor-text').value = COLOR_RE.test(p.ideologyColor || '') ? p.ideologyColor.toLowerCase() : '';
+    if ($('f-ideocolor-text').value) $('f-ideocolor').value = $('f-ideocolor-text').value;
+    updateCountryFields();
     const accent = COLOR_RE.test(p.accent || '') ? p.accent.toLowerCase() : '#00f3ff';
     $('f-accent').value = accent;
     $('f-accent-text').value = accent;
@@ -157,6 +162,11 @@ function fillForm(p) {
     sections.replaceChildren(...(p.sections || []).map(sectionEditor));
     if (!sections.children.length) sections.append(sectionEditor({ title: 'Overview', layout: 'full', body: '' }));
     updatePreview();
+}
+
+/** The home-table fields only matter for country pages. */
+function updateCountryFields() {
+    $('country-fields').classList.toggle('hidden', $('f-category').value !== 'country');
 }
 
 function readForm() {
@@ -173,6 +183,9 @@ function readForm() {
         tag: $('f-tag').value.trim().toUpperCase(),
         navLabel: $('f-navlabel').value.trim(),
         navOrder: parseInt($('f-navorder').value, 10) || 0,
+        ideology: $('f-ideology').value.trim(),
+        subIdeology: $('f-subideology').value.trim(),
+        ideologyColor: $('f-ideocolor-text').value.trim().toLowerCase(),
         accent: $('f-accent-text').value.trim().toLowerCase(),
         published: $('f-published').checked,
         sections
@@ -189,6 +202,8 @@ function validate(slug, p) {
     if (!COLOR_RE.test(p.accent)) return 'Accent colour must look like #12ab34.';
     if (p.navLabel.length > 60) return 'Navigation label is too long (max 60).';
     if (p.navOrder < 0 || p.navOrder > 999) return 'Nav order must be between 0 and 999.';
+    if (p.ideology.length > 60 || p.subIdeology.length > 60) return 'Ideology names: max 60 characters.';
+    if (p.ideologyColor && !COLOR_RE.test(p.ideologyColor)) return 'Ideology colour must look like #12ab34 (or stay empty).';
     if (p.sections.length > MAX_SECTIONS) return `Too many sections (max ${MAX_SECTIONS}).`;
     for (const s of p.sections) {
         if (s.title.length > 200) return 'A section title is too long (max 200).';
@@ -249,8 +264,16 @@ async function openPage(slug, { force = false } = {}) {
         state.isNew = true;
         state.rev = null;
         const seed = state.seeds[slug];
-        fillForm(seed ? { ...seed, published: false } : { title: '', category: 'other', accent: '#00f3ff' });
-        if (seed) notice('This page is still a placeholder. Its old content has been loaded: edit it and press Save to create the page.');
+        let base = {};
+        if (seed && seed.category === 'country') {
+            // Prefill the home-table fields from data/countries.json.
+            const row = (await loadCountries()).countries.find((c) => c.href === 'page.html?p=' + slug);
+            if (row) base = { ideology: row.ideology, subIdeology: row.subIdeology, ideologyColor: row.ideologyColor, navLabel: row.short || row.name };
+        }
+        fillForm(seed ? { ...seed, ...base, published: false } : { title: '', category: 'other', accent: '#00f3ff' });
+        if (seed) notice(seed.generated
+            ? 'This page is generated from the mod files. Its content has been loaded: edit it and press Save to create the page (the generated version is then replaced by yours).'
+            : 'This page is still a placeholder. Its old content has been loaded: edit it and press Save to create the page.');
     }
     state.slug = slug;
     $('f-slug').value = slug;
@@ -387,7 +410,13 @@ function wire() {
     $('page-filter').addEventListener('change', drawList);
     $('sections').addEventListener('input', changed);
     $('sections').addEventListener('change', changed);
-    for (const id of ['f-title', 'f-subtitle', 'f-category', 'f-group', 'f-tag', 'f-navlabel', 'f-navorder', 'f-published']) {
+    $('f-category').addEventListener('change', updateCountryFields);
+    $('f-ideocolor').addEventListener('input', () => { $('f-ideocolor-text').value = $('f-ideocolor').value; changed(); });
+    $('f-ideocolor-text').addEventListener('input', () => {
+        if (COLOR_RE.test($('f-ideocolor-text').value)) $('f-ideocolor').value = $('f-ideocolor-text').value.toLowerCase();
+    });
+    for (const id of ['f-title', 'f-subtitle', 'f-category', 'f-group', 'f-tag', 'f-navlabel', 'f-navorder', 'f-published',
+        'f-ideology', 'f-subideology', 'f-ideocolor-text']) {
         $(id).addEventListener('input', changed);
         $(id).addEventListener('change', changed);
     }
