@@ -4,7 +4,7 @@ import {
     store, HttpError, ensureBootstrap, parseUsername, renameForRole, verifyPassword, hashPassword,
     passwordProblem, tempPassword, signSession, readSession, sessionCookie, SESSION_COOKIE,
     getUser, listUsers, saveUser, createUser, publicUser, checkLock, recordFailure, clearFailures,
-    audit, cleanPage, pageSummary, SLUG_RE, isEditorRole, isAdminRole, canCreate, canManage,
+    audit, cleanPage, pageSummary, searchEntry, SLUG_RE, isEditorRole, isAdminRole, canCreate, canManage,
     canAssign, MAX_FAILED_LOGINS, MAX_IP_ATTEMPTS
 } from '../lib/core.mjs';
 
@@ -39,12 +39,36 @@ function clientIp(req, context) {
     return (context && context.ip) || req.headers.get('x-nf-client-connection-ip') || 'unknown';
 }
 
+/** Hosts this site answers to: the one the request arrived on (also behind a proxy / custom
+ *  domain), the site's own addresses and the optional DVE_ALLOWED_HOSTS list. */
+function ownHosts(req) {
+    const hosts = new Set();
+    const add = (v) => {
+        for (const part of String(v || '').split(',')) {
+            const h = part.trim().toLowerCase().replace(/^https?:\/\//, '').replace(/\/.*$/, '');
+            if (h) hosts.add(h);
+        }
+    };
+    try { add(new URL(req.url).host); } catch { /* ignore */ }
+    add(req.headers.get('host'));
+    add(req.headers.get('x-forwarded-host'));
+    add(process.env.URL);
+    add(process.env.DVE_ALLOWED_HOSTS);
+    return hosts;
+}
+
 /** Blocks cross-site requests: same-origin header + custom header that forms cannot send. */
 function checkCsrf(req) {
     if (req.method === 'GET' || req.method === 'HEAD') return;
     if (req.headers.get('x-dve-request') !== '1') throw new HttpError(403, 'Missing request header.');
     const origin = req.headers.get('origin');
-    if (origin && new URL(origin).host !== new URL(req.url).host) throw new HttpError(403, 'Cross-site request refused.');
+    if (!origin) return;
+    let host;
+    try { host = new URL(origin).host.toLowerCase(); } catch { throw new HttpError(403, 'Cross-site request refused.'); }
+    if (!ownHosts(req).has(host)) {
+        console.warn('[api] refused origin', host, 'expected one of', [...ownHosts(req)].join(' '));
+        throw new HttpError(403, 'Cross-site request refused.');
+    }
 }
 
 function requireUser(session) {
@@ -64,6 +88,17 @@ function requireAdmin(session) {
 }
 
 // ------------------------------------------------------------------ routes
+
+/** Public check that the storage works: only says ok, or the kind of problem (no details). */
+async function health() {
+    try {
+        await store('meta').get('health-check');
+        return json({ ok: true });
+    } catch (e) {
+        console.error('[api health]', e);
+        return json({ ok: false, problem: e && e.name ? e.name : 'Error' }, 503);
+    }
+}
 
 async function login(req, context) {
     const { username, password } = await body(req);
@@ -115,6 +150,17 @@ async function listPages(url, session) {
     }));
     const result = all.filter((p) => p && (editor || p.published) && (!group || p.group === group));
     return json({ pages: result });
+}
+
+/** Text of every published page, for the wiki search (search.html). */
+async function searchIndex() {
+    const pages = store('pages');
+    const { blobs } = await pages.list();
+    const all = await Promise.all(blobs.map(async (b) => {
+        const p = await pages.get(b.key, { type: 'json' });
+        return p && p.published ? searchEntry(b.key, p) : null;
+    }));
+    return json({ pages: all.filter(Boolean) });
 }
 
 async function getPage(slug, session) {
@@ -298,11 +344,13 @@ export default async function handler(req, context) {
         let res;
         switch (route) {
             case 'GET /me': res = json({ user: session ? publicUser(session.user) : null }); break;
+            case 'GET /health': res = await health(); break;
             case 'POST /login': return await login(req, context);
             case 'POST /logout':
                 return json({ ok: true }, 200, { 'Set-Cookie': sessionCookie('', 0) });
             case 'POST /password': return await changePassword(req, session);
             case 'GET /pages': res = await listPages(url, session); break;
+            case 'GET /search': res = await searchIndex(); break;
             case 'GET /pages/:': res = await getPage(parts[1], session); break;
             case 'PUT /pages/:': res = await savePage(req, parts[1], session); break;
             case 'DELETE /pages/:': res = await deletePage(parts[1], session); break;
@@ -332,7 +380,9 @@ export default async function handler(req, context) {
         return res;
     } catch (e) {
         if (e instanceof HttpError) return json({ error: e.message, ...e.extra }, e.status);
-        console.error(e);
-        return json({ error: 'Server error.' }, 500);
+        // The reference lets an administrator find this exact failure in the function log.
+        const ref = randomBytes(3).toString('hex');
+        console.error(`[api ${ref}] ${req.method} ${url.pathname}`, e);
+        return json({ error: `Server error (ref ${ref}).`, ref }, 500);
     }
 }

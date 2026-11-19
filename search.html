@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Search - Dragon vs Eagle Wiki</title>
+    <link rel="stylesheet" href="css/wiki.css">
+    <script type="module" src="js/search.js"></script>
+    <script type="module" src="js/nav-account.js"></script>
+</head>
+<body>
+    <header>
+        <h1>SEARCH THE WIKI</h1>
+        <p>Countries, ideologies, paths, focuses, guides</p>
+    </header>
+    <nav>
+        <a href="index.html">Home / Countries</a>
+        <a href="ideologies.html">Ideologies List</a>
+        <a href="search.html" class="attivo">&#128269; Search</a>
+        <a href="login.html" id="nav-login" class="nav-login">&#128100; Login</a>
+    </nav>
+    <div class="container">
+        <form id="search-form" class="search-box" role="search">
+            <input type="search" id="q" name="q" autocomplete="off" maxlength="100" placeholder="e.g. Maoism, ITA, Meloni, news_event…" aria-label="Search the wiki">
+            <button class="btn primary" type="submit">Search</button>
+        </form>
+        <p class="muted" id="status"></p>
+        <ul class="results" id="results"></ul>
+    </div>
+    <footer>
+        <p>Dragon vs Eagle (DvE) 2025 HOI4 Mod Wiki</p>
+    </footer>
+</body>
+</html>
