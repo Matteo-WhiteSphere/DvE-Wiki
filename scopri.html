@@ -417,10 +417,10 @@
     (() => {
         const section = document.getElementById('scrolly-section');
         const canvas = document.getElementById('scrolly-canvas');
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext('2d', { alpha: false }); // Ottimizzazione: niente trasparenza per il canvas
         const captions = document.querySelectorAll('.caption');
         
-        const LERP_FACTOR = 0.1;
+        const LERP_FACTOR = 0.12; // Leggermente più veloce
 
         let particles = [];
         let isImageLoaded = false;
@@ -454,7 +454,8 @@
                 const offCanvas = document.createElement('canvas');
                 const offCtx = offCanvas.getContext('2d');
                 
-                const scale = 0.2; 
+                // OTTIMIZZAZIONE: Scala molto più bassa (meno particelle)
+                const scale = 0.12; 
                 offCanvas.width = img.width * scale;
                 offCanvas.height = img.height * scale;
                 offCtx.drawImage(img, 0, 0, offCanvas.width, offCanvas.height);
@@ -476,8 +477,9 @@
                     offsetX = (w - drawW) / 2; offsetY = 0;
                 }
 
-                for (let y = 0; y < offCanvas.height; y += 2) {
-                    for (let x = 0; x < offCanvas.width; x += 2) {
+                // OTTIMIZZAZIONE: Legge un pixel ogni 4 (invece di 2)
+                for (let y = 0; y < offCanvas.height; y += 4) {
+                    for (let x = 0; x < offCanvas.width; x += 4) {
                         const i = (y * offCanvas.width + x) * 4;
                         const r = data[i];
                         const g = data[i+1];
@@ -490,8 +492,7 @@
                                 targetY: offsetY + (y / scale) * (drawH / img.height),
                                 startX: Math.random() * w,
                                 startY: Math.random() * h,
-                                color: `rgb(${r},${g},${b})`,
-                                size: Math.random() * 1.5 + 0.5
+                                color: `rgb(${r},${g},${b})`
                             });
                         }
                     }
@@ -503,17 +504,22 @@
         };
 
         function resizeCanvas() {
-            const dpr = window.devicePixelRatio || 1;
+            const dpr = Math.min(window.devicePixelRatio || 1, 1.5); // OTTIMIZZAZIONE: Limita i pixel per schermi Retina
             const rect = canvas.getBoundingClientRect();
             canvas.width = rect.width * dpr;
             canvas.height = rect.height * dpr;
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
         }
 
         function drawFrame(progress) {
             const w = canvas.clientWidth;
             const h = canvas.clientHeight;
-            ctx.clearRect(0, 0, w, h);
+            
+            // Riempie lo sfondo di nero (più veloce di clearRect)
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, w, h);
 
             if (imageError) {
                 ctx.fillStyle = '#ff3333';
@@ -552,23 +558,20 @@
                 return; 
             }
 
+            // OTTIMIZZAZIONE: Disegna quadratini (fillRect) invece di cerchi (arc)
+            const pSize = 2; 
             particles.forEach(p => {
                 const currentX = p.startX + (p.targetX - p.startX) * ease;
                 const currentY = p.startY + (p.targetY - p.startY) * ease;
 
                 ctx.fillStyle = p.color;
-                ctx.shadowBlur = 3;
-                ctx.shadowColor = p.color;
-                
-                ctx.beginPath();
-                ctx.arc(currentX, currentY, p.size, 0, Math.PI * 2);
-                ctx.fill();
+                ctx.fillRect(currentX, currentY, pSize, pSize);
             });
-            ctx.shadowBlur = 0; 
         }
 
         let targetFrame = 0;
         let currentFrame = 0;
+        let isAnimating = false; // OTTIMIZZAZIONE: Flag per fermare il loop
 
         function updateTargetFrame() {
             const rect = section.getBoundingClientRect();
@@ -582,23 +585,44 @@
                 const [min, max] = cap.dataset.range.split(',').map(Number);
                 cap.classList.toggle('visible', progress >= min && progress < max);
             });
+
+            // Se c'è un divario tra il target e il frame attuale, riavvia l'animazione
+            if (Math.abs(targetFrame - currentFrame) > 0.001 && !isAnimating) {
+                isAnimating = true;
+                requestAnimationFrame(animate);
+            }
         }
 
         function animate() {
             currentFrame += (targetFrame - currentFrame) * LERP_FACTOR;
-            if (Math.abs(targetFrame - currentFrame) < 0.001) currentFrame = targetFrame;
+            
+            // Se ci siamo avvicinati abbastanza al target, ferma il loop
+            if (Math.abs(targetFrame - currentFrame) < 0.001) {
+                currentFrame = targetFrame;
+                drawFrame(currentFrame);
+                isAnimating = false;
+                return; // Ferma il requestAnimationFrame
+            }
             
             drawFrame(currentFrame);
             requestAnimationFrame(animate);
         }
 
-        window.addEventListener('resize', resizeCanvas);
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            updateTargetFrame();
+        });
+        
         window.addEventListener('scroll', updateTargetFrame, { passive: true });
 
         requestAnimationFrame(() => {
             resizeCanvas();
             updateTargetFrame();
-            requestAnimationFrame(animate);
+            // Forza il primo disegno
+            if (!isAnimating) {
+                isAnimating = true;
+                requestAnimationFrame(animate);
+            }
         });
     })();
     </script>
