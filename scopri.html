@@ -630,6 +630,7 @@
     <!-- FULL-SCREEN PARLIAMENT SCRIPT -->
     <script>
     (() => {
+        // Feudalism rimosso, ora sono 14 ideologie
         const ideologies = [
             { id: 'totalitarian_socialism', name: 'Totalitarian Socialism', color: 'rgb(100, 0, 0)', desc: 'Absolute power of the State.' },
             { id: 'authoritarian_socialism', name: 'Authoritarian Socialism', color: 'rgb(150, 25, 25)', desc: 'Hierarchical socialism.' },
@@ -644,8 +645,7 @@
             { id: 'autocracy', name: 'Autocracy', color: 'rgb(200, 50, 150)', desc: 'A single leader.' },
             { id: 'absolutism', name: 'Absolutism', color: 'rgb(150, 50, 200)', desc: 'Monarchic power.' },
             { id: 'ultranationalism', name: 'Ultranationalism', color: 'rgb(133, 94, 21)', desc: 'Nation first.' },
-            { id: 'fundamentalism', name: 'Fundamentalism', color: 'rgb(255, 165, 0)', desc: 'Religious law.' },
-            { id: 'feudalism', name: 'Feudalism', color: 'rgb(139, 69, 19)', desc: 'Local lords.' }
+            { id: 'fundamentalism', name: 'Fundamentalism', color: 'rgb(255, 165, 0)', desc: 'Religious law.' }
         ];
 
         const container = document.getElementById('parliament-scroll-container');
